@@ -1,0 +1,25 @@
+/* Cambiar el color de fondo de la cabecera */
+.md-header {
+  background-color: #253d46;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+/* Personalizar el color de los enlaces */
+a {
+  color: #0c1417;
+}
+
+/* Oculta la barra lateral de navegación */
+.md-sidebar--primary {
+  display: none !important;
+}
+
+/* Ajusta el ancho de la sección de contenido al ocultar la barra */
+.md-main__inner {
+  max-width: 1000px; /* Ajusta según tu preferencia */
+  margin-left: auto;
+  margin-right: auto;
+}
