@@ -1,0 +1,16 @@
+# Entorno virtual
+venv/
+env/
+.venv/
+requirements.txt
+
+# Archivos y directorios de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Carpeta generada por MkDocs (sitio estático)
+site/
+
+# Configuración de editores e IDEs
+.vscode/

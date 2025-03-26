@@ -1,0 +1,41 @@
+site_name: Jordi Cido - FP
+site_author: Jordi Cidoncha
+
+theme:
+  name: "material"
+  language: es
+  features:
+    - navigation.top # Botó de "Back to top"
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: #253d46
+      accent: #072e3d
+    - scheme: slate
+      primary: "blue"
+      accent: "orange"
+  font:
+    text: "Open Sans"
+    code: "Fira Code"
+
+extra_css:
+  - styles/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - admonition
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mermaid2
