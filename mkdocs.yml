@@ -16,8 +16,8 @@ theme:
       primary: "blue"
       accent: "orange"
   font:
-    text: "Open Sans"
-    code: "Fira Code"
+    text: Roboto
+    code: JetBrains Mono
 
 extra_css:
   - styles/extra.css

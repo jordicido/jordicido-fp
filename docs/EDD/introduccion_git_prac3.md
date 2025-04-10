@@ -23,7 +23,8 @@ En esta práctica, aprenderás a clonar un repositorio remoto y realizar cambios
 1. **Clona un repositorio remoto**
 
     ??? summary "Solución"
-        - Abre la terminal y navega al directorio donde deseas clonar el repositorio.
+        - Accede al repositorio remoto que hemos creado en la Práctica 2.
+        - Abre una terminal y navega al directorio donde deseas clonar el repositorio.
         - Usa el siguiente comando para clonar el repositorio remoto:
           ```bash
           git clone <URL del repositorio remoto>

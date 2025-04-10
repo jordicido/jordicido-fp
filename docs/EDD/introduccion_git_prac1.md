@@ -61,7 +61,7 @@ En esta práctica, aprenderás a crear un nuevo repositorio local, realizar comm
         Realiza un commit de los cambios utilizando el siguiente comando:
 
         ```bash
-        git commit -m "Primer commit: agregar README.md"
+        git commit -m "commit inicial"
         ```
 
 6. **Visualiza el historial de commits**
