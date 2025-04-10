@@ -1,6 +1,8 @@
-# DAM/DAW
+# Entornos de Desarrollo
 
 En este espacio se encuentran los apuntes de la asignatura de Entornos de Desarrollo (EDD) del ciclo formativo de grado superior de Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW).
+
+## [Programación didáctica](pd.md)
 
 ## [UT1 - Desarrollo de software.](UT1)
 
