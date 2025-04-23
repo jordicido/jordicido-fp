@@ -112,7 +112,7 @@
 
 ### Semana 10 (22 Abril)
 
-- **Martes 22**: UT3: Debugging y pruebas de software.
+- **Martes 22**: UT3: Debugging.
 
 ### Semana 11 (29 Abril)
 
