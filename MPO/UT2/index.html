@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
 <link href="../UT1/ejercicios_ut1/" rel="prev"/>
-<link href="ejercicios_if_clase/" rel="next"/>
+<link href="ejercicios_for_while_clase/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
 <title>UT2: Estructuras de control - Jordi Cido - FP</title>
@@ -361,9 +361,55 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#estructuras-de-control-de-repeticion">
+<span class="md-ellipsis">
+      Estructuras de control de repetición
+    </span>
+</a>
+<nav aria-label="Estructuras de control de repetición" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bucle-for">
+<span class="md-ellipsis">
+      Bucle for
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bucle-while">
+<span class="md-ellipsis">
+      Bucle while
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instruccion-break">
+<span class="md-ellipsis">
+      Instrucción break
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instruccion-continue">
+<span class="md-ellipsis">
+      Instrucción continue
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-estructuras-de-control-condicionales">
 <span class="md-ellipsis">
       Ejercicios de clase: estructuras de control condicionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-estructuras-de-control-de-repeticion">
+<span class="md-ellipsis">
+      Ejercicios de clase: estructuras de control de repetición
     </span>
 </a>
 </li>
@@ -378,9 +424,25 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    Ejercicios de clase UT2: Estructura de control de repetición
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="ejercicios_if_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control condicional
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    Ejercicios UT2: Nivel avanzado
     
   </span>
 </a>
@@ -460,9 +522,55 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#estructuras-de-control-de-repeticion">
+<span class="md-ellipsis">
+      Estructuras de control de repetición
+    </span>
+</a>
+<nav aria-label="Estructuras de control de repetición" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bucle-for">
+<span class="md-ellipsis">
+      Bucle for
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bucle-while">
+<span class="md-ellipsis">
+      Bucle while
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instruccion-break">
+<span class="md-ellipsis">
+      Instrucción break
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instruccion-continue">
+<span class="md-ellipsis">
+      Instrucción continue
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-estructuras-de-control-condicionales">
 <span class="md-ellipsis">
       Ejercicios de clase: estructuras de control condicionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-estructuras-de-control-de-repeticion">
+<span class="md-ellipsis">
+      Ejercicios de clase: estructuras de control de repetición
     </span>
 </a>
 </li>
@@ -517,7 +625,59 @@ A lo largo de esta unidad, exploraremos las diferentes estructuras de control di
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Eres mayor de edad."</span><span class="p">)</span>
 </code></pre></div>
 <p>En este ejemplo, se solicita al usuario que introduzca su edad y se evalúa en qué categoría de edad se encuentra. Dependiendo de la edad ingresada, se imprime un mensaje diferente.</p>
+<h2 id="estructuras-de-control-de-repeticion">Estructuras de control de repetición<a class="headerlink" href="#estructuras-de-control-de-repeticion" title="Permanent link">¶</a></h2>
+<p>Las estructuras de control de repetición permiten ejecutar un bloque de código varias veces, ya sea un número determinado de veces o hasta que se cumpla una condición específica. En Python, las estructuras de control de repetición más comunes son los bucles <code>for</code> y <code>while</code>.</p>
+<h3 id="bucle-for">Bucle <code>for</code><a class="headerlink" href="#bucle-for" title="Permanent link">¶</a></h3>
+<p>El bucle <code>for</code> se utiliza para iterar sobre una secuencia (como una lista, una tupla o un rango). La sintaxis básica es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">secuencia</span><span class="p">:</span>
+    <span class="c1"># Bloque de código a ejecutar en cada iteración</span>
+</code></pre></div>
+<p>Para iterar sobre una secuencia de números, puedes utilizar la función <code>range()</code>. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+<p>La función <code>range(5)</code> genera una secuencia de números del 0 al 4, y el bucle <code>for</code> imprime cada número en la consola. Range también puede aceptar un segundo argumento para especificar el número de inicio y un tercer argumento para especificar la secuencia de iteración. Por ejemplo, <code>range(1, 10, 2)</code> generará la secuencia 1, 3, 5, 7, 9.</p>
+<p>Así pues, la función <code>range()</code> tiene la siguiente sintaxis:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">range</span><span class="p">(</span><span class="n">inicio</span><span class="p">,</span> <span class="n">fin</span><span class="p">,</span> <span class="n">paso</span><span class="p">)</span>
+</code></pre></div>
+<p>Lo que pasa en un bucle <code>for</code> es que la variable toma el valor de cada elemento de la secuencia en cada iteración. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, el bucle <code>for</code> itera sobre la lista <code>numeros</code> y asigna cada número a la variable <code>numero</code>, que luego se imprime en la consola.</p>
+<h3 id="bucle-while">Bucle <code>while</code><a class="headerlink" href="#bucle-while" title="Permanent link">¶</a></h3>
+<p>El bucle <code>while</code> se utiliza para ejecutar un bloque de código mientras una condición sea verdadera. La sintaxis básica es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">condición</span><span class="p">:</span>
+    <span class="c1"># Bloque de código a ejecutar mientras la condición sea verdadera</span>
+</code></pre></div>
+<p>El bucle <code>while</code> es útil cuando no se conoce de antemano cuántas veces se debe ejecutar el bloque de código. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número: "</span><span class="p">))</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">numero</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">suma</span> <span class="o">+=</span> <span class="n">numero</span>
+    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce otro número (0 para salir): "</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La suma es:"</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, el bucle <code>while</code> se ejecuta mientras el usuario no introduzca 0. En cada iteración, se suma el número ingresado a la variable <code>suma</code> y se solicita un nuevo número al usuario.</p>
+<h3 id="instruccion-break">Instrucción <code>break</code><a class="headerlink" href="#instruccion-break" title="Permanent link">¶</a></h3>
+<p>La instrucción <code>break</code> se utiliza para salir de un bucle antes de que se complete su iteración. Esto puede ser útil si se cumple una condición específica y no es necesario continuar con el bucle. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, el bucle <code>for</code> se detiene cuando <code>i</code> es igual a 5, por lo que solo se imprimen los números del 0 al 4.</p>
+<h3 id="instruccion-continue">Instrucción <code>continue</code><a class="headerlink" href="#instruccion-continue" title="Permanent link">¶</a></h3>
+<p>La instrucción <code>continue</code> se utiliza para omitir la iteración actual de un bucle y continuar con la siguiente iteración. Esto puede ser útil si se desea saltar ciertos valores en una secuencia. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, la instrucción <code>continue</code> se utiliza para omitir los números pares, por lo que solo se imprimen los números impares del 0 al 9.</p>
 <h2 id="ejercicios-de-clase-estructuras-de-control-condicionales"><a href="ejercicios_if_clase/">Ejercicios de clase: estructuras de control condicionales</a><a class="headerlink" href="#ejercicios-de-clase-estructuras-de-control-condicionales" title="Permanent link">¶</a></h2>
+<h2 id="ejercicios-de-clase-estructuras-de-control-de-repeticion"><a href="ejercicios_for_while_clase/">Ejercicios de clase: estructuras de control de repetición</a><a class="headerlink" href="#ejercicios-de-clase-estructuras-de-control-de-repeticion" title="Permanent link">¶</a></h2>
 <h2 id="ejercicios-practicos-nivel-basico"><a href="ejercicios_ut2_bas/">Ejercicios prácticos (Nivel básico)</a><a class="headerlink" href="#ejercicios-practicos-nivel-basico" title="Permanent link">¶</a></h2>
 <p>Asegúrate de leer atentamente cada ejercicio y de intentar resolverlo por tu cuenta antes de consultar las soluciones. Esto te ayudará a consolidar tus conocimientos y a mejorar tus habilidades de programación.</p>
 </article>

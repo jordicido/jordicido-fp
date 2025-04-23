@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
-<link href="../ejercicios_if_clase/" rel="prev"/>
+<link href="../ejercicios_ut2_avanzados/" rel="prev"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
 <title>Ejercicios UT2: Nivel básico - Jordi Cido - FP</title>
@@ -301,9 +301,25 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    Ejercicios de clase UT2: Estructura de control de repetición
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../ejercicios_if_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control condicional
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    Ejercicios UT2: Nivel avanzado
     
   </span>
 </a>
@@ -399,6 +415,55 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-11">
+<span class="md-ellipsis">
+      Ejercicio 11
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-12">
+<span class="md-ellipsis">
+      Ejercicio 12
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-13">
+<span class="md-ellipsis">
+      Ejercicio 13
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-14">
+<span class="md-ellipsis">
+      Ejercicio 14
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-15">
+<span class="md-ellipsis">
+      Ejercicio 15
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-16">
+<span class="md-ellipsis">
+      Ejercicio 16
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-17">
+<span class="md-ellipsis">
+      Ejercicio 17
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -489,6 +554,55 @@
 <a class="md-nav__link" href="#ejercicio-10">
 <span class="md-ellipsis">
       Ejercicio 10
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-11">
+<span class="md-ellipsis">
+      Ejercicio 11
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-12">
+<span class="md-ellipsis">
+      Ejercicio 12
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-13">
+<span class="md-ellipsis">
+      Ejercicio 13
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-14">
+<span class="md-ellipsis">
+      Ejercicio 14
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-15">
+<span class="md-ellipsis">
+      Ejercicio 15
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-16">
+<span class="md-ellipsis">
+      Ejercicio 16
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-17">
+<span class="md-ellipsis">
+      Ejercicio 17
     </span>
 </a>
 </li>
@@ -658,6 +772,131 @@
 <details class="warning">
 <summary>Recuerda</summary>
 <p>Recuerda que este ejercicio es un poco más complicado porque tienes que tener en cuenta los días de cada mes y los años bisiestos. No solo tienes que comprobar si el mes es válido, sino también si el día es válido para ese mes y año. Por ejemplo, febrero tiene 29 días en años bisiestos y 28 en años no bisiestos. Además, abril, junio, septiembre y noviembre tienen 30 días, mientras que enero, marzo, mayo, julio, agosto, octubre y diciembre tienen 31 días.</p>
+</details>
+<h2 id="ejercicio-11">Ejercicio 11<a class="headerlink" href="#ejercicio-11" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario dos números enteros e imprima la secuencia de números entre ellos (incluidos) en orden ascendente. El primer número siempre será menor que el segundo.</p>
+<p><strong>Ejemplo:</strong></p>
+<p>El usuario introduce 2 y 5.</p>
+<p>El programa debe imprimir:</p>
+<div class="highlight"><pre><span></span><code>```plaintext
+2
+3
+4
+5
+```
+</code></pre></div>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce el primer número: "</span><span class="p">))</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce el segundo número: "</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="warning">
+<summary>Recuerda</summary>
+<p>Recuerda que el rango en Python es exclusivo en el límite superior, por lo que debes sumar 1 al segundo número para incluirlo en la secuencia.</p>
+</details>
+<h2 id="ejercicio-12">Ejercicio 12<a class="headerlink" href="#ejercicio-12" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario dos números enteros e imprima la secuencia de números entre ellos (incluidos) en orden ascendente. Si el primer número es mayor que el segundo, imprime la secuencia en orden descendente. Debes imprimir la secuencia de números en una sola línea, separados por espacios.</p>
+<p><strong>Ejemplo:</strong></p>
+<p>El usuario introduce 5 y 2.</p>
+<p>El programa debe imprimir:</p>
+<div class="highlight"><pre><span></span><code>```plaintext
+5 4 3 2
+```
+</code></pre></div>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce el primer número: "</span><span class="p">))</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce el segundo número: "</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">num1</span> <span class="o">&lt;</span> <span class="n">num2</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="warning">
+<summary>Recuerda</summary>
+<p>RAdemás, el argumento <code>end=" "</code> en la función <code>print()</code> se utiliza para imprimir los números en la misma línea, separados por espacios. Si no se especifica, <code>print()</code> por defecto añade un salto de línea al final de cada impresión. Por lo tanto, al usar <code>end=" "</code>, estamos indicando que queremos que el siguiente número se imprima en la misma línea, separado por un espacio.</p>
+</details>
+<h2 id="ejercicio-13">Ejercicio 13<a class="headerlink" href="#ejercicio-13" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo e imprima la tabla de multiplicar de ese número (del 1 al 10).</p>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número entero positivo: "</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="ejercicio-14">Ejercicio 14<a class="headerlink" href="#ejercicio-14" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo e imprima la suma de los números pares por un lado y la suma de los números impares por otro. El programa debe imprimir ambos resultados.</p>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número entero positivo: "</span><span class="p">))</span>
+<span class="n">suma_pares</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">suma_impares</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">suma_pares</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">suma_impares</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Suma de números pares: </span><span class="si">{</span><span class="n">suma_pares</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Suma de números impares: </span><span class="si">{</span><span class="n">suma_impares</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="ejercicio-15">Ejercicio 15<a class="headerlink" href="#ejercicio-15" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y calcules la suma de la potencia de 3 de cada número desde 1 hasta el número introducido. El programa debe imprimir el resultado.</p>
+<p>Para que se entienda mejor, si el usuario introduce 3, el programa debe calcular:</p>
+<div class="highlight"><pre><span></span><code>```plaintext
+1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36
+```
+</code></pre></div>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número entero positivo: "</span><span class="p">))</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">suma</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"La suma de la potencia de 3 de los números desde 1 hasta </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> es: </span><span class="si">{</span><span class="n">suma</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="ejercicio-16">Ejercicio 16<a class="headerlink" href="#ejercicio-16" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo e imprima la lista de divisores de ese número. Un divisor de un número <code>n</code> es un número entero que divide a <code>n</code> sin dejar residuo. El programa debe imprimir todos los divisores del número introducido.</p>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número entero positivo: "</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Los divisores de </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> son: "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<details class="warning">
+<summary>¿Por qué ponemos ese último print()?</summary>
+<p>El último <code>print()</code> se utiliza para añadir un salto de línea después de imprimir todos los divisores, para que la salida sea más legible. Sin él, el cursor quedaría al final de la lista de divisores en la misma línea.</p>
+</details>
+<h2 id="ejercicio-17">Ejercicio 17<a class="headerlink" href="#ejercicio-17" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que reciba un número entero positivo y una letra. El programa debe imprimir la letra tantas veces como el número introducido.</p>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número entero positivo: "</span><span class="p">))</span>
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce una letra: "</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
 </details>
 </article>
 </div>
