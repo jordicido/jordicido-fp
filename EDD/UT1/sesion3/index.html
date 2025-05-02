@@ -6,25 +6,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
-<link href="../introduccion_git_prac2/" rel="prev"/>
-<link href="../introduccion_git_prac4/" rel="next"/>
-<link href="../../assets/images/favicon.png" rel="icon"/>
+<link href="../sesion2/" rel="prev"/>
+<link href="../sesion4/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
-<title>Introducción a Git: Práctica 3 - Jordi Cido - FP</title>
-<link href="../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>Fases de desarrollo de una aplicación - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
-<link href="../../styles/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#introduccion-a-git-practica-3">
+<a class="md-skip" href="#fases-de-desarrollo-de-una-aplicacion">
           Saltar a contenido
         </a>
 </div>
@@ -32,7 +32,7 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Cabecera" class="md-header__inner md-grid">
-<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Introducción a Git: Práctica 3
+              Fases de desarrollo de una aplicación
             
           </span>
 </div>
@@ -99,14 +99,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     Jordi Cido - FP
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     Jordi Cido - FP
     
@@ -129,7 +129,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Entornos de Desarrollo
     
@@ -137,7 +137,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git/">
+<a class="md-nav__link" href="../../introduccion_git/">
 <span class="md-ellipsis">
     Conceptos básicos de Git
     
@@ -145,7 +145,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac1/">
+<a class="md-nav__link" href="../../introduccion_git_prac1/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 1
     
@@ -153,9 +153,80 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac2/">
+<a class="md-nav__link" href="../../introduccion_git_prac2/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 2
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduccion_git_prac3/">
+<span class="md-ellipsis">
+    Introducción a Git: Práctica 3
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduccion_git_prac4/">
+<span class="md-ellipsis">
+    Introducción a Git: Práctica 4
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    Programación didáctica EDD Febrero 2025 Prometeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+<span class="md-ellipsis">
+    UT1
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            UT1
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    UT1 - Desarrollo de Software
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    Ejemplos de plugins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sesion1/">
+<span class="md-ellipsis">
+    Concepto de programa informático
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sesion2/">
+<span class="md-ellipsis">
+    Lenguajes de programación: Tipos y características
     
   </span>
 </a>
@@ -164,14 +235,14 @@
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Introducción a Git: Práctica 3
+    Fases de desarrollo de una aplicación
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Introducción a Git: Práctica 3
+    Fases de desarrollo de una aplicación
     
   </span>
 </a>
@@ -182,37 +253,30 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#objetivos">
+<a class="md-nav__link" href="#contexto">
 <span class="md-ellipsis">
-      Objetivos
+      Contexto
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#requisitos">
+<a class="md-nav__link" href="#fases-principales-del-desarrollo-de-software">
 <span class="md-ellipsis">
-      Requisitos
+      Fases principales del desarrollo de software
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#pasos-a-seguir">
+<a class="md-nav__link" href="#errores-comunes-de-alumnos">
 <span class="md-ellipsis">
-      Pasos a seguir
+      Errores comunes de alumnos
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#estructura-de-nuestro-repositorio">
+<a class="md-nav__link" href="#conclusion">
 <span class="md-ellipsis">
-      Estructura de nuestro repositorio
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#profundizando-conceptos">
-<span class="md-ellipsis">
-      Profundizando conceptos
+      Conclusión
     </span>
 </a>
 </li>
@@ -220,78 +284,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac4/">
-<span class="md-ellipsis">
-    Introducción a Git: Práctica 4
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../pd/">
-<span class="md-ellipsis">
-    Programación didáctica EDD Febrero 2025 Prometeo
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
-<span class="md-ellipsis">
-    UT1
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_8">
-<span class="md-nav__icon md-icon"></span>
-            UT1
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/">
-<span class="md-ellipsis">
-    UT1 - Desarrollo de Software
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/ejemplos%20mermaid/">
-<span class="md-ellipsis">
-    Ejemplos de plugins
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion1/">
-<span class="md-ellipsis">
-    Concepto de programa informático
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion2/">
-<span class="md-ellipsis">
-    Lenguajes de programación: Tipos y características
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion3/">
-<span class="md-ellipsis">
-    Fases de desarrollo de una aplicación
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion4/">
+<a class="md-nav__link" href="../sesion4/">
 <span class="md-ellipsis">
     Sesion4
     
@@ -320,7 +313,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/">
+<a class="md-nav__link" href="../../../MPO/">
 <span class="md-ellipsis">
     Módulo profesional optativo (MPO): Python
     
@@ -343,7 +336,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT1/">
+<a class="md-nav__link" href="../../../MPO/UT1/">
 <span class="md-ellipsis">
     UT1: Fundamentos de Python
     
@@ -351,7 +344,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT1/ejercicios_ut1/">
+<a class="md-nav__link" href="../../../MPO/UT1/ejercicios_ut1/">
 <span class="md-ellipsis">
     Ejercicios UT1 - Nivel básico
     
@@ -377,7 +370,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/">
+<a class="md-nav__link" href="../../../MPO/UT2/">
 <span class="md-ellipsis">
     UT2: Estructuras de control
     
@@ -385,7 +378,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_for_while_clase/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_for_while_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control de repetición
     
@@ -393,7 +386,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_if_clase/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_if_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control condicional
     
@@ -401,7 +394,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_avanzados/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_ut2_avanzados/">
 <span class="md-ellipsis">
     Ejercicios UT2: Nivel avanzado
     
@@ -409,7 +402,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_bas/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_ut2_bas/">
 <span class="md-ellipsis">
     Ejercicios UT2: Nivel básico
     
@@ -437,37 +430,30 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#objetivos">
+<a class="md-nav__link" href="#contexto">
 <span class="md-ellipsis">
-      Objetivos
+      Contexto
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#requisitos">
+<a class="md-nav__link" href="#fases-principales-del-desarrollo-de-software">
 <span class="md-ellipsis">
-      Requisitos
+      Fases principales del desarrollo de software
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#pasos-a-seguir">
+<a class="md-nav__link" href="#errores-comunes-de-alumnos">
 <span class="md-ellipsis">
-      Pasos a seguir
+      Errores comunes de alumnos
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#estructura-de-nuestro-repositorio">
+<a class="md-nav__link" href="#conclusion">
 <span class="md-ellipsis">
-      Estructura de nuestro repositorio
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#profundizando-conceptos">
-<span class="md-ellipsis">
-      Profundizando conceptos
+      Conclusión
     </span>
 </a>
 </li>
@@ -478,151 +464,134 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="introduccion-a-git-practica-3">Introducción a Git: Práctica 3<a class="headerlink" href="#introduccion-a-git-practica-3" title="Permanent link">¶</a></h1>
-<p>En esta práctica, aprenderás a clonar un repositorio remoto y realizar cambios en el código.</p>
-<h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">¶</a></h2>
-<ul>
-<li>Clonar un repositorio remoto.</li>
-<li>Realizar cambios en el código.</li>
-<li>Hacer un commit de los cambios.</li>
-<li>Hacer un push de los cambios al repositorio remoto.</li>
-</ul>
-<h2 id="requisitos">Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">¶</a></h2>
-<ul>
-<li>Tener Git instalado en tu sistema.</li>
-<li>Tener una cuenta en GitHub.</li>
-<li>Conocimientos básicos de comandos de terminal.</li>
-<li>Conocimientos básicos de Git.</li>
-<li>Haber completado la Práctica 1: Crear un nuevo repositorio local y realizar un commit inicial.</li>
-<li>Haber completado la Práctica 2: Crear un repositorio remoto en GitHub y hacer un push de tu commit inicial.</li>
-</ul>
-<h2 id="pasos-a-seguir">Pasos a seguir<a class="headerlink" href="#pasos-a-seguir" title="Permanent link">¶</a></h2>
+<h1 id="fases-de-desarrollo-de-una-aplicacion">Fases de desarrollo de una aplicación<a class="headerlink" href="#fases-de-desarrollo-de-una-aplicacion" title="Permanent link">¶</a></h1>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">¶</a></h2>
+<p>Desarrollar una aplicación no es solo escribir código. Es un <strong>proceso estructurado</strong> que incluye desde entender el problema hasta entregar el software final y mantenerlo en el tiempo.</p>
+<p>Este proceso se divide en <strong>fases</strong>, que ayudan a organizar el trabajo, reducir errores y garantizar que el resultado cumpla con las necesidades del cliente o usuario final.</p>
+<h2 id="fases-principales-del-desarrollo-de-software">Fases principales del desarrollo de software<a class="headerlink" href="#fases-principales-del-desarrollo-de-software" title="Permanent link">¶</a></h2>
 <ol>
-<li>
-<p><strong>Clona un repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Accede al repositorio remoto que hemos creado en la Práctica 2.</li>
-<li>Abre una terminal y navega al directorio donde deseas clonar el repositorio.</li>
-<li>Usa el siguiente comando para clonar el repositorio remoto:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL<span class="w"> </span>del<span class="w"> </span>repositorio<span class="w"> </span>remoto&gt;
-</code></pre></div></li>
-<li>Reemplaza <code>&lt;URL del repositorio remoto&gt;</code> con la URL del repositorio que deseas clonar.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Navega al directorio del repositorio clonado</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Cambia al directorio del repositorio clonado utilizando el siguiente comando:
-  <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nombre_del_repositorio
-</code></pre></div></li>
-<li>Reemplaza <code>nombre_del_repositorio</code> con el nombre del repositorio clonado.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Realiza cambios en el código</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Abre el archivo que deseas modificar en tu editor de texto.</li>
-<li>Realiza los cambios necesarios y guarda el archivo.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Agrega los cambios al área de preparación</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Usa el siguiente comando para agregar los cambios al área de preparación:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>nombre_del_archivo
-</code></pre></div></li>
-<li>Reemplaza <code>nombre_del_archivo</code> con el nombre del archivo que modificaste.</li>
-<li>Si deseas agregar todos los cambios, puedes usar:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
-</code></pre></div></li>
-<li>Esto agregará todos los archivos modificados al área de preparación.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Realiza un commit con un mensaje "bug arreglado"</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Realiza un commit de los cambios utilizando el siguiente comando:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"bug arreglado"</span>
-</code></pre></div></li>
-<li>Esto creará un nuevo commit con el mensaje "bug arreglado".</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Elimina el vínculo con mi repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Usa el siguiente comando para eliminar el vínculo con el repositorio remoto:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
-</code></pre></div></li>
-<li>Esto eliminará la referencia al repositorio remoto.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Crea un nuevo repositorio remoto en GitHub y vinculalo con tu repositorio local</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Si tienes dudas sobre cómo hacerlo puedes consultar la Práctica 2.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Haz un push de tus cambios al nuevo repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Usa el siguiente comando para hacer un push de tus cambios al nuevo repositorio remoto:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div></li>
-<li>Esto enviará tus cambios al nuevo repositorio remoto y establecerá la rama <code>main</code> como la rama de seguimiento.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Verifica que los cambios se han subido correctamente al repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Ve a tu nuevo repositorio en GitHub y verifica que tus cambios se han subido correctamente.</li>
-<li>Deberías ver el commit con el mensaje "bug arreglado" en la pestaña "Commits" del repositorio.</li>
-</ul>
-</details>
-</li>
+<li><strong>Análisis de requisitos</strong></li>
 </ol>
-<h2 id="estructura-de-nuestro-repositorio">Estructura de nuestro repositorio<a class="headerlink" href="#estructura-de-nuestro-repositorio" title="Permanent link">¶</a></h2>
-<p>Una vez realizado el commit inicial, la estructura de tu repositorio Git local se verá algo así:</p>
-<pre class="mermaid"><code>%%{init: { 'logLevel': 'debug', 'theme': 'base' } }%%
-gitGraph
-    commit id: "commit inicial"
-    commit id: "bug arreglado"</code></pre>
-<h2 id="profundizando-conceptos">Profundizando conceptos<a class="headerlink" href="#profundizando-conceptos" title="Permanent link">¶</a></h2>
-<p>¿Cómo es posible que me muestre dos commits si yo solo hice uno?</p>
+<blockquote>
+<p>¿Qué necesita el cliente?</p>
+</blockquote>
 <ul>
-<li>Git es un sistema de control de versiones distribuido, lo que significa que cada copia del repositorio es una copia completa del historial de cambios.</li>
-<li>Cuando clonas un repositorio, obtienes una copia completa de todo el historial de commits, incluyendo los commits que ya existen en el repositorio remoto.</li>
-<li>Por lo tanto, al clonar un repositorio, ya tienes acceso a todos los commits que se han realizado en ese repositorio, incluso si no los has creado tú mismo.</li>
-<li>En este caso, el commit "bug arreglado" es el que tú hiciste, mientras que el commit "commit inicial" es el que ya existía en el repositorio remoto antes de que lo clonaras.</li>
-<li>Esto es normal y esperado en Git, ya que cada commit tiene un identificador único (hash) que lo distingue de los demás.</li>
-<li>Por lo tanto, aunque tú solo hayas creado un commit, el historial de commits del repositorio incluye todos los commits que se han realizado en el repositorio, incluyendo los que ya existían antes de que lo clonaras.</li>
-<li>Esto te permite ver el historial completo de cambios y colaborar con otros desarrolladores de manera efectiva.</li>
+<li>Se recopila la información sobre lo que debe hacer la aplicación.</li>
+<li>Se identifican las necesidades, restricciones y objetivos.</li>
+<li>Puede implicar entrevistas, cuestionarios, observación...</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Reuniones con el cliente, análisis de mercado, estudios de viabilidad.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Escucha más de lo que hablas. El éxito depende de entender bien el problema.</p>
+</div>
+<ol>
+<li>Diseño</li>
+</ol>
+<blockquote>
+<p>¿Cómo lo vamos a construir?</p>
+</blockquote>
+<ul>
+<li>Se define la arquitectura del sistema (estructura general).</li>
+<li>Se diseña la interfaz de usuario (UI) y la experiencia de usuario (UX).</li>
+<li>Se planifican las bases de datos, clases, módulos, etc.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Diagramas UML, wireframes, diagramas de flujo, maquetas.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Un buen diseño evita muchos errores en fases posteriores.</p>
+</div>
+<ol>
+<li>Implementación</li>
+</ol>
+<blockquote>
+<p>¡Hora de programar!</p>
+</blockquote>
+<ul>
+<li>Se traduce el diseño en código real utilizando un lenguaje de programación.</li>
+<li>Puede realizarse de forma individual o en equipo.</li>
+<li>Se suele usar control de versiones (como Git) y entornos de desarrollo (IDEs).</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Programar una aplicación móvil que permita a los usuarios gestionar sus tareas diarias.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Escribe código limpio y documentado. Facilita el mantenimiento y la colaboración.</p>
+</div>
+<ol>
+<li>Pruebas</li>
+</ol>
+<blockquote>
+<p>¿Funciona como debería?</p>
+</blockquote>
+<ul>
+<li>Se verifica que la aplicación funciona correctamente y sin errores.</li>
+<li>Tipos: pruebas unitarias, de integración, funcionales, de rendimiento...</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Probar que si eliminas todas las tareas de una lista la aplicación sigue funcionando correctamente.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>No dejes las pruebas para el final. Hazlas a medida que desarrollas. Cuanto antes encuentres errores, mejor.</p>
+</div>
+<ol>
+<li>Despliegue</li>
+</ol>
+<blockquote>
+<p>Vamos a ponerlo en producción.</p>
+</blockquote>
+<ul>
+<li>Se instala la aplicación en el entorno real de uso.</li>
+<li>Puede implicar subirla a servidores, tiendas de apps, etc.</li>
+<li>A veces se hace en fases: beta, producción...</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Lanzar una nueva versión de una app en Google Play o App Store.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Asegúrate de tener un plan de contingencia por si algo sale mal en producción. Automatiza el despliegue si es posible (CI/CD).</p>
+</div>
+<ol>
+<li>Mantenimiento</li>
+</ol>
+<blockquote>
+<p>¿Y después qué?</p>
+</blockquote>
+<ul>
+<li>Se corrigen errores, se añaden nuevas funcionalidades y se mejora el rendimiento.</li>
+<li>Es un proceso continuo que puede durar años.</li>
+<li>Se recopila feedback de los usuarios para futuras mejoras.</li>
+<li>Se actualizan dependencias y se asegura la compatibilidad con nuevas tecnologías.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Actualizar una app para que funcione con la última versión de Android o iOS.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Mantén una buena comunicación con los usuarios. Ellos son la mejor fuente de información para mejorar tu aplicación.</p>
+</div>
+<h2 id="errores-comunes-de-alumnos">Errores comunes de alumnos<a class="headerlink" href="#errores-comunes-de-alumnos" title="Permanent link">¶</a></h2>
+<ul>
+<li>Empezar a programar sin entender bien el problema.</li>
+<li>Saltarse el diseño o hacerlo "de cabeza".</li>
+<li>No hacer pruebas porque "el código ya funciona".</li>
+<li>No documentar ni versionar su trabajo.</li>
+</ul>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>El desarrollo de software es un proceso complejo pero estructurado. Conocer las fases y seguirlas adecuadamente es clave para crear aplicaciones de calidad. Cada fase tiene su importancia y no se deben saltar pasos, ya que cada uno contribuye al éxito del proyecto final.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -650,7 +619,7 @@ gitGraph
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
-<script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
 </body>
 </html>

@@ -6,25 +6,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
-<link href="../introduccion_git_prac2/" rel="prev"/>
-<link href="../introduccion_git_prac4/" rel="next"/>
-<link href="../../assets/images/favicon.png" rel="icon"/>
+<link href="../sesion1/" rel="prev"/>
+<link href="../sesion3/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
-<title>Introducción a Git: Práctica 3 - Jordi Cido - FP</title>
-<link href="../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>Lenguajes de programación: Tipos y características - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
-<link href="../../styles/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#introduccion-a-git-practica-3">
+<a class="md-skip" href="#lenguajes-de-programacion-tipos-y-caracteristicas">
           Saltar a contenido
         </a>
 </div>
@@ -32,7 +32,7 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Cabecera" class="md-header__inner md-grid">
-<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Introducción a Git: Práctica 3
+              Lenguajes de programación: Tipos y características
             
           </span>
 </div>
@@ -99,14 +99,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     Jordi Cido - FP
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     Jordi Cido - FP
     
@@ -129,7 +129,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Entornos de Desarrollo
     
@@ -137,7 +137,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git/">
+<a class="md-nav__link" href="../../introduccion_git/">
 <span class="md-ellipsis">
     Conceptos básicos de Git
     
@@ -145,7 +145,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac1/">
+<a class="md-nav__link" href="../../introduccion_git_prac1/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 1
     
@@ -153,9 +153,72 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac2/">
+<a class="md-nav__link" href="../../introduccion_git_prac2/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 2
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduccion_git_prac3/">
+<span class="md-ellipsis">
+    Introducción a Git: Práctica 3
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduccion_git_prac4/">
+<span class="md-ellipsis">
+    Introducción a Git: Práctica 4
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    Programación didáctica EDD Febrero 2025 Prometeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+<span class="md-ellipsis">
+    UT1
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            UT1
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    UT1 - Desarrollo de Software
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    Ejemplos de plugins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sesion1/">
+<span class="md-ellipsis">
+    Concepto de programa informático
     
   </span>
 </a>
@@ -164,14 +227,14 @@
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Introducción a Git: Práctica 3
+    Lenguajes de programación: Tipos y características
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Introducción a Git: Práctica 3
+    Lenguajes de programación: Tipos y características
     
   </span>
 </a>
@@ -182,37 +245,44 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#objetivos">
+<a class="md-nav__link" href="#que-es-un-lenguaje-de-programacion">
 <span class="md-ellipsis">
-      Objetivos
+      ¿Qué es un lenguaje de programación?
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#requisitos">
+<a class="md-nav__link" href="#tipos-de-lenguajes-de-programacion">
 <span class="md-ellipsis">
-      Requisitos
+      Tipos de lenguajes de programación
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#pasos-a-seguir">
+<a class="md-nav__link" href="#caracteristicas-comunes-de-los-lenguajes">
 <span class="md-ellipsis">
-      Pasos a seguir
+      Características comunes de los lenguajes
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#estructura-de-nuestro-repositorio">
+<a class="md-nav__link" href="#consejos-para-elegir-un-lenguaje">
 <span class="md-ellipsis">
-      Estructura de nuestro repositorio
+      Consejos para elegir un lenguaje
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#profundizando-conceptos">
+<a class="md-nav__link" href="#errores-comunes">
 <span class="md-ellipsis">
-      Profundizando conceptos
+      Errores comunes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+<span class="md-ellipsis">
+      Conclusión
     </span>
 </a>
 </li>
@@ -220,70 +290,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac4/">
-<span class="md-ellipsis">
-    Introducción a Git: Práctica 4
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../pd/">
-<span class="md-ellipsis">
-    Programación didáctica EDD Febrero 2025 Prometeo
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
-<span class="md-ellipsis">
-    UT1
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_8">
-<span class="md-nav__icon md-icon"></span>
-            UT1
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/">
-<span class="md-ellipsis">
-    UT1 - Desarrollo de Software
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/ejemplos%20mermaid/">
-<span class="md-ellipsis">
-    Ejemplos de plugins
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion1/">
-<span class="md-ellipsis">
-    Concepto de programa informático
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion2/">
-<span class="md-ellipsis">
-    Lenguajes de programación: Tipos y características
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion3/">
+<a class="md-nav__link" href="../sesion3/">
 <span class="md-ellipsis">
     Fases de desarrollo de una aplicación
     
@@ -291,7 +298,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion4/">
+<a class="md-nav__link" href="../sesion4/">
 <span class="md-ellipsis">
     Sesion4
     
@@ -320,7 +327,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/">
+<a class="md-nav__link" href="../../../MPO/">
 <span class="md-ellipsis">
     Módulo profesional optativo (MPO): Python
     
@@ -343,7 +350,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT1/">
+<a class="md-nav__link" href="../../../MPO/UT1/">
 <span class="md-ellipsis">
     UT1: Fundamentos de Python
     
@@ -351,7 +358,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT1/ejercicios_ut1/">
+<a class="md-nav__link" href="../../../MPO/UT1/ejercicios_ut1/">
 <span class="md-ellipsis">
     Ejercicios UT1 - Nivel básico
     
@@ -377,7 +384,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/">
+<a class="md-nav__link" href="../../../MPO/UT2/">
 <span class="md-ellipsis">
     UT2: Estructuras de control
     
@@ -385,7 +392,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_for_while_clase/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_for_while_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control de repetición
     
@@ -393,7 +400,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_if_clase/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_if_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control condicional
     
@@ -401,7 +408,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_avanzados/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_ut2_avanzados/">
 <span class="md-ellipsis">
     Ejercicios UT2: Nivel avanzado
     
@@ -409,7 +416,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_bas/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_ut2_bas/">
 <span class="md-ellipsis">
     Ejercicios UT2: Nivel básico
     
@@ -437,37 +444,44 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#objetivos">
+<a class="md-nav__link" href="#que-es-un-lenguaje-de-programacion">
 <span class="md-ellipsis">
-      Objetivos
+      ¿Qué es un lenguaje de programación?
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#requisitos">
+<a class="md-nav__link" href="#tipos-de-lenguajes-de-programacion">
 <span class="md-ellipsis">
-      Requisitos
+      Tipos de lenguajes de programación
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#pasos-a-seguir">
+<a class="md-nav__link" href="#caracteristicas-comunes-de-los-lenguajes">
 <span class="md-ellipsis">
-      Pasos a seguir
+      Características comunes de los lenguajes
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#estructura-de-nuestro-repositorio">
+<a class="md-nav__link" href="#consejos-para-elegir-un-lenguaje">
 <span class="md-ellipsis">
-      Estructura de nuestro repositorio
+      Consejos para elegir un lenguaje
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#profundizando-conceptos">
+<a class="md-nav__link" href="#errores-comunes">
 <span class="md-ellipsis">
-      Profundizando conceptos
+      Errores comunes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+<span class="md-ellipsis">
+      Conclusión
     </span>
 </a>
 </li>
@@ -478,151 +492,69 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="introduccion-a-git-practica-3">Introducción a Git: Práctica 3<a class="headerlink" href="#introduccion-a-git-practica-3" title="Permanent link">¶</a></h1>
-<p>En esta práctica, aprenderás a clonar un repositorio remoto y realizar cambios en el código.</p>
-<h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">¶</a></h2>
-<ul>
-<li>Clonar un repositorio remoto.</li>
-<li>Realizar cambios en el código.</li>
-<li>Hacer un commit de los cambios.</li>
-<li>Hacer un push de los cambios al repositorio remoto.</li>
-</ul>
-<h2 id="requisitos">Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">¶</a></h2>
-<ul>
-<li>Tener Git instalado en tu sistema.</li>
-<li>Tener una cuenta en GitHub.</li>
-<li>Conocimientos básicos de comandos de terminal.</li>
-<li>Conocimientos básicos de Git.</li>
-<li>Haber completado la Práctica 1: Crear un nuevo repositorio local y realizar un commit inicial.</li>
-<li>Haber completado la Práctica 2: Crear un repositorio remoto en GitHub y hacer un push de tu commit inicial.</li>
-</ul>
-<h2 id="pasos-a-seguir">Pasos a seguir<a class="headerlink" href="#pasos-a-seguir" title="Permanent link">¶</a></h2>
+<h1 id="lenguajes-de-programacion-tipos-y-caracteristicas">Lenguajes de programación: Tipos y características<a class="headerlink" href="#lenguajes-de-programacion-tipos-y-caracteristicas" title="Permanent link">¶</a></h1>
+<h2 id="que-es-un-lenguaje-de-programacion">¿Qué es un lenguaje de programación?<a class="headerlink" href="#que-es-un-lenguaje-de-programacion" title="Permanent link">¶</a></h2>
+<p>Un <strong>lenguaje de programación</strong> es un sistema formal que permite escribir instrucciones que una máquina puede interpretar y ejecutar. Es el puente entre el pensamiento del programador y el comportamiento del ordenador.</p>
+<p>Los lenguajes de programación permiten <strong>crear programas</strong> para automatizar tareas, procesar datos, interactuar con usuarios o controlar dispositivos.</p>
+<h2 id="tipos-de-lenguajes-de-programacion">Tipos de lenguajes de programación<a class="headerlink" href="#tipos-de-lenguajes-de-programacion" title="Permanent link">¶</a></h2>
+<p>Los lenguajes de programación se pueden clasificar en varias categorías:</p>
 <ol>
-<li>
-<p><strong>Clona un repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Accede al repositorio remoto que hemos creado en la Práctica 2.</li>
-<li>Abre una terminal y navega al directorio donde deseas clonar el repositorio.</li>
-<li>Usa el siguiente comando para clonar el repositorio remoto:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL<span class="w"> </span>del<span class="w"> </span>repositorio<span class="w"> </span>remoto&gt;
-</code></pre></div></li>
-<li>Reemplaza <code>&lt;URL del repositorio remoto&gt;</code> con la URL del repositorio que deseas clonar.</li>
+<li>Según el nivel de abstracción<ul>
+<li><strong>Lenguajes de bajo nivel</strong>: Se acercan más al hardware y son difíciles de entender para los humanos. Ejemplo: ensamblador.</li>
+<li><strong>Lenguajes de alto nivel</strong>: Más cercanos al lenguaje humano y más fáciles de usar. Ejemplo: Python, Java.</li>
 </ul>
-</details>
-</li>
-<li>
-<p><strong>Navega al directorio del repositorio clonado</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Cambia al directorio del repositorio clonado utilizando el siguiente comando:
-  <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nombre_del_repositorio
-</code></pre></div></li>
-<li>Reemplaza <code>nombre_del_repositorio</code> con el nombre del repositorio clonado.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Realiza cambios en el código</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Abre el archivo que deseas modificar en tu editor de texto.</li>
-<li>Realiza los cambios necesarios y guarda el archivo.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Agrega los cambios al área de preparación</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Usa el siguiente comando para agregar los cambios al área de preparación:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>nombre_del_archivo
-</code></pre></div></li>
-<li>Reemplaza <code>nombre_del_archivo</code> con el nombre del archivo que modificaste.</li>
-<li>Si deseas agregar todos los cambios, puedes usar:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
-</code></pre></div></li>
-<li>Esto agregará todos los archivos modificados al área de preparación.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Realiza un commit con un mensaje "bug arreglado"</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Realiza un commit de los cambios utilizando el siguiente comando:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"bug arreglado"</span>
-</code></pre></div></li>
-<li>Esto creará un nuevo commit con el mensaje "bug arreglado".</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Elimina el vínculo con mi repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Usa el siguiente comando para eliminar el vínculo con el repositorio remoto:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
-</code></pre></div></li>
-<li>Esto eliminará la referencia al repositorio remoto.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Crea un nuevo repositorio remoto en GitHub y vinculalo con tu repositorio local</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Si tienes dudas sobre cómo hacerlo puedes consultar la Práctica 2.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Haz un push de tus cambios al nuevo repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Usa el siguiente comando para hacer un push de tus cambios al nuevo repositorio remoto:
-  <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div></li>
-<li>Esto enviará tus cambios al nuevo repositorio remoto y establecerá la rama <code>main</code> como la rama de seguimiento.</li>
-</ul>
-</details>
-</li>
-<li>
-<p><strong>Verifica que los cambios se han subido correctamente al repositorio remoto</strong></p>
-<details class="summary">
-<summary>Solución</summary>
-<ul>
-<li>Ve a tu nuevo repositorio en GitHub y verifica que tus cambios se han subido correctamente.</li>
-<li>Deberías ver el commit con el mensaje "bug arreglado" en la pestaña "Commits" del repositorio.</li>
-</ul>
-</details>
 </li>
 </ol>
-<h2 id="estructura-de-nuestro-repositorio">Estructura de nuestro repositorio<a class="headerlink" href="#estructura-de-nuestro-repositorio" title="Permanent link">¶</a></h2>
-<p>Una vez realizado el commit inicial, la estructura de tu repositorio Git local se verá algo así:</p>
-<pre class="mermaid"><code>%%{init: { 'logLevel': 'debug', 'theme': 'base' } }%%
-gitGraph
-    commit id: "commit inicial"
-    commit id: "bug arreglado"</code></pre>
-<h2 id="profundizando-conceptos">Profundizando conceptos<a class="headerlink" href="#profundizando-conceptos" title="Permanent link">¶</a></h2>
-<p>¿Cómo es posible que me muestre dos commits si yo solo hice uno?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cuanto más alto es el nivel, más fácil es programar, pero más se depende del compilador/intérprete.</p>
+</div>
+<ol>
+<li>
+<p>Según el modo de ejecución</p>
 <ul>
-<li>Git es un sistema de control de versiones distribuido, lo que significa que cada copia del repositorio es una copia completa del historial de cambios.</li>
-<li>Cuando clonas un repositorio, obtienes una copia completa de todo el historial de commits, incluyendo los commits que ya existen en el repositorio remoto.</li>
-<li>Por lo tanto, al clonar un repositorio, ya tienes acceso a todos los commits que se han realizado en ese repositorio, incluso si no los has creado tú mismo.</li>
-<li>En este caso, el commit "bug arreglado" es el que tú hiciste, mientras que el commit "commit inicial" es el que ya existía en el repositorio remoto antes de que lo clonaras.</li>
-<li>Esto es normal y esperado en Git, ya que cada commit tiene un identificador único (hash) que lo distingue de los demás.</li>
-<li>Por lo tanto, aunque tú solo hayas creado un commit, el historial de commits del repositorio incluye todos los commits que se han realizado en el repositorio, incluyendo los que ya existían antes de que lo clonaras.</li>
-<li>Esto te permite ver el historial completo de cambios y colaborar con otros desarrolladores de manera efectiva.</li>
+<li><strong>Lenguajes compilados</strong>: Se traducen a código máquina antes de ejecutarse. Ejemplo: C, C++.</li>
+<li><strong>Lenguajes interpretados</strong>: Se traducen línea por línea durante la ejecución. Ejemplo: Python, JavaScript.</li>
+<li><strong>Lenguajes mixtos</strong>: Combinan ambos enfoques. Ejemplo: Java (compilado a bytecode y luego interpretado por la JVM).</li>
 </ul>
+</li>
+<li>
+<p>Según el paradigma de programación</p>
+<ul>
+<li><strong>Lenguajes imperativos</strong>: Se centran en cómo se debe hacer algo. Ejemplo: C, Pascal.</li>
+<li><strong>Lenguajes declarativos</strong>: Se centran en qué se quiere lograr. Ejemplo: SQL, Prolog.</li>
+<li><strong>Lenguajes orientados a objetos</strong>: Basados en el concepto de objetos que contienen datos y métodos. Ejemplo: Java, C#.</li>
+<li><strong>Lenguajes funcionales</strong>: Se centran en la evaluación de funciones y evitan el estado mutable. Ejemplo: Haskell, Lisp.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Los lenguajes modernos suelen combinar varios paradigmas (por ejemplo, Python es multiparadigma).</p>
+</div>
+<h2 id="caracteristicas-comunes-de-los-lenguajes">Características comunes de los lenguajes<a class="headerlink" href="#caracteristicas-comunes-de-los-lenguajes" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Sintaxis clara</strong>: Qué tan fácil es leer o escribir código.</li>
+<li><strong>Portabilidad</strong>: Qué tan bien se ejecuta en distintos sistemas operativos.</li>
+<li><strong>Tipado</strong>: Si las variables tienen un tipo definido (tipado fuerte o débil; estático o dinámico).</li>
+<li><strong>Gestión de memoria</strong>: Automática (como en Java) o manual (como en C).</li>
+<li><strong>Bibliotecas y comunidad</strong>: Cuántas herramientas están disponibles y cuán grande es la comunidad.</li>
+</ul>
+<h2 id="consejos-para-elegir-un-lenguaje">Consejos para elegir un lenguaje<a class="headerlink" href="#consejos-para-elegir-un-lenguaje" title="Permanent link">¶</a></h2>
+<ul>
+<li>No te cases con uno solo. Cada lenguaje tiene su contexto ideal.</li>
+<li>Empieza por los más legibles: Python o Java son ideales para comenzar.</li>
+<li>Aprende las bases, no solo la sintaxis. Los conceptos son transferibles.</li>
+<li>Explora varios paradigmas. Así serás más versátil como desarrollador.</li>
+</ul>
+<h2 id="errores-comunes">Errores comunes<a class="headerlink" href="#errores-comunes" title="Permanent link">¶</a></h2>
+<ul>
+<li>Confundir compilador con intérprete.</li>
+<li>Pensar que un lenguaje es “mejor” que otro en general. Todo depende del uso.</li>
+<li>Aprender solo la sintaxis sin entender los conceptos.</li>
+</ul>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>Los lenguajes de programación son herramientas poderosas que nos permiten comunicarnos con las máquinas. Conocer sus tipos y características es esencial para elegir el adecuado para cada tarea y para convertirnos en programadores competentes. La práctica y la curiosidad son claves en este viaje.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -650,7 +582,7 @@ gitGraph
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
-<script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
 </body>
 </html>
