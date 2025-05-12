@@ -6,25 +6,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
-<link href="../UT1/sesion4/" rel="prev"/>
-<link href="junit/" rel="next"/>
-<link href="../../assets/images/favicon.png" rel="icon"/>
+<link href="../" rel="prev"/>
+<link href="../../../MPO/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
-<title>Diseño y realización de pruebas - Jordi Cido - FP</title>
-<link href="../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>JUnit - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
-<link href="../../styles/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#diseno-y-realizacion-de-pruebas">
+<a class="md-skip" href="#junit">
           Saltar a contenido
         </a>
 </div>
@@ -32,7 +32,7 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Cabecera" class="md-header__inner md-grid">
-<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Diseño y realización de pruebas
+              JUnit
             
           </span>
 </div>
@@ -99,14 +99,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     Jordi Cido - FP
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     Jordi Cido - FP
     
@@ -129,7 +129,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Entornos de Desarrollo
     
@@ -137,7 +137,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git/">
+<a class="md-nav__link" href="../../introduccion_git/">
 <span class="md-ellipsis">
     Conceptos básicos de Git
     
@@ -145,7 +145,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac1/">
+<a class="md-nav__link" href="../../introduccion_git_prac1/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 1
     
@@ -153,7 +153,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac2/">
+<a class="md-nav__link" href="../../introduccion_git_prac2/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 2
     
@@ -161,7 +161,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac3/">
+<a class="md-nav__link" href="../../introduccion_git_prac3/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 3
     
@@ -169,7 +169,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduccion_git_prac4/">
+<a class="md-nav__link" href="../../introduccion_git_prac4/">
 <span class="md-ellipsis">
     Introducción a Git: Práctica 4
     
@@ -177,7 +177,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../pd/">
+<a class="md-nav__link" href="../../pd/">
 <span class="md-ellipsis">
     Programación didáctica EDD Febrero 2025 Prometeo
     
@@ -200,7 +200,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/">
+<a class="md-nav__link" href="../../UT1/">
 <span class="md-ellipsis">
     UT1 - Desarrollo de Software
     
@@ -208,7 +208,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/ejemplos%20mermaid/">
+<a class="md-nav__link" href="../../UT1/ejemplos%20mermaid/">
 <span class="md-ellipsis">
     Ejemplos de plugins
     
@@ -216,7 +216,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion1/">
+<a class="md-nav__link" href="../../UT1/sesion1/">
 <span class="md-ellipsis">
     Concepto de programa informático
     
@@ -224,7 +224,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion2/">
+<a class="md-nav__link" href="../../UT1/sesion2/">
 <span class="md-ellipsis">
     Lenguajes de programación: Tipos y características
     
@@ -232,7 +232,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion3/">
+<a class="md-nav__link" href="../../UT1/sesion3/">
 <span class="md-ellipsis">
     Fases de desarrollo de una aplicación
     
@@ -240,7 +240,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../UT1/sesion4/">
+<a class="md-nav__link" href="../../UT1/sesion4/">
 <span class="md-ellipsis">
     Metodologías ágiles
     
@@ -265,18 +265,26 @@
             UT3
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Diseño y realización de pruebas
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Diseño y realización de pruebas
+    JUnit
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Diseño y realización de pruebas
+    JUnit
     
   </span>
 </a>
@@ -286,59 +294,6 @@
       Tabla de contenidos
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prueba-de-software">
-<span class="md-ellipsis">
-      Prueba de software
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapas-del-proceso-de-prueba">
-<span class="md-ellipsis">
-      Etapas del proceso de prueba
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#clasificacion-de-las-pruebas">
-<span class="md-ellipsis">
-      Clasificación de las pruebas
-    </span>
-</a>
-<nav aria-label="Clasificación de las pruebas" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#segun-su-realizacion">
-<span class="md-ellipsis">
-      Según su realización
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#segun-el-conocimiento-del-sistema">
-<span class="md-ellipsis">
-      Según el conocimiento del sistema
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#segun-su-proposito">
-<span class="md-ellipsis">
-      Según su propósito
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#junit">
-<span class="md-ellipsis">
-      JUnit
-    </span>
-</a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#instalacion-de-junit-mediante-maven">
 <span class="md-ellipsis">
@@ -476,14 +431,6 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="junit/">
-<span class="md-ellipsis">
-    JUnit
-    
-  </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
@@ -506,7 +453,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/">
+<a class="md-nav__link" href="../../../MPO/">
 <span class="md-ellipsis">
     Módulo profesional optativo (MPO): Python
     
@@ -529,7 +476,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT1/">
+<a class="md-nav__link" href="../../../MPO/UT1/">
 <span class="md-ellipsis">
     UT1: Fundamentos de Python
     
@@ -537,7 +484,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT1/ejercicios_ut1/">
+<a class="md-nav__link" href="../../../MPO/UT1/ejercicios_ut1/">
 <span class="md-ellipsis">
     Ejercicios UT1 - Nivel básico
     
@@ -563,7 +510,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/">
+<a class="md-nav__link" href="../../../MPO/UT2/">
 <span class="md-ellipsis">
     UT2: Estructuras de control
     
@@ -571,7 +518,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_for_while_clase/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_for_while_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control de repetición
     
@@ -579,7 +526,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_if_clase/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_if_clase/">
 <span class="md-ellipsis">
     Ejercicios de clase UT2: Estructura de control condicional
     
@@ -587,7 +534,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_avanzados/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_ut2_avanzados/">
 <span class="md-ellipsis">
     Ejercicios UT2: Nivel avanzado
     
@@ -595,7 +542,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_bas/">
+<a class="md-nav__link" href="../../../MPO/UT2/ejercicios_ut2_bas/">
 <span class="md-ellipsis">
     Ejercicios UT2: Nivel básico
     
@@ -622,59 +569,6 @@
       Tabla de contenidos
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prueba-de-software">
-<span class="md-ellipsis">
-      Prueba de software
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapas-del-proceso-de-prueba">
-<span class="md-ellipsis">
-      Etapas del proceso de prueba
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#clasificacion-de-las-pruebas">
-<span class="md-ellipsis">
-      Clasificación de las pruebas
-    </span>
-</a>
-<nav aria-label="Clasificación de las pruebas" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#segun-su-realizacion">
-<span class="md-ellipsis">
-      Según su realización
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#segun-el-conocimiento-del-sistema">
-<span class="md-ellipsis">
-      Según el conocimiento del sistema
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#segun-su-proposito">
-<span class="md-ellipsis">
-      Según su propósito
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#junit">
-<span class="md-ellipsis">
-      JUnit
-    </span>
-</a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#instalacion-de-junit-mediante-maven">
 <span class="md-ellipsis">
@@ -816,42 +710,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="diseno-y-realizacion-de-pruebas">Diseño y realización de pruebas<a class="headerlink" href="#diseno-y-realizacion-de-pruebas" title="Permanent link">¶</a></h1>
-<h2 id="prueba-de-software">Prueba de software<a class="headerlink" href="#prueba-de-software" title="Permanent link">¶</a></h2>
-<p>La prueba de software o testing es una práctica muy importante en el desarrollo de software, ya que nos ayuda a asegurar que nuestro programa funcione correctamente y esté libre de errores.</p>
-<p>El testing es una parte fundamental del proceso de desarrollo, ya que garantiza la calidad del programa y permite detectar y solucionar errores antes de que llegue a los usuarios finales.</p>
-<p>Existen diferentes tipos de pruebas, cada una con un objetivo específico, pero en general consisten en ejecutar casos de prueba o escenarios concretos con el objetivo de comprobar que el programa se comporta como se espera.</p>
-<p>Es imposible probar todos los casos posibles, pero cuantas más pruebas se realicen y más completas sean, más se podrá reducir el riesgo de errores.</p>
-<h2 id="etapas-del-proceso-de-prueba">Etapas del proceso de prueba<a class="headerlink" href="#etapas-del-proceso-de-prueba" title="Permanent link">¶</a></h2>
-<p>Hay distintas etapas en el proceso de testing:</p>
-<ol>
-<li><strong>Planificación de la prueba</strong>: En esta fase se definen los objetivos de las pruebas, se crea un plan de prueba y se seleccionan las herramientas y recursos necesarios.</li>
-<li><strong>Creación de los casos de prueba</strong>: Se diseñan los casos de prueba, que son escenarios concretos que se desean verificar. Esto incluye los pasos a seguir, los datos de entrada y los resultados esperados.</li>
-<li><strong>Ejecución de los casos de prueba</strong>: Se llevan a cabo los casos de prueba siguiendo los pasos definidos y comprobando que el programa devuelve los resultados esperados.</li>
-<li><strong>Análisis de resultados</strong>: Se revisan los resultados obtenidos, se registran los errores encontrados y se decide qué acciones tomar para solucionarlos</li>
-<li><strong>Regresión</strong>: Una vez corregidos los errores, se repiten las pruebas (paso 3) para asegurar que los cambios no han afectado negativamente a otras partes del programa.</li>
-<li><strong>Aceptación</strong>: Cuando todos los casos de prueba se han superado y se ha realizado una regresión adecuada, se considera que el programa está listo para ser entregado al cliente o puesto en producción.</li>
-</ol>
-<h2 id="clasificacion-de-las-pruebas">Clasificación de las pruebas<a class="headerlink" href="#clasificacion-de-las-pruebas" title="Permanent link">¶</a></h2>
-<h3 id="segun-su-realizacion">Según su realización<a class="headerlink" href="#segun-su-realizacion" title="Permanent link">¶</a></h3>
-<ul>
-<li>Pruebas manuales: Son realizadas por una persona que ejecuta los casos de prueba y analiza los resultados. Este tipo se utiliza especialmente cuando se requiere una evaluación visual o comprobar el comportamiento del programa en situaciones diversas.</li>
-<li>Pruebas automatizadas: Son realizadas mediante herramientas o programas específicos. Se utilizan para monitorizar cambios en el software y detectar incidencias. Son útiles para reducir el tiempo de prueba y asegurar que todos los casos se ejecutan de forma consistente.</li>
-</ul>
-<h3 id="segun-el-conocimiento-del-sistema">Según el conocimiento del sistema<a class="headerlink" href="#segun-el-conocimiento-del-sistema" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Pruebas de caja negra</strong>: Validan el comportamiento del programa sin tener en cuenta su implementación interna. Se basan en las especificaciones, entradas y salidas, sin necesidad de acceso al código fuente.</li>
-<li><strong>Pruebas de caja blanca</strong>: Validan el comportamiento considerando la implementación interna del programa. Requieren acceso al código y el uso de técnicas como el análisis o revisión del código para verificar que se cumplen los criterios de calidad.</li>
-</ul>
-<h3 id="segun-su-proposito">Según su propósito<a class="headerlink" href="#segun-su-proposito" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Pruebas unitarias</strong>: Verifican el correcto funcionamiento de cada unidad o módulo individual del programa. Su objetivo es asegurarse de que cada parte funciona correctamente de forma aislada.</li>
-<li><strong>Pruebas de integración</strong>: Verifican que las distintas unidades o módulos funcionan correctamente al interactuar entre ellos, para detectar errores en la integración.</li>
-<li><strong>Pruebas de sistema</strong>: Evalúan el funcionamiento del programa como un todo, asegurando que cumple con los requisitos globales y está listo para su entrega o producción.</li>
-<li><strong>Pruebas de validación</strong>: Verifican que el programa cumple con los requisitos del cliente o usuario final. Se asegura que el software hace lo que se espera.</li>
-<li><strong>Pruebas de carga</strong>: Evalúan cómo se comporta el programa bajo una carga de trabajo elevada. El objetivo es garantizar que el sistema puede manejar la carga prevista sin fallos.</li>
-</ul>
-<h2 id="junit">JUnit<a class="headerlink" href="#junit" title="Permanent link">¶</a></h2>
+<h1 id="junit">JUnit<a class="headerlink" href="#junit" title="Permanent link">¶</a></h1>
 <p>JUnit es una librería de Java que proporciona un marco para escribir y ejecutar pruebas de software.</p>
 <h2 id="instalacion-de-junit-mediante-maven">Instalación de JUnit mediante Maven<a class="headerlink" href="#instalacion-de-junit-mediante-maven" title="Permanent link">¶</a></h2>
 <p>Podemos instalar la librería JUnit mediante Maven.</p>
@@ -875,7 +734,7 @@
 <span class="nt">&lt;/dependencies&gt;</span>
 </code></pre></div>
 <p>Después de añadir esta dependencia, Maven descargará automáticamente JUnit y lo incluirá en el classpath del proyecto cuando ejecutes los tests.</p>
-<p><img alt="Proceso de pruebas" src="../../assets/img/imageEDDUT3-1.png"/></p>
+<p><img alt="Proceso de pruebas" src="../../../assets/img/imageEDDUT3-1.png"/></p>
 <h2 id="creacion-de-las-pruebas">Creación de las pruebas<a class="headerlink" href="#creacion-de-las-pruebas" title="Permanent link">¶</a></h2>
 <p>En un proyecto Maven, las pruebas deben guardarse en la carpeta src/test/java.</p>
 <p>Puedes crear los archivos de prueba manualmente o utilizar las herramientas del IDE (como IntelliJ IDEA o Eclipse).</p>
@@ -1067,7 +926,7 @@ Si la condición no se cumple, la prueba fallará.</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
-<script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
 </body>
 </html>
