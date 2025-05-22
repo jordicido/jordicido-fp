@@ -617,6 +617,8 @@
 </code></pre></div>
 <p>Si te fijas en el ejemplo anterior, <code>mi_lista</code> contiene cinco elementos: tres números enteros (1, 2, 3), una cadena de texto ("Hola") y un valor booleano (True). Las listas pueden contener elementos de diferentes tipos, lo que las hace muy versátiles.</p>
 <p>Antes de entrar en las operaciones que se pueden realizar con listas, es importante entender cómo se almacenan los elementos en ellas. Cada elemento de una lista tiene un índice asociado, que comienza en 0. Por ejemplo, en la lista <code>mi_lista</code> anterior, el primer elemento (1) tiene un índice de 0, el segundo elemento (2) tiene un índice de 1, y así sucesivamente.</p>
+<p><img alt="Imagen de una lista" src="../../assets/img/python-list.png"/></p>
+<p>Internamente, Python almacena las listas como una secuencia de referencias a los objetos que contienen. Esto significa que cuando creas una lista, Python no copia los objetos en la lista, sino que almacena referencias a ellos. Esto es importante tenerlo en cuenta, ya que puede afectar el rendimiento y el comportamiento de tu programa.</p>
 <p>Puedes acceder a los elementos de una lista utilizando su índice. Por ejemplo, para acceder al primer elemento de <code>mi_lista</code>, puedes usar:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Imprime: 1</span>
 </code></pre></div>
