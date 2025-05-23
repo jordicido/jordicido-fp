@@ -504,6 +504,27 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-6-encontrar-el-segundo-valor-mas-grande-en-una-lista">
+<span class="md-ellipsis">
+      Ejercicio 6 - Encontrar el segundo valor más grande en una lista
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-7-eliminar-elementos-duplicados-consecutivos-de-una-lista">
+<span class="md-ellipsis">
+      Ejercicio 7 - Eliminar elementos duplicados consecutivos de una lista
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-8-eliminar-elementos-duplicados-de-una-lista">
+<span class="md-ellipsis">
+      Ejercicio 8 - Eliminar elementos duplicados de una lista
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -562,6 +583,27 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-6-encontrar-el-segundo-valor-mas-grande-en-una-lista">
+<span class="md-ellipsis">
+      Ejercicio 6 - Encontrar el segundo valor más grande en una lista
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-7-eliminar-elementos-duplicados-consecutivos-de-una-lista">
+<span class="md-ellipsis">
+      Ejercicio 7 - Eliminar elementos duplicados consecutivos de una lista
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-8-eliminar-elementos-duplicados-de-una-lista">
+<span class="md-ellipsis">
+      Ejercicio 8 - Eliminar elementos duplicados de una lista
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -596,10 +638,15 @@
 <div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese una lista de números enteros separados por espacios: "</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">]</span>
 <span class="n">numero_a_multiplicar</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese un número entero: "</span><span class="p">))</span>
-<span class="n">numeros_multiplicados</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">*</span> <span class="n">numero_a_multiplicar</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">)):</span>
+    <span class="n">numeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">numero_a_multiplicar</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Lista resultante:"</span><span class="p">,</span> <span class="n">numeros_multiplicados</span><span class="p">)</span>
 </code></pre></div>
 </details>
+<div class="admonition warning">
+<p class="admonition-title">Explicación</p>
+<p>La forma [int(num) for num in numeros] convierte cada elemento de la lista de cadenas a enteros. Esto es necesario porque el método <code>split()</code> devuelve una lista de cadenas.</p>
+</div>
 <h2 id="ejercicio-3-filtrar-elementos-de-una-lista">Ejercicio 3 - Filtrar elementos de una lista<a class="headerlink" href="#ejercicio-3-filtrar-elementos-de-una-lista" title="Permanent link">¶</a></h2>
 <p>Escribe un programa que pida al usuario una lista de números enteros separados por comas y filtre los números pares de la lista. El programa debe imprimir la lista de números pares.</p>
 <details class="summary">
@@ -634,6 +681,70 @@
 </details>
 <h2 id="ejercicio-5-eliminar-todos-los-elementos-de-una-lista-que-sean-mayores-a-un-numero-dado">Ejercicio 5 - Eliminar todos los elementos de una lista que sean mayores a un número dado<a class="headerlink" href="#ejercicio-5-eliminar-todos-los-elementos-de-una-lista-que-sean-mayores-a-un-numero-dado" title="Permanent link">¶</a></h2>
 <p>Escribe un programa que pida al usuario una lista de números enteros separados por comas y un número entero. El programa debe eliminar todos los elementos de la lista que sean mayores al número dado y luego imprimir la lista resultante.</p>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese una lista de números enteros separados por comas: "</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">]</span>
+<span class="n">numero_a_eliminar</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese un número entero: "</span><span class="p">))</span>
+<span class="n">numeros_filtrados</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">numero_a_eliminar</span><span class="p">:</span>
+        <span class="n">numeros_filtrados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Lista resultante:"</span><span class="p">,</span> <span class="n">numeros_filtrados</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="ejercicio-6-encontrar-el-segundo-valor-mas-grande-en-una-lista">Ejercicio 6 - Encontrar el segundo valor más grande en una lista<a class="headerlink" href="#ejercicio-6-encontrar-el-segundo-valor-mas-grande-en-una-lista" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario una lista de números enteros separados por comas. El programa debe encontrar el segundo valor más grande en la lista y luego imprimirlo. Si no hay un segundo valor más grande, el programa debe imprimir un mensaje indicando que no se encontró. Se asegura que la lista no contiene duplicados.</p>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese una lista de números enteros separados por comas: "</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">]</span>
+<span class="n">numeros</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se encontró un segundo valor más grande."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">segundo_mayor</span> <span class="o">=</span> <span class="n">numeros</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"El segundo valor más grande es:"</span><span class="p">,</span> <span class="n">segundo_mayor</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="ejercicio-7-eliminar-elementos-duplicados-consecutivos-de-una-lista">Ejercicio 7 - Eliminar elementos duplicados consecutivos de una lista<a class="headerlink" href="#ejercicio-7-eliminar-elementos-duplicados-consecutivos-de-una-lista" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario una lista de números enteros separados por comas. El programa debe eliminar los elementos duplicados consecutivos de la lista y luego imprimir la lista resultante.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>Entrada: 1, 2, 2, 3, 3, 3, 4
+Salida: 1, 2, 3, 4
+</code></pre></div>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese una lista de números enteros separados por comas: "</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">]</span>
+<span class="n">numeros_filtrados</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">numeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">numeros</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="n">numeros_filtrados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numeros</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Lista resultante:"</span><span class="p">,</span> <span class="n">numeros_filtrados</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="ejercicio-8-eliminar-elementos-duplicados-de-una-lista">Ejercicio 8 - Eliminar elementos duplicados de una lista<a class="headerlink" href="#ejercicio-8-eliminar-elementos-duplicados-de-una-lista" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario una lista de números enteros separados por comas. El programa debe eliminar los elementos duplicados de la lista y luego imprimir la lista resultante.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>Entrada: 1, 2, 2, 3, 3, 3, 4, 3, 4, 1
+Salida: 1, 2, 3, 4
+</code></pre></div>
+<details class="summary">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Ingrese una lista de números enteros separados por comas: "</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">]</span>
+<span class="n">numeros_unicos</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">numeros_unicos</span><span class="p">:</span>
+        <span class="n">numeros_unicos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Lista resultante:"</span><span class="p">,</span> <span class="n">numeros_unicos</span><span class="p">)</span>
+</code></pre></div>
+</details>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
