@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
 <link href="../UT2/ejercicios_ut2_bas/" rel="prev"/>
-<link href="ejercicios_listas_clase/" rel="next"/>
+<link href="ejercicios_diccionarios_clase/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
 <title>UT3: Tipos de datos complejos - Jordi Cido - FP</title>
@@ -494,9 +494,189 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios">
+<span class="md-ellipsis">
+      Diccionarios
+    </span>
+</a>
+<nav aria-label="Diccionarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales">
+<span class="md-ellipsis">
+      Características principales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-basicas">
+<span class="md-ellipsis">
+      Operaciones básicas
+    </span>
+</a>
+<nav aria-label="Operaciones básicas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-un-diccionario">
+<span class="md-ellipsis">
+      Crear un diccionario
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-valores">
+<span class="md-ellipsis">
+      Acceder a valores
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-valores">
+<span class="md-ellipsis">
+      Modificar valores
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anadir-nuevos-pares-clave-valor">
+<span class="md-ellipsis">
+      Añadir nuevos pares clave-valor
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eliminar-elementos">
+<span class="md-ellipsis">
+      Eliminar elementos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comprobar-si-una-clave-existe">
+<span class="md-ellipsis">
+      Comprobar si una clave existe
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-un-diccionario">
+<span class="md-ellipsis">
+      Recorrer un diccionario
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-utiles">
+<span class="md-ellipsis">
+      Métodos útiles
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios-anidados">
+<span class="md-ellipsis">
+      Diccionarios anidados
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico">
+<span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas">
+<span class="md-ellipsis">
+      Tuplas
+    </span>
+</a>
+<nav aria-label="Tuplas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales_1">
+<span class="md-ellipsis">
+      Características principales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-tuplas">
+<span class="md-ellipsis">
+      Crear tuplas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-elementos">
+<span class="md-ellipsis">
+      Acceder a elementos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-una-tupla">
+<span class="md-ellipsis">
+      Recorrer una tupla
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-comunes">
+<span class="md-ellipsis">
+      Operaciones comunes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desempaquetado">
+<span class="md-ellipsis">
+      Desempaquetado
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas-anidadas">
+<span class="md-ellipsis">
+      Tuplas anidadas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tupla-o-lista">
+<span class="md-ellipsis">
+      ¿Tupla o lista?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico_1">
+<span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-listas">
 <span class="md-ellipsis">
       Ejercicios de clase: listas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-diccionarios-y-tuplas">
+<span class="md-ellipsis">
+      Ejercicios de clase: diccionarios y tuplas
     </span>
 </a>
 </li>
@@ -509,6 +689,14 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    Ejercicios de clase UT3: Diccionarios y tuplas
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="ejercicios_listas_clase/">
@@ -586,9 +774,189 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios">
+<span class="md-ellipsis">
+      Diccionarios
+    </span>
+</a>
+<nav aria-label="Diccionarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales">
+<span class="md-ellipsis">
+      Características principales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-basicas">
+<span class="md-ellipsis">
+      Operaciones básicas
+    </span>
+</a>
+<nav aria-label="Operaciones básicas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-un-diccionario">
+<span class="md-ellipsis">
+      Crear un diccionario
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-valores">
+<span class="md-ellipsis">
+      Acceder a valores
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-valores">
+<span class="md-ellipsis">
+      Modificar valores
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anadir-nuevos-pares-clave-valor">
+<span class="md-ellipsis">
+      Añadir nuevos pares clave-valor
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eliminar-elementos">
+<span class="md-ellipsis">
+      Eliminar elementos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comprobar-si-una-clave-existe">
+<span class="md-ellipsis">
+      Comprobar si una clave existe
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-un-diccionario">
+<span class="md-ellipsis">
+      Recorrer un diccionario
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-utiles">
+<span class="md-ellipsis">
+      Métodos útiles
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios-anidados">
+<span class="md-ellipsis">
+      Diccionarios anidados
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico">
+<span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas">
+<span class="md-ellipsis">
+      Tuplas
+    </span>
+</a>
+<nav aria-label="Tuplas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales_1">
+<span class="md-ellipsis">
+      Características principales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-tuplas">
+<span class="md-ellipsis">
+      Crear tuplas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-elementos">
+<span class="md-ellipsis">
+      Acceder a elementos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-una-tupla">
+<span class="md-ellipsis">
+      Recorrer una tupla
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-comunes">
+<span class="md-ellipsis">
+      Operaciones comunes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desempaquetado">
+<span class="md-ellipsis">
+      Desempaquetado
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas-anidadas">
+<span class="md-ellipsis">
+      Tuplas anidadas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tupla-o-lista">
+<span class="md-ellipsis">
+      ¿Tupla o lista?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico_1">
+<span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-listas">
 <span class="md-ellipsis">
       Ejercicios de clase: listas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-diccionarios-y-tuplas">
+<span class="md-ellipsis">
+      Ejercicios de clase: diccionarios y tuplas
     </span>
 </a>
 </li>
@@ -651,8 +1019,260 @@
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista_anidada</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Imprime: 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mi_lista_anidada</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Imprime: Hola</span>
 </code></pre></div>
+<h2 id="diccionarios">Diccionarios<a class="headerlink" href="#diccionarios" title="Permanent link">¶</a></h2>
+<p>Un <strong>diccionario</strong> es una estructura de datos en Python que almacena pares <strong>clave-valor</strong>. Cada clave es única y se utiliza para acceder a su valor asociado.</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"Ana"</span><span class="p">,</span>
+    <span class="s2">"edad"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">"ciudad"</span><span class="p">:</span> <span class="s2">"Valencia"</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="caracteristicas-principales">Características principales<a class="headerlink" href="#caracteristicas-principales" title="Permanent link">¶</a></h3>
+<ul>
+<li>Las <strong>claves</strong> deben ser de tipo <strong>inmutable</strong> (strings, números, tuplas...).</li>
+<li>Los <strong>valores</strong> pueden ser de cualquier tipo.</li>
+<li>Los elementos no están ordenados (hasta Python 3.6 era completamente desordenado; desde Python 3.7 mantiene el orden de inserción).</li>
+<li>Se pueden anidar diccionarios dentro de otros diccionarios.</li>
+</ul>
+<h3 id="operaciones-basicas">Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permanent link">¶</a></h3>
+<h4 id="crear-un-diccionario">Crear un diccionario<a class="headerlink" href="#crear-un-diccionario" title="Permanent link">¶</a></h4>
+<p>Para crear un diccionario, puedes usar llaves <code>{}</code> o la función <code>dict()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_dic</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Diccionario vacío</span>
+<span class="n">mi_dic</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">"Luis"</span><span class="p">,</span> <span class="n">edad</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="acceder-a-valores">Acceder a valores<a class="headerlink" href="#acceder-a-valores" title="Permanent link">¶</a></h3>
+<p>El acceso a los valores se realiza mediante la clave, es parecido a acceder a un elemento de una lista, pero en lugar de usar un índice, usas una clave:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="p">[</span><span class="s2">"nombre"</span><span class="p">])</span>  <span class="c1"># Ana</span>
+</code></pre></div>
+<p>Ten en cuenta que se lanza un error si la clave no existe.</p>
+<p>Es recomendable usar el método <code>.get()</code> para evitar errores:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"apellido"</span><span class="p">,</span> <span class="s2">"No especificado"</span><span class="p">))</span>
+</code></pre></div>
+<p>En este caso, si la clave "apellido" no existe, se devuelve "No especificado" en lugar de lanzar un error.</p>
+<h3 id="modificar-valores">Modificar valores<a class="headerlink" href="#modificar-valores" title="Permanent link">¶</a></h3>
+<p>Para modificar un valor en un diccionario, simplemente asignas un nuevo valor a la clave correspondiente:</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span><span class="p">[</span><span class="s2">"edad"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>
+</code></pre></div>
+<h3 id="anadir-nuevos-pares-clave-valor">Añadir nuevos pares clave-valor<a class="headerlink" href="#anadir-nuevos-pares-clave-valor" title="Permanent link">¶</a></h3>
+<p>De manera similar, puedes añadir nuevos pares clave-valor, la sintaxis es la misma que para modificar, pero la diferencia es que si la clave no existe, se crea un nuevo par:</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span><span class="p">[</span><span class="s2">"profesión"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Ingeniera"</span>
+</code></pre></div>
+<h3 id="eliminar-elementos">Eliminar elementos<a class="headerlink" href="#eliminar-elementos" title="Permanent link">¶</a></h3>
+<p>Para eliminar un elemento de un diccionario, puedes usar el método <code>pop()</code> o la palabra clave <code>del</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">del</span> <span class="n">persona</span><span class="p">[</span><span class="s2">"ciudad"</span><span class="p">]</span>
+<span class="n">persona</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"edad"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="comprobar-si-una-clave-existe">Comprobar si una clave existe<a class="headerlink" href="#comprobar-si-una-clave-existe" title="Permanent link">¶</a></h3>
+<p>Para comprobar si una clave existe en un diccionario, puedes usar el operador <code>in</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s2">"nombre"</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"La clave existe"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="recorrer-un-diccionario">Recorrer un diccionario<a class="headerlink" href="#recorrer-un-diccionario" title="Permanent link">¶</a></h3>
+<p>Para recorrer un diccionario, puedes usar un bucle <code>for</code>. Puedes iterar sobre las claves, los valores o ambos:</p>
+<ul>
+<li>Recorrer claves:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">clave</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">clave</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Recorrer valores:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">persona</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Recorrer claves y valores:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">persona</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">clave</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="metodos-utiles">Métodos útiles<a class="headerlink" href="#metodos-utiles" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get(clave)</code></td>
+<td>Devuelve el valor asociado a la clave</td>
+</tr>
+<tr>
+<td><code>keys()</code></td>
+<td>Devuelve una vista con las claves</td>
+</tr>
+<tr>
+<td><code>values()</code></td>
+<td>Devuelve una vista con los valores</td>
+</tr>
+<tr>
+<td><code>items()</code></td>
+<td>Devuelve pares (clave, valor)</td>
+</tr>
+<tr>
+<td><code>pop(clave)</code></td>
+<td>Elimina la clave y devuelve su valor</td>
+</tr>
+<tr>
+<td><code>update(dic2)</code></td>
+<td>Actualiza con los pares clave-valor de otro diccionario</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diccionarios-anidados">Diccionarios anidados<a class="headerlink" href="#diccionarios-anidados" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">alumnos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"alumno1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"Juan"</span><span class="p">,</span> <span class="s2">"nota"</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
+    <span class="s2">"alumno2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"Laura"</span><span class="p">,</span> <span class="s2">"nota"</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">inventario</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"manzanas"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"naranjas"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">"plátanos"</span><span class="p">:</span> <span class="mi">7</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">fruta</span><span class="p">,</span> <span class="n">cantidad</span> <span class="ow">in</span> <span class="n">inventario</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tengo </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="tuplas">Tuplas<a class="headerlink" href="#tuplas" title="Permanent link">¶</a></h2>
+<p>Una <strong>tupla</strong> es una colección ordenada e <strong>inmutable</strong> de elementos. Una vez creada, <strong>no se puede modificar</strong> (ni añadir, ni eliminar, ni cambiar elementos).</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="caracteristicas-principales_1">Características principales<a class="headerlink" href="#caracteristicas-principales_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Las tuplas son <strong>inmutables</strong>.</li>
+<li>Pueden contener elementos de <strong>diferentes tipos</strong>.</li>
+<li>Permiten elementos duplicados.</li>
+<li>Son <strong>más eficientes</strong> en memoria que las listas.</li>
+<li>Se pueden <strong>desempaquetar</strong> fácilmente.</li>
+</ul>
+<h3 id="crear-tuplas">Crear tuplas<a class="headerlink" href="#crear-tuplas" title="Permanent link">¶</a></h3>
+<p>Una tupla se define utilizando paréntesis <code>()</code>. Puedes crear una tupla con uno o más elementos, y si es una tupla unitaria, debes incluir una coma al final para diferenciarla de un simple valor entre paréntesis.</p>
+<div class="highlight"><pre><span></span><code><span class="n">tupla1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">tupla_unitaria</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,)</span>       <span class="c1"># Necesita la coma</span>
+<span class="n">tupla_vacia</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>⚠️ Sin la coma, <code>(5)</code> es solo un entero con paréntesis.</p>
+</blockquote>
+<h3 id="acceder-a-elementos">Acceder a elementos<a class="headerlink" href="#acceder-a-elementos" title="Permanent link">¶</a></h3>
+<p>Una tupla se comporta de manera similar a una lista en cuanto al acceso a sus elementos. Puedes acceder a los elementos utilizando índices, que comienzan en 0.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">tupla1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>      <span class="c1"># Primer elemento</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># Último elemento</span>
+</code></pre></div>
+<h3 id="recorrer-una-tupla">Recorrer una tupla<a class="headerlink" href="#recorrer-una-tupla" title="Permanent link">¶</a></h3>
+<p>Así como con las listas, puedes recorrer los elementos de una tupla utilizando un bucle <code>for</code>:</p>
+<ul>
+<li>Recorriendo sus elementos, con un for each.</li>
+<li>Recorriendo sus índices, con un for range.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">tupla1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="operaciones-comunes">Operaciones comunes<a class="headerlink" href="#operaciones-comunes" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitud</td>
+<td><code>len(tupla1)</code></td>
+</tr>
+<tr>
+<td>Concatenar</td>
+<td><code>tupla1 + tupla2</code></td>
+</tr>
+<tr>
+<td>Repetir</td>
+<td><code>tupla1 * 2</code></td>
+</tr>
+<tr>
+<td>Ver si contiene</td>
+<td><code>2 in tupla1</code></td>
+</tr>
+<tr>
+<td>Índice de elemento</td>
+<td><code>tupla1.index('hola')</code></td>
+</tr>
+<tr>
+<td>Contar elementos</td>
+<td><code>tupla1.count('adios')</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="desempaquetado">Desempaquetado<a class="headerlink" href="#desempaquetado" title="Permanent link">¶</a></h3>
+<p>Desempaquetar una tupla significa asignar sus elementos a variables individuales. Esto es útil cuando conoces la estructura de la tupla y quieres trabajar con sus valores de manera más directa.</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Ana"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"Valencia"</span><span class="p">)</span>
+<span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">,</span> <span class="n">ciudad</span> <span class="o">=</span> <span class="n">persona</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Ana</span>
+</code></pre></div>
+<blockquote>
+<p>⚠️ El número de variables debe coincidir con los elementos de la tupla.</p>
+</blockquote>
+<h3 id="tuplas-anidadas">Tuplas anidadas<a class="headerlink" href="#tuplas-anidadas" title="Permanent link">¶</a></h3>
+<p>Las tuplas también pueden contener otras tuplas, lo que permite crear estructuras de datos más complejas. Esto es útil para representar datos relacionados de manera estructurada.</p>
+<div class="highlight"><pre><span></span><code><span class="n">notas</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"Juan"</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Lucía"</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Pedro"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">nota</span> <span class="ow">in</span> <span class="n">notas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> sacó un </span><span class="si">{</span><span class="n">nota</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="tupla-o-lista">¿Tupla o lista?<a class="headerlink" href="#tupla-o-lista" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Tupla</th>
+<th>Lista</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mutabilidad</td>
+<td>Inmutable</td>
+<td>Mutable</td>
+</tr>
+<tr>
+<td>Rendimiento</td>
+<td>Más rápida y ligera</td>
+<td>Más pesada</td>
+</tr>
+<tr>
+<td>Uso común</td>
+<td>Datos fijos o constantes</td>
+<td>Datos que cambian</td>
+</tr>
+<tr>
+<td>Sintaxis</td>
+<td>Paréntesis <code>()</code></td>
+<td>Corchetes <code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-practico_1">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico_1" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">coordenada</span> <span class="o">=</span> <span class="p">(</span><span class="mf">39.4699</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3763</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mostrar_ubicacion</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+    <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">coord</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Latitud: </span><span class="si">{</span><span class="n">lat</span><span class="si">}</span><span class="s2">, Longitud: </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">mostrar_ubicacion</span><span class="p">(</span><span class="n">coordenada</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="ejercicios-de-clase-listas"><a href="ejercicios_listas_clase/">Ejercicios de clase: listas</a><a class="headerlink" href="#ejercicios-de-clase-listas" title="Permanent link">¶</a></h2>
-<p>Para practicar lo aprendido en esta unidad, hemos preparado una serie de ejercicios que te ayudarán a consolidar tus conocimientos. Puedes encontrar los ejercicios en el siguiente enlace</p>
+<h2 id="ejercicios-de-clase-diccionarios-y-tuplas"><a href="ejercicios_diccionarios_clase/">Ejercicios de clase: diccionarios y tuplas</a><a class="headerlink" href="#ejercicios-de-clase-diccionarios-y-tuplas" title="Permanent link">¶</a></h2>
+<p>Para practicar lo aprendido en esta unidad, hemos preparado una serie de ejercicios que te ayudarán a consolidar tus conocimientos. Puedes encontrar los ejercicios en el siguiente enlace:</p>
 <h2 id="ejercicios-extra-ut3"><a href="ejercicios_ut3_extra/">Ejercicios extra UT3</a><a class="headerlink" href="#ejercicios-extra-ut3" title="Permanent link">¶</a></h2>
 </article>
 </div>
