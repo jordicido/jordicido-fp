@@ -30,7 +30,11 @@ Escribe un programa que pida al usuario una lista de números enteros separados 
     numero_a_multiplicar = int(input("Ingrese un número entero: "))
     for i in range(len(numeros)):
         numeros[i] *= numero_a_multiplicar
+<<<<<<< HEAD
     print("Lista resultante:", numeros_multiplicados)
+=======
+    print("Lista resultante:", numeros)
+>>>>>>> 01ba69e (ut3)
     ```
 
 !!! warning "Explicación"
