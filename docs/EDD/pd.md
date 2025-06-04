@@ -120,28 +120,28 @@
 
 ### Semana 12 (6 Mayo)
 
-- **Martes 6**: UT3: Pruebas unitarias.
+- **Martes 6**: UT4: Git rebase y squash.
 
 ### Semana 13 (13 Mayo)
 
-- **Martes 13**: UT2: Automatización de tareas.
+- **Martes 13**: UT4: Git reset y revert. Git stash.
 
 ### Semana 14 (20 Mayo)
 
-- **Martes 20**: UT4: Git reset y revert. Git stash.
-
+- **Martes 20**: UT2: Gestores de dependencias.
+  
 ### Semana 15 (27 Mayo)
 
-- **Martes 27**: UT4: Git rebase y squash.
+- **Martes 27**: UT4: Documentación de software. Markdown.
 
 ### Semana 16 (3 Junio)
 
-- **Martes 3**: UT4: Documentación de software. Markdown.
+- **Martes 3**: UT4: Documentación de software. JavaDoc.
 
 ### Semana 17 (10 Junio)
 
-- **Martes 10**: UT4: Documentación de software. JavaDoc.
+- **Martes 10**: UT3: Pruebas unitarias. Junit.
 
 ### Semana 18 (17 Junio)
 
-- **Martes 17**:
+- **Martes 17**: UT3: Pruebas unitarias. Unittest y Pytest.

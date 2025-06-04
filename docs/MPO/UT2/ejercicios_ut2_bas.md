@@ -1,4 +1,4 @@
-# Ejercicios UT2: Nivel básico
+# Ejercicios UT2: Extras
 
 ## Ejercicio 1
 
@@ -188,12 +188,12 @@ El usuario introduce 2 y 5.
 
 El programa debe imprimir:
 
-    ```plaintext
-    2
-    3
-    4
-    5
-    ```
+```plain
+2
+3
+4
+5
+```
 
 ??? Summary "Solución"
     ```python
@@ -217,9 +217,9 @@ El usuario introduce 5 y 2.
 
 El programa debe imprimir:
 
-    ```plaintext
-    5 4 3 2
-    ```
+```plain
+5 4 3 2
+```
 
 ??? Summary "Solución"
     ```python
@@ -274,9 +274,9 @@ Escribe un programa que pida al usuario un número entero positivo y calcules la
 
 Para que se entienda mejor, si el usuario introduce 3, el programa debe calcular:
 
-    ```plaintext
-    1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36
-    ```
+```plain
+1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36
+```
 
 ??? Summary "Solución"
     ```python
@@ -318,5 +318,220 @@ Escribe un programa que reciba un número entero positivo y una letra. El progra
 
     for i in range(numero):
         print(letra, end="")
+    print()
+    ```
+
+## Ejercicio 18
+
+Escribe un programa que dado una serie de números introducidos por el usuario, hasta que introduzca un -1, imprima el número introducido sumándole 1. El programa debe imprimir todos los números introducidos, menos el -1, sumándoles 1.
+
+```plain
+Entrada:
+1
+2
+3
+-1
+
+Salida:
+2
+3
+4
+```
+
+??? Summary "Solución"
+    ```python
+    while True:
+        numero = int(input("Introduce un número (-1 para salir): "))
+        if numero == -1:
+            break
+        print(numero + 1)
+    ```
+
+## Ejercicio 19
+
+Escribe un programa que dado una serie de notas introducidas por el usuario, hasta que introduzca un -1, imprima el número de notas correctas introducidas, la media de las notas y cuantas de estas notas son 10. El programa debe imprimir la media de todas las notas introducidas, menos el -1.
+
+!!! tip
+    Una nota es correcta si está entre 0 y 10, ambos incluidos. Si el usuario introduce una nota fuera de este rango, el programa no la tendrá en cuenta para calcular la media ni el número de notas correctas.
+
+```plain
+Entrada:
+1
+6
+10
+11
+8
+-1
+
+Salida:
+Número de notas correctas: 4
+Media de notas: 6.25
+Número de dieces: 1
+```
+
+??? Summary "Solución"
+    ```python
+    suma_notas = 0
+    contador_notas = 0
+    contador_diez = 0
+
+    while True:
+        nota = float(input("Introduce una nota (-1 para salir): "))
+        if nota == -1:
+            break
+        if 0 <= nota <= 10:
+            suma_notas += nota
+            contador_notas += 1
+            if nota == 10:
+                contador_diez += 1
+
+    if contador_notas > 0:
+        media = suma_notas / contador_notas
+        print(f"Número de notas correctas: {contador_notas}")
+        print(f"Media de notas: {media:.2f}")
+        print(f"Número de dieces: {contador_diez}")
+    else:
+        print("No se introdujeron notas válidas.")
+    ```
+
+## Ejercicio 20
+
+Escribe un programa que dado una serie de números introducidos por el usuario, hasta que introduzca un -1, cuente cuántos de estos números son pares y cuántos son impares. El programa debe imprimir el número de pares e impares introducidos, menos el -1.
+
+??? Summary "Solución"
+    ```python
+    contador_pares = 0
+    contador_impares = 0
+
+    while True:
+        numero = int(input("Introduce un número (-1 para salir): "))
+        if numero == -1:
+            break
+        if numero % 2 == 0:
+            contador_pares += 1
+        else:
+            contador_impares += 1
+
+    print(f"Número de pares: {contador_pares}")
+    print(f"Número de impares: {contador_impares}")
+    ```
+
+!!! tip
+    Vigilad con el uso de `while True:`. Este bucle se ejecutará indefinidamente hasta que se encuentre una instrucción `break` dentro de él. Asegúrate de que haya una condición que permita salir del bucle, como en este caso, cuando el usuario introduce -1. Además, es importante para la legibilidad del código, no abusar de este tipo de bucles y utilizar estructuras de control más específicas cuando sea posible.
+    En este caso, el uso de `while True:` es adecuado porque estamos esperando una entrada del usuario que puede ser indefinida. Sin embargo, en otros casos, podrías considerar usar un bucle `for` o un bucle `while` con una condición más específica.
+
+## Ejercicio 21
+
+Escribe un programa que te introduzca un número entero positivo que corresponde al número de casos a tratar. Seguidamente te introducen un número entero positivo que corresponde a una serie de números. Después debes recibir ese total de números e imprimirlos en la misma linea de la terminal, separados por un espacio y habiéndoles sumado 1 a cada uno de ellos.
+
+```plain
+Entrada:
+3
+4
+5 0 99 2
+1
+45
+2 
+-1 -3
+
+Salida:
+5 1 100 3
+46
+0 -2
+```
+
+??? Summary "Solución"
+    ```python
+    casos = int(input("Introduce el número de casos: "))
+    for _ in range(casos):
+        numeros = int(input("Cuántos números vas a introducir? "))
+        for _ in range(numeros):
+            numero = int(input())
+            print(int(numero) + 1, end=" ")
+        print()
+    ```
+
+??? tip
+    En este caso, el uso de `for _ in range(casos):` es adecuado porque estamos iterando un número fijo de veces, que es el número de casos introducido por el usuario. El guion bajo (`_`) se utiliza como una convención para indicar que la variable de iteración no se va a utilizar dentro del bucle. Esto es útil para mejorar la legibilidad del código y evitar advertencias de variables no utilizadas.
+    En el segundo bucle, `for _ in range(numeros):`, también se utiliza el guion bajo porque no necesitamos el valor de la variable de iteración, solo queremos repetir el bloque de código un número específico de veces.
+
+## Ejercicio 22
+
+Escribe un programa que inicialmente te indique el número de casos a tratar. Después, para cada caso, te introduzca un número entero positivo del qual debes imprimir todos los divisores. Un divisor de un número `n` es un número entero que divide a `n` sin dejar residuo. El programa debe imprimir todos los divisores del número introducido en una sola línea, separados por espacios.
+
+```plain
+Entrada:
+3
+4
+2
+10
+
+Salida:
+1 2 4
+1 2
+1 2 5 10
+```
+
+??? Summary "Solución"
+    ```python
+    casos = int(input("Introduce el número de casos: "))
+    for _ in range(casos):
+        numero = int(input("Introduce un número entero positivo: "))
+        print(f"Los divisores de {numero} son: ", end=" ")
+        for i in range(1, numero + 1):
+            if numero % i == 0:
+                print(i, end=" ")
+        print()
+    ```
+
+## Ejercicio 23
+
+Escribe un programa que vaya recibiendo cadenas de texto hasta que el usuario introduzca "fin". El programa debe contar cuántas vocales se han introducido e imprimir el resultado. Las vocales son: a, e, i, o, u (tanto mayúsculas como minúsculas). El programa debe imprimir el número total de vocales introducidas sin contar la palabra "fin".
+
+```plain
+Entrada:
+Hola
+como estan los maquinas
+fin
+
+Salida:
+Número total de vocales: 11
+```
+
+??? Summary "Solución"
+    ```python
+    contador_vocales = 0
+
+    while True:
+        cadena = input("Introduce una cadena de texto (o 'fin' para salir): ")
+        if cadena.lower() == "fin":
+            break
+        for letra in cadena:
+            if letra.lower() in "aeiou":
+                contador_vocales += 1
+
+    print(f"Número total de vocales: {contador_vocales}")
+    ```
+
+??? tip
+    Analiza el condicional que hemos utilizado para comprobar si la letra es una vocal. En este caso, hemos utilizado `letra.lower() in "aeiou"` para comprobar si la letra en minúscula está en la cadena de vocales. Esto nos permite contar tanto las vocales mayúsculas como las minúsculas sin necesidad de duplicar el código. En lenguaje natural estaría así: "Si la letra en minúscula está en la cadena de vocales, entonces es una vocal". Esto es una forma eficiente de comprobar si una letra es una vocal sin necesidad de utilizar múltiples condicionales.
+
+??? tip
+    El bucle `for letra in cadena:` itera sobre cada letra de la cadena introducida por el usuario. En cada iteración, se comprueba si la letra es una vocal y, si lo es, se incrementa el contador de vocales. Al final del programa, se imprime el total de vocales encontradas. Este tipo de for se le llama "for-each" porque itera sobre cada elemento de una colección (en este caso, la cadena de texto).
+
+## Ejercicio 24
+
+Escribe un programa que reciba un número `n` entero positivo y que escriba esta secuencia de números: un uno, dos doses, tres treses... hasta `n` enes. Por ejemplo, si el usuario introduce 5, el programa debe imprimir:
+
+```plain
+122333444455555
+```
+
+??? Summary "Solución"
+    ```python
+    n = int(input("Introduce un número entero positivo: "))
+    for i in range(1, n + 1):
+        for j in range(i):
+            print(i, end="")
     print()
     ```

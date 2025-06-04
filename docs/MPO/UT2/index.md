@@ -142,6 +142,21 @@ for i in range(10):
 
 En este ejemplo, la instrucción `continue` se utiliza para omitir los números pares, por lo que solo se imprimen los números impares del 0 al 9.
 
+### Cuando usar `while` y `for`
+
+La elección entre `while` y `for` depende del problema que estés resolviendo. En general, se recomienda usar `for` cuando conoces de antemano el número de iteraciones que deseas realizar (por ejemplo, al iterar sobre una lista o un rango). Por otro lado, se recomienda usar `while` cuando no conoces el número de iteraciones y deseas continuar hasta que se cumpla una condición específica.
+
+Por ejemplo, vamos a analizar los siguientes casos:
+
+- Tenemos una lista de números y queremos imprimir cada número.
+- Queremos pedir al usuario que introduzca números hasta que introduzca 0.
+- Queremos imprimir los números del 1 al 10.
+- Queremos imprimir los números del 1 al 10, pero si el número es par, lo omitimos.
+- Queremos ejecutar un menú de opciones hasta que el usuario elija salir.
+- Queremos ejecutar una acción en una lista de elementos hasta encontrar un elemento específico.
+
+Como veis, no siempre hay una respuesta clara, pero si que hay casos en los que encaja mucho mejor un tipo de bucle que el otro.
+
 ## [Ejercicios de clase: estructuras de control condicionales](ejercicios_if_clase.md)
 
 ## [Ejercicios de clase: estructuras de control de repetición](ejercicios_for_while_clase.md)
