@@ -77,11 +77,6 @@ print(mi_lista_anidada[0][1])  # Imprime: 2
 print(mi_lista_anidada[1][0])  # Imprime: Hola
 ```
 
-<<<<<<< HEAD
-## [Ejercicios de clase: listas](ejercicios_listas_clase.md)
-
-Para practicar lo aprendido en esta unidad, hemos preparado una serie de ejercicios que te ayudarán a consolidar tus conocimientos. Puedes encontrar los ejercicios en el siguiente enlace
-=======
 ## Diccionarios
 
 Un **diccionario** es una estructura de datos en Python que almacena pares **clave-valor**. Cada clave es única y se utiliza para acceder a su valor asociado.
@@ -336,6 +331,5 @@ mostrar_ubicacion(coordenada)
 ## [Ejercicios de clase: diccionarios y tuplas](ejercicios_diccionarios_clase.md)
 
 Para practicar lo aprendido en esta unidad, hemos preparado una serie de ejercicios que te ayudarán a consolidar tus conocimientos. Puedes encontrar los ejercicios en el siguiente enlace:
->>>>>>> 01ba69e (ut3)
 
 ## [Ejercicios extra UT3](ejercicios_ut3_extra.md)
