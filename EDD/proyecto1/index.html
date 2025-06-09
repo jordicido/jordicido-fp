@@ -722,23 +722,21 @@ README.md
 <hr/>
 <h3 id="2-readmemd-en-markdown">2. <strong>README.md en Markdown</strong><a class="headerlink" href="#2-readmemd-en-markdown" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p>Crear un archivo <code>README.md</code> en la raíz del repositorio con:</p>
-</li>
-<li>
-<p>Nombre del proyecto.</p>
-</li>
+<li>Crear un archivo <code>README.md</code> en la raíz del repositorio con:<ul>
+<li>Nombre del proyecto.</li>
 <li>Breve descripción funcional.</li>
 <li>Requisitos para compilar y ejecutar.</li>
 <li>Instrucciones de uso.</li>
 <li>Autoría y licencia.</li>
+</ul>
+</li>
 </ul>
 <hr/>
 <h3 id="3-documentacion-tecnica-con-javadoc">3. <strong>Documentación técnica con Javadoc</strong><a class="headerlink" href="#3-documentacion-tecnica-con-javadoc" title="Permanent link">¶</a></h3>
 <ul>
 <li>Comentar las <strong>clases y sus métodos públicos</strong> usando la sintaxis estándar de <strong>Javadoc</strong>:</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Representa un producto en el inventario.</span>
 <span class="cm"> * @author Nombre</span>
 <span class="cm"> * @version 1.0</span>
@@ -751,7 +749,9 @@ README.md
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularPrecioFinal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-* Generar la documentación HTML con Javadoc y colocarla en la carpeta <code>/docs/</code>.</p>
+<ul>
+<li>Generar la documentación HTML con Javadoc y colocarla en la carpeta <code>/docs/</code>.</li>
+</ul>
 <hr/>
 <h3 id="4-testing-automatico-con-junit">4. <strong>Testing automático con JUnit</strong><a class="headerlink" href="#4-testing-automatico-con-junit" title="Permanent link">¶</a></h3>
 <ul>
@@ -769,16 +769,16 @@ README.md
 <hr/>
 <h3 id="5-gestion-de-dependencias-con-maven-o-gradle">5. <strong>Gestión de dependencias con Maven o Gradle</strong><a class="headerlink" href="#5-gestion-de-dependencias-con-maven-o-gradle" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p>Convertir el proyecto Java en un proyecto gestionado por <strong>Maven</strong> o <strong>Gradle</strong>:</p>
-</li>
-<li>
-<p>Si usas <strong>Maven</strong>, incluir un <code>pom.xml</code>.</p>
-</li>
+<li>Convertir el proyecto Java en un proyecto gestionado por <strong>Maven</strong> o <strong>Gradle</strong>:<ul>
+<li>Si usas <strong>Maven</strong>, incluir un <code>pom.xml</code>.</li>
 <li>Si usas <strong>Gradle</strong>, incluir un <code>build.gradle</code>.</li>
-<li>Declarar como mínimo las dependencias necesarias para:</li>
+</ul>
+</li>
+<li>Declarar como mínimo las dependencias necesarias para:<ul>
 <li><strong>JUnit 5</strong>.</li>
 <li>Cualquier otra librería adicional que uses (opcional).</li>
+</ul>
+</li>
 <li>Poder compilar el proyecto y ejecutar los tests mediante consola con:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>install
