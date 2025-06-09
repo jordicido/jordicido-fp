@@ -14,7 +14,7 @@ Una **función** es un **bloque de código con nombre** que se puede ejecutar cu
 **Piensa en una función como una máquina**:
 Le das ingredientes (parámetros), hace un trabajo (instrucciones), y puede darte un resultado (valor de retorno).
 
-### Ventajas de usar funciones:
+### Ventajas de usar funciones
 
 * **Reutilización de código**: Escribes una vez, usas muchas.
 * **Modularidad**: Puedes dividir un programa en partes más pequeñas, claras y fáciles de entender.
@@ -23,7 +23,7 @@ Le das ingredientes (parámetros), hace un trabajo (instrucciones), y puede dart
 
 ## ¿Cómo se define una función en Python?
 
-### Sintaxis básica:
+### Sintaxis básica
 
 ```python
 def nombre_funcion(parámetros):
@@ -32,13 +32,12 @@ def nombre_funcion(parámetros):
     return valor  # opcional
 ```
 
-### Detalle de cada parte:
+### Detalle de cada parte
 
 * `def`: palabra reservada que indica que se va a definir una función.
 * `nombre_funcion`: identificador que le damos a la función. Se recomienda usar minúsculas y guiones bajos (`snake_case`) si tiene varias palabras.
 * `parámetros`: variables que recibe la función como entrada (pueden ser cero o más).
 * `return`: sirve para **devolver** un resultado desde la función (es opcional).
-
 
 ## Ejemplos
 
@@ -118,3 +117,5 @@ print("Resta:", y)
 * Siempre que tengas código que se repite
 * Siempre que una parte del programa pueda separarse y probarse sola
 * Cuando quieras organizar tu programa de forma modular
+
+## [Ejercicios de clase: funciones](ejercicios_funciones_clase.md)
