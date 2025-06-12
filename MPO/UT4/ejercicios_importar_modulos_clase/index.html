@@ -543,17 +543,42 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ejercicio-1-gestor-de-archivos-con-python-modulo-os">
+<a class="md-nav__link" href="#ejercicio-1-gestor-de-archivos-con-python-usando-el-modulo-os">
 <span class="md-ellipsis">
-      Ejercicio 1 - Gestor de Archivos con Python (módulo os)
+      Ejercicio 1 - Gestor de Archivos con Python usando el módulo os
     </span>
 </a>
-<nav aria-label="Ejercicio 1 - Gestor de Archivos con Python (módulo os)" class="md-nav">
+<nav aria-label="Ejercicio 1 - Gestor de Archivos con Python usando el módulo os" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#funciones-del-modulo-os-a-utilizar">
 <span class="md-ellipsis">
       Funciones del módulo os a utilizar
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-2-coloreando-la-terminal-con-colorama">
+<span class="md-ellipsis">
+      Ejercicio 2 - Coloreando la Terminal con colorama
+    </span>
+</a>
+<nav aria-label="Ejercicio 2 - Coloreando la Terminal con colorama" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-del-modulo-colorama-a-utilizar">
+<span class="md-ellipsis">
+      Funciones del módulo colorama a utilizar
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-de-implementacion">
+<span class="md-ellipsis">
+      Ejemplo de implementación
     </span>
 </a>
 </li>
@@ -591,17 +616,42 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ejercicio-1-gestor-de-archivos-con-python-modulo-os">
+<a class="md-nav__link" href="#ejercicio-1-gestor-de-archivos-con-python-usando-el-modulo-os">
 <span class="md-ellipsis">
-      Ejercicio 1 - Gestor de Archivos con Python (módulo os)
+      Ejercicio 1 - Gestor de Archivos con Python usando el módulo os
     </span>
 </a>
-<nav aria-label="Ejercicio 1 - Gestor de Archivos con Python (módulo os)" class="md-nav">
+<nav aria-label="Ejercicio 1 - Gestor de Archivos con Python usando el módulo os" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#funciones-del-modulo-os-a-utilizar">
 <span class="md-ellipsis">
       Funciones del módulo os a utilizar
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-2-coloreando-la-terminal-con-colorama">
+<span class="md-ellipsis">
+      Ejercicio 2 - Coloreando la Terminal con colorama
+    </span>
+</a>
+<nav aria-label="Ejercicio 2 - Coloreando la Terminal con colorama" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-del-modulo-colorama-a-utilizar">
+<span class="md-ellipsis">
+      Funciones del módulo colorama a utilizar
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-de-implementacion">
+<span class="md-ellipsis">
+      Ejemplo de implementación
     </span>
 </a>
 </li>
@@ -618,7 +668,7 @@
 <h1 id="ejercicios-de-clase-ut4-importar-modulos">Ejercicios de clase UT4: Importar módulos<a class="headerlink" href="#ejercicios-de-clase-ut4-importar-modulos" title="Permanent link">¶</a></h1>
 <h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">¶</a></h2>
 <p>Los módulos en Python son una herramienta muy importante y poderosa. Se debe explorar y probar diferentes módulos para sacar el mayor provecho de estos. En los siguientes ejercicios exploraremos los módulos más típicos.</p>
-<h2 id="ejercicio-1-gestor-de-archivos-con-python-modulo-os">Ejercicio 1 - Gestor de Archivos con Python (módulo <code>os</code>)<a class="headerlink" href="#ejercicio-1-gestor-de-archivos-con-python-modulo-os" title="Permanent link">¶</a></h2>
+<h2 id="ejercicio-1-gestor-de-archivos-con-python-usando-el-modulo-os">Ejercicio 1 - Gestor de Archivos con Python usando el módulo <code>os</code><a class="headerlink" href="#ejercicio-1-gestor-de-archivos-con-python-usando-el-modulo-os" title="Permanent link">¶</a></h2>
 <p>Desarrollar un programa en Python que permita gestionar archivos y directorios mediante un menú interactivo, utilizando las funciones principales del módulo <code>os</code>.  </p>
 <p>El programa debe incluir las siguientes funcionalidades:  </p>
 <ol>
@@ -687,6 +737,49 @@
 </tr>
 </tbody>
 </table>
+<h2 id="ejercicio-2-coloreando-la-terminal-con-colorama">Ejercicio 2 - Coloreando la Terminal con <code>colorama</code><a class="headerlink" href="#ejercicio-2-coloreando-la-terminal-con-colorama" title="Permanent link">¶</a></h2>
+<p>Vamos a evolucionar el programa del ejercicio anterior para que los mensajes se muestren con colores utilizando el módulo <code>colorama</code>.</p>
+<p>Concretamente vamos a modificar la opción de listar archivos.</p>
+<p>En vez de imprimir los nombres de los archivos directamente, vamos a colorearlos según su tipo:
+- Archivos de texto (<code>.txt</code>) en <strong>verde</strong>.
+- Archivos de imagen (<code>.jpg</code>, <code>.png</code>) en <strong>azul</strong>.
+- Archivos de audio (<code>.mp3</code>, <code>.wav</code>) en <strong>amarillo</strong>.
+- Otros archivos en <strong>blanco</strong>.</p>
+<h3 id="funciones-del-modulo-colorama-a-utilizar">Funciones del módulo <code>colorama</code> a utilizar<a class="headerlink" href="#funciones-del-modulo-colorama-a-utilizar" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Función</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Ejemplo de uso</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Fore</code></td>
+<td>Colores del texto</td>
+<td><code>Fore.GREEN</code>, <code>Fore.BLUE</code>, etc.</td>
+</tr>
+<tr>
+<td><code>Style</code></td>
+<td>Estilos del texto</td>
+<td><code>Style.RESET_ALL</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-de-implementacion">Ejemplo de implementación<a class="headerlink" href="#ejemplo-de-implementacion" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">colorama</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fore</span><span class="p">,</span> <span class="n">Style</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pintar_terminal</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ejemplo de uso de colorama"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s2">"Este texto es verde"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="s2">"Este texto es azul"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"Este texto es amarillo"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">WHITE</span> <span class="o">+</span> <span class="s2">"Este texto es blanco"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fin del ejemplo"</span><span class="p">)</span>
+</code></pre></div>
+<p>Una vez implementado, el programa debería mostrar los archivos del directorio actual con los colores correspondientes según su tipo. Asegúrate de que el usuario pueda ver claramente los nombres de los archivos coloreados. A continuación imprime detalles de cada archivo, como su tamaño y fecha de modificación usando la función <code>os.stat()</code>.</p>
+<p>Con estas modificaciones vamos a tener una suerte de comando <code>ls</code>(o <code>dir</code> en Windows) mejorado, que no solo lista los archivos, sino que también los colorea según su tipo y muestra información adicional.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
