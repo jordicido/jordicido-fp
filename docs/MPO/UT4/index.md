@@ -118,4 +118,190 @@ print("Resta:", y)
 * Siempre que una parte del programa pueda separarse y probarse sola
 * Cuando quieras organizar tu programa de forma modular
 
+---
+
+## Módulos
+
+### ¿Qué es un módulo?
+Un módulo es un archivo con extensión `.py` que contiene código Python organizado para ser reutilizado. Este código puede incluir:
+
+- **Funciones** (bloques de código reutilizables)
+- **Clases** (plantillas para crear objetos)
+- **Variables** (datos almacenados)
+- **Código ejecutable** (que se corre al importar el módulo)
+
+**Ejemplo visual:**
+```
+proyecto/
+│
+├── main.py            # Programa principal
+└── mis_modulos/
+    ├── calculadora.py # Módulo con funciones matemáticas
+    └── utils.py      # Módulo con utilidades varias
+```
+
+**Beneficios clave:**
+
+1. **Organización:** Divide programas grandes en archivos más pequeños y manejables.
+2. **Reutilización:** Usa el mismo código en múltiples proyectos sin copiar/pegar.
+3. **Encapsulamiento:** Oculta detalles complejos detrás de interfaces simples.
+
+### Cómo importar módulos
+
+#### Importación básica
+
+```python
+import math
+print(math.pi)  # 3.141592653589793
+```
+
+- Accedes a los elementos con la notación `módulo.elemento`
+- Ideal cuando necesitas muchos elementos del módulo
+
+#### Importación selectiva
+
+```python
+from math import sqrt, pow
+print(pow(2, 3))  # 8.0
+```
+
+- Ventaja: No necesitas prefijar con el nombre del módulo
+- Riesgo: Posibles conflictos de nombres
+
+#### Importación con alias
+
+```python
+import numpy as np
+print(np.array([1, 2, 3]))  # Crea un array de NumPy
+```
+
+- Especialmente útil para:
+- Módulos con nombres largos
+- Librerías de visualización de datos
+- Cuando trabajas con múltiples módulos similares
+
+#### Importación avanzada
+
+```python
+from statistics import (
+    mean as promedio,
+    median as mediana,
+    stdev as desviacion
+)
+```
+
+- Permite renombrar funciones para mayor claridad
+- Útil cuando los nombres originales son muy técnicos
+
+### Creación de módulos personalizados
+
+#### Estructura típica:
+
+```
+mi_proyecto/
+│
+├── main.py
+└── modulo_ventas/
+    ├── __init__.py    # Para convertir en paquete
+    ├── clientes.py
+    └── facturacion.py
+```
+
+**Ejemplo completo:**
+
+**geometria.py**
+
+```python
+"""Módulo para cálculos geométricos básicos"""
+# Constante del módulo
+PI = 3.1416
+
+def area_circulo(radio):
+    """Calcula el área de un círculo"""
+    return PI * radio ** 2
+
+def perimetro_rectangulo(largo, ancho):
+    return 2 * (largo + ancho)
+
+# Código que se ejecuta al importar
+print("Módulo geometría cargado correctamente")
+```
+
+**main.py**
+
+```python
+from geometria import area_circulo, PI
+
+print(f"El valor de PI es: {PI}")
+print(f"Área de círculo radio 5: {area_circulo(5)}")
+```
+
+**Notas importantes:**
+
+- El archivo `__init__.py` (aunque vacío) convierte un directorio en un paquete Python
+- El código fuera de funciones se ejecuta al importar el módulo
+
+### Módulos estándar más importantes
+
+#### Matemáticas (`math`)
+
+```python
+import math
+
+# Constantes
+print(math.pi)      # 3.141592...
+print(math.e)       # 2.718281...
+
+# Funciones
+print(math.factorial(5))    # 120
+print(math.gcd(12, 18))     # Máximo común divisor: 6
+print(math.radians(180))    # Convierte a radianes: 3.1415...
+```
+
+#### Fechas y horas (`datetime`)
+
+```python
+from datetime import datetime, timedelta
+
+hoy = datetime.now()
+print(hoy.strftime("%d/%m/%Y"))  # Formatea fecha: "11/06/2025"
+
+mañana = hoy + timedelta(days=1)
+diferencia = mañana - hoy
+print(diferencia.total_seconds())  # 86400.0
+```
+
+#### Sistema operativo (`os`)
+
+```python
+import os
+
+# Rutas
+print(os.getcwd())  # Directorio actual
+os.mkdir("nueva_carpeta")  # Crear directorio
+
+# Variables de entorno
+print(os.environ.get('PATH'))
+```
+
+#### Aleatoriedad (`random`)
+
+```python
+import random
+
+# Números aleatorios
+print(random.uniform(1.5, 2.5))  # Float entre 1.5 y 2.5
+
+# Selecciones
+colores = ["rojo", "verde", "azul"]
+print(random.sample(colores, 2))  # 2 elementos aleatorios
+```
+
+### Buenas prácticas con módulos
+
+1. **Nombres descriptivos:** `calculadora.py` mejor que `mod1.py`
+2. **Documentación:** Usa docstrings para explicar el módulo
+3. **Evitar `from modulo import *`:** Puede causar conflictos
+
 ## [Ejercicios de clase: funciones](ejercicios_funciones_clase.md)
+## [Ejercicios de clase: importar módulos](ejercicios_importar_modulos_clase.md)

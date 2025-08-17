@@ -144,4 +144,56 @@
 
 ### Semana 18 (17 Junio)
 
-- **Martes 17**: UT3: Pruebas unitarias. Unittest y Pytest.
+- **Martes 17**: UT3: Pruebas unitarias. Junit. (2a parte)
+
+### Semana 19 (16 Septiembre)
+
+- **Martes 16**: UT3: Pruebas unitarias. Unittest y Pytest.
+
+### Semana 20 (23 Septiembre)
+
+- **Martes 23**: UT5: Introducción a UML.
+
+### Semana 21 (30 Septiembre)
+
+- **Martes 30**: UT5: Diagramas de clases. (1a parte)
+
+### Semana 22 (7 Octubre)
+
+- **Martes 7**: UT5: Diagramas de clases. (2a parte)
+
+### Semana 23 (14 Octubre)
+
+- **Martes 14**: UT6: Diagramas de casos de uso.
+
+### Semana 24 (21 Octubre)
+
+- **Martes 21**: UT6: Diagramas de secuencia. (1a parte)
+
+### Semana 25 (28 Octubre)
+
+- **Martes 28**: UT6: Diagramas de secuencia. (2a parte)
+
+### Semana 26 (4 Noviembre)
+
+- **Martes 4**: UT6: Diagramas de comunicación.
+
+### Semana 27 (11 Noviembre)
+
+- **Martes 11**: UT6: Diagramas de actividad. (1a parte)
+
+### Semana 28 (18 Noviembre)
+
+- **Martes 18**: UT6: Diagramas de actividad. (2a parte)
+
+### Semana 29 (25 Noviembre)
+
+- **Martes 25**: Reservado para profundizar algún tema.
+
+### Semana 30 (2 Diciembre)
+
+- **Martes 2**: Repaso.
+
+### Semana 31 (9 Diciembre)
+
+- **Martes 9**: Repaso.

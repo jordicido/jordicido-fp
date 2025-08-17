@@ -5,6 +5,8 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 
 ## [Programación didáctica](pd.md)
 
+## [Proyecto 1 - **ENTREGA: 01/09/2025**](proyecto1.md)
+
 ## Contenidos del módulo
 
 ### [UT1: Fundamentos de Python](UT1)
