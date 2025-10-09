@@ -6,11 +6,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Jordi Cidoncha" name="author"/>
-<link href="../introduccion_git_prac4/" rel="prev"/>
-<link href="../proyecto1/" rel="next"/>
+<link href="../proyecto1/" rel="prev"/>
+<link href="../UT1/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
-<title>Programación didáctica EDD Febrero 2025 Prometeo - Jordi Cido - FP</title>
+<title>Proyecto 2: Análisis y diseño con UML - Jordi Cido - FP</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#programacion-didactica-edd-febrero-2025-prometeo">
+<a class="md-skip" href="#proyecto-2-analisis-y-diseno-con-uml">
           Saltar a contenido
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Programación didáctica EDD Febrero 2025 Prometeo
+              Proyecto 2: Análisis y diseño con UML
             
           </span>
 </div>
@@ -176,18 +176,34 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pd/">
+<span class="md-ellipsis">
+    Programación didáctica EDD Febrero 2025 Prometeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto1/">
+<span class="md-ellipsis">
+    Proyecto 1: Profesionaliza tu proyecto Java
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Programación didáctica EDD Febrero 2025 Prometeo
+    Proyecto 2: Análisis y diseño con UML
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Programación didáctica EDD Febrero 2025 Prometeo
+    Proyecto 2: Análisis y diseño con UML
     
   </span>
 </a>
@@ -198,258 +214,138 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#unidades-de-trabajo-ut">
+<a class="md-nav__link" href="#contexto">
 <span class="md-ellipsis">
-      Unidades de Trabajo (UT)
+      Contexto
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#temporalizacion">
+<a class="md-nav__link" href="#objetivo">
 <span class="md-ellipsis">
-      Temporalización
+      Objetivo
     </span>
 </a>
-<nav aria-label="Temporalización" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisitos-funcionales">
+<span class="md-ellipsis">
+      Requisitos funcionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pistas-para-el-diagrama-de-clases">
+<span class="md-ellipsis">
+      Pistas para el diagrama de clases
+    </span>
+</a>
+<nav aria-label="Pistas para el diagrama de clases" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-1-11-febrero">
+<a class="md-nav__link" href="#a-detectar-clases-del-lenguaje-del-dominio">
 <span class="md-ellipsis">
-      Semana 1 (11 Febrero)
+      A. Detectar clases (del lenguaje del dominio)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-2-18-20-febrero">
+<a class="md-nav__link" href="#b-relaciones-tipicas-y-multiplicidades">
 <span class="md-ellipsis">
-      Semana 2 (18-20 Febrero)
+      B. Relaciones típicas y multiplicidades
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-3-25-27-febrero">
+<a class="md-nav__link" href="#c-atributos-minimos-sugeridos">
 <span class="md-ellipsis">
-      Semana 3 (25-27 Febrero)
+      C. Atributos mínimos sugeridos
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-4-4-6-marzo">
+<a class="md-nav__link" href="#d-operaciones-tipicas">
 <span class="md-ellipsis">
-      Semana 4 (4-6 Marzo)
+      D. Operaciones típicas
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-5-11-13-marzo">
+<a class="md-nav__link" href="#e-decisiones-de-diseno-tipicas-explicalas-en-la-justificacion">
 <span class="md-ellipsis">
-      Semana 5 (11-13 Marzo)
+      E. Decisiones de diseño típicas (explícalas en la justificación)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-6-18-20-marzo">
+<a class="md-nav__link" href="#f-buenas-practicas-uml">
 <span class="md-ellipsis">
-      Semana 6 (18-20 Marzo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-7-25-27-marzo">
-<span class="md-ellipsis">
-      Semana 7 (25-27 Marzo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-8-1-3-abril">
-<span class="md-ellipsis">
-      Semana 8 (1-3 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-9-8-abril">
-<span class="md-ellipsis">
-      Semana 9 (8 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-10-22-abril">
-<span class="md-ellipsis">
-      Semana 10 (22 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-11-29-abril">
-<span class="md-ellipsis">
-      Semana 11 (29 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-12-6-mayo">
-<span class="md-ellipsis">
-      Semana 12 (6 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-13-13-mayo">
-<span class="md-ellipsis">
-      Semana 13 (13 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-14-20-mayo">
-<span class="md-ellipsis">
-      Semana 14 (20 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-15-27-mayo">
-<span class="md-ellipsis">
-      Semana 15 (27 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-16-3-junio">
-<span class="md-ellipsis">
-      Semana 16 (3 Junio)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-17-10-junio">
-<span class="md-ellipsis">
-      Semana 17 (10 Junio)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-18-17-junio">
-<span class="md-ellipsis">
-      Semana 18 (17 Junio)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-19-16-septiembre">
-<span class="md-ellipsis">
-      Semana 19 (16 Septiembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-20-23-septiembre">
-<span class="md-ellipsis">
-      Semana 20 (23 Septiembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-21-30-septiembre">
-<span class="md-ellipsis">
-      Semana 21 (30 Septiembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-22-7-octubre">
-<span class="md-ellipsis">
-      Semana 22 (7 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-23-14-octubre">
-<span class="md-ellipsis">
-      Semana 23 (14 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-24-21-octubre">
-<span class="md-ellipsis">
-      Semana 24 (21 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-25-28-octubre">
-<span class="md-ellipsis">
-      Semana 25 (28 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-26-4-noviembre">
-<span class="md-ellipsis">
-      Semana 26 (4 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-27-11-noviembre">
-<span class="md-ellipsis">
-      Semana 27 (11 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-28-18-noviembre">
-<span class="md-ellipsis">
-      Semana 28 (18 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-29-25-noviembre">
-<span class="md-ellipsis">
-      Semana 29 (25 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-30-2-diciembre">
-<span class="md-ellipsis">
-      Semana 30 (2 Diciembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-31-9-diciembre">
-<span class="md-ellipsis">
-      Semana 31 (9 Diciembre)
+      F. Buenas prácticas UML
     </span>
 </a>
 </li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tareas-a-realizar">
+<span class="md-ellipsis">
+      Tareas a realizar
+    </span>
+</a>
+<nav aria-label="Tareas a realizar" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-diagrama-de-casos-de-uso-40">
+<span class="md-ellipsis">
+      1) Diagrama de casos de uso (40%)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-diagrama-de-clases-60">
+<span class="md-ellipsis">
+      2) Diagrama de clases (60%)
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../proyecto1/">
+<a class="md-nav__link" href="#criterios-de-evaluacion-y-ponderacion">
 <span class="md-ellipsis">
-    Proyecto 1: Profesionaliza tu proyecto Java
-    
-  </span>
+      Criterios de evaluación y ponderación
+    </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../proyecto2/">
+<a class="md-nav__link" href="#rubrica-detallada-de-evaluacion">
 <span class="md-ellipsis">
-    Proyecto 2: Análisis y diseño con UML
-    
-  </span>
+      Rúbrica detallada de evaluación
+    </span>
 </a>
+<nav aria-label="Rúbrica detallada de evaluación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#total-ponderado">
+<span class="md-ellipsis">
+      Total ponderado
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recomendaciones-de-entrega">
+<span class="md-ellipsis">
+      Recomendaciones de entrega
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
@@ -845,239 +741,135 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#unidades-de-trabajo-ut">
+<a class="md-nav__link" href="#contexto">
 <span class="md-ellipsis">
-      Unidades de Trabajo (UT)
+      Contexto
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#temporalizacion">
+<a class="md-nav__link" href="#objetivo">
 <span class="md-ellipsis">
-      Temporalización
+      Objetivo
     </span>
 </a>
-<nav aria-label="Temporalización" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisitos-funcionales">
+<span class="md-ellipsis">
+      Requisitos funcionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pistas-para-el-diagrama-de-clases">
+<span class="md-ellipsis">
+      Pistas para el diagrama de clases
+    </span>
+</a>
+<nav aria-label="Pistas para el diagrama de clases" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-1-11-febrero">
+<a class="md-nav__link" href="#a-detectar-clases-del-lenguaje-del-dominio">
 <span class="md-ellipsis">
-      Semana 1 (11 Febrero)
+      A. Detectar clases (del lenguaje del dominio)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-2-18-20-febrero">
+<a class="md-nav__link" href="#b-relaciones-tipicas-y-multiplicidades">
 <span class="md-ellipsis">
-      Semana 2 (18-20 Febrero)
+      B. Relaciones típicas y multiplicidades
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-3-25-27-febrero">
+<a class="md-nav__link" href="#c-atributos-minimos-sugeridos">
 <span class="md-ellipsis">
-      Semana 3 (25-27 Febrero)
+      C. Atributos mínimos sugeridos
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-4-4-6-marzo">
+<a class="md-nav__link" href="#d-operaciones-tipicas">
 <span class="md-ellipsis">
-      Semana 4 (4-6 Marzo)
+      D. Operaciones típicas
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-5-11-13-marzo">
+<a class="md-nav__link" href="#e-decisiones-de-diseno-tipicas-explicalas-en-la-justificacion">
 <span class="md-ellipsis">
-      Semana 5 (11-13 Marzo)
+      E. Decisiones de diseño típicas (explícalas en la justificación)
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#semana-6-18-20-marzo">
+<a class="md-nav__link" href="#f-buenas-practicas-uml">
 <span class="md-ellipsis">
-      Semana 6 (18-20 Marzo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-7-25-27-marzo">
-<span class="md-ellipsis">
-      Semana 7 (25-27 Marzo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-8-1-3-abril">
-<span class="md-ellipsis">
-      Semana 8 (1-3 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-9-8-abril">
-<span class="md-ellipsis">
-      Semana 9 (8 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-10-22-abril">
-<span class="md-ellipsis">
-      Semana 10 (22 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-11-29-abril">
-<span class="md-ellipsis">
-      Semana 11 (29 Abril)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-12-6-mayo">
-<span class="md-ellipsis">
-      Semana 12 (6 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-13-13-mayo">
-<span class="md-ellipsis">
-      Semana 13 (13 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-14-20-mayo">
-<span class="md-ellipsis">
-      Semana 14 (20 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-15-27-mayo">
-<span class="md-ellipsis">
-      Semana 15 (27 Mayo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-16-3-junio">
-<span class="md-ellipsis">
-      Semana 16 (3 Junio)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-17-10-junio">
-<span class="md-ellipsis">
-      Semana 17 (10 Junio)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-18-17-junio">
-<span class="md-ellipsis">
-      Semana 18 (17 Junio)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-19-16-septiembre">
-<span class="md-ellipsis">
-      Semana 19 (16 Septiembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-20-23-septiembre">
-<span class="md-ellipsis">
-      Semana 20 (23 Septiembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-21-30-septiembre">
-<span class="md-ellipsis">
-      Semana 21 (30 Septiembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-22-7-octubre">
-<span class="md-ellipsis">
-      Semana 22 (7 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-23-14-octubre">
-<span class="md-ellipsis">
-      Semana 23 (14 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-24-21-octubre">
-<span class="md-ellipsis">
-      Semana 24 (21 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-25-28-octubre">
-<span class="md-ellipsis">
-      Semana 25 (28 Octubre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-26-4-noviembre">
-<span class="md-ellipsis">
-      Semana 26 (4 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-27-11-noviembre">
-<span class="md-ellipsis">
-      Semana 27 (11 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-28-18-noviembre">
-<span class="md-ellipsis">
-      Semana 28 (18 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-29-25-noviembre">
-<span class="md-ellipsis">
-      Semana 29 (25 Noviembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-30-2-diciembre">
-<span class="md-ellipsis">
-      Semana 30 (2 Diciembre)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#semana-31-9-diciembre">
-<span class="md-ellipsis">
-      Semana 31 (9 Diciembre)
+      F. Buenas prácticas UML
     </span>
 </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tareas-a-realizar">
+<span class="md-ellipsis">
+      Tareas a realizar
+    </span>
+</a>
+<nav aria-label="Tareas a realizar" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-diagrama-de-casos-de-uso-40">
+<span class="md-ellipsis">
+      1) Diagrama de casos de uso (40%)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-diagrama-de-clases-60">
+<span class="md-ellipsis">
+      2) Diagrama de clases (60%)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criterios-de-evaluacion-y-ponderacion">
+<span class="md-ellipsis">
+      Criterios de evaluación y ponderación
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rubrica-detallada-de-evaluacion">
+<span class="md-ellipsis">
+      Rúbrica detallada de evaluación
+    </span>
+</a>
+<nav aria-label="Rúbrica detallada de evaluación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#total-ponderado">
+<span class="md-ellipsis">
+      Total ponderado
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recomendaciones-de-entrega">
+<span class="md-ellipsis">
+      Recomendaciones de entrega
+    </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -1086,216 +878,222 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="programacion-didactica-edd-febrero-2025-prometeo">Programación didáctica EDD Febrero 2025 Prometeo<a class="headerlink" href="#programacion-didactica-edd-febrero-2025-prometeo" title="Permanent link">¶</a></h1>
-<h2 id="unidades-de-trabajo-ut">Unidades de Trabajo (UT)<a class="headerlink" href="#unidades-de-trabajo-ut" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>UT1</strong>: Desarrollo de software.</p>
+<h1 id="proyecto-2-analisis-y-diseno-con-uml">Proyecto 2: Análisis y diseño con UML<a class="headerlink" href="#proyecto-2-analisis-y-diseno-con-uml" title="Permanent link">¶</a></h1>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">¶</a></h2>
+<p>Imagina que una empresa de software te ha encargado el <strong>análisis y diseño preliminar de un sistema de gestión para una biblioteca municipal</strong>.<br/>
+El sistema permitirá gestionar el préstamo de libros, el control de usuarios (socios) y la supervisión del catálogo por parte del personal bibliotecario.</p>
+<p>Este proyecto se centra en las fases iniciales del <strong>análisis y diseño orientado a objetos</strong>, utilizando <strong>UML</strong> para representar los <strong>casos de uso</strong> y las <strong>clases</strong> del sistema.</p>
+<hr/>
+<h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">¶</a></h2>
+<p>Aplicar los conocimientos de <strong>análisis de requisitos y modelado UML</strong> para diseñar los diagramas fundamentales de un sistema de información, garantizando coherencia, corrección formal y claridad estructural.</p>
+<hr/>
+<h2 id="requisitos-funcionales">Requisitos funcionales<a class="headerlink" href="#requisitos-funcionales" title="Permanent link">¶</a></h2>
+<p>El sistema de gestión de biblioteca deberá permitir:</p>
 <ol>
-<li>Concepto de programa informático.</li>
-<li>Código fuente, código objeto y código ejecutable; tecnologías de virtualización.</li>
-<li>Tipos de lenguajes de programación. Paradigmas.</li>
-<li>Características de los lenguajes más difundidos.</li>
-<li>Fases del desarrollo de una aplicación: análisis, diseño, codificación, pruebas, documentación, explotación y mantenimiento, entre otras.</li>
-<li>Proceso de obtención de código ejecutable a partir del código fuente; herramientas implicadas.</li>
-<li>Metodologías ágiles. Técnicas. Características.</li>
-</ol>
+<li><strong>Gestión de usuarios (socios y personal bibliotecario)</strong></li>
+<li>Alta, baja y modificación de socios.</li>
+<li>Consulta de datos personales e historial de préstamos.</li>
+<li>
+<p>Roles: socio, bibliotecario y administrador.</p>
 </li>
 <li>
-<p><strong>UT2</strong>: Instalación y uso de entornos de desarrollo.</p>
-<ol>
-<li>Funciones de un entorno de desarrollo.</li>
-<li>Instalación de un entorno de desarrollo.</li>
-<li>Uso básico de un entorno de desarrollo.</li>
-<li>Personalización del entorno de desarrollo: temas, estilos de codificación,
-  módulos y extensiones, entre otras.</li>
-<li>Edición de programas.</li>
-<li>Generación de ejecutables en distintos entornos.</li>
-<li>Herramientas y automatización.</li>
-</ol>
+<p><strong>Gestión del catálogo</strong></p>
+</li>
+<li>Registro, modificación y eliminación de libros.</li>
+<li>Búsqueda por título, autor, género o ISBN.</li>
+<li>
+<p>Control del stock (disponible / prestado / reservado).</p>
 </li>
 <li>
-<p><strong>UT3</strong>: Diseño y realización de pruebas.</p>
-<ol>
-<li>Planificación de Pruebas.</li>
-<li>Tipos de pruebas: Funcionales, estructurales y regresión, entre otras.</li>
-<li>Procedimientos y casos de prueba.</li>
-<li>Pruebas de Código: Cubrimiento, valores límite y clases de equivalencia,
-  entre otras.</li>
-<li>Pruebas unitarias; herramientas de automatización.</li>
-<li>Documentación de las incidencias.</li>
-<li>Dobles de prueba. Tipos. Características.</li>
-</ol>
+<p><strong>Gestión de préstamos</strong></p>
+</li>
+<li>Registro de préstamos y devoluciones.</li>
+<li>Control de fechas de vencimiento y penalizaciones por retraso.</li>
+<li>
+<p>Renovación y reserva de ejemplares.</p>
 </li>
 <li>
-<p><strong>UT4</strong>: Optimización y documentación.</p>
-<ol>
-<li>Refactorización. Concepto. Limitaciones. Patrones de refactorización más
-  usuales. Refactorización y pruebas. Herramientas de ayuda a la
-  refactorización.</li>
-<li>Analizadores de código.</li>
-<li>Control de versiones. Estructura de las herramientas de control de
-  versiones.</li>
-<li>Repositorios remotos.</li>
-<li>Documentación. Uso de comentarios. Alternativas.</li>
-<li>Integración continua. Herramientas.</li>
-</ol>
+<p><strong>Consultas e informes</strong></p>
+</li>
+<li>Historial de préstamos por usuario o por libro.</li>
+<li>Listado de ejemplares más prestados.</li>
+<li>
+<p>Registro de incidencias o pérdidas.</p>
 </li>
 <li>
-<p><strong>UT5</strong>: Elaboración de diagramas de clases.</p>
-<ol>
-<li>Clases. Atributos, métodos y visibilidad.</li>
-<li>Objetos. Instanciación.</li>
-<li>Relaciones. Asociación, navegabilidad y multiplicidad. Herencia,
-  composición, agregación. Realización y dependencia.</li>
-<li>Notación de los diagramas de clases.</li>
-<li>Herramientas.</li>
-<li>Generación automática de código. Ingeniería inversa.</li>
-</ol>
+<p><strong>Acceso diferenciado por rol</strong></p>
 </li>
-<li>
-<p><strong>UT6</strong>: Elaboración de diagramas de comportamiento.</p>
-<ol>
-<li>Tipos. Campo de aplicación.</li>
-<li>Diagrama de casos de uso. Actores, escenario, relación de comunicación.</li>
-<li>Diagrama de secuencia. Línea de vida de un objeto, activación, envío de
-  mensajes.</li>
-<li>Diagrama de comunicación. Objetos, mensajes.</li>
-<li>Diagrama de actividad. Diagrama de estados.</li>
+<li>El socio consulta catálogo e historial propio.</li>
+<li>El bibliotecario gestiona usuarios, préstamos y libros.</li>
+<li>El administrador supervisa y genera informes.</li>
 </ol>
-</li>
-</ul>
-<h2 id="temporalizacion">Temporalización<a class="headerlink" href="#temporalizacion" title="Permanent link">¶</a></h2>
-<h3 id="semana-1-11-febrero">Semana 1 (11 Febrero)<a class="headerlink" href="#semana-1-11-febrero" title="Permanent link">¶</a></h3>
+<hr/>
+<h2 id="pistas-para-el-diagrama-de-clases">Pistas para el <strong>diagrama de clases</strong><a class="headerlink" href="#pistas-para-el-diagrama-de-clases" title="Permanent link">¶</a></h2>
+<h3 id="a-detectar-clases-del-lenguaje-del-dominio">A. Detectar clases (del lenguaje del dominio)<a class="headerlink" href="#a-detectar-clases-del-lenguaje-del-dominio" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 11</strong>: Presentación de la asignatura y el profesor.</li>
+<li>Sustantivos candidatos en los requisitos: <strong>Libro</strong>, <strong>Ejemplar</strong>, <strong>Autor</strong>, <strong>Socio</strong>, <strong>Bibliotecario</strong>, <strong>Administrador</strong>, <strong>Préstamo</strong>, <strong>Reserva</strong>, <strong>Penalización</strong>, <strong>Catálogo</strong>, <strong>Incidencia</strong>.</li>
+<li>Distingue entre <strong>concepto “Libro”</strong> (obra) y <strong>“Ejemplar”</strong> (copia física con código/estado).</li>
 </ul>
-<h3 id="semana-2-18-20-febrero">Semana 2 (18-20 Febrero)<a class="headerlink" href="#semana-2-18-20-febrero" title="Permanent link">¶</a></h3>
+<h3 id="b-relaciones-tipicas-y-multiplicidades">B. Relaciones típicas y multiplicidades<a class="headerlink" href="#b-relaciones-tipicas-y-multiplicidades" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 18</strong>: UT2: ¿Qué es un IDE?</li>
-<li><strong>Jueves 20</strong>: Tutoria: Dudas sobre la instalación y configuración del IDE.</li>
+<li><strong>Libro 1..*—contiene—&gt; Ejemplar</strong> (composición si el ejemplar no tiene sentido sin el libro).  </li>
+<li><strong>Libro <em>&lt;—&gt;</em> Autor</strong> (muchos a muchos; considera clase asociativa <strong>Autoría</strong> si necesitas rol/orden).  </li>
+<li><strong>Socio 1..*—tiene—&gt; Préstamo</strong>; <strong>Préstamo 1—1 Ejemplar</strong>; <strong>Préstamo 1—1 Socio</strong>.  </li>
+<li><strong>Socio 0..*—realiza—&gt; Reserva</strong>; <strong>Reserva 1—1 Ejemplar</strong>.  </li>
+<li><strong>Penalización 0..*—afecta—&gt; Socio</strong> (opcional, depende del alcance).  </li>
+<li><strong>Bibliotecario/Admin</strong> podrían <strong>heredar</strong> de <strong>Usuario</strong> (generalización con atributo <code>rol</code> o jerarquía).</li>
 </ul>
-<h3 id="semana-3-25-27-febrero">Semana 3 (25-27 Febrero)<a class="headerlink" href="#semana-3-25-27-febrero" title="Permanent link">¶</a></h3>
+<h3 id="c-atributos-minimos-sugeridos">C. Atributos mínimos sugeridos<a class="headerlink" href="#c-atributos-minimos-sugeridos" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 25</strong>: UT1: Lenguajes de programación.</li>
-<li><strong>Jueves 27</strong>: Tutoria: Dudas sobre tipos de lenguajes de programación.</li>
+<li><strong>Libro</strong>: <code>isbn</code>, <code>titulo</code>, <code>anio</code>, <code>genero</code>.  </li>
+<li><strong>Ejemplar</strong>: <code>codigoInventario</code>, <code>estado</code> (disponible/prestado/reservado), <code>ubicacion</code>.  </li>
+<li><strong>Socio</strong>: <code>idSocio</code>, <code>nombre</code>, <code>email</code>, <code>fechaAlta</code>.  </li>
+<li><strong>Préstamo</strong>: <code>idPrestamo</code>, <code>fechaInicio</code>, <code>fechaVencimiento</code>, <code>fechaDevolucion</code>.  </li>
+<li><strong>Reserva</strong>: <code>idReserva</code>, <code>fechaReserva</code>, <code>estado</code> (activa/caducada).  </li>
+<li><strong>Usuario</strong> (si lo usas): <code>id</code>, <code>nombre</code>, <code>email</code>, <code>passwordHash</code>.</li>
 </ul>
-<h3 id="semana-4-4-6-marzo">Semana 4 (4-6 Marzo)<a class="headerlink" href="#semana-4-4-6-marzo" title="Permanent link">¶</a></h3>
+<h3 id="d-operaciones-tipicas">D. Operaciones típicas<a class="headerlink" href="#d-operaciones-tipicas" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 4</strong>: UT4: Introducción a Git.</li>
-<li><strong>Jueves 6</strong>: Tutoria: Dudas sobre Git y su instalación.</li>
+<li><strong>Catálogo / Repositorio</strong>: <code>buscarPorTitulo()</code>, <code>buscarPorAutor()</code>, <code>buscarPorISBN()</code>.  </li>
+<li><strong>Préstamo</strong>: <code>registrar()</code>, <code>devolver()</code>, <code>estaVencido()</code>.  </li>
+<li><strong>Reserva</strong>: <code>crear()</code>, <code>cancelar()</code>, <code>convertirEnPrestamo()</code>.  </li>
+<li><strong>Socio</strong>: <code>calcularPenalizaciones()</code>, <code>puedePedirPrestamo()</code>.</li>
 </ul>
-<h3 id="semana-5-11-13-marzo">Semana 5 (11-13 Marzo)<a class="headerlink" href="#semana-5-11-13-marzo" title="Permanent link">¶</a></h3>
+<h3 id="e-decisiones-de-diseno-tipicas-explicalas-en-la-justificacion">E. Decisiones de diseño típicas (explícalas en la justificación)<a class="headerlink" href="#e-decisiones-de-diseno-tipicas-explicalas-en-la-justificacion" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 11</strong>: UT4: Git remote y git branch.</li>
-<li><strong>Jueves 13</strong>: Tutoria: Dudas sobre Git remote y git branch.</li>
+<li><strong>Generalización</strong>: <code>Usuario</code> ← <code>Socio</code> / <code>Bibliotecario</code> / <code>Administrador</code>, o un único <code>Usuario</code> con <code>rol</code>.  </li>
+<li><strong>Composición vs agregación</strong>: <code>Libro</code> ♦► <code>Ejemplar</code> suele ser <strong>composición</strong> (un ejemplar no existe sin su libro).  </li>
+<li><strong>Cardinalidades</strong>: sé explícito (<code>0..1</code>, <code>1</code>, <code>1..*</code>, <code>*</code>), evita dejar relaciones sin multiplicidad.</li>
 </ul>
-<h3 id="semana-6-18-20-marzo">Semana 6 (18-20 Marzo)<a class="headerlink" href="#semana-6-18-20-marzo" title="Permanent link">¶</a></h3>
+<h3 id="f-buenas-practicas-uml">F. Buenas prácticas UML<a class="headerlink" href="#f-buenas-practicas-uml" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 18</strong>: UT1: Ingeniería del Software, Fases y Ciclos de Vida.</li>
-<li><strong>Jueves 20</strong>: Tutoria: Dinámica sobre ingeniería del Software, Fases y Ciclos de Vida.</li>
+<li>Nombres en <strong>PascalCase</strong> para clases y <strong>camelCase</strong> para atributos/métodos.  </li>
+<li>Marca visibilidad: <code>+</code> público, <code>-</code> privado, <code>#</code> protegido.  </li>
+<li>Mantén <strong>consistencia</strong> entre casos de uso y clases: cada caso de uso debe estar soportado por colaboraciones plausibles de clases.</li>
 </ul>
-<h3 id="semana-7-25-27-marzo">Semana 7 (25-27 Marzo)<a class="headerlink" href="#semana-7-25-27-marzo" title="Permanent link">¶</a></h3>
+<hr/>
+<h2 id="tareas-a-realizar">Tareas a realizar<a class="headerlink" href="#tareas-a-realizar" title="Permanent link">¶</a></h2>
+<h3 id="1-diagrama-de-casos-de-uso-40">1) Diagrama de casos de uso (<strong>40%</strong>)<a class="headerlink" href="#1-diagrama-de-casos-de-uso-40" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 25</strong>: UT1: Metodologías ágiles vs tradicionales. Conociendo SCRUM.</li>
-<li><strong>Jueves 27</strong>: Tutoria: Dinámica sobre SCRUM y sus roles.</li>
+<li>Identifica los actores principales del sistema.  </li>
+<li>Define los casos de uso y sus relaciones (<strong>include</strong>, <strong>extend</strong>, <strong>generalización</strong>).  </li>
+<li>Representa el diagrama con <strong>notación UML correcta</strong>.  </li>
+<li>Acompaña el diagrama con una <strong>breve descripción</strong> de los casos de uso principales.</li>
 </ul>
-<h3 id="semana-8-1-3-abril">Semana 8 (1-3 Abril)<a class="headerlink" href="#semana-8-1-3-abril" title="Permanent link">¶</a></h3>
+<h3 id="2-diagrama-de-clases-60">2) Diagrama de clases (<strong>60%</strong>)<a class="headerlink" href="#2-diagrama-de-clases-60" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 1</strong>: UT4: Git merge y resolución de conflictos.</li>
-<li><strong>Jueves 3</strong>: Tutoria: Dudas sobre Git merge y resolución de conflictos.</li>
+<li>Identifica las clases relevantes a partir del análisis anterior.  </li>
+<li>Define <strong>atributos, métodos y relaciones</strong> (asociación, agregación, composición, herencia).  </li>
+<li>Representa el diagrama con <strong>notación UML</strong> (visibilidad, multiplicidades, nombres significativos).  </li>
+<li>Añade una <strong>justificación del diseño</strong> (decisiones clave y trazabilidad con casos de uso).</li>
 </ul>
-<h3 id="semana-9-8-abril">Semana 9 (8 Abril)<a class="headerlink" href="#semana-9-8-abril" title="Permanent link">¶</a></h3>
+<hr/>
+<h2 id="criterios-de-evaluacion-y-ponderacion">Criterios de evaluación y ponderación<a class="headerlink" href="#criterios-de-evaluacion-y-ponderacion" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Aspecto evaluado</strong></th>
+<th><strong>Peso</strong></th>
+<th><strong>Indicadores de logro</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Diagrama de casos de uso</strong></td>
+<td><strong>40%</strong></td>
+<td>- Identificación correcta de actores y casos de uso.<br/>- Uso adecuado de relaciones (include, extend, generalización).<br/>- Claridad y limpieza visual del diagrama.<br/>- Corrección del lenguaje UML.<br/>- Coherencia con el enunciado.</td>
+</tr>
+<tr>
+<td><strong>2. Diagrama de clases</strong></td>
+<td><strong>60%</strong></td>
+<td>- Identificación adecuada de clases y relaciones.<br/>- Corrección en el uso de asociaciones, agregaciones y composiciones.<br/>- Atributos y métodos coherentes con la funcionalidad.<br/>- Aplicación correcta del lenguaje UML.<br/>- Presentación clara y estructurada del modelo.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="rubrica-detallada-de-evaluacion">Rúbrica detallada de evaluación<a class="headerlink" href="#rubrica-detallada-de-evaluacion" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Peso</strong></th>
+<th><strong>Básico (1)</strong></th>
+<th><strong>Medio (2)</strong></th>
+<th><strong>Avanzado (3)</strong></th>
+<th><strong>Experto (4)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Identificación de actores y casos de uso</strong></td>
+<td>10%</td>
+<td>Identifica pocos actores o casos; hay errores conceptuales.</td>
+<td>Identifica la mayoría, aunque faltan algunos relevantes.</td>
+<td>Identifica correctamente casi todos los actores y casos principales.</td>
+<td>Identifica todos los actores y casos relevantes; refleja bien las interacciones del sistema.</td>
+</tr>
+<tr>
+<td><strong>2. Uso de relaciones (include, extend, generalización)</strong></td>
+<td>10%</td>
+<td>No usa relaciones o las aplica incorrectamente.</td>
+<td>Usa algunas relaciones básicas, pero con errores o sin justificación.</td>
+<td>Usa relaciones adecuadas y mayormente correctas.</td>
+<td>Usa correctamente las relaciones UML con justificación lógica y coherente.</td>
+</tr>
+<tr>
+<td><strong>3. Corrección formal y claridad del diagrama de casos de uso</strong></td>
+<td>20%</td>
+<td>El diagrama es confuso o incumple las normas UML.</td>
+<td>Presenta errores menores en la notación o disposición.</td>
+<td>Cumple la notación UML y es comprensible.</td>
+<td>Cumple perfectamente la notación UML, es claro, limpio y profesional.</td>
+</tr>
+<tr>
+<td><strong>4. Identificación de clases y relaciones</strong></td>
+<td>20%</td>
+<td>Faltan clases clave o las relaciones son incorrectas.</td>
+<td>Incluye las clases principales pero hay algunas omisiones o errores.</td>
+<td>Clases y relaciones adecuadas y coherentes con el sistema.</td>
+<td>Clases y relaciones perfectamente justificadas y completas, coherentes con los casos de uso.</td>
+</tr>
+<tr>
+<td><strong>5. Uso correcto de asociaciones, agregaciones, composiciones y herencia</strong></td>
+<td>15%</td>
+<td>No aplica o confunde los tipos de relaciones.</td>
+<td>Aplica algunas correctamente, pero con errores.</td>
+<td>Usa adecuadamente la mayoría de las relaciones UML.</td>
+<td>Usa todos los tipos de relaciones con precisión y justificación conceptual.</td>
+</tr>
+<tr>
+<td><strong>6. Definición de atributos y métodos</strong></td>
+<td>10%</td>
+<td>Atributos o métodos incorrectos o irrelevantes.</td>
+<td>Incluye algunos adecuados, pero faltan o sobran varios.</td>
+<td>La mayoría son apropiados y coherentes con el sistema.</td>
+<td>Todos los atributos y métodos son precisos, coherentes y bien seleccionados.</td>
+</tr>
+<tr>
+<td><strong>7. Corrección formal y legibilidad del diagrama de clases</strong></td>
+<td>15%</td>
+<td>Desorganizado, difícil de leer o con errores de notación.</td>
+<td>Presenta algunos errores formales o visuales.</td>
+<td>Claramente estructurado y casi sin errores.</td>
+<td>Estructura limpia, notación UML impecable, disposición visual profesional.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="total-ponderado">Total ponderado<a class="headerlink" href="#total-ponderado" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Martes 8</strong>: UT4: Colaborando en repositorios Github.</li>
+<li><strong>Diagrama de casos de uso:</strong> 40% (criterios 1–3)  </li>
+<li><strong>Diagrama de clases:</strong> 60% (criterios 4–7)</li>
 </ul>
-<h3 id="semana-10-22-abril">Semana 10 (22 Abril)<a class="headerlink" href="#semana-10-22-abril" title="Permanent link">¶</a></h3>
+<hr/>
+<h2 id="recomendaciones-de-entrega">Recomendaciones de entrega<a class="headerlink" href="#recomendaciones-de-entrega" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>Martes 22</strong>: UT3: Debugging.</li>
-</ul>
-<h3 id="semana-11-29-abril">Semana 11 (29 Abril)<a class="headerlink" href="#semana-11-29-abril" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 29</strong>: UT3: Planificación y tipos de pruebas.</li>
-</ul>
-<h3 id="semana-12-6-mayo">Semana 12 (6 Mayo)<a class="headerlink" href="#semana-12-6-mayo" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 6</strong>: UT4: Git rebase y squash.</li>
-</ul>
-<h3 id="semana-13-13-mayo">Semana 13 (13 Mayo)<a class="headerlink" href="#semana-13-13-mayo" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 13</strong>: UT4: Git reset y revert. Git stash.</li>
-</ul>
-<h3 id="semana-14-20-mayo">Semana 14 (20 Mayo)<a class="headerlink" href="#semana-14-20-mayo" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 20</strong>: UT2: Gestores de dependencias.</li>
-</ul>
-<h3 id="semana-15-27-mayo">Semana 15 (27 Mayo)<a class="headerlink" href="#semana-15-27-mayo" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 27</strong>: UT4: Documentación de software. Markdown.</li>
-</ul>
-<h3 id="semana-16-3-junio">Semana 16 (3 Junio)<a class="headerlink" href="#semana-16-3-junio" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 3</strong>: UT4: Documentación de software. JavaDoc.</li>
-</ul>
-<h3 id="semana-17-10-junio">Semana 17 (10 Junio)<a class="headerlink" href="#semana-17-10-junio" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 10</strong>: UT3: Pruebas unitarias. Junit.</li>
-</ul>
-<h3 id="semana-18-17-junio">Semana 18 (17 Junio)<a class="headerlink" href="#semana-18-17-junio" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 17</strong>: UT3: Pruebas unitarias. Junit. (2a parte)</li>
-</ul>
-<h3 id="semana-19-16-septiembre">Semana 19 (16 Septiembre)<a class="headerlink" href="#semana-19-16-septiembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 16</strong>: UT5: Introducción a UML.</li>
-</ul>
-<h3 id="semana-20-23-septiembre">Semana 20 (23 Septiembre)<a class="headerlink" href="#semana-20-23-septiembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 23</strong>: UT5: Diagramas de clases. (1a parte)</li>
-</ul>
-<h3 id="semana-21-30-septiembre">Semana 21 (30 Septiembre)<a class="headerlink" href="#semana-21-30-septiembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 30</strong>: UT5: Diagramas de clases. (2a parte)</li>
-</ul>
-<h3 id="semana-22-7-octubre">Semana 22 (7 Octubre)<a class="headerlink" href="#semana-22-7-octubre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 7</strong>: UT6: Diagramas de casos de uso.</li>
-</ul>
-<h3 id="semana-23-14-octubre">Semana 23 (14 Octubre)<a class="headerlink" href="#semana-23-14-octubre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 14</strong>: UT6: Diagramas de secuencia. (1a parte)</li>
-</ul>
-<h3 id="semana-24-21-octubre">Semana 24 (21 Octubre)<a class="headerlink" href="#semana-24-21-octubre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 21</strong>: UT6: Diagramas de secuencia. (2a parte)</li>
-</ul>
-<h3 id="semana-25-28-octubre">Semana 25 (28 Octubre)<a class="headerlink" href="#semana-25-28-octubre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 28</strong>: UT6: Diagramas de comunicación.</li>
-</ul>
-<h3 id="semana-26-4-noviembre">Semana 26 (4 Noviembre)<a class="headerlink" href="#semana-26-4-noviembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 4</strong>: UT6: Diagramas de actividad. (1a parte)</li>
-</ul>
-<h3 id="semana-27-11-noviembre">Semana 27 (11 Noviembre)<a class="headerlink" href="#semana-27-11-noviembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 11</strong>: UT6: Diagramas de actividad. (2a parte)</li>
-</ul>
-<h3 id="semana-28-18-noviembre">Semana 28 (18 Noviembre)<a class="headerlink" href="#semana-28-18-noviembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 18</strong>: Reservado para profundizar algún tema.</li>
-</ul>
-<h3 id="semana-29-25-noviembre">Semana 29 (25 Noviembre)<a class="headerlink" href="#semana-29-25-noviembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 25</strong>: Reservado para profundizar algún tema.</li>
-</ul>
-<h3 id="semana-30-2-diciembre">Semana 30 (2 Diciembre)<a class="headerlink" href="#semana-30-2-diciembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 2</strong>: Repaso.</li>
-</ul>
-<h3 id="semana-31-9-diciembre">Semana 31 (9 Diciembre)<a class="headerlink" href="#semana-31-9-diciembre" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Martes 9</strong>: Repaso.</li>
+<li>Herramientas sugeridas: <strong>StarUML, Visual Paradigm, Draw.io, PlantUML</strong>.  </li>
+<li>Entrega en <strong>PDF</strong> con rotulado, multiplicidades y leyenda si procede.  </li>
+<li>Incluye una <strong>página de justificación</strong> (½–1 página) explicando decisiones clave del diseño.</li>
 </ul>
 </article>
 </div>
