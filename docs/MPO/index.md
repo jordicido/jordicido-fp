@@ -33,3 +33,9 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 - Definición y uso de funciones
 - Parámetros y argumentos
 - Alcance de variables
+
+### [UT5: Manejo de archivos y excepciones](UT5)
+
+- Lectura y escritura de archivos
+- Tratamiento de diferentes formatos de archivo
+- Gestión de errores con excepciones

@@ -188,7 +188,7 @@
 - **Jueves 19 Junio**: UT4: Funciones y módulos. Módulos y paquetes.
 
 ### Semana 19
-- **Jueves 18 Septiembre**: UT4: Refuerzo de funciones. Ejercicios prácticos y depuración.
+- **Jueves 18 Septiembre**: UT1, UT2, UT3 Y UT4: Hackathon, repaso de conceptos.
 
 ### Semana 20
 - **Jueves 25 Septiembre**: UT5: Manejo de archivos I. Lectura de archivos de texto (logs, configuraciones).
