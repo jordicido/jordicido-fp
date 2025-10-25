@@ -7,6 +7,8 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 
 ## [Proyecto 1 - **ENTREGA: 01/09/2025**](proyecto1.md)
 
+## [Proyecto 2 - **ENTREGA: 16/11/2025**](proyecto2.md)
+
 ## Contenidos del módulo
 
 ### [UT1: Fundamentos de Python](UT1)
@@ -39,3 +41,13 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 - Lectura y escritura de archivos
 - Tratamiento de diferentes formatos de archivo
 - Gestión de errores con excepciones
+
+### [UT6: Automatización de Tareas del Sistema](UT6)
+
+- Uso de bibliotecas estándar para automatización
+- Ejemplos prácticos de automatización
+
+### [UT7: Conectividad y Datos](UT7)
+
+- Módulos para conectividad HTTP
+- Manejo de datos en formatos JSON y CSV

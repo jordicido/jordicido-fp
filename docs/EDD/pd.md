@@ -168,27 +168,27 @@
 
 ### Semana 24 (21 Octubre)
 
-- **Martes 21**: UT6: Diagramas de secuencia. (2a parte)
+- **Martes 21**: UT6: Diagramas de arquitectura.
 
 ### Semana 25 (28 Octubre)
 
-- **Martes 28**: UT6: Diagramas de comunicación.
+- **Martes 28**: Caso práctico: Elaboración de un proyecto UML completo.
 
 ### Semana 26 (4 Noviembre)
 
-- **Martes 4**: UT6: Diagramas de actividad. (1a parte)
+- **Martes 4**: UT3: TDD y ciclo de mejora continua
 
 ### Semana 27 (11 Noviembre)
 
-- **Martes 11**: UT6: Diagramas de actividad. (2a parte)
+- **Martes 11**: UT3: Refactorización con el IDE
 
 ### Semana 28 (18 Noviembre)
 
-- **Martes 18**: Reservado para profundizar algún tema.
+- **Martes 18**: UT4: Patrones de diseño (Strategy, Factory)
 
 ### Semana 29 (25 Noviembre)
 
-- **Martes 25**: Reservado para profundizar algún tema.
+- **Martes 25**: UT4: Integración UML ↔ código
 
 ### Semana 30 (2 Diciembre)
 

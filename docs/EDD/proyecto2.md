@@ -17,26 +17,31 @@ Aplicar los conocimientos de **análisis de requisitos y modelado UML** para dis
 El sistema de gestión de biblioteca deberá permitir:
 
 1. **Gestión de usuarios (socios y personal bibliotecario)**
+
    - Alta, baja y modificación de socios.
    - Consulta de datos personales e historial de préstamos.
    - Roles: socio, bibliotecario y administrador.
 
 2. **Gestión del catálogo**
+
    - Registro, modificación y eliminación de libros.
    - Búsqueda por título, autor, género o ISBN.
    - Control del stock (disponible / prestado / reservado).
 
 3. **Gestión de préstamos**
+
    - Registro de préstamos y devoluciones.
    - Control de fechas de vencimiento y penalizaciones por retraso.
    - Renovación y reserva de ejemplares.
 
 4. **Consultas e informes**
+
    - Historial de préstamos por usuario o por libro.
    - Listado de ejemplares más prestados.
    - Registro de incidencias o pérdidas.
 
 5. **Acceso diferenciado por rol**
+
    - El socio consulta catálogo e historial propio.
    - El bibliotecario gestiona usuarios, préstamos y libros.
    - El administrador supervisa y genera informes.
@@ -71,7 +76,7 @@ El sistema de gestión de biblioteca deberá permitir:
 - **Reserva**: `crear()`, `cancelar()`, `convertirEnPrestamo()`.  
 - **Socio**: `calcularPenalizaciones()`, `puedePedirPrestamo()`.
 
-### E. Decisiones de diseño típicas (explícalas en la justificación)
+### E. Decisiones de diseño típicas 
 - **Generalización**: `Usuario` ← `Socio` / `Bibliotecario` / `Administrador`, o un único `Usuario` con `rol`.  
 - **Composición vs agregación**: `Libro` ♦► `Ejemplar` suele ser **composición** (un ejemplar no existe sin su libro).  
 - **Cardinalidades**: sé explícito (`0..1`, `1`, `1..*`, `*`), evita dejar relaciones sin multiplicidad.
