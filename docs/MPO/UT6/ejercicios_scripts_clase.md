@@ -36,4 +36,18 @@ Escribe un script que reciba como argumento el nombre de un directorio y cuente 
 
 Escribe un script que reciba como argumento el nombre de un directorio y elimine todos los archivos vacíos que contiene.
 
+## Ejercicio 9 - Eliminar archivos con una extensión específica
 
+Escribe un script que reciba como argumentos el nombre de un directorio y una extensión de archivo (por ejemplo, `.txt`), y elimine todos los archivos con esa extensión en el directorio.
+
+## Ejercicio 10 - Copiar archivos de un directorio a otro
+
+Escribe un script que reciba como argumentos el nombre de un directorio de origen y un directorio de destino, y copie todos los archivos del directorio de origen al directorio de destino.
+
+## Ejercicio 11 - Borrar los archivos más antiguos que una fecha dada
+
+Escribe un script que reciba como argumentos el nombre de un directorio y una cantidad de días, y elimine todos los archivos en ese directorio que no hayan sido modificados en los últimos N días.
+
+## Ejercicio 12 - Crear un script que realize una copia de seguridad cada cierto tiempo
+
+Escribe un script que utilice el módulo `datetime` para programar una copia de seguridad de un directorio específico cada cierto intervalo de tiempo (por ejemplo, cada día a las 2 AM). El script debe copiar todos los archivos del directorio original a un directorio de respaldo, añadiendo la fecha y hora al nombre del directorio de respaldo.

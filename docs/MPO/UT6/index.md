@@ -116,4 +116,59 @@ for root, dirs, files in os.walk(directorio):
             print(f'Archivo eliminado: {ruta_archivo}')
 ```
 
+## El módulo datetime
+
+El módulo `datetime` nos permite trabajar con fechas y horas en Python. Podemos utilizarlo para programar tareas basadas en tiempo, como ejecutar scripts en momentos específicos o calcular diferencias entre fechas.
+
+### Importar el módulo datetime
+
+Para utilizar el módulo `datetime`, primero debemos importarlo en nuestro script de Python:
+
+```python
+import datetime
+```
+
+### Funciones comunes del módulo datetime
+
+Algunas funciones comunes del módulo `datetime` incluyen:
+
+- `datetime.datetime.now()`: Obtiene la fecha y hora actuales.
+- `datetime.timedelta()`: Representa una duración, la diferencia entre dos fechas u horas.
+- `datetime.datetime.strptime()`: Convierte una cadena en un objeto datetime según un formato especificado.
+
+```python
+# Ejemplo de uso del módulo datetime
+import datetime
+
+# Obtener la fecha y hora actuales
+ahora = datetime.datetime.now()
+print(f'Fecha y hora actuales: {ahora}')
+# Calcular una fecha futura
+futuro = ahora + datetime.timedelta(days=7)
+print(f'Fecha dentro de 7 días: {futuro}')
+```
+
+## Programación de Tareas
+
+Para programar tareas automáticas en Python, podemos utilizar bibliotecas como `schedule` o `APScheduler`. Estas bibliotecas permiten definir tareas que se ejecutan en intervalos regulares o en momentos específicos.
+
+### Ejemplo con la biblioteca schedule
+
+```python
+import schedule
+import time
+
+def tarea():
+    print("Ejecutando tarea programada...")
+
+# Programar la tarea para que se ejecute cada 10 segundos
+schedule.every(10).seconds.do(tarea)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+```
+
+
+
 ## Ejercicios de clase: [Scripts de Automatización](ejercicios_scripts_clase.md)
