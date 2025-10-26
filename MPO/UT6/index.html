@@ -677,6 +677,49 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#el-modulo-datetime">
+<span class="md-ellipsis">
+      El módulo datetime
+    </span>
+</a>
+<nav aria-label="El módulo datetime" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-datetime">
+<span class="md-ellipsis">
+      Importar el módulo datetime
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-comunes-del-modulo-datetime">
+<span class="md-ellipsis">
+      Funciones comunes del módulo datetime
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programacion-de-tareas">
+<span class="md-ellipsis">
+      Programación de Tareas
+    </span>
+</a>
+<nav aria-label="Programación de Tareas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-con-la-biblioteca-schedule">
+<span class="md-ellipsis">
+      Ejemplo con la biblioteca schedule
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-scripts-de-automatizacion">
 <span class="md-ellipsis">
       Ejercicios de clase: Scripts de Automatización
@@ -839,6 +882,49 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#el-modulo-datetime">
+<span class="md-ellipsis">
+      El módulo datetime
+    </span>
+</a>
+<nav aria-label="El módulo datetime" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-datetime">
+<span class="md-ellipsis">
+      Importar el módulo datetime
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-comunes-del-modulo-datetime">
+<span class="md-ellipsis">
+      Funciones comunes del módulo datetime
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programacion-de-tareas">
+<span class="md-ellipsis">
+      Programación de Tareas
+    </span>
+</a>
+<nav aria-label="Programación de Tareas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-con-la-biblioteca-schedule">
+<span class="md-ellipsis">
+      Ejemplo con la biblioteca schedule
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-scripts-de-automatizacion">
 <span class="md-ellipsis">
       Ejercicios de clase: Scripts de Automatización
@@ -940,6 +1026,45 @@
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">ruta_archivo</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">fecha_limite</span><span class="p">:</span>
             <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">ruta_archivo</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Archivo eliminado: </span><span class="si">{</span><span class="n">ruta_archivo</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="el-modulo-datetime">El módulo datetime<a class="headerlink" href="#el-modulo-datetime" title="Permanent link">¶</a></h2>
+<p>El módulo <code>datetime</code> nos permite trabajar con fechas y horas en Python. Podemos utilizarlo para programar tareas basadas en tiempo, como ejecutar scripts en momentos específicos o calcular diferencias entre fechas.</p>
+<h3 id="importar-el-modulo-datetime">Importar el módulo datetime<a class="headerlink" href="#importar-el-modulo-datetime" title="Permanent link">¶</a></h3>
+<p>Para utilizar el módulo <code>datetime</code>, primero debemos importarlo en nuestro script de Python:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+</code></pre></div>
+<h3 id="funciones-comunes-del-modulo-datetime">Funciones comunes del módulo datetime<a class="headerlink" href="#funciones-comunes-del-modulo-datetime" title="Permanent link">¶</a></h3>
+<p>Algunas funciones comunes del módulo <code>datetime</code> incluyen:</p>
+<ul>
+<li><code>datetime.datetime.now()</code>: Obtiene la fecha y hora actuales.</li>
+<li><code>datetime.timedelta()</code>: Representa una duración, la diferencia entre dos fechas u horas.</li>
+<li><code>datetime.datetime.strptime()</code>: Convierte una cadena en un objeto datetime según un formato especificado.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ejemplo de uso del módulo datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="c1"># Obtener la fecha y hora actuales</span>
+<span class="n">ahora</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Fecha y hora actuales: </span><span class="si">{</span><span class="n">ahora</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="c1"># Calcular una fecha futura</span>
+<span class="n">futuro</span> <span class="o">=</span> <span class="n">ahora</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Fecha dentro de 7 días: </span><span class="si">{</span><span class="n">futuro</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="programacion-de-tareas">Programación de Tareas<a class="headerlink" href="#programacion-de-tareas" title="Permanent link">¶</a></h2>
+<p>Para programar tareas automáticas en Python, podemos utilizar bibliotecas como <code>schedule</code> o <code>APScheduler</code>. Estas bibliotecas permiten definir tareas que se ejecutan en intervalos regulares o en momentos específicos.</p>
+<h3 id="ejemplo-con-la-biblioteca-schedule">Ejemplo con la biblioteca schedule<a class="headerlink" href="#ejemplo-con-la-biblioteca-schedule" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">schedule</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tarea</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ejecutando tarea programada..."</span><span class="p">)</span>
+
+<span class="c1"># Programar la tarea para que se ejecute cada 10 segundos</span>
+<span class="n">schedule</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">tarea</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">schedule</span><span class="o">.</span><span class="n">run_pending</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="ejercicios-de-clase-scripts-de-automatizacion">Ejercicios de clase: <a href="ejercicios_scripts_clase/">Scripts de Automatización</a><a class="headerlink" href="#ejercicios-de-clase-scripts-de-automatizacion" title="Permanent link">¶</a></h2>
 </article>
