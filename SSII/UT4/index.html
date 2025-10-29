@@ -610,6 +610,32 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    UT7
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            UT7
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT7/">
+<span class="md-ellipsis">
+    UT7: Conectividad y Datos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -701,6 +727,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#rutas-absolutas-y-relativas">
+<span class="md-ellipsis">
+      Rutas Absolutas y Relativas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#redirecciones-de-entrada-y-salida">
 <span class="md-ellipsis">
       Redirecciones de Entrada y Salida
@@ -718,6 +751,34 @@
 <a class="md-nav__link" href="#el-usuario-root-y-sudo">
 <span class="md-ellipsis">
       El usuario root y sudo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permisos-y-propiedades-de-archivos">
+<span class="md-ellipsis">
+      Permisos y propiedades de archivos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambiar-los-permisos-de-un-archivo">
+<span class="md-ellipsis">
+      Cambiar los permisos de un archivo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambio-de-propietario-y-grupo">
+<span class="md-ellipsis">
+      Cambio de propietario y grupo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pipes">
+<span class="md-ellipsis">
+      Pipes
     </span>
 </a>
 </li>
@@ -788,6 +849,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#rutas-absolutas-y-relativas">
+<span class="md-ellipsis">
+      Rutas Absolutas y Relativas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#redirecciones-de-entrada-y-salida">
 <span class="md-ellipsis">
       Redirecciones de Entrada y Salida
@@ -805,6 +873,34 @@
 <a class="md-nav__link" href="#el-usuario-root-y-sudo">
 <span class="md-ellipsis">
       El usuario root y sudo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permisos-y-propiedades-de-archivos">
+<span class="md-ellipsis">
+      Permisos y propiedades de archivos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambiar-los-permisos-de-un-archivo">
+<span class="md-ellipsis">
+      Cambiar los permisos de un archivo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambio-de-propietario-y-grupo">
+<span class="md-ellipsis">
+      Cambio de propietario y grupo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pipes">
+<span class="md-ellipsis">
+      Pipes
     </span>
 </a>
 </li>
@@ -847,11 +943,22 @@
 <p>Es importante consultar la documentación de cada comando para entender qué argumentos y parámetros acepta. Esto se puede hacer utilizando el comando <code>man</code>, que muestra el manual del comando:</p>
 <div class="highlight"><pre><span></span><code>man<span class="w"> </span>ls
 </code></pre></div>
+<h2 id="rutas-absolutas-y-relativas">Rutas Absolutas y Relativas<a class="headerlink" href="#rutas-absolutas-y-relativas" title="Permanent link">¶</a></h2>
+<p>En Linux, las rutas de archivos y directorios pueden ser absolutas o relativas. Una ruta absoluta comienza desde el directorio raíz (<code>/</code>) y especifica la ubicación completa del archivo o directorio. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ruta absoluta</span>
+/home/user/documentos/archivo.txt
+</code></pre></div>
+<p>Una ruta relativa, por otro lado, se especifica en relación con el directorio actual. Por ejemplo, si el directorio actual es <code>/home/user</code>, la ruta relativa al archivo <code>archivo.txt</code> en el subdirectorio <code>documentos</code> sería:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ruta relativa</span>
+documentos/archivo.txt
+</code></pre></div>
 <h2 id="redirecciones-de-entrada-y-salida">Redirecciones de Entrada y Salida<a class="headerlink" href="#redirecciones-de-entrada-y-salida" title="Permanent link">¶</a></h2>
-<p>En Linux, es posible redirigir la entrada y salida de los comandos utilizando operadores especiales. Algunos de los operadores más comunes son:
-- <code>&gt;</code>: Redirige la salida estándar a un archivo, sobrescribiendo su contenido.
-- <code>&gt;&gt;</code>: Redirige la salida estándar a un archivo, agregando al final del archivo.
-- <code>&lt;</code>: Redirige la entrada estándar desde un archivo.</p>
+<p>En Linux, es posible redirigir la entrada y salida de los comandos utilizando operadores especiales. Algunos de los operadores más comunes son:</p>
+<ul>
+<li><code>&gt;</code>: Redirige la salida estándar a un archivo, sobrescribiendo su contenido.</li>
+<li><code>&gt;&gt;</code>: Redirige la salida estándar a un archivo, agregando al final del archivo.</li>
+<li><code>&lt;</code>: Redirige la entrada estándar desde un archivo.</li>
+</ul>
 <p>Por ejemplo, para guardar la salida del comando <code>ls</code> en un archivo llamado <code>lista.txt</code>, se puede utilizar el siguiente comando:</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>&gt;<span class="w"> </span>lista.txt
 </code></pre></div>
@@ -874,6 +981,33 @@
 <p>En Linux, el usuario root es el superusuario del sistema, con privilegios completos para realizar cualquier operación. Sin embargo, por razones de seguridad, no se recomienda utilizar la cuenta root directamente para tareas diarias. En su lugar, se utiliza el comando <code>sudo</code> (superuser do) para ejecutar comandos con privilegios elevados de manera temporal. Por ejemplo, para instalar un paquete utilizando el gestor de paquetes <code>apt</code>, se puede utilizar el siguiente comando:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nombre_del_paquete
 </code></pre></div>
+<h2 id="permisos-y-propiedades-de-archivos">Permisos y propiedades de archivos<a class="headerlink" href="#permisos-y-propiedades-de-archivos" title="Permanent link">¶</a></h2>
+<p>En Linux, cada archivo y directorio tiene permisos y propiedades que determinan quién puede acceder y modificar esos archivos. Los permisos se dividen en tres categorías: propietario, grupo y otros. Cada categoría puede tener permisos de lectura (r), escritura (w) y ejecución (x).</p>
+<p>Los permisos vienen indicados en una cadena de 10 caracteres al listar los archivos con el comando <code>ls -l</code>. El primer carácter indica el tipo de archivo (por ejemplo, <code>-</code> para archivos regulares y <code>d</code> para directorios), y los siguientes nueve caracteres representan los permisos para el propietario, grupo y otros, en ese orden.</p>
+<p>Los permisos se pueden ver utilizando el comando <code>ls -l</code>, que muestra una lista detallada de archivos y sus permisos. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1234</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">01</span><span class="w"> </span><span class="m">12</span>:00<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p>En este ejemplo, el archivo <code>archivo.txt</code> tiene permisos de lectura y escritura para el propietario (user), permisos de lectura para el grupo (group) y permisos de lectura para otros usuarios.</p>
+<h2 id="cambiar-los-permisos-de-un-archivo">Cambiar los permisos de un archivo<a class="headerlink" href="#cambiar-los-permisos-de-un-archivo" title="Permanent link">¶</a></h2>
+<p>Para cambiar los permisos de un archivo o directorio, se utiliza el comando <code>chmod</code> (change mode). Este comando permite modificar los permisos utilizando tanto notación simbólica como notación octal. Por ejemplo, para otorgar permisos de ejecución al propietario de un archivo, se puede utilizar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>u+x<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p>Este comando añade el permiso de ejecución (<code>x</code>) al usuario propietario (<code>u</code>) del archivo <code>archivo.txt</code>.</p>
+<p>También es posible utilizar notación octal para establecer los permisos. Por ejemplo, para establecer permisos de lectura, escritura y ejecución para el propietario, y solo lectura para el grupo y otros, se puede utilizar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>archivo.txt
+</code></pre></div>
+<h2 id="cambio-de-propietario-y-grupo">Cambio de propietario y grupo<a class="headerlink" href="#cambio-de-propietario-y-grupo" title="Permanent link">¶</a></h2>
+<p>Para cambiar el propietario y el grupo de un archivo o directorio, se utilizan los comandos <code>chown</code> (change owner) y <code>chgrp</code> (change group). Por ejemplo, para cambiar el propietario de un archivo a un usuario llamado <code>nuevo_usuario</code>, se puede utilizar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>nuevo_usuario<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p>Para cambiar el grupo de un archivo a un grupo llamado <code>nuevo_grupo</code>, se puede utilizar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chgrp<span class="w"> </span>nuevo_grupo<span class="w"> </span>archivo.txt
+</code></pre></div>
+<h2 id="pipes">Pipes<a class="headerlink" href="#pipes" title="Permanent link">¶</a></h2>
+<p>En Linux, los pipes (<code>|</code>) permiten conectar la salida de un comando a la entrada de otro comando. Esto es útil para encadenar comandos y procesar datos de manera eficiente. Por ejemplo, para listar los archivos en un directorio y luego contar cuántos archivos hay, se puede utilizar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</code></pre></div>
+<p>Este comando lista los archivos en el directorio actual y pasa esa lista al comando <code>wc -l</code>, que cuenta el número de líneas (es decir, el número de archivos).</p>
 <h2 id="practica-en-clase"><a href="practica_comandos/">Práctica en clase</a><a class="headerlink" href="#practica-en-clase" title="Permanent link">¶</a></h2>
 </article>
 </div>
