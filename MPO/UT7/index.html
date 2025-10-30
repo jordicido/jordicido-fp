@@ -707,6 +707,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-consumo-de-una-api-publica">
+<span class="md-ellipsis">
+      Ejemplo práctico: Consumo de una API pública
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-llamadas-a-apis">
 <span class="md-ellipsis">
       Ejercicios de clase: Llamadas a APIs
@@ -772,6 +779,40 @@
 <a class="md-nav__link" href="../../SSII/UT4/practica_comandos/">
 <span class="md-ellipsis">
     Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    UT5
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            UT5
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/">
+<span class="md-ellipsis">
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
     
   </span>
 </a>
@@ -855,6 +896,13 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-consumo-de-una-api-publica">
+<span class="md-ellipsis">
+      Ejemplo práctico: Consumo de una API pública
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ejercicios-de-clase-llamadas-a-apis">
@@ -950,6 +998,20 @@
 <li><code>json()</code>: Un método que convierte el contenido de la respuesta en un objeto JSON (si el contenido es JSON).</li>
 </ul>
 <p>Se pueden consultar los diferentes estados HTTP en el siguiente enlace: <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">Códigos de estado HTTP</a>.</p>
+<h2 id="ejemplo-practico-consumo-de-una-api-publica">Ejemplo práctico: Consumo de una API pública<a class="headerlink" href="#ejemplo-practico-consumo-de-una-api-publica" title="Permanent link">¶</a></h2>
+<p>En este ejemplo, consumiremos una API pública que proporciona información sobre países. Utilizaremos el módulo <code>requests</code> para realizar una solicitud GET y obtener datos en formato JSON.</p>
+<p>Vamos a usar la PokeAPI, que es una API pública que proporciona información sobre Pokémon.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://pokeapi.co/api/v2/pokemon/ditto'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nombre: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Altura: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'height'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Peso: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="ejercicios-de-clase-llamadas-a-apis">Ejercicios de clase: <a href="ejercicios_apis_clase.md">Llamadas a APIs</a><a class="headerlink" href="#ejercicios-de-clase-llamadas-a-apis" title="Permanent link">¶</a></h2>
 </article>
 </div>
