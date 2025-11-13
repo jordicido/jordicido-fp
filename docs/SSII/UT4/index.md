@@ -38,9 +38,26 @@ Es importante consultar la documentación de cada comando para entender qué arg
 man ls
 ```
 
+## Rutas Absolutas y Relativas
+
+En Linux, las rutas de archivos y directorios pueden ser absolutas o relativas. Una ruta absoluta comienza desde el directorio raíz (`/`) y especifica la ubicación completa del archivo o directorio. Por ejemplo:
+
+```bash
+# Ruta absoluta
+/home/user/documentos/archivo.txt
+```
+
+Una ruta relativa, por otro lado, se especifica en relación con el directorio actual. Por ejemplo, si el directorio actual es `/home/user`, la ruta relativa al archivo `archivo.txt` en el subdirectorio `documentos` sería:
+
+```bash
+# Ruta relativa
+documentos/archivo.txt
+```
+
 ## Redirecciones de Entrada y Salida
 
 En Linux, es posible redirigir la entrada y salida de los comandos utilizando operadores especiales. Algunos de los operadores más comunes son:
+
 - `>`: Redirige la salida estándar a un archivo, sobrescribiendo su contenido.
 - `>>`: Redirige la salida estándar a un archivo, agregando al final del archivo.
 - `<`: Redirige la entrada estándar desde un archivo.
@@ -80,5 +97,60 @@ En Linux, el usuario root es el superusuario del sistema, con privilegios comple
 ```bash
 sudo apt install nombre_del_paquete
 ```
+
+## Permisos y propiedades de archivos
+
+En Linux, cada archivo y directorio tiene permisos y propiedades que determinan quién puede acceder y modificar esos archivos. Los permisos se dividen en tres categorías: propietario, grupo y otros. Cada categoría puede tener permisos de lectura (r), escritura (w) y ejecución (x).
+
+Los permisos vienen indicados en una cadena de 10 caracteres al listar los archivos con el comando `ls -l`. El primer carácter indica el tipo de archivo (por ejemplo, `-` para archivos regulares y `d` para directorios), y los siguientes nueve caracteres representan los permisos para el propietario, grupo y otros, en ese orden.
+
+Los permisos se pueden ver utilizando el comando `ls -l`, que muestra una lista detallada de archivos y sus permisos. Por ejemplo:
+
+```bash
+-rw-r--r-- 1 user group 1234 Jan 01 12:00 archivo.txt
+``` 
+
+En este ejemplo, el archivo `archivo.txt` tiene permisos de lectura y escritura para el propietario (user), permisos de lectura para el grupo (group) y permisos de lectura para otros usuarios.
+
+## Cambiar los permisos de un archivo
+
+Para cambiar los permisos de un archivo o directorio, se utiliza el comando `chmod` (change mode). Este comando permite modificar los permisos utilizando tanto notación simbólica como notación octal. Por ejemplo, para otorgar permisos de ejecución al propietario de un archivo, se puede utilizar el siguiente comando:
+
+```bash
+chmod u+x archivo.txt
+```
+
+Este comando añade el permiso de ejecución (`x`) al usuario propietario (`u`) del archivo `archivo.txt`.
+
+También es posible utilizar notación octal para establecer los permisos. Por ejemplo, para establecer permisos de lectura, escritura y ejecución para el propietario, y solo lectura para el grupo y otros, se puede utilizar el siguiente comando:
+
+```bash
+chmod 755 archivo.txt
+```
+
+## Cambio de propietario y grupo
+
+Para cambiar el propietario y el grupo de un archivo o directorio, se utilizan los comandos `chown` (change owner) y `chgrp` (change group). Por ejemplo, para cambiar el propietario de un archivo a un usuario llamado `nuevo_usuario`, se puede utilizar el siguiente comando:
+
+```bash
+sudo chown nuevo_usuario archivo.txt
+```
+
+Para cambiar el grupo de un archivo a un grupo llamado `nuevo_grupo`, se puede utilizar el siguiente comando:
+
+```bash
+sudo chgrp nuevo_grupo archivo.txt
+```
+
+## Pipes
+
+En Linux, los pipes (`|`) permiten conectar la salida de un comando a la entrada de otro comando. Esto es útil para encadenar comandos y procesar datos de manera eficiente. Por ejemplo, para listar los archivos en un directorio y luego contar cuántos archivos hay, se puede utilizar el siguiente comando:
+
+```bash
+ls | wc -l
+```
+
+Este comando lista los archivos en el directorio actual y pasa esa lista al comando `wc -l`, que cuenta el número de líneas (es decir, el número de archivos).
+
 
 ## [Práctica en clase](practica_comandos.md)

@@ -63,3 +63,20 @@ Busca en el manual del comando `wc` (word count) y realiza lo siguiente:
 3. Utiliza el comando `grep` para buscar todas las líneas que contienen la palabra "error" en `log_ejemplo.txt`.
 4. Ahora, utiliza `grep` con el parámetro adecuado para buscar la palabra "error" sin importar si está en mayúsculas o minúsculas.
 5. Finalmente, utiliza `grep` con el parámetro adecuado para mostrar las líneas que no contienen la palabra "error".
+
+
+## Ejercicio 9 - Permisos de archivos
+
+1. Crea un archivo de texto llamado `permisos_ejemplo.txt` en tu carpeta de usuario.
+2. Utiliza el comando `ls -l` para ver los permisos actuales del archivo.
+3. Cambia los permisos del archivo para que solo el propietario tenga permisos de lectura y escritura.
+4. Verifica los cambios en los permisos utilizando nuevamente `ls -l`.
+5. Intenta abrir el archivo con otro usuario (si es posible) para verificar que no tiene acceso.
+
+## Ejercicio 10 - Uso de rutas absolutas y relativas
+
+1. Crea un directorio llamado `ruta_ejemplo` en tu carpeta de usuario.
+2. Dentro de `ruta_ejemplo`, crea un archivo llamado `archivo_ruta.txt`.
+3. Desde tu carpeta de usuario, utiliza una ruta relativa para acceder a `archivo_ruta.txt` y muestra su contenido.
+4. Ahora, utiliza una ruta absoluta para acceder al mismo archivo y muestra su contenido.
+5. Finalmente, elimina el directorio `ruta_ejemplo` junto con su contenido.

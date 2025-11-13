@@ -51,3 +51,7 @@ Escribe un script que reciba como argumentos el nombre de un directorio y una ca
 ## Ejercicio 12 - Crear un script que realize una copia de seguridad cada cierto tiempo
 
 Escribe un script que utilice el módulo `datetime` para programar una copia de seguridad de un directorio específico cada cierto intervalo de tiempo (por ejemplo, cada día a las 2 AM). El script debe copiar todos los archivos del directorio original a un directorio de respaldo, añadiendo la fecha y hora al nombre del directorio de respaldo.
+
+## Ejercicio 13 - Script para monitorear cambios en un directorio
+
+Escribe un script que utilice el módulo `time` para monitorear un directorio específico y registre en un archivo de log cualquier cambio que ocurra en ese directorio (por ejemplo, creación, eliminación o modificación de archivos). El script debe ejecutarse continuamente y registrar los cambios con una marca de tiempo.

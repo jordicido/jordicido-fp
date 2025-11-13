@@ -6,9 +6,21 @@ En esta sección se encuentran los apuntes correspondientes a la asignatura de S
 
 ### [UT 1. Introducción a los Sistemas Informáticos](UT1)
 
+- Conceptos básicos de hardware y software
+- Componentes de un sistema informático
+- Tipos de sistemas informáticos
+
 ### [UT 2. Introducción a los Sistemas Operativos](UT2)
 
+- Funciones de un sistema operativo
+- Tipos de sistemas operativos
+- Interacción entre hardware y software a través del sistema operativo
+
 ### [UT 3. Máquinas Virtuales](UT3)
+
+- Concepto de virtualización
+- Tipos de máquinas virtuales
+- Herramientas de virtualización (VirtualBox, VMware, etc.)
 
 ### [UT 4. Gestión de la información en sistemas operativos Libres: Linux](UT4)
 
@@ -38,6 +50,10 @@ En esta sección se encuentran los apuntes correspondientes a la asignatura de S
 - Gestión de servicios y procesos en Windows
 
 ### [UT 8. Conexión de los sistemas en red](UT8)
+
+- Conceptos básicos de redes
+- Modelos OSI y TCP/IP
+- Direccionamiento IP y subredes
 
 ### [UT 9. Docker y contenedores](UT9)
 
