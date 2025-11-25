@@ -16,8 +16,6 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
 
     steps:
       - name: Checkout del repositorio
@@ -32,14 +30,5 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Construir la documentación
-        run: mkdocs build
-
-      - name: Subir artefacto generado
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-
       - name: Desplegar en GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+        run: mkdocs gh-deploy --force
