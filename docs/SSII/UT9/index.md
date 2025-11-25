@@ -1,177 +1,69 @@
 # UT 9. Docker y contenedores
 
-# **1. ¿Qué es Docker?**
+## Contexto
 
-Docker es una tecnología que permite ejecutar aplicaciones dentro de **contenedores**, que son entornos ligeros, aislados y reproducibles.
-En ellos podemos:
+Docker es una plataforma de software que permite crear, desplegar y gestionar aplicaciones dentro de contenedores. Los contenedores son entornos ligeros y portátiles que incluyen todo lo necesario para ejecutar una aplicación, lo que facilita su despliegue en diferentes entornos sin preocuparse por las dependencias del sistema operativo.
 
-* Instalar versiones concretas de software
-* Asegurar que el proyecto funciona igual en cualquier ordenador
-* Evitar conflictos de dependencias
-* Distribuir proyectos fácilmente
+## Diferencias entre máquinas virtuales y contenedores
 
----
+Cuando hablamos de virtualización, es importante distinguir entre máquinas virtuales y contenedores. Ambas tecnologías permiten ejecutar aplicaciones en entornos aislados, pero lo hacen de maneras diferentes. Las máquinas virtuales emulan un sistema operativo completo, mientras que los contenedores comparten el kernel del sistema operativo host, lo que los hace más ligeros y eficientes.
 
-# **2. Requisitos previos en Windows**
+| Característica           | Máquina Virtual                      | Contenedor                          |
+|-------------------------|-------------------------------------|------------------------------------|
+| Aislamiento             | Completo (incluye sistema operativo)| Parcial (comparte el kernel del host) |
+| Tamaño                  | Grande (varios GB)                  | Pequeño (varios MB)                  |
+| Tiempo de arranque      | Lento (minutos)                     | Rápido (segundos)                   |
+| Uso de recursos         | Alto                              | Bajo                               |
+| Portabilidad            | Menos portátil                      | Muy portátil                       |  
+| Gestión                 | Más compleja                        | Más sencilla                       |
 
-Antes de instalar Docker, debemos comprobar:
+## Ventajas de usar contenedores
 
-### **2.1. Arquitectura del sistema**
+- **Portabilidad**: Los contenedores pueden ejecutarse en cualquier entorno que soporte Docker, garantizando que la aplicación funcione de la misma manera en desarrollo, pruebas y producción.
+- **Eficiencia**: Los contenedores son ligeros y utilizan menos recursos que las máquinas virtuales, lo que permite ejecutar más instancias en el mismo hardware.
+- **Aislamiento**: Cada contenedor opera de manera independiente, lo que mejora la seguridad y facilita la gestión de aplicaciones.
+- **Facilidad de despliegue**: Docker simplifica el proceso de despliegue de aplicaciones, permitiendo a los desarrolladores empaquetar todo lo necesario en un contenedor.u
 
-* Windows 10 o 11
-* Procesador compatible con virtualización (casi todos los modernos)
+## Primeros pasos con Docker
 
-### **2.2. Virtualización activada**
+Para comenzar a usar Docker, es necesario instalar Docker Desktop en tu sistema operativo. Docker Desktop está disponible para Windows y macOS, y proporciona una interfaz gráfica para gestionar contenedores, imágenes y volúmenes.
 
-Debes activar:
+Aquí tienes los pasos básicos para instalar Docker Desktop en Windows: [Instalación Docker en Windows](./instalar_docker.md)
 
-* **Virtualización (Intel VT-x / AMD-V)** desde la BIOS/UEFI
-* En algunos casos, **Hyper-V** (si tienes Windows Pro)
+Una vez instalado Docker Desktop, puedes comenzar a crear y gestionar contenedores utilizando la línea de comandos o la interfaz gráfica proporcionada por Docker Desktop.
 
----
+## Comandos básicos de Docker
 
-# **3. Instalar Docker en Windows**
+Aquí tienes algunos comandos básicos para empezar a trabajar con Docker desde la línea de comandos:
 
-Existen **dos formas oficiales** de tener Docker en Windows. Se usa una u otra según tu versión del sistema.
+- `docker --version`: Muestra la versión de Docker instalada.
+- `docker pull nombre_imagen`: Descarga una imagen de Docker desde Docker Hub.
+- `docker run -d -p puerto_host:puerto_contenedor nombre_imagen`: Crea y ejecuta un contenedor en segundo plano, mapeando puertos.
+- `docker ps`: Lista los contenedores en ejecución.
+- `docker ps -a`: Lista todos los contenedores, incluidos los detenidos.
+- `docker stop id_contenedor`: Detiene un contenedor en ejecución.
+- `docker rm id_contenedor`: Elimina un contenedor detenido.
+- `docker images`: Lista las imágenes de Docker descargadas.
+- `docker rmi id_imagen`: Elimina una imagen de Docker.
+- `docker logs id_contenedor`: Muestra los registros de un contenedor.
+- `docker exec -it id_contenedor bash`: Accede a la terminal de un contenedor en ejecución.
 
----
+## Recursos adicionales
 
-## **3.1. Opción A: Docker Desktop (Windows 10/11 Home/Pro)**
+Para aprender más sobre Docker y contenedores, puedes consultar los siguientes recursos:
+- [Documentación oficial de Docker](https://docs.docker.com/)
+- [Docker Hub](https://hub.docker.com/): Repositorio oficial de imágenes de Docker.
+- [Tutoriales de Docker](https://www.docker.com/101-tutorial): Guías paso a paso para aprender a usar Docker.
 
-### **Pasos a seguir:**
+## Imágenes de Docker
 
-### **Paso 1 – Instalar WSL2 (Windows Subsystem for Linux 2)**
+Las imágenes de Docker son plantillas inmutables que contienen todo lo necesario para ejecutar una aplicación, incluyendo el código, las bibliotecas, las dependencias y el sistema operativo. Las imágenes se utilizan para crear contenedores.
 
-Abrir PowerShell como Administrador y ejecutar:
+Las imágenes de Docker se pueden obtener de varios lugares, siendo Docker Hub el repositorio más popular. También es posible crear imágenes personalizadas utilizando Dockerfiles.
 
-```
-wsl --install
-```
+Para consultar las imágenes disponibles en Docker Hub, puedes visitar: [Docker Hub](https://hub.docker.com/)
 
-Reiniciar el equipo si es necesario.
 
-### **Paso 2 – Instalar una distribución Linux**
 
-Windows descargará Ubuntu automáticamente o te permitirá elegir.
-
-### **Paso 3 – Descargar Docker Desktop**
-
-Buscar en Google: **Docker Desktop for Windows**
-Instalar desde la web oficial.
-
-### **Paso 4 – Configurar**
-
-Durante la instalación, marcar:
-
-* ✔ *Use WSL 2 instead of Hyper-V*
-
-### **Paso 5 – Finalizar**
-
-Reiniciar el equipo si lo solicita.
-Docker Desktop se iniciará automáticamente.
-
----
-
-# **4. Modos de funcionamiento de Docker en Windows**
-
-Docker funciona sobre un motor Linux. En Windows puede funcionar de estas formas:
-
----
-
-## **4.1. Modo WSL 2 (recomendado)**
-
-* Kernel Linux real
-* Mejor rendimiento
-* Ideal para desarrollo
-* Disponible en Windows Home y Pro
-
----
-
-## **4.2. Modo Hyper-V**
-
-* Requiere Windows Pro/Enterprise/Education
-* Usado históricamente por Docker
-* Menor rendimiento que WSL2
-
----
-
-## **4.3. Docker Engine en WSL (modo Linux puro)**
-
-* No usa Docker Desktop
-* Ligero
-* Todo se hace desde terminal
-
----
-
-# **5. ¿Cómo usar Docker una vez instalado?**
-
-Puedes trabajar con Docker de tres maneras.
-
----
-
-## **5.1. Terminal (PowerShell, CMD o Linux WSL2)**
-
-Ejemplos básicos:
-
-### Probar Docker:
-
-```bash
-docker run hello-world
-```
-
-### Listar contenedores:
-
-```bash
-docker ps
-```
-
-### Descargar una imagen:
-
-```bash
-docker pull ubuntu
-```
-
-### Crear y entrar en un contenedor:
-
-```bash
-docker run -it ubuntu bash
-```
-
----
-
-## **5.2. Docker Desktop (Interfaz gráfica)**
-
-Permite ver:
-
-* Contenedores activos
-* Imágenes descargadas
-* Volúmenes
-* Logs de contenedores
-* Estadísticas de uso
-
-Excelente para que los estudiantes entiendan visualmente cómo funciona Docker.
-
----
-
-## **5.3. Visual Studio Code (extensión Docker)**
-
-VS Code permite:
-
-* Ver contenedores e imágenes
-* Crear Dockerfiles
-* Abrir carpetas dentro de contenedores
-* Ejecutar comandos sin usar terminal
-
-Ideal para principiantes.
-
----
-
-# **6. Tabla resumen para alumnos**
-
-| Opción                       | Requisitos              | Ventajas              | Limitaciones        |
-| ---------------------------- | ----------------------- | --------------------- | ------------------- |
-| **Docker Desktop (WSL2)**    | Windows Home/Pro + WSL2 | Rápido, sencillo, GUI | Ocupa más recursos  |
-| **Docker Desktop (Hyper-V)** | Windows Pro             | Estable               | No funciona en Home |
-| **Docker Engine en WSL2**    | Solo WSL2 Linux         | Muy ligero            | Sin GUI             |
-
-
+## [Instalar Docker en Windows](./instalar_docker.md)
+## [Práctica: Contenedores Docker básicos](./practica_contenedores.md)

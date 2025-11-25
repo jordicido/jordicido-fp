@@ -194,3 +194,13 @@ Estas ampliaciones son opcionales, pensadas para los alumnos que deseen profundi
 | 🔵 Avanzado   | Exportar datos a CSV o JSON comprimido | Generar un informe con todas las consultas                                                       |
 | 🔵 Avanzado   | Gráfica ASCII                          | Dibujar una gráfica de temperaturas por hora con caracteres en texto                             |
 | 🔵 Avanzado   | Tests unitarios                        | Probar funciones puras con `pytest` (por ejemplo, formateo o parsing de JSON)                    |
+
+
+---
+
+## 7. Temporización
+
+* Sesión 1: Creación del proyecto, estructura de archivos, menú principal y conexión a las API.
+* Sesión 2: Implementación de las diferentes consultas meteorológicas, presentación de resultados, manejo de datos JSON.
+* Sesión 3: Persistencia de datos, historial de consultas, control de errores y pruebas.
+* Extras: Opciones de elección de datos a visualizar.
