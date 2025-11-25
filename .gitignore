@@ -2,7 +2,6 @@
 venv/
 env/
 .venv/
-requirements.txt
 
 # Archivos y directorios de Python
 __pycache__/
