@@ -63,6 +63,10 @@ Las imágenes de Docker se pueden obtener de varios lugares, siendo Docker Hub e
 
 Para consultar las imágenes disponibles en Docker Hub, puedes visitar: [Docker Hub](https://hub.docker.com/)
 
+## Dockerfiles
+
+Un Dockerfile es un archivo de texto que contiene una serie de instrucciones para construir una imagen de Docker personalizada. Cada instrucción en el Dockerfile define un paso en el proceso de construcción de la imagen.
+
 
 
 ## [Instalar Docker en Windows](./instalar_docker.md)

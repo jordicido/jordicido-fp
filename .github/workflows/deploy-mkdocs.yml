@@ -28,5 +28,8 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Construir el sitio MkDocs
+        run: mkdocs build
+
       - name: Desplegar en GitHub Pages
         run: mkdocs gh-deploy --force
