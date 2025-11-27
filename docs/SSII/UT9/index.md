@@ -341,27 +341,27 @@ Listar redes:
 docker network ls
 ```
 
-#### Ejemplo simple: dos contenedores que se ven entre sí**
+#### Ejemplo simple: dos contenedores que se ven entre sí
 
-1. Crear red:
+* Crear red:
 
 ```bash
 docker network create damnet
 ```
 
-2. Crear contenedor 1:
+* Crear contenedor 1:
 
 ```bash
 docker run -dit --name c1 --network damnet ubuntu sh
 ```
 
-3. Crear contenedor 2:
+* Crear contenedor 2:
 
 ```bash
 docker run -dit --name c2 --network damnet ubuntu sh
 ```
 
-4. Desde c1:
+* Desde c1:
 
 ```bash
 ping c2
