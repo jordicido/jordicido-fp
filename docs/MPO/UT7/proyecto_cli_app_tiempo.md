@@ -202,5 +202,5 @@ Estas ampliaciones son opcionales, pensadas para los alumnos que deseen profundi
 
 * Sesión 1: Creación del proyecto, estructura de archivos, menú principal y conexión a las API.
 * Sesión 2: Implementación de las diferentes consultas meteorológicas, presentación de resultados, manejo de datos JSON.
-* Sesión 3: Persistencia de datos, historial de consultas, control de errores y pruebas.
+* Sesión 3: Persistencia de datos, historial de consultas, configuración de localización por defecto.
 * Extras: Opciones de elección de datos a visualizar.
