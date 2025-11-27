@@ -1,0 +1,1666 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../UT6/ejercicios_scripts_clase/" rel="prev"/>
+<link href="proyecto_cli_app_tiempo/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>UT7: Conectividad y Datos - Jordi Cido - FP</title>
+<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ut7-conectividad-y-datos">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT7: Conectividad y Datos
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT6/ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conectividad-http-con-el-modulo-requests">
+<span class="md-ellipsis">
+      
+        Conectividad HTTP con el módulo requests
+      
+    </span>
+</a>
+<nav aria-label="Conectividad HTTP con el módulo requests" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instalacion-del-modulo-requests">
+<span class="md-ellipsis">
+      
+        Instalación del módulo requests
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-get">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud GET
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-post">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud POST
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-put">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud PUT
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-delete">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud DELETE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#respuestas-de-las-solicitudes-http">
+<span class="md-ellipsis">
+      
+        Respuestas de las solicitudes HTTP
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-consumo-de-una-api-publica">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico: Consumo de una API pública
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manejo-de-datos-en-formato-json">
+<span class="md-ellipsis">
+      
+        Manejo de datos en formato JSON
+      
+    </span>
+</a>
+<nav aria-label="Manejo de datos en formato JSON" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-de-uso-del-modulo-json">
+<span class="md-ellipsis">
+      
+        Ejemplo de uso del módulo json
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manejo-de-datos-en-formato-csv">
+<span class="md-ellipsis">
+      
+        Manejo de datos en formato CSV
+      
+    </span>
+</a>
+<nav aria-label="Manejo de datos en formato CSV" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-de-uso-del-modulo-csv">
+<span class="md-ellipsis">
+      
+        Ejemplo de uso del módulo csv
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-llamadas-a-apis">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: Llamadas a APIs
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conectividad-http-con-el-modulo-requests">
+<span class="md-ellipsis">
+      
+        Conectividad HTTP con el módulo requests
+      
+    </span>
+</a>
+<nav aria-label="Conectividad HTTP con el módulo requests" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instalacion-del-modulo-requests">
+<span class="md-ellipsis">
+      
+        Instalación del módulo requests
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-get">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud GET
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-post">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud POST
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-put">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud PUT
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#realizar-una-solicitud-delete">
+<span class="md-ellipsis">
+      
+        Realizar una solicitud DELETE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#respuestas-de-las-solicitudes-http">
+<span class="md-ellipsis">
+      
+        Respuestas de las solicitudes HTTP
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-consumo-de-una-api-publica">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico: Consumo de una API pública
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manejo-de-datos-en-formato-json">
+<span class="md-ellipsis">
+      
+        Manejo de datos en formato JSON
+      
+    </span>
+</a>
+<nav aria-label="Manejo de datos en formato JSON" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-de-uso-del-modulo-json">
+<span class="md-ellipsis">
+      
+        Ejemplo de uso del módulo json
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manejo-de-datos-en-formato-csv">
+<span class="md-ellipsis">
+      
+        Manejo de datos en formato CSV
+      
+    </span>
+</a>
+<nav aria-label="Manejo de datos en formato CSV" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-de-uso-del-modulo-csv">
+<span class="md-ellipsis">
+      
+        Ejemplo de uso del módulo csv
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-llamadas-a-apis">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: Llamadas a APIs
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ut7-conectividad-y-datos">UT7: Conectividad y Datos<a class="headerlink" href="#ut7-conectividad-y-datos" title="Permanent link">¶</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h2>
+<p>En esta unidad, exploraremos cómo Python puede interactuar con servicios web y manejar datos en formatos comunes como JSON y CSV. Aprenderemos a utilizar módulos estándar para realizar solicitudes HTTP, así como a leer y escribir datos en estos formatos. Estos conocimientos son esenciales para trabajar con APIs y manejar datos en aplicaciones del mundo real.</p>
+<p>Las solicitudes HTTP son fundamentales para la comunicación entre clientes y servidores en la web. Python ofrece varias bibliotecas para realizar estas solicitudes de manera sencilla. Los diferentes métodos HTTP que utilizaremos incluyen:</p>
+<ul>
+<li><strong>GET</strong>: Se utiliza para solicitar datos de un servidor.</li>
+<li><strong>POST</strong>: Se utiliza para enviar datos a un servidor.</li>
+<li><strong>PUT</strong>: Se utiliza para actualizar datos existentes en un servidor.</li>
+<li><strong>DELETE</strong>: Se utiliza para eliminar datos en un servidor.</li>
+</ul>
+<p>La información intercambiada a través de estas solicitudes a menudo se encuentra en formatos estructurados como JSON (JavaScript Object Notation) y CSV (Comma-Separated Values). Estos formatos son ampliamente utilizados debido a su simplicidad y facilidad de uso.</p>
+<h2 id="conectividad-http-con-el-modulo-requests">Conectividad HTTP con el módulo <code>requests</code><a class="headerlink" href="#conectividad-http-con-el-modulo-requests" title="Permanent link">¶</a></h2>
+<p>El módulo <code>requests</code> es una biblioteca popular en Python para realizar solicitudes HTTP de manera sencilla. Nos permite enviar solicitudes GET, POST, y otras, así como manejar respuestas de manera eficiente.</p>
+<h3 id="instalacion-del-modulo-requests">Instalación del módulo <code>requests</code><a class="headerlink" href="#instalacion-del-modulo-requests" title="Permanent link">¶</a></h3>
+<p>Para utilizar el módulo <code>requests</code>, primero debemos instalarlo. Podemos hacerlo utilizando pip:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>requests
+</code></pre></div>
+<h3 id="realizar-una-solicitud-get">Realizar una solicitud GET<a class="headerlink" href="#realizar-una-solicitud-get" title="Permanent link">¶</a></h3>
+<p>Las solicitudes GET se utilizan para obtener datos de un servidor. Aquí hay un ejemplo básico de cómo realizar una solicitud GET utilizando el módulo <code>requests</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://api.example.com/data'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>Cuando un servidor responde a una solicitud GET, podemos verificar el código de estado para asegurarnos de que la solicitud fue exitosa (código 200) y luego procesar los datos recibidos.</p>
+<p>La próxima sección cubrirá cómo manejar datos en formatos JSON y CSV.</p>
+<h3 id="realizar-una-solicitud-post">Realizar una solicitud POST<a class="headerlink" href="#realizar-una-solicitud-post" title="Permanent link">¶</a></h3>
+<p>Las solicitudes POST se utilizan para enviar datos a un servidor. Aquí hay un ejemplo básico de cómo realizar una solicitud POST utilizando el módulo <code>requests</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'value1'</span><span class="p">,</span>
+    <span class="s1">'key2'</span><span class="p">:</span> <span class="s1">'value2'</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'https://api.example.com/data'</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">201</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos enviados exitosamente."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, enviamos un diccionario como datos JSON al servidor. Al igual que con las solicitudes GET, verificamos el código de estado para asegurarnos de que la solicitud fue exitosa (código 201 para creación).</p>
+<h3 id="realizar-una-solicitud-put">Realizar una solicitud PUT<a class="headerlink" href="#realizar-una-solicitud-put" title="Permanent link">¶</a></h3>
+<p>Las solicitudes PUT se utilizan para actualizar datos existentes en un servidor. Aquí hay un ejemplo básico de cómo realizar una solicitud PUT utilizando el módulo <code>requests</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'new_value1'</span><span class="p">,</span>
+    <span class="s1">'key2'</span><span class="p">:</span> <span class="s1">'new_value2'</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">'https://api.example.com/data/1'</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos actualizados exitosamente."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, enviamos un diccionario como datos JSON para actualizar un recurso específico en el servidor. Verificamos el código de estado para asegurarnos de que la solicitud fue exitosa (código 200).</p>
+<h3 id="realizar-una-solicitud-delete">Realizar una solicitud DELETE<a class="headerlink" href="#realizar-una-solicitud-delete" title="Permanent link">¶</a></h3>
+<p>Las solicitudes DELETE se utilizan para eliminar datos en un servidor. Aquí hay un ejemplo básico de cómo realizar una solicitud DELETE utilizando el módulo <code>requests</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">'https://api.example.com/data/1'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">204</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos eliminados exitosamente."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>En este ejemplo, realizamos una solicitud DELETE para eliminar un recurso específico en el servidor. Verificamos el código de estado para asegurarnos de que la solicitud fue exitosa (código 204 para eliminación).</p>
+<h3 id="respuestas-de-las-solicitudes-http">Respuestas de las solicitudes HTTP<a class="headerlink" href="#respuestas-de-las-solicitudes-http" title="Permanent link">¶</a></h3>
+<p>Cuando realizamos una solicitud HTTP, el servidor responde con un objeto de respuesta que contiene varios atributos útiles. Algunos de los atributos más comunes incluyen:</p>
+<ul>
+<li><code>status_code</code>: El código de estado HTTP de la respuesta (por ejemplo, 200, 404, 500).</li>
+<li><code>headers</code>: Un diccionario que contiene los encabezados de la respuesta.</li>
+<li><code>text</code>: El contenido de la respuesta como una cadena de texto.</li>
+<li><code>json()</code>: Un método que convierte el contenido de la respuesta en un objeto JSON (si el contenido es JSON).</li>
+</ul>
+<p>Se pueden consultar los diferentes estados HTTP en el siguiente enlace: <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">Códigos de estado HTTP</a>.</p>
+<h2 id="ejemplo-practico-consumo-de-una-api-publica">Ejemplo práctico: Consumo de una API pública<a class="headerlink" href="#ejemplo-practico-consumo-de-una-api-publica" title="Permanent link">¶</a></h2>
+<p>En este ejemplo, consumiremos una API pública que proporciona información sobre países. Utilizaremos el módulo <code>requests</code> para realizar una solicitud GET y obtener datos en formato JSON.</p>
+<p>Vamos a usar la PokeAPI, que es una API pública que proporciona información sobre Pokémon.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://pokeapi.co/api/v2/pokemon/ditto'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nombre: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Altura: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'height'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Peso: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="manejo-de-datos-en-formato-json">Manejo de datos en formato JSON<a class="headerlink" href="#manejo-de-datos-en-formato-json" title="Permanent link">¶</a></h2>
+<p>El formato JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos que es fácil de leer y escribir tanto para humanos como para máquinas. En Python, podemos trabajar con datos JSON utilizando el módulo <code>json</code>, que nos permite convertir entre objetos Python y cadenas JSON.</p>
+<h3 id="ejemplo-de-uso-del-modulo-json">Ejemplo de uso del módulo <code>json</code><a class="headerlink" href="#ejemplo-de-uso-del-modulo-json" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1"># Convertir un objeto Python a una cadena JSON</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'value1'</span><span class="p">,</span>
+    <span class="s1">'key2'</span><span class="p">:</span> <span class="s1">'value2'</span>
+<span class="p">}</span>
+<span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+
+<span class="c1"># Convertir una cadena JSON a un objeto Python</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>Los objetos json se componen de pares clave-valor y pueden incluir listas y otros objetos JSON anidados. El módulo <code>json</code> facilita la serialización y deserialización de estos datos en Python.</p>
+<h2 id="manejo-de-datos-en-formato-csv">Manejo de datos en formato CSV<a class="headerlink" href="#manejo-de-datos-en-formato-csv" title="Permanent link">¶</a></h2>
+<p>El formato CSV (Comma-Separated Values) es un formato común para almacenar datos tabulares en texto plano. En Python, podemos trabajar con archivos CSV utilizando el módulo <code>csv</code>, que nos permite leer y escribir datos en este formato de manera sencilla.</p>
+<h3 id="ejemplo-de-uso-del-modulo-csv">Ejemplo de uso del módulo <code>csv</code><a class="headerlink" href="#ejemplo-de-uso-del-modulo-csv" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+
+<span class="c1"># Escribir datos en un archivo CSV</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data.csv'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">'Name'</span><span class="p">,</span> <span class="s1">'Age'</span><span class="p">,</span> <span class="s1">'City'</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">'Alice'</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">'New York'</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">'Bob'</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">'Los Angeles'</span><span class="p">])</span>
+<span class="c1"># Leer datos de un archivo CSV</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data.csv'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</code></pre></div>
+<p>Los archivos CSV consisten en filas de datos, donde cada fila contiene valores separados por comas. El módulo <code>csv</code> facilita la lectura y escritura de estos archivos en Python.</p>
+<p>La función <code>reader</code> devuelve un objeto iterable que puede ser recorrido para acceder a cada fila del archivo CSV. Cada fila se representa como una lista de valores. Se le puede indicar un delimitador diferente si los valores no están separados por comas, utilizando el parámetro <code>delimiter</code> al crear el objeto <code>reader</code>.</p>
+<p>La función <code>next</code> se puede utilizar para saltar la fila de encabezado si es necesario. En ciertos casos, puede ser útil convertir cada fila en un diccionario para facilitar el acceso a los valores por nombre de columna. Esto se puede lograr utilizando <code>csv.DictReader</code>.</p>
+<h2 id="ejercicios-de-clase-llamadas-a-apis">Ejercicios de clase: <a href="proyecto_cli_app_tiempo/">Llamadas a APIs</a><a class="headerlink" href="#ejercicios-de-clase-llamadas-a-apis" title="Permanent link">¶</a></h2>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1672 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../" rel="prev"/>
+<link href="../../../SSII/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#proyecto-final-weather-cli-aplicacion-de-consulta-meteorologica">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-descripcion-general-del-proyecto">
+<span class="md-ellipsis">
+      
+        1. Descripción general del proyecto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-funcionamiento-general-del-programa">
+<span class="md-ellipsis">
+      
+        2. Funcionamiento general del programa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-apis-utilizadas-en-el-proyecto">
+<span class="md-ellipsis">
+      
+        3. APIs utilizadas en el proyecto
+      
+    </span>
+</a>
+<nav aria-label="3. APIs utilizadas en el proyecto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-api-de-geocoding-para-obtener-coordenadas">
+<span class="md-ellipsis">
+      
+        3.1. API de Geocoding (para obtener coordenadas)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-api-de-prevision-meteorologica">
+<span class="md-ellipsis">
+      
+        3.2. API de Previsión Meteorológica
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-estructura-de-archivos-del-proyecto">
+<span class="md-ellipsis">
+      
+        4. Estructura de archivos del proyecto
+      
+    </span>
+</a>
+<nav aria-label="4. Estructura de archivos del proyecto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion-de-cada-archivo">
+<span class="md-ellipsis">
+      
+        Descripción de cada archivo:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-funcionalidades-obligatorias">
+<span class="md-ellipsis">
+      
+        5. Funcionalidades obligatorias
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-posibles-ampliaciones-para-quienes-quieran-ir-mas-alla">
+<span class="md-ellipsis">
+      
+        6. Posibles ampliaciones (para quienes quieran ir más allá)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-temporizacion">
+<span class="md-ellipsis">
+      
+        7. Temporización
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-descripcion-general-del-proyecto">
+<span class="md-ellipsis">
+      
+        1. Descripción general del proyecto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-funcionamiento-general-del-programa">
+<span class="md-ellipsis">
+      
+        2. Funcionamiento general del programa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-apis-utilizadas-en-el-proyecto">
+<span class="md-ellipsis">
+      
+        3. APIs utilizadas en el proyecto
+      
+    </span>
+</a>
+<nav aria-label="3. APIs utilizadas en el proyecto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-api-de-geocoding-para-obtener-coordenadas">
+<span class="md-ellipsis">
+      
+        3.1. API de Geocoding (para obtener coordenadas)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-api-de-prevision-meteorologica">
+<span class="md-ellipsis">
+      
+        3.2. API de Previsión Meteorológica
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-estructura-de-archivos-del-proyecto">
+<span class="md-ellipsis">
+      
+        4. Estructura de archivos del proyecto
+      
+    </span>
+</a>
+<nav aria-label="4. Estructura de archivos del proyecto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion-de-cada-archivo">
+<span class="md-ellipsis">
+      
+        Descripción de cada archivo:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-funcionalidades-obligatorias">
+<span class="md-ellipsis">
+      
+        5. Funcionalidades obligatorias
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-posibles-ampliaciones-para-quienes-quieran-ir-mas-alla">
+<span class="md-ellipsis">
+      
+        6. Posibles ampliaciones (para quienes quieran ir más allá)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-temporizacion">
+<span class="md-ellipsis">
+      
+        7. Temporización
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="proyecto-final-weather-cli-aplicacion-de-consulta-meteorologica">Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica<a class="headerlink" href="#proyecto-final-weather-cli-aplicacion-de-consulta-meteorologica" title="Permanent link">¶</a></h1>
+<h2 id="1-descripcion-general-del-proyecto">1. Descripción general del proyecto<a class="headerlink" href="#1-descripcion-general-del-proyecto" title="Permanent link">¶</a></h2>
+<p>En este proyecto desarrollarás una <strong>aplicación de consola (CLI)</strong> en Python que permitirá consultar el <strong>tiempo actual y las previsiones meteorológicas</strong> de cualquier ciudad del mundo utilizando <strong>servicios web gratuitos (APIs públicas)</strong>.</p>
+<p>La aplicación no tendrá interfaz gráfica, sino que funcionará directamente desde el <strong>terminal o la consola de comandos</strong>, solicitando información al usuario y mostrando los resultados formateados en texto.</p>
+<p>El objetivo es integrar en un proyecto completo los conocimientos básicos de <strong>programación estructurada</strong>, <strong>manejo de ficheros</strong>, <strong>control de errores</strong>, y <strong>consumo de datos desde Internet (JSON)</strong>.</p>
+<p>Este proyecto está pensado para un nivel introductorio, pero con margen para que los estudiantes más avanzados puedan ampliar funcionalidades.</p>
+<hr/>
+<h2 id="2-funcionamiento-general-del-programa">2. Funcionamiento general del programa<a class="headerlink" href="#2-funcionamiento-general-del-programa" title="Permanent link">¶</a></h2>
+<p>La aplicación se ejecutará desde consola, mostrando un <strong>menú interactivo</strong> con opciones como:</p>
+<div class="highlight"><pre><span></span><code>=== Weather CLI ===
+1) Consultar ciudad (1 día)
+2) Consultar ciudad (3 días)
+3) Ver último resultado
+4) Ver historial (últimas consultas)
+0) Salir
+</code></pre></div>
+<p>Cuando el usuario elija la opción “Consultar ciudad”, el programa:</p>
+<ol>
+<li>Solicitará el nombre de la ciudad.</li>
+<li>Consultará una API de geolocalización para obtener su <strong>latitud y longitud</strong>.</li>
+<li>Con esas coordenadas, llamará a una API meteorológica para obtener la <strong>temperatura actual, máxima y mínima, amanecer, atardecer y probabilidad de lluvia</strong>.</li>
+<li>Mostrará los resultados en pantalla y los guardará en un archivo local (<code>ultimo.json</code>).</li>
+<li>Además, añadirá los datos a un historial de consultas (<code>historial.json</code>).</li>
+</ol>
+<p>El programa debe ser capaz de <strong>manejar errores comunes</strong> (ciudad no encontrada, falta de conexión, formato erróneo del JSON, etc.) y funcionar incluso en <strong>modo offline</strong> usando un archivo local de ejemplo.</p>
+<hr/>
+<h2 id="3-apis-utilizadas-en-el-proyecto">3. APIs utilizadas en el proyecto<a class="headerlink" href="#3-apis-utilizadas-en-el-proyecto" title="Permanent link">¶</a></h2>
+<p>El proyecto utiliza <strong>dos APIs públicas</strong> de la plataforma <strong><a href="https://open-meteo.com/">Open-Meteo</a></strong>, que no requieren registro ni autenticación.</p>
+<h3 id="31-api-de-geocoding-para-obtener-coordenadas">3.1. API de Geocoding (para obtener coordenadas)<a class="headerlink" href="#31-api-de-geocoding-para-obtener-coordenadas" title="Permanent link">¶</a></h3>
+<p><strong>URL base:</strong>
+<code>https://geocoding-api.open-meteo.com/v1/search</code></p>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="highlight"><pre><span></span><code>https://geocoding-api.open-meteo.com/v1/search?name=Valencia&amp;count=1
+</code></pre></div>
+<p><strong>Respuesta típica (formato JSON):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Valencia"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.4702</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.3768</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spain"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A partir de este JSON, el programa extraerá:</p>
+<ul>
+<li><code>name</code> → nombre normalizado de la ciudad</li>
+<li><code>latitude</code> y <code>longitude</code> → coordenadas para la segunda API</li>
+</ul>
+<hr/>
+<h3 id="32-api-de-prevision-meteorologica">3.2. API de Previsión Meteorológica<a class="headerlink" href="#32-api-de-prevision-meteorologica" title="Permanent link">¶</a></h3>
+<p><strong>URL base:</strong>
+<code>https://api.open-meteo.com/v1/forecast</code></p>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="highlight"><pre><span></span><code>https://api.open-meteo.com/v1/forecast?latitude=39.47&amp;longitude=-0.37&amp;hourly=temperature_2m,precipitation_probability&amp;daily=sunrise,sunset,temperature_2m_max,temperature_2m_min&amp;timezone=auto
+</code></pre></div>
+<p><strong>Respuesta típica:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.47</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.37</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"daily"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"temperature_2m_max"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">23.5</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"temperature_2m_min"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">14.2</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"sunrise"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2025-11-12T07:34"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"sunset"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2025-11-12T17:49"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"temperature_2m"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">18.0</span><span class="p">,</span><span class="w"> </span><span class="mf">19.1</span><span class="p">,</span><span class="w"> </span><span class="mf">20.3</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"precipitation_probability"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>De aquí se extraerán los valores de:</p>
+<ul>
+<li>Temperatura actual (primer valor horario)</li>
+<li>Temperatura máxima y mínima del día</li>
+<li>Hora de amanecer y atardecer (últimos 5 caracteres: <code>HH:MM</code>)</li>
+<li>Probabilidad de precipitación</li>
+</ul>
+<hr/>
+<h2 id="4-estructura-de-archivos-del-proyecto">4. Estructura de archivos del proyecto<a class="headerlink" href="#4-estructura-de-archivos-del-proyecto" title="Permanent link">¶</a></h2>
+<p>El proyecto se dividirá en varios <strong>módulos de Python</strong>, cada uno con una función clara y bien delimitada.
+Esta separación facilita la comprensión y el mantenimiento del código, y ayuda a los alumnos a entender cómo se organizan los programas reales.</p>
+<div class="highlight"><pre><span></span><code>weather_cli/
+  main.py           # Programa principal: menú, flujo general y coordinación
+  cli.py            # Interfaz de línea de comandos: menús e interacción con el usuario
+  services.py       # Conexión con las APIs (geocoding y meteorología)
+  storage.py        # Lectura y escritura de archivos JSON (persistencia)
+  formatter.py      # Presentación y formato del resultado en texto
+</code></pre></div>
+<h3 id="descripcion-de-cada-archivo">Descripción de cada archivo:<a class="headerlink" href="#descripcion-de-cada-archivo" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong><code>main.py</code></strong>
+  Es el <strong>punto de entrada</strong> del programa. Contiene el bucle principal que muestra el menú, llama a las funciones adecuadas y coordina el flujo entre los demás módulos.</p>
+</li>
+<li>
+<p><strong><code>cli.py</code></strong>
+  Gestiona la <strong>interacción con el usuario</strong>: mostrar el menú, pedir opciones y textos, validar entradas y devolverlas al programa principal.</p>
+</li>
+<li>
+<p><strong><code>services.py</code></strong>
+  Contiene las funciones encargadas de <strong>conectarse a las APIs</strong>.
+  Define cómo construir las URLs, enviar las peticiones y extraer los datos útiles del JSON.
+  También puede incluir un pequeño control de errores de red (por ejemplo, <code>requests.exceptions.Timeout</code>).</p>
+</li>
+<li>
+<p><strong><code>storage.py</code></strong>
+  Se encarga de la <strong>persistencia de datos</strong>.
+  Permite guardar el último resultado en <code>ultimo.json</code>, mantener un historial en <code>historial.json</code>.</p>
+</li>
+<li>
+<p><strong><code>formatter.py</code></strong>
+  Define cómo se <strong>muestran los resultados</strong> al usuario: formato de texto, etiquetas, redondeos, alineación, etc.</p>
+</li>
+</ul>
+<hr/>
+<h2 id="5-funcionalidades-obligatorias">5. Funcionalidades obligatorias<a class="headerlink" href="#5-funcionalidades-obligatorias" title="Permanent link">¶</a></h2>
+<p>Las siguientes características forman parte del <strong>núcleo del proyecto</strong>.
+Todo alumno deberá implementarlas correctamente para considerar la práctica completa:</p>
+<ol>
+<li><strong>Menú principal interactivo</strong> con opciones numeradas y control básico de errores.</li>
+<li>
+<p><strong>Consulta meteorológica por ciudad:</strong></p>
+</li>
+<li>
+<p>Solicitar nombre de la ciudad al usuario.</p>
+</li>
+<li>Obtener sus coordenadas mediante la API de Geocoding.</li>
+<li>Obtener los datos del tiempo mediante la API de Forecast.</li>
+<li>
+<p>Mostrar un resumen claro con:</p>
+<ul>
+<li>Ciudad y coordenadas</li>
+<li>Temperatura actual</li>
+<li>Temperaturas máxima y mínima del día</li>
+<li>Amanecer y atardecer</li>
+<li>Probabilidad de precipitación</li>
+<li><strong>Persistencia de datos:</strong></li>
+</ul>
+</li>
+<li>
+<p>Guardar el último resultado (<code>ultimo.json</code>).</p>
+</li>
+<li>Registrar todas las consultas en un archivo de historial (<code>historial.json</code>).</li>
+<li><strong>Visualización de historial:</strong> mostrar las últimas 5 consultas realizadas.</li>
+<li>
+<p><strong>Manejo de errores y robustez:</strong></p>
+</li>
+<li>
+<p>Validar entradas del usuario (no vacías, sin números en el nombre de ciudad).</p>
+</li>
+<li>Controlar errores de red (sin conexión, ciudad inexistente).</li>
+<li>Evitar que el programa se cierre inesperadamente.</li>
+</ol>
+<hr/>
+<h2 id="6-posibles-ampliaciones-para-quienes-quieran-ir-mas-alla">6. Posibles ampliaciones (para quienes quieran ir más allá)<a class="headerlink" href="#6-posibles-ampliaciones-para-quienes-quieran-ir-mas-alla" title="Permanent link">¶</a></h2>
+<p>Estas ampliaciones son opcionales, pensadas para los alumnos que deseen profundizar:</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Ampliación</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 Fácil</td>
+<td>Limitar el historial</td>
+<td>Mostrar solo las últimas N consultas o filtrarlas por ciudad</td>
+</tr>
+<tr>
+<td>🟢 Fácil</td>
+<td>Mostrar fecha y hora de la consulta</td>
+<td>Añadir un campo <code>timestamp</code> (fecha/hora ISO) al guardar datos</td>
+</tr>
+<tr>
+<td>🟠 Intermedio</td>
+<td>Cachear resultados</td>
+<td>Si se consulta la misma ciudad en menos de 10 minutos, leer de <code>ultimo.json</code> sin llamar a la API</td>
+</tr>
+<tr>
+<td>🟠 Intermedio</td>
+<td>Permitir días personalizados</td>
+<td>Pasar el número de días como parámetro (<code>--dias N</code>) desde la línea de comandos</td>
+</tr>
+<tr>
+<td>🟠 Intermedio</td>
+<td>Mejorar formato de salida</td>
+<td>Mostrar las temperaturas en tabla o con colores usando ANSI</td>
+</tr>
+<tr>
+<td>🔵 Avanzado</td>
+<td>Exportar datos a CSV o JSON comprimido</td>
+<td>Generar un informe con todas las consultas</td>
+</tr>
+<tr>
+<td>🔵 Avanzado</td>
+<td>Gráfica ASCII</td>
+<td>Dibujar una gráfica de temperaturas por hora con caracteres en texto</td>
+</tr>
+<tr>
+<td>🔵 Avanzado</td>
+<td>Tests unitarios</td>
+<td>Probar funciones puras con <code>pytest</code> (por ejemplo, formateo o parsing de JSON)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="7-temporizacion">7. Temporización<a class="headerlink" href="#7-temporizacion" title="Permanent link">¶</a></h2>
+<ul>
+<li>Sesión 1: Creación del proyecto, estructura de archivos, menú principal y conexión a las API.</li>
+<li>Sesión 2: Implementación de las diferentes consultas meteorológicas, presentación de resultados, manejo de datos JSON.</li>
+<li>Sesión 3: Persistencia de datos, historial de consultas, configuración de localización por defecto.</li>
+<li>Extras: Opciones de elección de datos a visualizar.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+</body>
+</html>

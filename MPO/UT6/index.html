@@ -1,0 +1,1670 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../UT5/ejercicios_archivos_clase/" rel="prev"/>
+<link href="ejercicios_scripts_clase/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>UT6: Automatización de Tareas del Sistema - Jordi Cido - FP</title>
+<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ut6-automatizacion-de-tareas-del-sistema">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT6: Automatización de Tareas del Sistema
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interaccion-con-el-sistema-operativo">
+<span class="md-ellipsis">
+      
+        Interacción con el Sistema Operativo
+      
+    </span>
+</a>
+<nav aria-label="Interacción con el Sistema Operativo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-os">
+<span class="md-ellipsis">
+      
+        Importar el módulo os
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-comunes-del-modulo-os">
+<span class="md-ellipsis">
+      
+        Funciones comunes del módulo os
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#argumentos-y-parametros-de-linea-de-comandos">
+<span class="md-ellipsis">
+      
+        Argumentos y Parámetros de Línea de Comandos
+      
+    </span>
+</a>
+<nav aria-label="Argumentos y Parámetros de Línea de Comandos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-sys">
+<span class="md-ellipsis">
+      
+        Importar el módulo sys
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-los-argumentos-de-linea-de-comandos">
+<span class="md-ellipsis">
+      
+        Acceder a los argumentos de línea de comandos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-modulo-datetime">
+<span class="md-ellipsis">
+      
+        El módulo datetime
+      
+    </span>
+</a>
+<nav aria-label="El módulo datetime" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-datetime">
+<span class="md-ellipsis">
+      
+        Importar el módulo datetime
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-comunes-del-modulo-datetime">
+<span class="md-ellipsis">
+      
+        Funciones comunes del módulo datetime
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programacion-de-tareas">
+<span class="md-ellipsis">
+      
+        Programación de Tareas
+      
+    </span>
+</a>
+<nav aria-label="Programación de Tareas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-con-la-biblioteca-schedule">
+<span class="md-ellipsis">
+      
+        Ejemplo con la biblioteca schedule
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-scripts-de-automatizacion">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: Scripts de Automatización
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interaccion-con-el-sistema-operativo">
+<span class="md-ellipsis">
+      
+        Interacción con el Sistema Operativo
+      
+    </span>
+</a>
+<nav aria-label="Interacción con el Sistema Operativo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-os">
+<span class="md-ellipsis">
+      
+        Importar el módulo os
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-comunes-del-modulo-os">
+<span class="md-ellipsis">
+      
+        Funciones comunes del módulo os
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#argumentos-y-parametros-de-linea-de-comandos">
+<span class="md-ellipsis">
+      
+        Argumentos y Parámetros de Línea de Comandos
+      
+    </span>
+</a>
+<nav aria-label="Argumentos y Parámetros de Línea de Comandos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-sys">
+<span class="md-ellipsis">
+      
+        Importar el módulo sys
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-los-argumentos-de-linea-de-comandos">
+<span class="md-ellipsis">
+      
+        Acceder a los argumentos de línea de comandos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-modulo-datetime">
+<span class="md-ellipsis">
+      
+        El módulo datetime
+      
+    </span>
+</a>
+<nav aria-label="El módulo datetime" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importar-el-modulo-datetime">
+<span class="md-ellipsis">
+      
+        Importar el módulo datetime
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-comunes-del-modulo-datetime">
+<span class="md-ellipsis">
+      
+        Funciones comunes del módulo datetime
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programacion-de-tareas">
+<span class="md-ellipsis">
+      
+        Programación de Tareas
+      
+    </span>
+</a>
+<nav aria-label="Programación de Tareas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-con-la-biblioteca-schedule">
+<span class="md-ellipsis">
+      
+        Ejemplo con la biblioteca schedule
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-scripts-de-automatizacion">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: Scripts de Automatización
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ut6-automatizacion-de-tareas-del-sistema">UT6: Automatización de Tareas del Sistema<a class="headerlink" href="#ut6-automatizacion-de-tareas-del-sistema" title="Permanent link">¶</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h2>
+<p>En esta unidad, aprenderemos a automatizar tareas del sistema utilizando Python. La automatización puede ayudarnos a ahorrar tiempo y reducir errores en tareas repetitivas. Veremos cómo interactuar con el sistema operativo, manejar procesos y programar tareas automáticas. </p>
+<h2 id="interaccion-con-el-sistema-operativo">Interacción con el Sistema Operativo<a class="headerlink" href="#interaccion-con-el-sistema-operativo" title="Permanent link">¶</a></h2>
+<p>Python proporciona el módulo <code>os</code> que nos permite interactuar con el sistema operativo de manera sencilla. Podemos realizar operaciones como crear, eliminar y renombrar archivos y directorios, así como obtener información del sistema.</p>
+<h3 id="importar-el-modulo-os">Importar el módulo os<a class="headerlink" href="#importar-el-modulo-os" title="Permanent link">¶</a></h3>
+<p>Para utilizar el módulo <code>os</code>, primero debemos importarlo en nuestro script de Python:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</code></pre></div>
+<h3 id="funciones-comunes-del-modulo-os">Funciones comunes del módulo os<a class="headerlink" href="#funciones-comunes-del-modulo-os" title="Permanent link">¶</a></h3>
+<p>Algunas funciones comunes del módulo <code>os</code> incluyen:</p>
+<ul>
+<li><code>os.getcwd()</code>: Obtiene el directorio de trabajo actual.</li>
+<li><code>os.listdir(path)</code>: Lista los archivos y directorios en el directorio especificado.</li>
+<li><code>os.mkdir(path)</code>: Crea un nuevo directorio.</li>
+<li><code>os.remove(path)</code>: Elimina un archivo.</li>
+<li><code>os.rmdir(path)</code>: Elimina un directorio vacío.</li>
+<li><code>os.rename(src, dst)</code>: Renombra un archivo o directorio.  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ejemplo de uso del módulo os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Obtener el directorio de trabajo actual</span>
+<span class="n">directorio_actual</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Directorio actual: </span><span class="si">{</span><span class="n">directorio_actual</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="c1"># Listar archivos y directorios en el directorio actual</span>
+<span class="n">contenido</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directorio_actual</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Contenido del directorio:'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">contenido</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="argumentos-y-parametros-de-linea-de-comandos">Argumentos y Parámetros de Línea de Comandos<a class="headerlink" href="#argumentos-y-parametros-de-linea-de-comandos" title="Permanent link">¶</a></h2>
+<p>Python permite manejar argumentos y parámetros pasados desde la línea de comandos utilizando el módulo <code>sys</code>. Esto es útil para crear scripts que puedan recibir entradas dinámicas al ejecutarse.</p>
+<h3 id="importar-el-modulo-sys">Importar el módulo sys<a class="headerlink" href="#importar-el-modulo-sys" title="Permanent link">¶</a></h3>
+<p>Para utilizar el módulo <code>sys</code>, primero debemos importarlo en nuestro script de Python:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</code></pre></div>
+<h3 id="acceder-a-los-argumentos-de-linea-de-comandos">Acceder a los argumentos de línea de comandos<a class="headerlink" href="#acceder-a-los-argumentos-de-linea-de-comandos" title="Permanent link">¶</a></h3>
+<p>Los argumentos de línea de comandos se almacenan en la lista <code>sys.argv</code>, donde el primer elemento es el nombre del script y los elementos siguientes son los argumentos pasados.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ejemplo de uso del módulo sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="c1"># Imprimir los argumentos de línea de comandos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Argumentos de línea de comandos:'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">¶</a></h3>
+<p>A continuación, un ejemplo de un script que recibe un nombre de archivo como argumento y muestra su contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Uso: python script.py &lt;nombre_del_archivo&gt;'</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">nombre_archivo</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">nombre_archivo</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'El archivo </span><span class="si">{</span><span class="n">nombre_archivo</span><span class="si">}</span><span class="s1"> no existe.'</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_archivo</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">contenido</span> <span class="o">=</span> <span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Contenido del archivo:'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contenido</span><span class="p">)</span>  
+</code></pre></div>
+<p>Otros ejemplos combinando <code>os</code> y <code>sys</code> pueden incluir scripts para automatizar copias de seguridad, limpieza de archivos temporales, o cualquier otra tarea repetitiva que involucre el sistema de archivos. Por ejemplo, un script que elimine archivos antiguos en un directorio específico.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Uso: python limpiar.py &lt;directorio&gt; &lt;días&gt;'</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">directorio</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">dias</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Obtener la fecha límite</span>
+<span class="n">fecha_limite</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="p">(</span><span class="n">dias</span> <span class="o">*</span> <span class="mi">86400</span><span class="p">)</span>
+
+<span class="c1"># Eliminar archivos antiguos</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directorio</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">nombre_archivo</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">ruta_archivo</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">nombre_archivo</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">ruta_archivo</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">fecha_limite</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">ruta_archivo</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Archivo eliminado: </span><span class="si">{</span><span class="n">ruta_archivo</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="el-modulo-datetime">El módulo datetime<a class="headerlink" href="#el-modulo-datetime" title="Permanent link">¶</a></h2>
+<p>El módulo <code>datetime</code> nos permite trabajar con fechas y horas en Python. Podemos utilizarlo para programar tareas basadas en tiempo, como ejecutar scripts en momentos específicos o calcular diferencias entre fechas.</p>
+<h3 id="importar-el-modulo-datetime">Importar el módulo datetime<a class="headerlink" href="#importar-el-modulo-datetime" title="Permanent link">¶</a></h3>
+<p>Para utilizar el módulo <code>datetime</code>, primero debemos importarlo en nuestro script de Python:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+</code></pre></div>
+<h3 id="funciones-comunes-del-modulo-datetime">Funciones comunes del módulo datetime<a class="headerlink" href="#funciones-comunes-del-modulo-datetime" title="Permanent link">¶</a></h3>
+<p>Algunas funciones comunes del módulo <code>datetime</code> incluyen:</p>
+<ul>
+<li><code>datetime.datetime.now()</code>: Obtiene la fecha y hora actuales.</li>
+<li><code>datetime.timedelta()</code>: Representa una duración, la diferencia entre dos fechas u horas.</li>
+<li><code>datetime.datetime.strptime()</code>: Convierte una cadena en un objeto datetime según un formato especificado.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ejemplo de uso del módulo datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="c1"># Obtener la fecha y hora actuales</span>
+<span class="n">ahora</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Fecha y hora actuales: </span><span class="si">{</span><span class="n">ahora</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="c1"># Calcular una fecha futura</span>
+<span class="n">futuro</span> <span class="o">=</span> <span class="n">ahora</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Fecha dentro de 7 días: </span><span class="si">{</span><span class="n">futuro</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="programacion-de-tareas">Programación de Tareas<a class="headerlink" href="#programacion-de-tareas" title="Permanent link">¶</a></h2>
+<p>Para programar tareas automáticas en Python, podemos utilizar bibliotecas como <code>schedule</code> o <code>APScheduler</code>. Estas bibliotecas permiten definir tareas que se ejecutan en intervalos regulares o en momentos específicos.</p>
+<h3 id="ejemplo-con-la-biblioteca-schedule">Ejemplo con la biblioteca schedule<a class="headerlink" href="#ejemplo-con-la-biblioteca-schedule" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">schedule</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tarea</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ejecutando tarea programada..."</span><span class="p">)</span>
+
+<span class="c1"># Programar la tarea para que se ejecute cada 10 segundos</span>
+<span class="n">schedule</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">tarea</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">schedule</span><span class="o">.</span><span class="n">run_pending</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="ejercicios-de-clase-scripts-de-automatizacion">Ejercicios de clase: <a href="ejercicios_scripts_clase/">Scripts de Automatización</a><a class="headerlink" href="#ejercicios-de-clase-scripts-de-automatizacion" title="Permanent link">¶</a></h2>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+</body>
+</html>

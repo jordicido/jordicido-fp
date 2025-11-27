@@ -1,0 +1,1661 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../" rel="prev"/>
+<link href="../ejercicios_if_clase/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>Ejercicios de clase UT2: Estructura de control de repetición - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ejercicios-de-clase-ut2-estructura-de-control-de-repeticion">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Ejercicios de clase UT2: Estructura de control de repetición
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contexto">
+<span class="md-ellipsis">
+      
+        Contexto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-1-contador">
+<span class="md-ellipsis">
+      
+        Ejercicio 1 - Contador
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-2-contador-de-numeros-pares">
+<span class="md-ellipsis">
+      
+        Ejercicio 2 - Contador de números pares
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-3-cuenta-atras">
+<span class="md-ellipsis">
+      
+        Ejercicio 3 - Cuenta atrás
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-4-factorial">
+<span class="md-ellipsis">
+      
+        Ejercicio 4 - Factorial
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-5-multiple-de-3-o-5">
+<span class="md-ellipsis">
+      
+        Ejercicio 5 - Múltiple de 3 o 5
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-6-triangulo-de-asteriscos">
+<span class="md-ellipsis">
+      
+        Ejercicio 6 - Triángulo de asteriscos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-7-tabla-de-multiplicar">
+<span class="md-ellipsis">
+      
+        Ejercicio 7 - Tabla de multiplicar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-8-cuadrado-con-cruz">
+<span class="md-ellipsis">
+      
+        Ejercicio 8 - Cuadrado con cruz
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-9-suma-acumulativa">
+<span class="md-ellipsis">
+      
+        Ejercicio 9 - Suma acumulativa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-10-akinator-numerico">
+<span class="md-ellipsis">
+      
+        Ejercicio 10 - Akinator numérico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-11-media-de-notas">
+<span class="md-ellipsis">
+      
+        Ejercicio 11 - Media de notas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-12-mayor-y-menor">
+<span class="md-ellipsis">
+      
+        Ejercicio 12 - Mayor y menor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-13-numero-de-cifras">
+<span class="md-ellipsis">
+      
+        Ejercicio 13 - Número de cifras
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-14-numeros-primos">
+<span class="md-ellipsis">
+      
+        Ejercicio 14 - Números primos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-15-banca-online">
+<span class="md-ellipsis">
+      
+        Ejercicio 15 - Banca online
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-16-numeros-perfectos">
+<span class="md-ellipsis">
+      
+        Ejercicio 16 - Números perfectos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-17-conversion-binaria">
+<span class="md-ellipsis">
+      
+        Ejercicio 17 - Conversión binaria
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contexto">
+<span class="md-ellipsis">
+      
+        Contexto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-1-contador">
+<span class="md-ellipsis">
+      
+        Ejercicio 1 - Contador
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-2-contador-de-numeros-pares">
+<span class="md-ellipsis">
+      
+        Ejercicio 2 - Contador de números pares
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-3-cuenta-atras">
+<span class="md-ellipsis">
+      
+        Ejercicio 3 - Cuenta atrás
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-4-factorial">
+<span class="md-ellipsis">
+      
+        Ejercicio 4 - Factorial
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-5-multiple-de-3-o-5">
+<span class="md-ellipsis">
+      
+        Ejercicio 5 - Múltiple de 3 o 5
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-6-triangulo-de-asteriscos">
+<span class="md-ellipsis">
+      
+        Ejercicio 6 - Triángulo de asteriscos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-7-tabla-de-multiplicar">
+<span class="md-ellipsis">
+      
+        Ejercicio 7 - Tabla de multiplicar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-8-cuadrado-con-cruz">
+<span class="md-ellipsis">
+      
+        Ejercicio 8 - Cuadrado con cruz
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-9-suma-acumulativa">
+<span class="md-ellipsis">
+      
+        Ejercicio 9 - Suma acumulativa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-10-akinator-numerico">
+<span class="md-ellipsis">
+      
+        Ejercicio 10 - Akinator numérico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-11-media-de-notas">
+<span class="md-ellipsis">
+      
+        Ejercicio 11 - Media de notas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-12-mayor-y-menor">
+<span class="md-ellipsis">
+      
+        Ejercicio 12 - Mayor y menor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-13-numero-de-cifras">
+<span class="md-ellipsis">
+      
+        Ejercicio 13 - Número de cifras
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-14-numeros-primos">
+<span class="md-ellipsis">
+      
+        Ejercicio 14 - Números primos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-15-banca-online">
+<span class="md-ellipsis">
+      
+        Ejercicio 15 - Banca online
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-16-numeros-perfectos">
+<span class="md-ellipsis">
+      
+        Ejercicio 16 - Números perfectos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-17-conversion-binaria">
+<span class="md-ellipsis">
+      
+        Ejercicio 17 - Conversión binaria
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ejercicios-de-clase-ut2-estructura-de-control-de-repeticion">Ejercicios de clase UT2: Estructura de control de repetición<a class="headerlink" href="#ejercicios-de-clase-ut2-estructura-de-control-de-repeticion" title="Permanent link">¶</a></h1>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">¶</a></h2>
+<p>La estructura de control de repetición es fundamental en programación, ya que permite ejecutar un bloque de código varias veces bajo ciertas condiciones. En este ejercicio, se te presentarán varios problemas que requieren el uso de bucles <code>for</code> y <code>while</code> para resolverlos. Asegúrate de entender cada problema y de implementar una solución adecuada utilizando estas estructuras de control.</p>
+<h2 id="ejercicio-1-contador">Ejercicio 1 - Contador<a class="headerlink" href="#ejercicio-1-contador" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo e imprima los números desde el 0 hasta ese número (incluido). El programa debe imprimir los números en cada iteración.</p>
+<h2 id="ejercicio-2-contador-de-numeros-pares">Ejercicio 2 - Contador de números pares<a class="headerlink" href="#ejercicio-2-contador-de-numeros-pares" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y cuente cuántos números pares hay desde 0 hasta ese número (incluido). El programa debe imprimir el resultado.</p>
+<h2 id="ejercicio-3-cuenta-atras">Ejercicio 3 - Cuenta atrás<a class="headerlink" href="#ejercicio-3-cuenta-atras" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y realice una cuenta atrás desde ese número hasta 0. El programa debe imprimir cada número en la cuenta atrás.</p>
+<h2 id="ejercicio-4-factorial">Ejercicio 4 - Factorial<a class="headerlink" href="#ejercicio-4-factorial" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y calcule su factorial. El programa debe imprimir el resultado.
+El factorial de un número <code>n</code> se define como el producto de todos los números enteros desde 1 hasta <code>n</code>.</p>
+<p>Por ejemplo, el factorial de 5 (5!) es:</p>
+<div class="highlight"><pre><span></span><code>5 * 4 * 3 * 2 * 1 = 120.
+</code></pre></div>
+<h2 id="ejercicio-5-multiple-de-3-o-5">Ejercicio 5 - Múltiple de 3 o 5<a class="headerlink" href="#ejercicio-5-multiple-de-3-o-5" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo e imprima solamente los números múltiplos de 3 o de 5 dentro de ese rango.</p>
+<p>Si el número es múltiplo de 3, imprime el número seguido de el mensaje "es múltiplo de 3". Si el número es múltiplo de 5, imprime el número seguido del mensaje "es múltiplo de 5". Si el número es múltiplo de ambos no debes imprimir nada.</p>
+<h2 id="ejercicio-6-triangulo-de-asteriscos">Ejercicio 6 - Triángulo de asteriscos<a class="headerlink" href="#ejercicio-6-triangulo-de-asteriscos" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y dibuje un triángulo de asteriscos con la altura especificada. Por ejemplo, si el usuario ingresa 5, el triángulo debe verse así:</p>
+<div class="highlight"><pre><span></span><code>*
+**
+***
+****
+*****
+</code></pre></div>
+<h2 id="ejercicio-7-tabla-de-multiplicar">Ejercicio 7 - Tabla de multiplicar<a class="headerlink" href="#ejercicio-7-tabla-de-multiplicar" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y muestre la tabla de multiplicar de ese número. Por ejemplo, si el usuario ingresa 3, el programa debe imprimir:</p>
+<div class="highlight"><pre><span></span><code>3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+</code></pre></div>
+<h2 id="ejercicio-8-cuadrado-con-cruz">Ejercicio 8 - Cuadrado con cruz<a class="headerlink" href="#ejercicio-8-cuadrado-con-cruz" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo impar y dibuje un cuadrado de x con una cruz en el medio. Por ejemplo, si el usuario ingresa 5, el cuadrado debe verse así:</p>
+<div class="highlight"><pre><span></span><code>xxxxx
+xx xx
+x x x
+xx xx
+xxxxx
+</code></pre></div>
+<h2 id="ejercicio-9-suma-acumulativa">Ejercicio 9 - Suma acumulativa<a class="headerlink" href="#ejercicio-9-suma-acumulativa" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario una serie de números enteros y calcule la suma acumulativa de esos números. El programa debe seguir pidiendo números hasta que el usuario ingrese un 0. Al final, imprime la suma total.</p>
+<h2 id="ejercicio-10-akinator-numerico">Ejercicio 10 - Akinator numérico<a class="headerlink" href="#ejercicio-10-akinator-numerico" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que escoja un número aleatorio entre 1 y 100 y le pida al usuario que adivine el número. El programa debe dar pistas al usuario si el número es mayor o menor que el número elegido. El programa debe seguir pidiendo números hasta que el usuario adivine el número correcto.</p>
+<h2 id="ejercicio-11-media-de-notas">Ejercicio 11 - Media de notas<a class="headerlink" href="#ejercicio-11-media-de-notas" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario cuantas evaluaciones hay que cualificar. Seguidamente se recibirán ese número de series de notas (números decimales entre 0 y 10) y calcule la media de esas notas. El programa debe seguir pidiendo notas hasta que el usuario ingrese un -1. Al final, imprime la media.</p>
+<div class="highlight"><pre><span></span><code>Introduce el número de evaluaciones: 3
+Notas de la evaluación 1: 6 8 4 3.5 9 -1
+Notas de la evaluación 2: 7 5 8.5 -1
+Notas de la evaluación 3: 9 10 8.5 -1
+La media de la evaluación 1 es: 6.5
+La media de la evaluación 2 es: 7.5
+La media de la evaluación 3 es: 9.0
+</code></pre></div>
+<h2 id="ejercicio-12-mayor-y-menor">Ejercicio 12 - Mayor y menor<a class="headerlink" href="#ejercicio-12-mayor-y-menor" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario una serie de números enteros y determine cuál es el mayor y cuál es el menor. El programa debe seguir pidiendo números hasta que el usuario ingrese un 0. Al final, imprime el mayor y el menor.</p>
+<h2 id="ejercicio-13-numero-de-cifras">Ejercicio 13 - Número de cifras<a class="headerlink" href="#ejercicio-13-numero-de-cifras" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario una serie de números enteros positivos hasta la introducción de un valor -1 para cada número debe contar cuántas cifras tiene. El programa debe imprimir la longitud de cada número. No podéis usar la función <code>len()</code> para contar las cifras ni convertir el número a cadena.</p>
+<h2 id="ejercicio-14-numeros-primos">Ejercicio 14 - Números primos<a class="headerlink" href="#ejercicio-14-numeros-primos" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y determine si es primo o no. Un número primo es aquel que solo es divisible por 1 y por sí mismo. El programa debe imprimir el resultado.</p>
+<h2 id="ejercicio-15-banca-online">Ejercicio 15 - Banca online<a class="headerlink" href="#ejercicio-15-banca-online" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que simule una cuenta bancaria. El programa debe permitir al usuario realizar las siguientes operaciones:</p>
+<ol>
+<li>Ingresar dinero</li>
+<li>Retirar dinero</li>
+<li>Consultar saldo</li>
+<li>Salir</li>
+</ol>
+<p>Inicializa el saldo en 0 y permite al usuario realizar operaciones hasta que decida salir.</p>
+<h2 id="ejercicio-16-numeros-perfectos">Ejercicio 16 - Números perfectos<a class="headerlink" href="#ejercicio-16-numeros-perfectos" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y determine si es un número perfecto o no. Un número perfecto es aquel que es igual a la suma de sus divisores propios (excluyendo el propio número). Por ejemplo, 6 es un número perfecto porque sus divisores son 1, 2 y 3, y 1 + 2 + 3 = 6.</p>
+<h2 id="ejercicio-17-conversion-binaria">Ejercicio 17 - Conversión binaria<a class="headerlink" href="#ejercicio-17-conversion-binaria" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que pida al usuario un número entero positivo y lo convierta a su representación binaria. El programa debe imprimir el resultado en forma de cadena de caracteres.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+</body>
+</html>

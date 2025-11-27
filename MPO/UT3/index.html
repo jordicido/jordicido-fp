@@ -1,0 +1,2147 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../UT2/ejercicios_ut2_bas/" rel="prev"/>
+<link href="ejercicios_diccionarios_clase/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>UT3: Tipos de datos complejos - Jordi Cido - FP</title>
+<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ut3-tipos-de-datos-complejos">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT3: Tipos de datos complejos
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipos-de-datos-complejos">
+<span class="md-ellipsis">
+      
+        Tipos de datos complejos
+      
+    </span>
+</a>
+<nav aria-label="Tipos de datos complejos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#listas">
+<span class="md-ellipsis">
+      
+        Listas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-con-listas">
+<span class="md-ellipsis">
+      
+        Operaciones con listas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#otras-caracteristicas-de-las-listas">
+<span class="md-ellipsis">
+      
+        Otras características de las listas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios">
+<span class="md-ellipsis">
+      
+        Diccionarios
+      
+    </span>
+</a>
+<nav aria-label="Diccionarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales">
+<span class="md-ellipsis">
+      
+        Características principales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-basicas">
+<span class="md-ellipsis">
+      
+        Operaciones básicas
+      
+    </span>
+</a>
+<nav aria-label="Operaciones básicas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-un-diccionario">
+<span class="md-ellipsis">
+      
+        Crear un diccionario
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-valores">
+<span class="md-ellipsis">
+      
+        Acceder a valores
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-valores">
+<span class="md-ellipsis">
+      
+        Modificar valores
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anadir-nuevos-pares-clave-valor">
+<span class="md-ellipsis">
+      
+        Añadir nuevos pares clave-valor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eliminar-elementos">
+<span class="md-ellipsis">
+      
+        Eliminar elementos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comprobar-si-una-clave-existe">
+<span class="md-ellipsis">
+      
+        Comprobar si una clave existe
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-un-diccionario">
+<span class="md-ellipsis">
+      
+        Recorrer un diccionario
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-utiles">
+<span class="md-ellipsis">
+      
+        Métodos útiles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios-anidados">
+<span class="md-ellipsis">
+      
+        Diccionarios anidados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas">
+<span class="md-ellipsis">
+      
+        Tuplas
+      
+    </span>
+</a>
+<nav aria-label="Tuplas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales_1">
+<span class="md-ellipsis">
+      
+        Características principales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-tuplas">
+<span class="md-ellipsis">
+      
+        Crear tuplas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-elementos">
+<span class="md-ellipsis">
+      
+        Acceder a elementos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-una-tupla">
+<span class="md-ellipsis">
+      
+        Recorrer una tupla
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-comunes">
+<span class="md-ellipsis">
+      
+        Operaciones comunes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desempaquetado">
+<span class="md-ellipsis">
+      
+        Desempaquetado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas-anidadas">
+<span class="md-ellipsis">
+      
+        Tuplas anidadas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tupla-o-lista">
+<span class="md-ellipsis">
+      
+        ¿Tupla o lista?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico_1">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-listas">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: listas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-diccionarios-y-tuplas">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: diccionarios y tuplas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-extra-ut3">
+<span class="md-ellipsis">
+      
+        Ejercicios extra UT3
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT6/ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipos-de-datos-complejos">
+<span class="md-ellipsis">
+      
+        Tipos de datos complejos
+      
+    </span>
+</a>
+<nav aria-label="Tipos de datos complejos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#listas">
+<span class="md-ellipsis">
+      
+        Listas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-con-listas">
+<span class="md-ellipsis">
+      
+        Operaciones con listas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#otras-caracteristicas-de-las-listas">
+<span class="md-ellipsis">
+      
+        Otras características de las listas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios">
+<span class="md-ellipsis">
+      
+        Diccionarios
+      
+    </span>
+</a>
+<nav aria-label="Diccionarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales">
+<span class="md-ellipsis">
+      
+        Características principales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-basicas">
+<span class="md-ellipsis">
+      
+        Operaciones básicas
+      
+    </span>
+</a>
+<nav aria-label="Operaciones básicas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-un-diccionario">
+<span class="md-ellipsis">
+      
+        Crear un diccionario
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-valores">
+<span class="md-ellipsis">
+      
+        Acceder a valores
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-valores">
+<span class="md-ellipsis">
+      
+        Modificar valores
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anadir-nuevos-pares-clave-valor">
+<span class="md-ellipsis">
+      
+        Añadir nuevos pares clave-valor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eliminar-elementos">
+<span class="md-ellipsis">
+      
+        Eliminar elementos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comprobar-si-una-clave-existe">
+<span class="md-ellipsis">
+      
+        Comprobar si una clave existe
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-un-diccionario">
+<span class="md-ellipsis">
+      
+        Recorrer un diccionario
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-utiles">
+<span class="md-ellipsis">
+      
+        Métodos útiles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diccionarios-anidados">
+<span class="md-ellipsis">
+      
+        Diccionarios anidados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas">
+<span class="md-ellipsis">
+      
+        Tuplas
+      
+    </span>
+</a>
+<nav aria-label="Tuplas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas-principales_1">
+<span class="md-ellipsis">
+      
+        Características principales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-tuplas">
+<span class="md-ellipsis">
+      
+        Crear tuplas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceder-a-elementos">
+<span class="md-ellipsis">
+      
+        Acceder a elementos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recorrer-una-tupla">
+<span class="md-ellipsis">
+      
+        Recorrer una tupla
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-comunes">
+<span class="md-ellipsis">
+      
+        Operaciones comunes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desempaquetado">
+<span class="md-ellipsis">
+      
+        Desempaquetado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuplas-anidadas">
+<span class="md-ellipsis">
+      
+        Tuplas anidadas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tupla-o-lista">
+<span class="md-ellipsis">
+      
+        ¿Tupla o lista?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico_1">
+<span class="md-ellipsis">
+      
+        Ejemplo práctico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-listas">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: listas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-de-clase-diccionarios-y-tuplas">
+<span class="md-ellipsis">
+      
+        Ejercicios de clase: diccionarios y tuplas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-extra-ut3">
+<span class="md-ellipsis">
+      
+        Ejercicios extra UT3
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ut3-tipos-de-datos-complejos">UT3: Tipos de datos complejos<a class="headerlink" href="#ut3-tipos-de-datos-complejos" title="Permanent link">¶</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h2>
+<p>Bienvenid@s a la Unidad de Trabajo 3 (UT3) del módulo profesional optativo (MPO) de Python. En esta unidad, nos centraremos en los tipos de datos complejos, que son fundamentales para el desarrollo de programas en Python. Aprenderás a utilizar listas, diccionarios y tuplas para almacenar y manipular datos de manera eficiente.</p>
+<h2 id="tipos-de-datos-complejos">Tipos de datos complejos<a class="headerlink" href="#tipos-de-datos-complejos" title="Permanent link">¶</a></h2>
+<p>Los tipos de datos complejos son estructuras que permiten almacenar múltiples valores en una sola variable. En Python, los tipos de datos complejos más comunes son las listas, los diccionarios y las tuplas. Cada uno de estos tipos tiene sus propias características y usos.</p>
+<h3 id="listas">Listas<a class="headerlink" href="#listas" title="Permanent link">¶</a></h3>
+<p>Las listas son colecciones ordenadas y mutables de elementos. Puedes almacenar diferentes tipos de datos en una lista, incluyendo números, cadenas y otros objetos. Las listas se definen utilizando corchetes <code>[]</code> y los elementos se separan por comas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Hola"</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</code></pre></div>
+<p>Si te fijas en el ejemplo anterior, <code>mi_lista</code> contiene cinco elementos: tres números enteros (1, 2, 3), una cadena de texto ("Hola") y un valor booleano (True). Las listas pueden contener elementos de diferentes tipos, lo que las hace muy versátiles.</p>
+<p>Antes de entrar en las operaciones que se pueden realizar con listas, es importante entender cómo se almacenan los elementos en ellas. Cada elemento de una lista tiene un índice asociado, que comienza en 0. Por ejemplo, en la lista <code>mi_lista</code> anterior, el primer elemento (1) tiene un índice de 0, el segundo elemento (2) tiene un índice de 1, y así sucesivamente.</p>
+<p><img alt="Imagen de una lista" src="../../assets/img/python-list.png"/></p>
+<p>Internamente, Python almacena las listas como una secuencia de referencias a los objetos que contienen. Esto significa que cuando creas una lista, Python no copia los objetos en la lista, sino que almacena referencias a ellos. Esto es importante tenerlo en cuenta, ya que puede afectar el rendimiento y el comportamiento de tu programa.</p>
+<p>Puedes acceder a los elementos de una lista utilizando su índice. Por ejemplo, para acceder al primer elemento de <code>mi_lista</code>, puedes usar:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Imprime: 1</span>
+</code></pre></div>
+<p>También puedes acceder a los elementos desde el final de la lista utilizando índices negativos. Por ejemplo, <code>mi_lista[-1]</code> te dará el último elemento de la lista.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Imprime: True</span>
+</code></pre></div>
+<p>Para declarar una lista vacía, puedes usar:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_lista_vacia</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+<p>O también puedes usar la función <code>list()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_lista_vacia</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="operaciones-con-listas">Operaciones con listas<a class="headerlink" href="#operaciones-con-listas" title="Permanent link">¶</a></h3>
+<p>Las listas permiten realizar operaciones como agregar, eliminar y modificar elementos. Algunas de las operaciones más comunes son:</p>
+<ul>
+<li><code>append()</code>: Agrega un elemento al final de la lista.</li>
+<li><code>insert()</code>: Inserta un elemento en una posición específica de la lista.</li>
+<li><code>remove()</code>: Elimina el primer elemento con el valor especificado.</li>
+<li><code>pop()</code>: Elimina y devuelve el último elemento de la lista (o el elemento en la posición especificada).</li>
+<li><code>sort()</code>: Ordena los elementos de la lista en orden ascendente.</li>
+<li><code>reverse()</code>: Invierte el orden de los elementos en la lista.</li>
+<li><code>len()</code>: Devuelve la longitud de la lista (número de elementos).</li>
+</ul>
+<h3 id="otras-caracteristicas-de-las-listas">Otras características de las listas<a class="headerlink" href="#otras-caracteristicas-de-las-listas" title="Permanent link">¶</a></h3>
+<p>Las listas también tienen otras características interesantes, como la posibilidad de anidar listas dentro de otras listas (listas multidimensionales) y la capacidad de utilizar comprensiones de listas para crear nuevas listas de manera concisa.</p>
+<p>Este tipo de estructuras las denominamos listas anidadas. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_lista_anidada</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Hola"</span><span class="p">,</span> <span class="s2">"Mundo"</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]</span>
+</code></pre></div>
+<p>En este caso, <code>mi_lista_anidada</code> contiene tres listas, cada una con diferentes tipos de datos. Puedes acceder a los elementos de las listas anidadas utilizando múltiples índices:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista_anidada</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Imprime: 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_lista_anidada</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Imprime: Hola</span>
+</code></pre></div>
+<h2 id="diccionarios">Diccionarios<a class="headerlink" href="#diccionarios" title="Permanent link">¶</a></h2>
+<p>Un <strong>diccionario</strong> es una estructura de datos en Python que almacena pares <strong>clave-valor</strong>. Cada clave es única y se utiliza para acceder a su valor asociado.</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"Ana"</span><span class="p">,</span>
+    <span class="s2">"edad"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">"ciudad"</span><span class="p">:</span> <span class="s2">"Valencia"</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="caracteristicas-principales">Características principales<a class="headerlink" href="#caracteristicas-principales" title="Permanent link">¶</a></h3>
+<ul>
+<li>Las <strong>claves</strong> deben ser de tipo <strong>inmutable</strong> (strings, números, tuplas...).</li>
+<li>Los <strong>valores</strong> pueden ser de cualquier tipo.</li>
+<li>Los elementos no están ordenados (hasta Python 3.6 era completamente desordenado; desde Python 3.7 mantiene el orden de inserción).</li>
+<li>Se pueden anidar diccionarios dentro de otros diccionarios.</li>
+</ul>
+<h3 id="operaciones-basicas">Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permanent link">¶</a></h3>
+<h4 id="crear-un-diccionario">Crear un diccionario<a class="headerlink" href="#crear-un-diccionario" title="Permanent link">¶</a></h4>
+<p>Para crear un diccionario, puedes usar llaves <code>{}</code> o la función <code>dict()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_dic</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Diccionario vacío</span>
+<span class="n">mi_dic</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">"Luis"</span><span class="p">,</span> <span class="n">edad</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="acceder-a-valores">Acceder a valores<a class="headerlink" href="#acceder-a-valores" title="Permanent link">¶</a></h3>
+<p>El acceso a los valores se realiza mediante la clave, es parecido a acceder a un elemento de una lista, pero en lugar de usar un índice, usas una clave:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="p">[</span><span class="s2">"nombre"</span><span class="p">])</span>  <span class="c1"># Ana</span>
+</code></pre></div>
+<p>Ten en cuenta que se lanza un error si la clave no existe.</p>
+<p>Es recomendable usar el método <code>.get()</code> para evitar errores:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"apellido"</span><span class="p">,</span> <span class="s2">"No especificado"</span><span class="p">))</span>
+</code></pre></div>
+<p>En este caso, si la clave "apellido" no existe, se devuelve "No especificado" en lugar de lanzar un error.</p>
+<h3 id="modificar-valores">Modificar valores<a class="headerlink" href="#modificar-valores" title="Permanent link">¶</a></h3>
+<p>Para modificar un valor en un diccionario, simplemente asignas un nuevo valor a la clave correspondiente:</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span><span class="p">[</span><span class="s2">"edad"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>
+</code></pre></div>
+<h3 id="anadir-nuevos-pares-clave-valor">Añadir nuevos pares clave-valor<a class="headerlink" href="#anadir-nuevos-pares-clave-valor" title="Permanent link">¶</a></h3>
+<p>De manera similar, puedes añadir nuevos pares clave-valor, la sintaxis es la misma que para modificar, pero la diferencia es que si la clave no existe, se crea un nuevo par:</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span><span class="p">[</span><span class="s2">"profesión"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Ingeniera"</span>
+</code></pre></div>
+<h3 id="eliminar-elementos">Eliminar elementos<a class="headerlink" href="#eliminar-elementos" title="Permanent link">¶</a></h3>
+<p>Para eliminar un elemento de un diccionario, puedes usar el método <code>pop()</code> o la palabra clave <code>del</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">del</span> <span class="n">persona</span><span class="p">[</span><span class="s2">"ciudad"</span><span class="p">]</span>
+<span class="n">persona</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"edad"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="comprobar-si-una-clave-existe">Comprobar si una clave existe<a class="headerlink" href="#comprobar-si-una-clave-existe" title="Permanent link">¶</a></h3>
+<p>Para comprobar si una clave existe en un diccionario, puedes usar el operador <code>in</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s2">"nombre"</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"La clave existe"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="recorrer-un-diccionario">Recorrer un diccionario<a class="headerlink" href="#recorrer-un-diccionario" title="Permanent link">¶</a></h3>
+<p>Para recorrer un diccionario, puedes usar un bucle <code>for</code>. Puedes iterar sobre las claves, los valores o ambos:</p>
+<ul>
+<li>Recorrer claves:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">clave</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">clave</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Recorrer valores:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">persona</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Recorrer claves y valores:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">persona</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">clave</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="metodos-utiles">Métodos útiles<a class="headerlink" href="#metodos-utiles" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get(clave)</code></td>
+<td>Devuelve el valor asociado a la clave</td>
+</tr>
+<tr>
+<td><code>keys()</code></td>
+<td>Devuelve una vista con las claves</td>
+</tr>
+<tr>
+<td><code>values()</code></td>
+<td>Devuelve una vista con los valores</td>
+</tr>
+<tr>
+<td><code>items()</code></td>
+<td>Devuelve pares (clave, valor)</td>
+</tr>
+<tr>
+<td><code>pop(clave)</code></td>
+<td>Elimina la clave y devuelve su valor</td>
+</tr>
+<tr>
+<td><code>update(dic2)</code></td>
+<td>Actualiza con los pares clave-valor de otro diccionario</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diccionarios-anidados">Diccionarios anidados<a class="headerlink" href="#diccionarios-anidados" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">alumnos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"alumno1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"Juan"</span><span class="p">,</span> <span class="s2">"nota"</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
+    <span class="s2">"alumno2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"nombre"</span><span class="p">:</span> <span class="s2">"Laura"</span><span class="p">,</span> <span class="s2">"nota"</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">inventario</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"manzanas"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"naranjas"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">"plátanos"</span><span class="p">:</span> <span class="mi">7</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">fruta</span><span class="p">,</span> <span class="n">cantidad</span> <span class="ow">in</span> <span class="n">inventario</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tengo </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="tuplas">Tuplas<a class="headerlink" href="#tuplas" title="Permanent link">¶</a></h2>
+<p>Una <strong>tupla</strong> es una colección ordenada e <strong>inmutable</strong> de elementos. Una vez creada, <strong>no se puede modificar</strong> (ni añadir, ni eliminar, ni cambiar elementos).</p>
+<div class="highlight"><pre><span></span><code><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="caracteristicas-principales_1">Características principales<a class="headerlink" href="#caracteristicas-principales_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Las tuplas son <strong>inmutables</strong>.</li>
+<li>Pueden contener elementos de <strong>diferentes tipos</strong>.</li>
+<li>Permiten elementos duplicados.</li>
+<li>Son <strong>más eficientes</strong> en memoria que las listas.</li>
+<li>Se pueden <strong>desempaquetar</strong> fácilmente.</li>
+</ul>
+<h3 id="crear-tuplas">Crear tuplas<a class="headerlink" href="#crear-tuplas" title="Permanent link">¶</a></h3>
+<p>Una tupla se define utilizando paréntesis <code>()</code>. Puedes crear una tupla con uno o más elementos, y si es una tupla unitaria, debes incluir una coma al final para diferenciarla de un simple valor entre paréntesis.</p>
+<div class="highlight"><pre><span></span><code><span class="n">tupla1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">tupla_unitaria</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,)</span>       <span class="c1"># Necesita la coma</span>
+<span class="n">tupla_vacia</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>⚠️ Sin la coma, <code>(5)</code> es solo un entero con paréntesis.</p>
+</blockquote>
+<h3 id="acceder-a-elementos">Acceder a elementos<a class="headerlink" href="#acceder-a-elementos" title="Permanent link">¶</a></h3>
+<p>Una tupla se comporta de manera similar a una lista en cuanto al acceso a sus elementos. Puedes acceder a los elementos utilizando índices, que comienzan en 0.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">tupla1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>      <span class="c1"># Primer elemento</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># Último elemento</span>
+</code></pre></div>
+<h3 id="recorrer-una-tupla">Recorrer una tupla<a class="headerlink" href="#recorrer-una-tupla" title="Permanent link">¶</a></h3>
+<p>Así como con las listas, puedes recorrer los elementos de una tupla utilizando un bucle <code>for</code>:</p>
+<ul>
+<li>Recorriendo sus elementos, con un for each.</li>
+<li>Recorriendo sus índices, con un for range.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">tupla1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="operaciones-comunes">Operaciones comunes<a class="headerlink" href="#operaciones-comunes" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitud</td>
+<td><code>len(tupla1)</code></td>
+</tr>
+<tr>
+<td>Concatenar</td>
+<td><code>tupla1 + tupla2</code></td>
+</tr>
+<tr>
+<td>Repetir</td>
+<td><code>tupla1 * 2</code></td>
+</tr>
+<tr>
+<td>Ver si contiene</td>
+<td><code>2 in tupla1</code></td>
+</tr>
+<tr>
+<td>Índice de elemento</td>
+<td><code>tupla1.index('hola')</code></td>
+</tr>
+<tr>
+<td>Contar elementos</td>
+<td><code>tupla1.count('adios')</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="desempaquetado">Desempaquetado<a class="headerlink" href="#desempaquetado" title="Permanent link">¶</a></h3>
+<p>Desempaquetar una tupla significa asignar sus elementos a variables individuales. Esto es útil cuando conoces la estructura de la tupla y quieres trabajar con sus valores de manera más directa.</p>
+<div class="highlight"><pre><span></span><code><span class="n">persona</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Ana"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"Valencia"</span><span class="p">)</span>
+<span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">,</span> <span class="n">ciudad</span> <span class="o">=</span> <span class="n">persona</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Ana</span>
+</code></pre></div>
+<blockquote>
+<p>⚠️ El número de variables debe coincidir con los elementos de la tupla.</p>
+</blockquote>
+<h3 id="tuplas-anidadas">Tuplas anidadas<a class="headerlink" href="#tuplas-anidadas" title="Permanent link">¶</a></h3>
+<p>Las tuplas también pueden contener otras tuplas, lo que permite crear estructuras de datos más complejas. Esto es útil para representar datos relacionados de manera estructurada.</p>
+<div class="highlight"><pre><span></span><code><span class="n">notas</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"Juan"</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Lucía"</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Pedro"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">nota</span> <span class="ow">in</span> <span class="n">notas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> sacó un </span><span class="si">{</span><span class="n">nota</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="tupla-o-lista">¿Tupla o lista?<a class="headerlink" href="#tupla-o-lista" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Tupla</th>
+<th>Lista</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mutabilidad</td>
+<td>Inmutable</td>
+<td>Mutable</td>
+</tr>
+<tr>
+<td>Rendimiento</td>
+<td>Más rápida y ligera</td>
+<td>Más pesada</td>
+</tr>
+<tr>
+<td>Uso común</td>
+<td>Datos fijos o constantes</td>
+<td>Datos que cambian</td>
+</tr>
+<tr>
+<td>Sintaxis</td>
+<td>Paréntesis <code>()</code></td>
+<td>Corchetes <code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-practico_1">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico_1" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">coordenada</span> <span class="o">=</span> <span class="p">(</span><span class="mf">39.4699</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3763</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mostrar_ubicacion</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+    <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">coord</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Latitud: </span><span class="si">{</span><span class="n">lat</span><span class="si">}</span><span class="s2">, Longitud: </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">mostrar_ubicacion</span><span class="p">(</span><span class="n">coordenada</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="ejercicios-de-clase-listas"><a href="ejercicios_listas_clase/">Ejercicios de clase: listas</a><a class="headerlink" href="#ejercicios-de-clase-listas" title="Permanent link">¶</a></h2>
+<h2 id="ejercicios-de-clase-diccionarios-y-tuplas"><a href="ejercicios_diccionarios_clase/">Ejercicios de clase: diccionarios y tuplas</a><a class="headerlink" href="#ejercicios-de-clase-diccionarios-y-tuplas" title="Permanent link">¶</a></h2>
+<p>Para practicar lo aprendido en esta unidad, hemos preparado una serie de ejercicios que te ayudarán a consolidar tus conocimientos. Puedes encontrar los ejercicios en el siguiente enlace:</p>
+<h2 id="ejercicios-extra-ut3"><a href="ejercicios_ut3_extra/">Ejercicios extra UT3</a><a class="headerlink" href="#ejercicios-extra-ut3" title="Permanent link">¶</a></h2>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+</body>
+</html>

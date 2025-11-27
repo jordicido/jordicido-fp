@@ -1,0 +1,1912 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../UT5/practica_usuarios/" rel="prev"/>
+<link href="../UT7/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>UT 6: Gestión de la información en sistemas operativos propietarios: Windows - Jordi Cido - FP</title>
+<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ut-6-gestion-de-la-informacion-en-sistemas-operativos-propietarios-windows">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2025 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT6/ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MPO/UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sistemas-de-archivos-en-windows">
+<span class="md-ellipsis">
+      
+        Sistemas de archivos en Windows
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cmd-simbolo-del-sistema">
+<span class="md-ellipsis">
+      
+        CMD (Símbolo del sistema)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comandos-basicos-para-la-gestion-de-archivos-y-directorios">
+<span class="md-ellipsis">
+      
+        Comandos básicos para la gestión de archivos y directorios
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#argumentos-y-parametros-de-linea-de-comandos">
+<span class="md-ellipsis">
+      
+        Argumentos y Parámetros de Línea de Comandos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rutas-absolutas-y-relativas">
+<span class="md-ellipsis">
+      
+        Rutas Absolutas y Relativas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#redirecciones-de-entrada-y-salida">
+<span class="md-ellipsis">
+      
+        Redirecciones de Entrada y Salida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ayuda-y-documentacion">
+<span class="md-ellipsis">
+      
+        Ayuda y documentación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-usuario-administrador-y-uac">
+<span class="md-ellipsis">
+      
+        El usuario Administrador y UAC
+      
+    </span>
+</a>
+<nav aria-label="El usuario Administrador y UAC" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-de-cuentas-de-usuario-uac">
+<span class="md-ellipsis">
+      
+        Control de Cuentas de Usuario (UAC)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejecutar-como-administrador">
+<span class="md-ellipsis">
+      
+        Ejecutar como Administrador
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permisos-y-propiedades-de-archivos">
+<span class="md-ellipsis">
+      
+        Permisos y propiedades de archivos
+      
+    </span>
+</a>
+<nav aria-label="Permisos y propiedades de archivos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipos-de-permisos-basicos-en-ntfs">
+<span class="md-ellipsis">
+      
+        Tipos de permisos básicos en NTFS:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ver-permisos-desde-la-gui">
+<span class="md-ellipsis">
+      
+        Ver permisos desde la GUI:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ver-permisos-desde-cmd">
+<span class="md-ellipsis">
+      
+        Ver permisos desde CMD:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambiar-los-permisos-de-un-archivo">
+<span class="md-ellipsis">
+      
+        Cambiar los permisos de un archivo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambio-de-propietario">
+<span class="md-ellipsis">
+      
+        Cambio de propietario
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pipes">
+<span class="md-ellipsis">
+      
+        Pipes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#atributos-de-archivos-en-windows">
+<span class="md-ellipsis">
+      
+        Atributos de archivos en Windows
+      
+    </span>
+</a>
+<nav aria-label="Atributos de archivos en Windows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ver-atributos">
+<span class="md-ellipsis">
+      
+        Ver atributos:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-atributos">
+<span class="md-ellipsis">
+      
+        Modificar atributos:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estructura-del-sistema-operativo-windows">
+<span class="md-ellipsis">
+      
+        Estructura del sistema operativo Windows
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#practica-en-clase">
+<span class="md-ellipsis">
+      
+        Práctica en clase
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sistemas-de-archivos-en-windows">
+<span class="md-ellipsis">
+      
+        Sistemas de archivos en Windows
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cmd-simbolo-del-sistema">
+<span class="md-ellipsis">
+      
+        CMD (Símbolo del sistema)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comandos-basicos-para-la-gestion-de-archivos-y-directorios">
+<span class="md-ellipsis">
+      
+        Comandos básicos para la gestión de archivos y directorios
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#argumentos-y-parametros-de-linea-de-comandos">
+<span class="md-ellipsis">
+      
+        Argumentos y Parámetros de Línea de Comandos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rutas-absolutas-y-relativas">
+<span class="md-ellipsis">
+      
+        Rutas Absolutas y Relativas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#redirecciones-de-entrada-y-salida">
+<span class="md-ellipsis">
+      
+        Redirecciones de Entrada y Salida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ayuda-y-documentacion">
+<span class="md-ellipsis">
+      
+        Ayuda y documentación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-usuario-administrador-y-uac">
+<span class="md-ellipsis">
+      
+        El usuario Administrador y UAC
+      
+    </span>
+</a>
+<nav aria-label="El usuario Administrador y UAC" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-de-cuentas-de-usuario-uac">
+<span class="md-ellipsis">
+      
+        Control de Cuentas de Usuario (UAC)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejecutar-como-administrador">
+<span class="md-ellipsis">
+      
+        Ejecutar como Administrador
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permisos-y-propiedades-de-archivos">
+<span class="md-ellipsis">
+      
+        Permisos y propiedades de archivos
+      
+    </span>
+</a>
+<nav aria-label="Permisos y propiedades de archivos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipos-de-permisos-basicos-en-ntfs">
+<span class="md-ellipsis">
+      
+        Tipos de permisos básicos en NTFS:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ver-permisos-desde-la-gui">
+<span class="md-ellipsis">
+      
+        Ver permisos desde la GUI:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ver-permisos-desde-cmd">
+<span class="md-ellipsis">
+      
+        Ver permisos desde CMD:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambiar-los-permisos-de-un-archivo">
+<span class="md-ellipsis">
+      
+        Cambiar los permisos de un archivo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambio-de-propietario">
+<span class="md-ellipsis">
+      
+        Cambio de propietario
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pipes">
+<span class="md-ellipsis">
+      
+        Pipes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#atributos-de-archivos-en-windows">
+<span class="md-ellipsis">
+      
+        Atributos de archivos en Windows
+      
+    </span>
+</a>
+<nav aria-label="Atributos de archivos en Windows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ver-atributos">
+<span class="md-ellipsis">
+      
+        Ver atributos:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-atributos">
+<span class="md-ellipsis">
+      
+        Modificar atributos:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estructura-del-sistema-operativo-windows">
+<span class="md-ellipsis">
+      
+        Estructura del sistema operativo Windows
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#practica-en-clase">
+<span class="md-ellipsis">
+      
+        Práctica en clase
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ut-6-gestion-de-la-informacion-en-sistemas-operativos-propietarios-windows">UT 6: Gestión de la información en sistemas operativos propietarios: Windows<a class="headerlink" href="#ut-6-gestion-de-la-informacion-en-sistemas-operativos-propietarios-windows" title="Permanent link">¶</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h2>
+<p>En esta unidad, aprenderemos a gestionar la información en sistemas operativos Windows. Veremos cómo funcionan los sistemas de archivos en Windows, los comandos básicos para la gestión de archivos y directorios desde CMD y PowerShell, el usuario Administrador y UAC, los permisos y propiedades de archivos, y la estructura del sistema operativo Windows.</p>
+<h2 id="sistemas-de-archivos-en-windows">Sistemas de archivos en Windows<a class="headerlink" href="#sistemas-de-archivos-en-windows" title="Permanent link">¶</a></h2>
+<p>Windows utiliza principalmente el sistema de archivos NTFS (New Technology File System), aunque también soporta FAT32 y exFAT para dispositivos extraíbles. NTFS ofrece características avanzadas como:</p>
+<ul>
+<li>Permisos de seguridad granulares</li>
+<li>Compresión de archivos</li>
+<li>Cifrado de archivos (EFS - Encrypting File System)</li>
+<li>Cuotas de disco</li>
+<li>Journaling para recuperación de datos</li>
+<li>Soporte para archivos y volúmenes grandes</li>
+</ul>
+<p>La estructura de archivos en Windows se organiza por unidades (C:, D:, E:, etc.), donde cada unidad representa una partición o dispositivo de almacenamiento. La unidad C: suele contener el sistema operativo y los archivos de programa.</p>
+<p>Cuando conectáis un dispositivo de almacenamiento externo (como un pendrive o un disco duro) en Windows, el sistema lo detecta automáticamente y le asigna una letra de unidad. Si el sistema de archivos no es compatible (por ejemplo, ext4 de Linux), Windows puede solicitar formatear el dispositivo o necesitaréis software de terceros para acceder a los datos.</p>
+<h2 id="cmd-simbolo-del-sistema">CMD (Símbolo del sistema)<a class="headerlink" href="#cmd-simbolo-del-sistema" title="Permanent link">¶</a></h2>
+<p>Windows utiliza CMD como interfaz de línea de comandos, heredera de MS-DOS. Para abrirlo: Win + R, escribir <code>cmd</code> y Enter, o buscarlo en el menú inicio.</p>
+<h2 id="comandos-basicos-para-la-gestion-de-archivos-y-directorios">Comandos básicos para la gestión de archivos y directorios<a class="headerlink" href="#comandos-basicos-para-la-gestion-de-archivos-y-directorios" title="Permanent link">¶</a></h2>
+<p>Aunque Windows cuenta con el Explorador de archivos (GUI), es fundamental conocer los comandos de línea de comandos para tareas administrativas y automatización:</p>
+<ul>
+<li><code>dir</code>: Lista los archivos y directorios.</li>
+<li><code>cd</code>: Cambia el directorio actual. Sin parámetros muestra la ruta actual.</li>
+<li><code>mkdir</code> o <code>md</code>: Crea un nuevo directorio.</li>
+<li><code>del</code>: Elimina archivos.</li>
+<li><code>rmdir</code> o <code>rd</code>: Elimina directorios.</li>
+<li><code>copy</code>: Copia archivos.</li>
+<li><code>xcopy</code>: Copia archivos y directorios con más opciones.</li>
+<li><code>move</code>: Mueve o renombra archivos o directorios.</li>
+<li><code>ren</code>: Renombra archivos o directorios.</li>
+<li><code>type</code>: Muestra el contenido de un archivo de texto.</li>
+<li><code>cls</code>: Limpia la pantalla de la consola.</li>
+</ul>
+<h2 id="argumentos-y-parametros-de-linea-de-comandos">Argumentos y Parámetros de Línea de Comandos<a class="headerlink" href="#argumentos-y-parametros-de-linea-de-comandos" title="Permanent link">¶</a></h2>
+<p>Los comandos pueden aceptar argumentos y parámetros (modificadores o switches) para modificar su comportamiento:</p>
+<div class="highlight"><pre><span></span><code>dir /w C:\Users\Usuario
+</code></pre></div>
+<ul>
+<li><code>/w</code>: parámetro que indica formato de lista ancha</li>
+<li><code>C:\Users\Usuario</code>: argumento que especifica el directorio a listar</li>
+</ul>
+<p><strong>Para consultar la ayuda</strong>, la mayoría de comandos aceptan <code>/?</code>:
+<div class="highlight"><pre><span></span><code>dir /?
+xcopy /?
+help dir
+</code></pre></div></p>
+<h2 id="rutas-absolutas-y-relativas">Rutas Absolutas y Relativas<a class="headerlink" href="#rutas-absolutas-y-relativas" title="Permanent link">¶</a></h2>
+<p>En Windows, las rutas pueden ser absolutas o relativas. Windows usa la barra invertida (<code>\</code>) como separador de directorios.</p>
+<p><strong>Ruta absoluta:</strong>
+<div class="highlight"><pre><span></span><code>C:\Users\Usuario\Documentos\archivo.txt
+</code></pre></div></p>
+<p><strong>Ruta relativa:</strong>
+<div class="highlight"><pre><span></span><code>Documentos\archivo.txt
+</code></pre></div></p>
+<p><strong>Notación especial:</strong>
+- <code>.</code> representa el directorio actual
+- <code>..</code> representa el directorio padre</p>
+<p><strong>Ejemplos:</strong>
+<div class="highlight"><pre><span></span><code>cd ..                          REM Sube un nivel
+cd ..\..                       REM Sube dos niveles
+cd Documentos\Proyectos        REM Ruta relativa hacia abajo
+</code></pre></div></p>
+<h2 id="redirecciones-de-entrada-y-salida">Redirecciones de Entrada y Salida<a class="headerlink" href="#redirecciones-de-entrada-y-salida" title="Permanent link">¶</a></h2>
+<p>En Windows, es posible redirigir la entrada y salida de los comandos utilizando operadores especiales:</p>
+<p><strong>Operadores de redirección:</strong>
+- <code>&gt;</code>: Redirige la salida a un archivo, sobrescribiendo su contenido.
+- <code>&gt;&gt;</code>: Redirige la salida a un archivo, agregando al final.
+- <code>&lt;</code>: Redirige la entrada desde un archivo.
+- <code>|</code>: Pipe - conecta la salida de un comando con la entrada de otro.</p>
+<p><strong>Ejemplos:</strong>
+<div class="highlight"><pre><span></span><code>dir &gt; lista.txt
+</code></pre></div>
+Crea (o sobrescribe) el archivo <code>lista.txt</code> con la lista de archivos del directorio actual.</p>
+<p><div class="highlight"><pre><span></span><code>dir &gt;&gt; lista.txt
+</code></pre></div>
+Añade la salida al final del archivo <code>lista.txt</code> sin sobrescribir.</p>
+<p><div class="highlight"><pre><span></span><code>dir C:\DirectorioInexistente 2&gt; errores.txt
+</code></pre></div>
+Redirige los mensajes de error al archivo <code>errores.txt</code>.</p>
+<h2 id="ayuda-y-documentacion">Ayuda y documentación<a class="headerlink" href="#ayuda-y-documentacion" title="Permanent link">¶</a></h2>
+<p>La mayoría de comandos aceptan el modificador <code>/?</code> para mostrar información de ayuda:</p>
+<div class="highlight"><pre><span></span><code>dir /?
+copy /?
+xcopy /?
+</code></pre></div>
+<p>También existe el comando <code>help</code>:
+<div class="highlight"><pre><span></span><code>help
+help dir
+</code></pre></div></p>
+<p><strong>Recursos adicionales:</strong>
+- Documentación oficial de Microsoft: docs.microsoft.com
+- Foros de la comunidad y Stack Overflow</p>
+<h2 id="el-usuario-administrador-y-uac">El usuario Administrador y UAC<a class="headerlink" href="#el-usuario-administrador-y-uac" title="Permanent link">¶</a></h2>
+<p>En Windows, el usuario Administrador tiene privilegios completos para realizar cualquier operación en el sistema. Sin embargo, Windows implementa el Control de Cuentas de Usuario (UAC - User Account Control) como medida de seguridad.</p>
+<h3 id="control-de-cuentas-de-usuario-uac">Control de Cuentas de Usuario (UAC)<a class="headerlink" href="#control-de-cuentas-de-usuario-uac" title="Permanent link">¶</a></h3>
+<p>UAC es una característica de seguridad que solicita confirmación o credenciales cuando se intentan realizar tareas que requieren permisos de administrador. Esto ayuda a prevenir cambios no autorizados en el sistema.</p>
+<h3 id="ejecutar-como-administrador">Ejecutar como Administrador<a class="headerlink" href="#ejecutar-como-administrador" title="Permanent link">¶</a></h3>
+<p>Para ejecutar un programa o comando con privilegios elevados:</p>
+<p><strong>Desde la GUI:</strong>
+- Clic derecho en un programa o acceso directo
+- Seleccionar "Ejecutar como administrador"</p>
+<p><strong>Desde CMD:</strong>
+- Buscar "CMD" en el menú inicio
+- Clic derecho y seleccionar "Ejecutar como administrador"
+- La ventana mostrará "Administrador" en el título</p>
+<p><strong>Verificar si tienes privilegios de administrador:</strong>
+<div class="highlight"><pre><span></span><code>net session
+</code></pre></div>
+Si no muestra errores, tienes privilegios de administrador.</p>
+<h2 id="permisos-y-propiedades-de-archivos">Permisos y propiedades de archivos<a class="headerlink" href="#permisos-y-propiedades-de-archivos" title="Permanent link">¶</a></h2>
+<p>En Windows, el sistema de permisos NTFS es más complejo que en sistemas más antiguos como FAT32. Los permisos determinan qué usuarios y grupos pueden acceder y modificar archivos y directorios.</p>
+<h3 id="tipos-de-permisos-basicos-en-ntfs">Tipos de permisos básicos en NTFS:<a class="headerlink" href="#tipos-de-permisos-basicos-en-ntfs" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Control total</strong>: Todos los permisos, incluida la capacidad de cambiar permisos y propietario</li>
+<li><strong>Modificar</strong>: Leer, escribir, eliminar archivos y subcarpetas</li>
+<li><strong>Lectura y ejecución</strong>: Ver contenido y ejecutar programas</li>
+<li><strong>Lectura</strong>: Ver archivos y propiedades</li>
+<li><strong>Escritura</strong>: Crear archivos y escribir datos</li>
+</ul>
+<h3 id="ver-permisos-desde-la-gui">Ver permisos desde la GUI:<a class="headerlink" href="#ver-permisos-desde-la-gui" title="Permanent link">¶</a></h3>
+<ol>
+<li>Clic derecho en un archivo o carpeta</li>
+<li>Seleccionar "Propiedades"</li>
+<li>Ir a la pestaña "Seguridad"</li>
+<li>Aquí se muestran los usuarios/grupos y sus permisos</li>
+</ol>
+<h3 id="ver-permisos-desde-cmd">Ver permisos desde CMD:<a class="headerlink" href="#ver-permisos-desde-cmd" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>icacls archivo.txt
+icacls C:\Carpeta
+</code></pre></div>
+<p>El comando <code>icacls</code> muestra los permisos de forma abreviada:
+- <code>F</code> = Control total (Full)
+- <code>M</code> = Modificar
+- <code>RX</code> = Lectura y ejecución
+- <code>R</code> = Lectura (Read)
+- <code>W</code> = Escritura (Write)</p>
+<p><strong>Ejemplo de salida:</strong>
+<div class="highlight"><pre><span></span><code>archivo.txt NT AUTHORITY\SYSTEM:(F)
+            BUILTIN\Administrators:(F)
+            DESKTOP-PC\Usuario:(R,W)
+</code></pre></div></p>
+<h2 id="cambiar-los-permisos-de-un-archivo">Cambiar los permisos de un archivo<a class="headerlink" href="#cambiar-los-permisos-de-un-archivo" title="Permanent link">¶</a></h2>
+<p>Para cambiar los permisos de archivos y directorios en Windows, se utiliza el comando <code>icacls</code>:</p>
+<p><strong>Sintaxis básica:</strong>
+<div class="highlight"><pre><span></span><code>icacls archivo.txt /grant Usuario:(permisos)
+</code></pre></div></p>
+<p><strong>Ejemplos:</strong>
+<div class="highlight"><pre><span></span><code>icacls archivo.txt /grant Usuario:(F)          REM Control total
+icacls archivo.txt /grant Usuario:(R)          REM Lectura
+icacls archivo.txt /grant Usuario:(R,W)        REM Lectura y escritura
+icacls archivo.txt /remove Usuario             REM Quitar permisos
+icacls C:\Carpeta /grant Usuario:(F) /T        REM Recursivo
+</code></pre></div></p>
+<h2 id="cambio-de-propietario">Cambio de propietario<a class="headerlink" href="#cambio-de-propietario" title="Permanent link">¶</a></h2>
+<p>Para cambiar el propietario de un archivo o directorio en Windows:</p>
+<p><strong>Usar takeown para tomar propiedad:</strong>
+<div class="highlight"><pre><span></span><code>takeown /f archivo.txt
+takeown /f C:\Carpeta /r /d y        REM Recursivo
+</code></pre></div></p>
+<p><strong>Usar icacls para cambiar el propietario:</strong>
+<div class="highlight"><pre><span></span><code>icacls archivo.txt /setowner NuevoUsuario
+icacls C:\Carpeta /setowner NuevoUsuario /T        REM Recursivo
+</code></pre></div></p>
+<p><strong>Nota:</strong> Necesitáis permisos de administrador para cambiar propietarios.</p>
+<h2 id="pipes">Pipes<a class="headerlink" href="#pipes" title="Permanent link">¶</a></h2>
+<p>Los pipes (<code>|</code>) conectan la salida de un comando con la entrada de otro, permitiendo encadenar comandos:</p>
+<p><strong>Ejemplos:</strong>
+<div class="highlight"><pre><span></span><code>dir | find "txt"                    REM Filtrar archivos que contienen "txt"
+dir | sort                          REM Ordenar resultados
+dir C:\Windows\System32 | more      REM Paginar salida larga
+dir | find /c /v ""                 REM Contar líneas
+</code></pre></div></p>
+<p><strong>Comandos útiles con pipes:</strong>
+- <code>find</code>: Busca texto
+- <code>findstr</code>: Búsqueda con expresiones regulares
+- <code>sort</code>: Ordena texto
+- <code>more</code>: Pagina la salida</p>
+<h2 id="atributos-de-archivos-en-windows">Atributos de archivos en Windows<a class="headerlink" href="#atributos-de-archivos-en-windows" title="Permanent link">¶</a></h2>
+<p>Windows utiliza atributos especiales para marcar características de archivos:</p>
+<p><strong>Atributos principales:</strong>
+- <strong>R</strong> (Read-only): Solo lectura
+- <strong>H</strong> (Hidden): Oculto
+- <strong>S</strong> (System): Archivo del sistema
+- <strong>A</strong> (Archive): Archivo modificado (para backups)</p>
+<h3 id="ver-atributos">Ver atributos:<a class="headerlink" href="#ver-atributos" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>attrib archivo.txt
+</code></pre></div>
+<h3 id="modificar-atributos">Modificar atributos:<a class="headerlink" href="#modificar-atributos" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>attrib +h archivo.txt    REM Hace el archivo oculto
+attrib -h archivo.txt    REM Quita el atributo oculto
+attrib +r archivo.txt    REM Solo lectura
+attrib -r archivo.txt    REM Quita solo lectura
+</code></pre></div>
+<p><strong>Aplicar de forma recursiva:</strong>
+<div class="highlight"><pre><span></span><code>attrib +h C:\Carpeta\*.* /s /d
+</code></pre></div></p>
+<h2 id="estructura-del-sistema-operativo-windows">Estructura del sistema operativo Windows<a class="headerlink" href="#estructura-del-sistema-operativo-windows" title="Permanent link">¶</a></h2>
+<p><strong>Directorios principales:</strong></p>
+<ul>
+<li><strong>C:\Windows</strong>: Archivos del sistema operativo</li>
+<li><code>System32</code>: Archivos y programas del sistema</li>
+<li><code>Temp</code>: Archivos temporales del sistema</li>
+<li><strong>C:\Program Files</strong>: Programas instalados</li>
+<li><strong>C:\Users</strong>: Perfiles de usuarios</li>
+<li><code>Usuario\Desktop</code>: Escritorio</li>
+<li><code>Usuario\Documents</code>: Documentos</li>
+<li><code>Usuario\Downloads</code>: Descargas</li>
+<li><code>Usuario\AppData</code>: Datos de aplicaciones</li>
+<li><strong>C:\ProgramData</strong>: Datos compartidos de aplicaciones</li>
+</ul>
+<p><strong>Variables de entorno:</strong></p>
+<p>Windows utiliza variables de entorno para referenciar ubicaciones comunes:</p>
+<div class="highlight"><pre><span></span><code>echo %USERPROFILE%     REM C:\Users\Usuario
+echo %TEMP%            REM Carpeta temporal
+echo %SYSTEMROOT%      REM C:\Windows
+echo %PROGRAMFILES%    REM C:\Program Files
+</code></pre></div>
+<h2 id="practica-en-clase"><a href="practica_comandos.md">Práctica en clase</a><a class="headerlink" href="#practica-en-clase" title="Permanent link">¶</a></h2>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+</body>
+</html>
