@@ -4,9 +4,13 @@ En este espacio se encuentran los apuntes de la asignatura de Entornos de Desarr
 
 ## [Programación didáctica](pd.md)
 
-## [Proyecto 1 - **Entrega 01/09/2025**](proyecto1.md)
+## [Proyecto 1 - **10% nota evaluación continua**]()
 
-## [Proyecto 2 - **Entrega 16/11/2025**](proyecto2.md)
+## [Proyecto 2 - **10% nota evaluación continua**]()
+
+## [Test 1 - **5% nota evaluación continua**]()
+
+## [Test 2 - **5% nota evaluación continua**]()
 
 ---
 

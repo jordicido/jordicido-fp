@@ -2,6 +2,7 @@
 venv/
 env/
 .venv/
+CLAUDE.md
 
 # Archivos y directorios de Python
 __pycache__/

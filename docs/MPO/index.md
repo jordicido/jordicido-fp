@@ -5,9 +5,13 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 
 ## [Programación didáctica](pd.md)
 
-## [Proyecto 1 - **ENTREGA: 01/09/2025**](proyecto1.md)
+## [Proyecto 1 - **10% nota evaluación continua**]()
 
-## [Proyecto 2 - **ENTREGA: 16/11/2025**](proyecto2.md)
+## [Proyecto 2 - **10% nota evaluación continua**]()
+
+## [Test 1 - **5% nota evaluación continua**]()
+
+## [Test 2 - **5% nota evaluación continua**]()
 
 ## Contenidos del módulo
 
@@ -42,12 +46,8 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 - Tratamiento de diferentes formatos de archivo
 - Gestión de errores con excepciones
 
-### [UT6: Automatización de Tareas del Sistema](UT6)
+### [UT6: Programación orientada a objetos](UT6)
 
-- Uso de bibliotecas estándar para automatización
-- Ejemplos prácticos de automatización
-
-### [UT7: Conectividad y Datos](UT7)
-
-- Módulos para conectividad HTTP
-- Manejo de datos en formatos JSON y CSV
+- Conceptos de POO: clases, objetos, atributos y métodos
+- Encapsulación, herencia y polimorfismo
+- Diseño de clases y objetos en Python

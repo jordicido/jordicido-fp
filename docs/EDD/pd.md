@@ -1,4 +1,4 @@
-# Programación didáctica EDD Febrero 2025 Prometeo
+# Programación didáctica EDD Febrero 2026 Prometeo
 
 ## Unidades de Trabajo (UT)
 
@@ -67,133 +67,129 @@
 
 ## Temporalización
 
-### Semana 1 (11 Febrero)
+### Sesión 1
 
-- **Martes 11**: Presentación de la asignatura y el profesor.
+- Presentación de la asignatura y el profesor.
 
-### Semana 2 (18-20 Febrero)
+### Sesión 2 
 
-- **Martes 18**: UT2: ¿Qué es un IDE?
-- **Jueves 20**: Tutoria: Dudas sobre la instalación y configuración del IDE.
+- **UT2**: ¿Qué es un IDE?
 
-### Semana 3 (25-27 Febrero)
+### Sesión 3 
 
-- **Martes 25**: UT1: Lenguajes de programación.
-- **Jueves 27**: Tutoria: Dudas sobre tipos de lenguajes de programación.
+- **UT1**: Lenguajes de programación.
 
-### Semana 4 (4-6 Marzo)
+### Sesión 4 
 
-- **Martes 4**: UT4: Introducción a Git.
-- **Jueves 6**: Tutoria: Dudas sobre Git y su instalación.
+- **UT1**: Ingeniería del Software, Fases y Ciclos de Vida.
 
-### Semana 5 (11-13 Marzo)
+### Sesión 5 
 
-- **Martes 11**: UT4: Git remote y git branch.
-- **Jueves 13**: Tutoria: Dudas sobre Git remote y git branch.
+- **UT1**: Metodologías ágiles vs tradicionales. Conociendo SCRUM.
 
-### Semana 6 (18-20 Marzo)
+### Sesión 6 
 
-- **Martes 18**: UT1: Ingeniería del Software, Fases y Ciclos de Vida.
-- **Jueves 20**: Tutoria: Dinámica sobre ingeniería del Software, Fases y Ciclos de Vida.
+- **UT2**: Gestores de dependencias.
 
-### Semana 7 (25-27 Marzo)
+### Sesión 7
 
-- **Martes 25**: UT1: Metodologías ágiles vs tradicionales. Conociendo SCRUM.
-- **Jueves 27**: Tutoria: Dinámica sobre SCRUM y sus roles.
+- **UT3**: Debugging.
 
-### Semana 8 (1-3 Abril)
+### Sesión 8
 
-- **Martes 1**: UT4: Git merge y resolución de conflictos.
-- **Jueves 3**: Tutoria: Dudas sobre Git merge y resolución de conflictos.
+- **UT4**: Introducción a Git.
 
-### Semana 9 (8 Abril)
+### Sesión 9
 
-- **Martes 8**: UT4: Colaborando en repositorios Github.
+- **UT4**: Git remote y git branch.
 
-### Semana 10 (22 Abril)
+### Sesión 10 
 
-- **Martes 22**: UT3: Debugging.
+- **UT4**: Git merge y resolución de conflictos.
 
-### Semana 11 (29 Abril)
+### Sesión 11 
 
-- **Martes 29**: UT3: Planificación y tipos de pruebas.
+- **UT4**: Colaborando en repositorios Github.
 
-### Semana 12 (6 Mayo)
+### Sesión 12
 
-- **Martes 6**: UT4: Git rebase y squash.
+- **UT4**: Git reset y revert. Git stash.
 
-### Semana 13 (13 Mayo)
+### Sesión 13
 
-- **Martes 13**: UT4: Git reset y revert. Git stash.
+- **UT4**: Documentación de software. Markdown.
 
-### Semana 14 (20 Mayo)
+### Sesión 14
 
-- **Martes 20**: UT2: Gestores de dependencias.
+- **UT4**: Documentación de software. JavaDoc.
+
+### Sesión 15
+
+- **UT3**: ¿Qué es una prueba? Planificación de pruebas.
   
-### Semana 15 (27 Mayo)
+### Sesión 16
 
-- **Martes 27**: UT4: Documentación de software. Markdown.
+- **UT3**: Tipos de pruebas
 
-### Semana 16 (3 Junio)
+### Sesión 17
 
-- **Martes 3**: UT4: Documentación de software. JavaDoc.
+- **UT3**: Pruebas unitarias. Junit.
 
-### Semana 17 (10 Junio)
+### Sesión 18
 
-- **Martes 10**: UT3: Pruebas unitarias. Junit.
+- **UT3**: Pruebas unitarias. Junit. (2a parte)
 
-### Semana 18 (17 Junio)
+### Sesión 19 
 
-- **Martes 17**: UT3: Pruebas unitarias. Junit. (2a parte)
+- **UT4**: Refactorización.
 
-### Semana 19 (16 Septiembre)
+### Sesión 20
 
-- **Martes 16**: UT5: Introducción a UML.
+- **UT5**: Introducción a UML.
 
-### Semana 20 (23 Septiembre)
+### Sesión 21
 
-- **Martes 23**: UT5: Diagramas de clases. (1a parte)
+- **UT5**: Diagramas de clases. (1a parte)
 
-### Semana 21 (30 Septiembre)
+### Sesión 22
 
-- **Martes 30**: UT5: Diagramas de clases. (2a parte)
+- **UT5**: Diagramas de clases. (2a parte)
 
-### Semana 22 (7 Octubre)
+### Sesión 23
 
-- **Martes 7**: UT6: Diagramas de casos de uso.
+- **UT6**: Diagramas de casos de uso.
 
-### Semana 23 (14 Octubre)
+### Sesión 24
 
-- **Martes 14**: UT6: Diagramas de secuencia. (1a parte)
+- **UT6**: Diagramas de secuencia. (1a parte)
 
-### Semana 24 (21 Octubre)
+### Sesión 25
 
-- **Martes 21**: UT6: Diagramas de arquitectura.
+- **UT6**: Diagramas de arquitectura.
 
-### Semana 25 (28 Octubre)
+### Sesión 26
 
-- **Martes 28**: Caso práctico: Elaboración de un proyecto UML completo.
+- **UT5/6**:Caso práctico: Elaboración de un proyecto UML completo.
 
-### Semana 26 (4 Noviembre)
+### Sesión 27
 
-- **Martes 4**: UT3: TDD y ciclo de mejora continua
 
-### Semana 27 (11 Noviembre)
+### Sesión 28 
 
-- **Martes 11**: UT3: Refactorización con el IDE
 
-### Semana 28 (18 Noviembre)
+### Sesión 29 
 
-- **Martes 18**: UT4: Patrones de diseño (Strategy, Factory)
 
-### Semana 29 (25 Noviembre)
+### Sesión 30 
 
-- **Martes 25**: UT4: Integración UML ↔ código
 
-### Semana 30 (2 Diciembre)
+### Sesión 31
 
-- **Martes 2**: Repaso.
 
-### Semana 31 (9 Diciembre)
+### Sesión 32
+
+- **Martes 9**: Repaso.
+
+### Sesión 33
 
 - **Martes 9**: Repaso.
