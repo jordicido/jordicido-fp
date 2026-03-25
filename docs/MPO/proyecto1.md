@@ -11,7 +11,7 @@ Desarrollar una aplicación de consola en Python que permita realizar cuestionar
 Tu aplicación deberá permitir:
 
 1. Implementar un menú que se ejecute indefinidamente hasta que el usuario finalice, que permita las siguientes opciones:
-```
+```python
 ### MENÚ ###
 1 - Empezar cuestionario
 2 - Ranking (opcional)

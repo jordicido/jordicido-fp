@@ -20,7 +20,7 @@ archivo = open('mi_archivo.txt', 'r')  # 'r' para lectura
 
 Los modos de apertura más comunes son:
 
-```python
+```python hl_lines="2 3 4"
 archivo = open('mi_archivo.txt', 'r')  # 'r' para lectura
 archivo = open('mi_archivo.txt', 'w')  # 'w' para escritura
 archivo = open('mi_archivo.txt', 'a')  # 'a' para agregar contenido al final
@@ -79,7 +79,7 @@ archivo.close()
 
 Una forma recomendada de manejar archivos en Python es utilizando la declaración `with`. Esto asegura que el archivo se cierre automáticamente al finalizar el bloque de código, incluso si ocurre un error.
 
-```python
+```python hl_lines="1"
 with open('mi_archivo.txt', 'r') as archivo:
     contenido = archivo.read()
     print(contenido)
@@ -92,7 +92,7 @@ El manejo de errores en Python se realiza mediante excepciones. Podemos capturar
 
 ### Estructura básica de manejo de excepciones
 
-```python
+```python hl_lines="3 4 5"
 try:
     # Código que puede generar un error
     resultado = 10 / 0  # Esto generará un error de división por cero
@@ -108,7 +108,7 @@ except Exception as e:
 
 El bloque `finally` se ejecuta siempre, independientemente de si ocurrió un error o no. Es útil para realizar tareas de limpieza, como cerrar archivos.
 
-```python
+```python hl_lines="7 8"
 try:
     archivo = open('mi_archivo.txt', 'r')
     contenido = archivo.read()
@@ -122,12 +122,12 @@ finally:
 
 Podemos lanzar nuestras propias excepciones utilizando la palabra clave `raise`.
 
-```python
+```python hl_lines="3"
 def dividir(a, b):
     if b == 0:
         raise ValueError("El divisor no puede ser cero.")
     return a / b
-    
+
 try:
     resultado = dividir(10, 0)
 except ValueError as e:
@@ -136,13 +136,13 @@ except ValueError as e:
 
 Las excepciones pueden ser personalizadas creando nuevas clases que hereden de la clase `Exception`.
 
-```python
+```python hl_lines="1 2 5"
 class MiErrorPersonalizado(Exception):
     pass
 
 def funcion_con_error():
     raise MiErrorPersonalizado("Este es un error personalizado.")
-    
+
 try:
     funcion_con_error()
 except MiErrorPersonalizado as e:

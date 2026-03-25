@@ -89,7 +89,7 @@ gitGraph
 
 Para que Git pueda identificarte como autor de los commits, es importante configurar tus credenciales. Puedes hacerlo ejecutando los siguientes comandos en la terminal:
 
-```bash
+```bash hl_lines="1 2"
 git config --global user.name "Tu Nombre"
 git config --global user.email "tucorreo@ejemplo.com"
 ```

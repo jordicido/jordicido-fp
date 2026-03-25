@@ -71,7 +71,7 @@ for arg in sys.argv:
 
 A continuación, un ejemplo de un script que recibe un nombre de archivo como argumento y muestra su contenido:
 
-```python
+```python hl_lines="4 5 8"
 import sys
 import os
 
@@ -88,7 +88,7 @@ if not os.path.isfile(nombre_archivo):
 with open(nombre_archivo, 'r') as archivo:
     contenido = archivo.read()
     print('Contenido del archivo:')
-    print(contenido)  
+    print(contenido)
 ```
 
 Otros ejemplos combinando `os` y `sys` pueden incluir scripts para automatizar copias de seguridad, limpieza de archivos temporales, o cualquier otra tarea repetitiva que involucre el sistema de archivos. Por ejemplo, un script que elimine archivos antiguos en un directorio específico.

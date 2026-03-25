@@ -54,7 +54,7 @@ saludar()
 
 ### Ejemplo 2: Función con parámetros
 
-```python
+```python hl_lines="1"
 def saludar_persona(nombre):
     print(f"Hola, {nombre}. ¡Bienvenido!")
 
@@ -65,7 +65,7 @@ saludar_persona("Laura")
 
 ### Ejemplo 3: Función con retorno (`return`)
 
-```python
+```python hl_lines="3 6"
 def sumar(a, b):
     resultado = a + b
     return resultado
@@ -79,7 +79,7 @@ Es muy útil cuando necesitamos que la función nos diga el resultado de su oper
 
 ### Ejemplo 4: Función con valores por defecto
 
-```python
+```python hl_lines="1"
 def saludar(nombre="invitado"):
     print(f"Hola, {nombre}")
 
@@ -91,7 +91,7 @@ saludar("Carlos")   # Hola, Carlos
 
 ### Ejemplo 5: Función con múltiples valores de retorno
 
-```python
+```python hl_lines="4 6"
 def operaciones(a, b):
     suma = a + b
     resta = a - b
@@ -160,7 +160,7 @@ print(math.pi)  # 3.141592653589793
 
 #### Importación selectiva
 
-```python
+```python hl_lines="1"
 from math import sqrt, pow
 print(pow(2, 3))  # 8.0
 ```
@@ -170,7 +170,7 @@ print(pow(2, 3))  # 8.0
 
 #### Importación con alias
 
-```python
+```python hl_lines="1"
 import numpy as np
 print(np.array([1, 2, 3]))  # Crea un array de NumPy
 ```
@@ -182,7 +182,7 @@ print(np.array([1, 2, 3]))  # Crea un array de NumPy
 
 #### Importación avanzada
 
-```python
+```python hl_lines="2 3 4"
 from statistics import (
     mean as promedio,
     median as mediana,
@@ -229,7 +229,7 @@ print("Módulo geometría cargado correctamente")
 
 **main.py**
 
-```python
+```python hl_lines="1"
 from geometria import area_circulo, PI
 
 print(f"El valor de PI es: {PI}")
@@ -260,7 +260,7 @@ print(math.radians(180))    # Convierte a radianes: 3.1415...
 
 #### Fechas y horas (`datetime`)
 
-```python
+```python hl_lines="4 6"
 from datetime import datetime, timedelta
 
 hoy = datetime.now()

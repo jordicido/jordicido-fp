@@ -17,7 +17,7 @@ Un programa suele componerse de:
 
 ## Ejemplo básico
 
-```python
+```python hl_lines="4 5"
 # Programa que suma dos números
 a = 5
 b = 3

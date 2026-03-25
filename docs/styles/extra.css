@@ -1,25 +1,230 @@
-/* Cambiar el color de fondo de la cabecera */
+/* =====================================================
+   COLORES DE MARCA
+   ===================================================== */
+:root {
+  --brand-dark:   #253d46;
+  --brand-darker: #1a2d35;
+  --brand-light:  #3a5a67;
+
+  --md-primary-fg-color:        var(--brand-dark);
+  --md-primary-fg-color--light: var(--brand-light);
+  --md-primary-fg-color--dark:  var(--brand-darker);
+  --md-primary-bg-color:        #ffffff;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        var(--brand-dark);
+  --md-primary-fg-color--light: var(--brand-light);
+  --md-primary-fg-color--dark:  var(--brand-darker);
+  --md-default-bg-color:        #0f1e24;
+  --md-default-fg-color:        rgba(255,255,255,0.87);
+}
+
+/* =====================================================
+   CABECERA
+   ===================================================== */
 .md-header {
-  background-color: #253d46;
+  background-color: rgba(37, 61, 70, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
-h1 {
-  font-weight: bold;
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-/* Personalizar el color de los enlaces */
-a {
-  color: #0c1417;
-}
-
-/* Oculta la barra lateral de navegación */
-.md-sidebar--primary {
+/* =====================================================
+   SIDEBARS — ocultar navegación lateral y TOC
+   ===================================================== */
+.md-sidebar--primary,
+.md-sidebar--secondary {
   display: none !important;
 }
 
-/* Ajusta el ancho de la sección de contenido al ocultar la barra */
+/* =====================================================
+   CONTENIDO PRINCIPAL — ancho máximo centrado
+   ===================================================== */
 .md-main__inner {
-  max-width: 1000px; /* Ajusta según tu preferencia */
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.md-content {
+  line-height: 1.8;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =====================================================
+   TIPOGRAFÍA — ENCABEZADOS
+   ===================================================== */
+.md-typeset h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--brand-dark);
+  border-bottom: 3px solid var(--brand-dark);
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #e0f0f5;
+  border-bottom-color: var(--brand-light);
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-left: 4px solid var(--brand-dark);
+  padding-left: 0.6em;
+  margin-top: 2em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-left-color: var(--brand-light);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--brand-dark);
+  margin-top: 1.6em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #b0d4df;
+}
+
+/* =====================================================
+   ENLACES
+   ===================================================== */
+.md-typeset a {
+  color: #00838f;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--brand-dark);
+  text-decoration: underline;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #4dd0e1;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #80deea;
+}
+
+/* =====================================================
+   BLOQUES DE CÓDIGO
+   ===================================================== */
+.md-typeset .highlight {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.md-typeset .highlight pre {
+  border-radius: 8px;
+}
+
+/* Código inline */
+.md-typeset code:not(.highlight code) {
+  background-color: rgba(37, 61, 70, 0.10);
+  color: #00626b;
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  font-size: 0.875em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset code:not(.highlight code) {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #80deea;
+}
+
+/* =====================================================
+   TABLAS
+   ===================================================== */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: none;
+  font-size: 0.9rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--brand-dark);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.7em 1em;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.6em 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(37, 61, 70, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* =====================================================
+   ADMONITIONS (notas, advertencias, etc.)
+   ===================================================== */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  border-left-width: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin: 1.2em 0;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+}
+
+/* =====================================================
+   SCROLLBAR PERSONALIZADA
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(37, 61, 70, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--brand-dark);
+}
+
+/* =====================================================
+   TRANSICIONES SUAVES
+   ===================================================== */
+.md-typeset a,
+.md-nav__link,
+.md-header {
+  transition: all 0.2s ease;
 }

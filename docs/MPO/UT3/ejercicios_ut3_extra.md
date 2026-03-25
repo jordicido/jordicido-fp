@@ -5,7 +5,7 @@
 Escribe un programa que pida al usuario una lista de números enteros separados por espacios y un número entero. El programa debe contar cuántas veces aparece el número en la lista y luego imprimir el resultado.
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="2 4"
     numeros = input("Ingrese una lista de números enteros separados por espacios: ").split()
     numeros = [int(num) for num in numeros]
     numero_a_contar = int(input("Ingrese un número entero: "))
@@ -111,13 +111,13 @@ Escribe un programa que pida al usuario una lista de números enteros separados 
 
 Ejemplo:
 
-```
+```python
 Entrada: 1, 2, 2, 3, 3, 3, 4
 Salida: 1, 2, 3, 4
 ```
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="5 6"
     numeros = input("Ingrese una lista de números enteros separados por comas: ").split(",")
     numeros = [int(num) for num in numeros]
     numeros_filtrados = []
@@ -125,7 +125,7 @@ Salida: 1, 2, 3, 4
     for i in range(len(numeros)):
         if i == 0 or numeros[i] != numeros[i - 1]:
             numeros_filtrados.append(numeros[i])
-    
+
     print("Lista resultante:", numeros_filtrados)
     ```
 
@@ -135,13 +135,13 @@ Escribe un programa que pida al usuario una lista de números enteros separados 
 
 Ejemplo:
 
-```
+```python
 Entrada: 1, 2, 2, 3, 3, 3, 4, 3, 4, 1
 Salida: 1, 2, 3, 4
 ```
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="5 6"
     numeros = input("Ingrese una lista de números enteros separados por comas: ").split(",")
     numeros = [int(num) for num in numeros]
     numeros_unicos = []

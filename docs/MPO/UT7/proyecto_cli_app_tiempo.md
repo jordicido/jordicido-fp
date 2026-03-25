@@ -16,7 +16,7 @@ Este proyecto está pensado para un nivel introductorio, pero con margen para qu
 
 La aplicación se ejecutará desde consola, mostrando un **menú interactivo** con opciones como:
 
-```
+```python
 === Weather CLI ===
 1) Consultar ciudad (1 día)
 2) Consultar ciudad (3 días)
@@ -48,7 +48,7 @@ El proyecto utiliza **dos APIs públicas** de la plataforma **[Open-Meteo](https
 
 **Ejemplo de uso:**
 
-```
+```python
 https://geocoding-api.open-meteo.com/v1/search?name=Valencia&count=1
 ```
 
@@ -81,7 +81,7 @@ A partir de este JSON, el programa extraerá:
 
 **Ejemplo de uso:**
 
-```
+```python
 https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.37&hourly=temperature_2m,precipitation_probability&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min&timezone=auto
 ```
 
@@ -118,7 +118,7 @@ De aquí se extraerán los valores de:
 El proyecto se dividirá en varios **módulos de Python**, cada uno con una función clara y bien delimitada.
 Esta separación facilita la comprensión y el mantenimiento del código, y ayuda a los alumnos a entender cómo se organizan los programas reales.
 
-```
+```python
 weather_cli/
   main.py           # Programa principal: menú, flujo general y coordinación
   cli.py            # Interfaz de línea de comandos: menús e interacción con el usuario

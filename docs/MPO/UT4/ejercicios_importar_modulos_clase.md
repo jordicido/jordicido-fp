@@ -63,7 +63,7 @@ En vez de imprimir los nombres de los archivos directamente, vamos a colorearlos
 
 ### Ejemplo de implementación
 
-```python
+```python hl_lines="2 5 6 7 8"
 import os
 from colorama import Fore, Style
 def pintar_terminal():

@@ -71,45 +71,45 @@
 
 - Presentación de la asignatura y el profesor.
 
-### Sesión 2 
+### Sesión 2
 
 - **UT2**: ¿Qué es un IDE?
 
-### Sesión 3 
+### Sesión 3
 
 - **UT1**: Lenguajes de programación.
 
-### Sesión 4 
-
-- **UT1**: Ingeniería del Software, Fases y Ciclos de Vida.
-
-### Sesión 5 
-
-- **UT1**: Metodologías ágiles vs tradicionales. Conociendo SCRUM.
-
-### Sesión 6 
-
-- **UT2**: Gestores de dependencias.
-
-### Sesión 7
-
-- **UT3**: Debugging.
-
-### Sesión 8
+### Sesión 4
 
 - **UT4**: Introducción a Git.
 
-### Sesión 9
+### Sesión 5
 
 - **UT4**: Git remote y git branch.
 
-### Sesión 10 
+### Sesión 6
+
+- **UT1**: Ingeniería del Software, Fases y Ciclos de Vida.
+
+### Sesión 7
+
+- **UT1**: Metodologías ágiles vs tradicionales. Conociendo SCRUM.
+
+### Sesión 8
 
 - **UT4**: Git merge y resolución de conflictos.
 
-### Sesión 11 
+### Sesión 9
 
 - **UT4**: Colaborando en repositorios Github.
+
+### Sesión 10
+
+- **UT2**: Gestores de dependencias.
+
+### Sesión 11
+
+- **UT3**: Debugging.
 
 ### Sesión 12
 

@@ -18,7 +18,7 @@ Para poder utilizar JUnit en nuestro proyecto, debemos añadir la librería como
 4. Asegúrate de que se haya añadido la siguiente entrada al bloque <dependencies>:
 5. Para actualizar las dependencias, haz clic derecho en el proyecto y selecciona Maven > Update project o bien haz clic en el icono de actualizar en la barra de herramientas de Maven.
 
-```xml
+```xml hl_lines="3 4 5 6"
 <dependencies>
   <dependency>
     <groupId>org.junit.jupiter</groupId>
@@ -60,7 +60,7 @@ Si expected y actual son iguales, la prueba continuará ejecutándose. Si no lo 
 !!! Importante
     Este método utiliza el método equals() de los objetos para determinar si los objetos son iguales o no.
 
-```java
+```java hl_lines="4"
 assertEquals(10, 3 + 7), // Integer
 assertEquals('b', 'a' + 1), // Char
 assertEquals(1.5, 3.0 / 2), // Double
@@ -102,7 +102,7 @@ Las instrucciones assertSame(expected, actual) y assertNotSame(expected, actual)
 !!! importante
     Este método utiliza el operador == para determinar si los objetos son iguales o no.
 
-```java
+```java hl_lines="3 5"
 String a = "Joan";
 String b = "Joan";
 String c = new String("Joan");
@@ -135,7 +135,7 @@ assertArrayEquals(stringExpected, stringActual)
 
 La instrucción assertThrows(expectedType, executable) se utiliza para comprobar que una determinada excepción se lanza al ejecutar un bloque de código.
 
-```java
+```java hl_lines="1"
 assertThrows(IllegalArgumentException.class, () -> {
     throw new IllegalArgumentException("Invalid argument");
 });
@@ -161,7 +161,7 @@ JUnit proporciona varias anotaciones que se pueden utilizar para definir el comp
 
 La anotación @Test se utiliza para marcar un método como un caso de prueba. JUnit ejecutará este método como parte de la suite de pruebas.
 
-```java
+```java hl_lines="1"
 @Test
 public void testAddition() {
     assertEquals(2, 1 + 1);
@@ -172,7 +172,7 @@ public void testAddition() {
 
 La anotación @DisplayName se utiliza para proporcionar un nombre legible para el caso de prueba. Esto es útil para documentar el propósito de la prueba y hacer que los informes de prueba sean más comprensibles.
 
-```java
+```java hl_lines="2"
 @Test
 @DisplayName("Test for addition")
 public void testAddition() {
@@ -184,7 +184,7 @@ public void testAddition() {
 
 Las anotaciones @BeforeEach y @AfterEach se utilizan para definir métodos que se ejecutan antes y después de cada caso de prueba, respectivamente. Esto es útil para configurar el entorno de prueba y limpiar los recursos utilizados.
 
-```java
+```java hl_lines="1 5"
 @BeforeEach
 public void setUp() {
     // Código de configuración antes de cada prueba
@@ -214,7 +214,7 @@ public static void tearDownAll() {
 
 La anotación @Disabled se utiliza para deshabilitar un caso de prueba o una clase de prueba. Esto es útil cuando se desea omitir temporalmente una prueba sin eliminarla del código.
 
-```java
+```java hl_lines="11 12"
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -236,7 +236,7 @@ public class MyTestClass {
 
 La anotación @Nested se utiliza para definir clases de prueba anidadas. Esto es útil para organizar las pruebas en grupos lógicos y mejorar la legibilidad del código.
 
-```java
+```java hl_lines="10 11"
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 

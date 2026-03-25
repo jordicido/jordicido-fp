@@ -38,7 +38,7 @@
           git checkout nueva_funcionalidad
           ```
         - Alternativamente, puedes crear y cambiar a la nueva rama en un solo paso utilizando:
-          ```bash
+          ```bash hl_lines="1"
           git checkout -b nueva_funcionalidad
           ```
 
@@ -76,11 +76,11 @@
 
     ??? summary "Solución"
         - Cambia a la rama principal utilizando el siguiente comando:
-          ```bash
+          ```bash hl_lines="1"
           git checkout main
           ```
         - Luego, haz un merge de la nueva rama con la rama principal:
-          ```bash
+          ```bash hl_lines="1"
           git merge nueva_funcionalidad
           ```
         - Esto combinará los cambios de la nueva rama en la rama principal.
@@ -104,7 +104,7 @@
 
     ??? summary "Solución"
         - Si ya no necesitas la rama creada, puedes eliminarla utilizando el siguiente comando:
-          ```bash
+          ```bash hl_lines="1"
           git branch -d nueva_funcionalidad
           ```
         - Esto eliminará la rama `nueva_funcionalidad` de tu repositorio local.
@@ -113,7 +113,7 @@
 
     ??? summary "Solución"
         - Usa el siguiente comando para visualizar el historial de commits en modo gráfico:
-          ```bash
+          ```bash hl_lines="1"
           git log --oneline --graph
           ```
         - Esto mostrará un gráfico del historial de commits, incluyendo las ramas y merges realizados.

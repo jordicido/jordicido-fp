@@ -5,7 +5,7 @@
 Escribe un programa que pida al usuario un número entero y determine si es par o impar. El programa debe imprimir un mensaje indicando el resultado.
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="2"
     numero = int(input("Introduce un número entero: "))
     if numero % 2 == 0:
         print(f"{numero} es par.")
@@ -85,7 +85,7 @@ Escribe un programa que pida el nombre de un día de la semana y muestre si es "
 Escribe un porgrama que pida un año y muestra si es bisiesto. Un año es bisiesto si es divisible por 4, pero no por 100, o si es divisible por 400.
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="2"
     año = int(input("Introduce un año: "))
     if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
         print(f"{año} es un año bisiesto.")
@@ -98,7 +98,7 @@ Escribe un porgrama que pida un año y muestra si es bisiesto. Un año es bisies
 Escribe un programa que pida dos números y un operador (+, -, *, /) y muestre el resultado de la operación.
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="12 13 14 15"
     num1 = float(input("Introduce el primer número: "))
     num2 = float(input("Introduce el segundo número: "))
     operador = input("Introduce un operador (+, -, *, /): ")
@@ -222,7 +222,7 @@ El programa debe imprimir:
 ```
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="5 6 8 9"
     num1 = int(input("Introduce el primer número: "))
     num2 = int(input("Introduce el segundo número: "))
 
@@ -370,7 +370,7 @@ Número de dieces: 1
 ```
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="9 10 12 13"
     suma_notas = 0
     contador_notas = 0
     contador_diez = 0
@@ -499,7 +499,7 @@ Número total de vocales: 11
 ```
 
 ??? Summary "Solución"
-    ```python
+    ```python hl_lines="7 8"
     contador_vocales = 0
 
     while True:

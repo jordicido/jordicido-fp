@@ -44,7 +44,7 @@ else:
 
 ### Ejemplo de estructura de control de flujo
 
-```python
+```python hl_lines="2 4 6"
 edad = int(input("Introduce tu edad: "))
 if edad < 18:
     print("Eres menor de edad.")
@@ -105,7 +105,7 @@ while condición:
 
 El bucle `while` es útil cuando no se conoce de antemano cuántas veces se debe ejecutar el bloque de código. Por ejemplo:
 
-```python
+```python hl_lines="3 4 5"
 numero = int(input("Introduce un número: "))
 suma = 0
 while numero != 0:
@@ -120,7 +120,7 @@ En este ejemplo, el bucle `while` se ejecuta mientras el usuario no introduzca 0
 
 La instrucción `break` se utiliza para salir de un bucle antes de que se complete su iteración. Esto puede ser útil si se cumple una condición específica y no es necesario continuar con el bucle. Por ejemplo:
 
-```python
+```python hl_lines="2 3"
 for i in range(10):
     if i == 5:
         break
@@ -133,7 +133,7 @@ En este ejemplo, el bucle `for` se detiene cuando `i` es igual a 5, por lo que s
 
 La instrucción `continue` se utiliza para omitir la iteración actual de un bucle y continuar con la siguiente iteración. Esto puede ser útil si se desea saltar ciertos valores en una secuencia. Por ejemplo:
 
-```python
+```python hl_lines="2 3"
 for i in range(10):
     if i % 2 == 0:
         continue

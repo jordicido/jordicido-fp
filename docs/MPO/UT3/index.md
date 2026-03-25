@@ -32,7 +32,7 @@ print(mi_lista[0])  # Imprime: 1
 
 También puedes acceder a los elementos desde el final de la lista utilizando índices negativos. Por ejemplo, `mi_lista[-1]` te dará el último elemento de la lista.
 
-```python
+```python hl_lines="1"
 print(mi_lista[-1])  # Imprime: True
 ```
 
@@ -72,7 +72,7 @@ mi_lista_anidada = [[1, 2, 3], ["Hola", "Mundo"], [True, False]]
 
 En este caso, `mi_lista_anidada` contiene tres listas, cada una con diferentes tipos de datos. Puedes acceder a los elementos de las listas anidadas utilizando múltiples índices:
 
-```python
+```python hl_lines="1 2"
 print(mi_lista_anidada[0][1])  # Imprime: 2
 print(mi_lista_anidada[1][0])  # Imprime: Hola
 ```
@@ -119,7 +119,7 @@ Ten en cuenta que se lanza un error si la clave no existe.
 
 Es recomendable usar el método `.get()` para evitar errores:
 
-```python
+```python hl_lines="1"
 print(persona.get("apellido", "No especificado"))
 ```
 
@@ -179,7 +179,7 @@ for valor in persona.values():
 
 - Recorrer claves y valores:
 
-```python
+```python hl_lines="1"
 for clave, valor in persona.items():
     print(f"{clave}: {valor}")
 ```
@@ -237,7 +237,7 @@ mi_tupla = (1, 2, 3)
 
 Una tupla se define utilizando paréntesis `()`. Puedes crear una tupla con uno o más elementos, y si es una tupla unitaria, debes incluir una coma al final para diferenciarla de un simple valor entre paréntesis.
 
-```python
+```python hl_lines="2"
 tupla1 = (1, 2, 3)
 tupla_unitaria = (5,)       # Necesita la coma
 tupla_vacia = tuple()
@@ -281,7 +281,7 @@ for elemento in tupla1:
 
 Desempaquetar una tupla significa asignar sus elementos a variables individuales. Esto es útil cuando conoces la estructura de la tupla y quieres trabajar con sus valores de manera más directa.
 
-```python
+```python hl_lines="2"
 persona = ("Ana", 30, "Valencia")
 nombre, edad, ciudad = persona
 
@@ -316,7 +316,7 @@ for nombre, nota in notas:
 
 ### Ejemplo práctico
 
-```python
+```python hl_lines="4"
 coordenada = (39.4699, -0.3763)
 
 def mostrar_ubicacion(coord):

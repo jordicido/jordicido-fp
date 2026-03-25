@@ -8,4 +8,4 @@ En este repositorio se encuentran los apuntes de las asignaturas del ciclo forma
 
 ### [Módulo Profesional Optativo](MPO)
 
-### [Sistemas informáticos](SSII)
+<!-- ### [Sistemas informáticos](SSII) -->

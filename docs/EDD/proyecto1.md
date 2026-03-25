@@ -48,7 +48,7 @@ Tu trabajo consistirá en preparar el entorno del proyecto Java aplicando los si
 
 * Comentar las **clases y sus métodos públicos** usando la sintaxis estándar de **Javadoc**:
 
-  ```java
+  ```java hl_lines="3 4 8 9"
   /**
    * Representa un producto en el inventario.
    * @author Nombre
@@ -75,7 +75,7 @@ Tu trabajo consistirá en preparar el entorno del proyecto Java aplicando los si
 
 Ejemplo básico:
 
-```java
+```java hl_lines="1 4"
 @Test
 void testCalcularPrecio() {
     Producto p = new Producto("Pan", 1.0, 10);
