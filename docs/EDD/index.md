@@ -18,9 +18,9 @@ En este espacio se encuentran los apuntes de la asignatura de Entornos de Desarr
 
 ### [UT1 - Desarrollo de software.](UT1)
 
-### [UT2 - Instalación y uso de entornos de desarrollo.](UT1)
+### [UT2 - Instalación y uso de entornos de desarrollo.](UT2)
 
-### [UT3 - Diseño y realización de pruebas.](UT1)
+### [UT3 - Diseño y realización de pruebas.](UT3)
 
 ### [UT4 - Optimización y documentación.](UT1)
 
