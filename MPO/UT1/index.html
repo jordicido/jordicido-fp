@@ -1,0 +1,2358 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../proyecto2/" rel="prev"/>
+<link href="ejercicios_ut1/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>UT1: Fundamentos de Python - Jordi Cido - FP</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ut1-fundamentos-de-python">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT1: Fundamentos de Python
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Jordi Cido - FP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Entornos de Desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica EDD Febrero 2026 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Profesionaliza tu proyecto Java
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Análisis y diseño con UML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 - Desarrollo de Software
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Ejemplos de plugins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Concepto de programa informático
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Lenguajes de programación: Tipos y características
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    Fases de desarrollo de una aplicación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    Metodologías ágiles
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2 - Instalación y uso de entornos de desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT2/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    Instalación de un IDE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT2/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    Configuración de un entorno de desarrollo
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    Diseño y realización de pruebas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/">
+<span class="md-ellipsis">
+    
+  
+    Conceptos básicos de Git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    Introducción a Git: Práctica 4
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Módulo profesional optativo (MPO): Python
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica MPO Febrero 2026 Prometeo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1: Generador de Cuestionarios Interactivo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2: Gestor de Archivos en Consola
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT1: Fundamentos de Python
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivos-de-la-unidad">
+<span class="md-ellipsis">
+      
+        Objetivos de la unidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-que-es-python">
+<span class="md-ellipsis">
+      
+        1. ¿Qué es Python?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-como-se-ejecuta-un-programa-en-python">
+<span class="md-ellipsis">
+      
+        2. ¿Cómo se ejecuta un programa en Python?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-entorno-de-desarrollo">
+<span class="md-ellipsis">
+      
+        3. Entorno de desarrollo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-sintaxis-basica">
+<span class="md-ellipsis">
+      
+        4. Sintaxis básica
+      
+    </span>
+</a>
+<nav aria-label="4. Sintaxis básica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-comentarios">
+<span class="md-ellipsis">
+      
+        4.1 Comentarios
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-variables">
+<span class="md-ellipsis">
+      
+        4.2 Variables
+      
+    </span>
+</a>
+<nav aria-label="4.2 Variables" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reglas-para-nombres-de-variables">
+<span class="md-ellipsis">
+      
+        Reglas para nombres de variables
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43-tipos-de-datos-basicos">
+<span class="md-ellipsis">
+      
+        4.3 Tipos de datos básicos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44-conversion-de-tipos-casting">
+<span class="md-ellipsis">
+      
+        4.4 Conversión de tipos (casting)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-entrada-y-salida-de-datos">
+<span class="md-ellipsis">
+      
+        5. Entrada y salida de datos
+      
+    </span>
+</a>
+<nav aria-label="5. Entrada y salida de datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-salida-con-print">
+<span class="md-ellipsis">
+      
+        5.1 Salida con print()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-entrada-con-input">
+<span class="md-ellipsis">
+      
+        5.2 Entrada con input()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-operadores">
+<span class="md-ellipsis">
+      
+        6. Operadores
+      
+    </span>
+</a>
+<nav aria-label="6. Operadores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-aritmeticos">
+<span class="md-ellipsis">
+      
+        6.1 Aritméticos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-comparacion">
+<span class="md-ellipsis">
+      
+        6.2 Comparación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63-logicos">
+<span class="md-ellipsis">
+      
+        6.3 Lógicos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#64-asignacion-compuesta">
+<span class="md-ellipsis">
+      
+        6.4 Asignación compuesta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-indentacion-y-bloques-de-codigo">
+<span class="md-ellipsis">
+      
+        7. Indentación y bloques de código
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-errores-comunes">
+<span class="md-ellipsis">
+      
+        8. Errores comunes
+      
+    </span>
+</a>
+<nav aria-label="8. Errores comunes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#syntaxerror-error-de-sintaxis">
+<span class="md-ellipsis">
+      
+        SyntaxError — error de sintaxis
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#typeerror-tipos-incompatibles">
+<span class="md-ellipsis">
+      
+        TypeError — tipos incompatibles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nameerror-variable-no-definida">
+<span class="md-ellipsis">
+      
+        NameError — variable no definida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indentationerror-indentacion-incorrecta">
+<span class="md-ellipsis">
+      
+        IndentationError — indentación incorrecta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-modelo-mental-como-piensa-un-programa">
+<span class="md-ellipsis">
+      
+        9. Modelo mental: cómo piensa un programa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-buenas-practicas-basicas">
+<span class="md-ellipsis">
+      
+        10. Buenas prácticas básicas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-ut1">
+<span class="md-ellipsis">
+      
+        Ejercicios UT1
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT1 - Nivel básico
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2: Estructuras de control
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control de repetición
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT2: Estructura de control condicional
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Nivel avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3: Tipos de datos complejos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Diccionarios y tuplas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT3: Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios UT2: Extras
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4: Funciones y módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Importar módulos
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Manejo de Archivos y Errores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Automatización de Tareas del Sistema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT6/ejercicios_scripts_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Scripts de Automatización
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7: Conectividad y Datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto Final: Weather CLI — Aplicación de Consulta Meteorológica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Sistemas informáticos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT 4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT4: Gestión de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT5
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT 5. Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT5: Configuración de la información en sistemas operativos Libres: Linux
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT 6: Gestión de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT 7. Configuración de la información en sistemas operativos propietarios: Windows
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT9
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT 9. Docker y contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    1. ¿Qué es Docker?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    Práctica: Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivos-de-la-unidad">
+<span class="md-ellipsis">
+      
+        Objetivos de la unidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-que-es-python">
+<span class="md-ellipsis">
+      
+        1. ¿Qué es Python?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-como-se-ejecuta-un-programa-en-python">
+<span class="md-ellipsis">
+      
+        2. ¿Cómo se ejecuta un programa en Python?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-entorno-de-desarrollo">
+<span class="md-ellipsis">
+      
+        3. Entorno de desarrollo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-sintaxis-basica">
+<span class="md-ellipsis">
+      
+        4. Sintaxis básica
+      
+    </span>
+</a>
+<nav aria-label="4. Sintaxis básica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-comentarios">
+<span class="md-ellipsis">
+      
+        4.1 Comentarios
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-variables">
+<span class="md-ellipsis">
+      
+        4.2 Variables
+      
+    </span>
+</a>
+<nav aria-label="4.2 Variables" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reglas-para-nombres-de-variables">
+<span class="md-ellipsis">
+      
+        Reglas para nombres de variables
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43-tipos-de-datos-basicos">
+<span class="md-ellipsis">
+      
+        4.3 Tipos de datos básicos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44-conversion-de-tipos-casting">
+<span class="md-ellipsis">
+      
+        4.4 Conversión de tipos (casting)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-entrada-y-salida-de-datos">
+<span class="md-ellipsis">
+      
+        5. Entrada y salida de datos
+      
+    </span>
+</a>
+<nav aria-label="5. Entrada y salida de datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-salida-con-print">
+<span class="md-ellipsis">
+      
+        5.1 Salida con print()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-entrada-con-input">
+<span class="md-ellipsis">
+      
+        5.2 Entrada con input()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-operadores">
+<span class="md-ellipsis">
+      
+        6. Operadores
+      
+    </span>
+</a>
+<nav aria-label="6. Operadores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-aritmeticos">
+<span class="md-ellipsis">
+      
+        6.1 Aritméticos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-comparacion">
+<span class="md-ellipsis">
+      
+        6.2 Comparación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63-logicos">
+<span class="md-ellipsis">
+      
+        6.3 Lógicos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#64-asignacion-compuesta">
+<span class="md-ellipsis">
+      
+        6.4 Asignación compuesta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-indentacion-y-bloques-de-codigo">
+<span class="md-ellipsis">
+      
+        7. Indentación y bloques de código
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-errores-comunes">
+<span class="md-ellipsis">
+      
+        8. Errores comunes
+      
+    </span>
+</a>
+<nav aria-label="8. Errores comunes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#syntaxerror-error-de-sintaxis">
+<span class="md-ellipsis">
+      
+        SyntaxError — error de sintaxis
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#typeerror-tipos-incompatibles">
+<span class="md-ellipsis">
+      
+        TypeError — tipos incompatibles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nameerror-variable-no-definida">
+<span class="md-ellipsis">
+      
+        NameError — variable no definida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indentationerror-indentacion-incorrecta">
+<span class="md-ellipsis">
+      
+        IndentationError — indentación incorrecta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-modelo-mental-como-piensa-un-programa">
+<span class="md-ellipsis">
+      
+        9. Modelo mental: cómo piensa un programa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-buenas-practicas-basicas">
+<span class="md-ellipsis">
+      
+        10. Buenas prácticas básicas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios-ut1">
+<span class="md-ellipsis">
+      
+        Ejercicios UT1
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ut1-fundamentos-de-python">UT1: Fundamentos de Python<a class="headerlink" href="#ut1-fundamentos-de-python" title="Permanent link">¶</a></h1>
+<h2 id="objetivos-de-la-unidad">Objetivos de la unidad<a class="headerlink" href="#objetivos-de-la-unidad" title="Permanent link">¶</a></h2>
+<p>Al finalizar esta unidad serás capaz de:</p>
+<ul>
+<li>Comprender qué es Python y cómo se ejecuta.</li>
+<li>Escribir programas simples correctamente estructurados.</li>
+<li>Utilizar variables, tipos de datos y operadores.</li>
+<li>Gestionar entrada y salida de datos.</li>
+<li>Aplicar buenas prácticas básicas de programación.</li>
+<li>Interpretar y solucionar errores comunes.</li>
+</ul>
+<hr/>
+<h2 id="1-que-es-python">1. ¿Qué es Python?<a class="headerlink" href="#1-que-es-python" title="Permanent link">¶</a></h2>
+<p>Python es un lenguaje de programación:</p>
+<ul>
+<li><strong>Interpretado</strong>: el código se ejecuta línea a línea, sin necesidad de compilarlo antes.</li>
+<li><strong>De alto nivel</strong>: su sintaxis se parece mucho al inglés natural, lo que lo hace fácil de leer.</li>
+<li><strong>Multiparadigma</strong>: puedes programar de forma imperativa, orientada a objetos o funcional.</li>
+<li><strong>De tipado dinámico</strong>: no necesitas decirle a Python qué tipo de dato es una variable, lo detecta solo.</li>
+<li><strong>Multiplataforma</strong>: funciona en Windows, Linux y macOS sin cambios.</li>
+</ul>
+<p>Se utiliza en sectores muy variados:</p>
+<ul>
+<li>Desarrollo web (Django, FastAPI)</li>
+<li>Automatización de tareas repetitivas</li>
+<li>Ciencia de datos e inteligencia artificial</li>
+<li>Ciberseguridad y hacking ético</li>
+<li>DevOps y administración de sistemas</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">¿Por qué aprender Python?</p>
+<p>Python es el lenguaje más utilizado en el mundo según los índices TIOBE y Stack Overflow. Aprenderlo bien te abre las puertas a prácticamente cualquier área de la informática.</p>
+</div>
+<hr/>
+<h2 id="2-como-se-ejecuta-un-programa-en-python">2. ¿Cómo se ejecuta un programa en Python?<a class="headerlink" href="#2-como-se-ejecuta-un-programa-en-python" title="Permanent link">¶</a></h2>
+<p>Antes de nada, comprueba que tienes Python instalado:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>python<span class="w"> </span>--version
+</span></code></pre></div></td></tr></table></div>
+<p>Verás algo como <code>Python 3.12.x</code>. Si aparece un error, necesitas instalar Python desde <a href="https://python.org">python.org</a>.</p>
+<p>Para ejecutar un archivo:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>python<span class="w"> </span>main.py
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">¿Python o Python3?</p>
+<p>En algunos sistemas (especialmente Linux y macOS) puede que necesites escribir <code>python3</code> en lugar de <code>python</code>. En Windows suele funcionar directamente <code>python</code>.</p>
+</div>
+<hr/>
+<h2 id="3-entorno-de-desarrollo">3. Entorno de desarrollo<a class="headerlink" href="#3-entorno-de-desarrollo" title="Permanent link">¶</a></h2>
+<p>Puedes programar en cualquier editor de texto, pero para este módulo recomendamos:</p>
+<ul>
+<li><strong>VS Code</strong> — gratuito, ligero y con soporte excelente para Python. Es la opción recomendada.</li>
+<li>PyCharm — muy completo, pero más pesado. Ideal cuando ya tengas más experiencia.</li>
+<li>Jupyter Notebook — útil para ciencia de datos y experimentos rápidos.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Configuración recomendada en VS Code</p>
+<p>Instala la extensión oficial de <strong>Python</strong> (de Microsoft). Te dará resaltado de sintaxis, autocompletado y la posibilidad de ejecutar el código directamente desde el editor.</p>
+</div>
+<hr/>
+<h2 id="4-sintaxis-basica">4. Sintaxis básica<a class="headerlink" href="#4-sintaxis-basica" title="Permanent link">¶</a></h2>
+<h3 id="41-comentarios">4.1 Comentarios<a class="headerlink" href="#41-comentarios" title="Permanent link">¶</a></h3>
+<p>Los comentarios son líneas que Python ignora al ejecutar el código. Sirven para explicar qué hace el código, tanto a otros como a ti mismo cuando lo releas días después.</p>
+<p>Comentario de una línea (empieza con <code>#</code>):</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Esto es un comentario, Python lo ignora completamente</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Jordi"</span>  <span class="c1"># También puedes ponerlos al final de una línea</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Comentario de varias líneas (docstring, con comillas triples):</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="sd">"""</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="sd">Este programa calcula el área de un círculo.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="sd">Autor: Jordi</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="sd">Fecha: 2025</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="sd">"""</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">¿Cuándo comentar?</p>
+<p>Comenta el <strong>por qué</strong>, no el <strong>qué</strong>. Si el código ya es claro, no hace falta explicarlo. Un buen comentario aclara la intención detrás de una decisión.</p>
+</div>
+<hr/>
+<h3 id="42-variables">4.2 Variables<a class="headerlink" href="#42-variables" title="Permanent link">¶</a></h3>
+<p>Una variable es como una <strong>caja con etiqueta</strong> en la que guardas información. La etiqueta es el nombre de la variable y el contenido es su valor.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Jordi"</span>   <span class="c1"># caja llamada "nombre" que contiene el texto "Jordi"</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">30</span>          <span class="c1"># caja llamada "edad" que contiene el número 30</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Se llaman "variables" porque su contenido puede <strong>cambiar</strong> a lo largo del programa:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">30</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>   <span class="c1"># 30</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">31</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>   <span class="c1"># 31</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Para saber qué tipo de dato tiene una variable, usa <code>type()</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">edad</span><span class="p">))</span>    <span class="c1"># &lt;class 'int'&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">))</span>  <span class="c1"># &lt;class 'str'&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="reglas-para-nombres-de-variables">Reglas para nombres de variables<a class="headerlink" href="#reglas-para-nombres-de-variables" title="Permanent link">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>Regla</th>
+<th>Ejemplo correcto</th>
+<th>Ejemplo incorrecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No pueden empezar por número</td>
+<td><code>precio1</code></td>
+<td><code>1precio</code></td>
+</tr>
+<tr>
+<td>No pueden contener espacios</td>
+<td><code>precio_total</code></td>
+<td><code>precio total</code></td>
+</tr>
+<tr>
+<td>No pueden ser palabras reservadas</td>
+<td><code>total</code></td>
+<td><code>if</code>, <code>for</code>, <code>while</code>...</td>
+</tr>
+<tr>
+<td>Solo letras, números y <code>_</code></td>
+<td><code>mi_variable</code></td>
+<td><code>mi-variable</code>, <code>mi.variable</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Convención: snake_case</p>
+<p>En Python se recomienda usar <code>snake_case</code> para los nombres de variables: todas las letras en minúscula y las palabras separadas por guión bajo. Ejemplo: <code>precio_total</code>, <code>nombre_alumno</code>, <code>numero_intentos</code>.</p>
+</div>
+<hr/>
+<h3 id="43-tipos-de-datos-basicos">4.3 Tipos de datos básicos<a class="headerlink" href="#43-tipos-de-datos-basicos" title="Permanent link">¶</a></h3>
+<p>Cada variable tiene un <strong>tipo</strong> que determina qué clase de información almacena y qué operaciones puedes hacer con ella.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Nombre</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entero</td>
+<td><code>int</code></td>
+<td><code>edad = 25</code></td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td><code>float</code></td>
+<td><code>precio = 9.99</code></td>
+</tr>
+<tr>
+<td>Texto</td>
+<td><code>str</code></td>
+<td><code>nombre = "Ana"</code></td>
+</tr>
+<tr>
+<td>Booleano</td>
+<td><code>bool</code></td>
+<td><code>activo = True</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplos:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Entero (int): números sin decimales</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1"># Flotante (float): números con decimales</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">precio</span> <span class="o">=</span> <span class="mf">9.99</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="n">temperatura</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.5</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1"># Cadena de texto (str): cualquier texto entre comillas</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Ana"</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">apellido</span> <span class="o">=</span> <span class="s1">'García'</span>   <span class="c1"># También puedes usar comillas simples</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="c1"># Booleano (bool): solo puede ser True o False (con mayúscula inicial)</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="n">activo</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="n">tiene_deuda</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Las cadenas siempre van entre comillas</p>
+<p><code>nombre = Ana</code> daría un error porque Python buscaría una variable llamada <code>Ana</code>. Siempre usa comillas: <code>nombre = "Ana"</code>.</p>
+</div>
+<hr/>
+<h3 id="44-conversion-de-tipos-casting">4.4 Conversión de tipos (casting)<a class="headerlink" href="#44-conversion-de-tipos-casting" title="Permanent link">¶</a></h3>
+<p>A veces necesitas convertir un dato de un tipo a otro. A esto se le llama <strong>casting</strong>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># De texto a número</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="hll"><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"18"</span><span class="p">)</span>       <span class="c1"># "18" (str) → 18 (int)</span>
+</span></span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="hll"><span class="n">precio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"9.99"</span><span class="p">)</span> <span class="c1"># "9.99" (str) → 9.99 (float)</span>
+</span></span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="c1"># De número a texto</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="hll"><span class="n">texto</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>        <span class="c1"># 42 (int) → "42" (str)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>Esto es especialmente útil con <code>input()</code>, que <strong>siempre devuelve texto</strong>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="hll"><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"¿Cuántos años tienes? "</span><span class="p">))</span>  <span class="c1"># convierte la respuesta a entero</span>
+</span></span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">No puedes convertir cualquier texto a número</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"veinte"</span><span class="p">)</span>  <span class="c1"># ¡Error! "veinte" no es un número válido</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"20"</span><span class="p">)</span>      <span class="c1"># Correcto</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<hr/>
+<h2 id="5-entrada-y-salida-de-datos">5. Entrada y salida de datos<a class="headerlink" href="#5-entrada-y-salida-de-datos" title="Permanent link">¶</a></h2>
+<h3 id="51-salida-con-print">5.1 Salida con <code>print()</code><a class="headerlink" href="#51-salida-con-print" title="Permanent link">¶</a></h3>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hola mundo"</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>La forma más moderna y recomendada de mostrar variables es usando <strong>f-strings</strong>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Ana"</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hola, me llamo </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> y tengo </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años."</span><span class="p">)</span>
+</span></span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="c1"># Resultado: Hola, me llamo Ana y tengo 20 años.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Las f-strings empiezan con una <code>f</code> antes de las comillas y permiten insertar variables directamente entre <code>{}</code>.</p>
+<hr/>
+<h3 id="52-entrada-con-input">5.2 Entrada con <code>input()</code><a class="headerlink" href="#52-entrada-con-input" title="Permanent link">¶</a></h3>
+<p><code>input()</code> pausa el programa y espera a que el usuario escriba algo y pulse Enter:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce tu nombre: "</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hola, </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>input()</code> siempre devuelve texto (<code>str</code>)</p>
+<p>Aunque el usuario escriba un número, <code>input()</code> lo devuelve como texto. Si quieres operar con él matemáticamente, conviértelo:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número: "</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div></p>
+</div>
+<hr/>
+<h2 id="6-operadores">6. Operadores<a class="headerlink" href="#6-operadores" title="Permanent link">¶</a></h2>
+<h3 id="61-aritmeticos">6.1 Aritméticos<a class="headerlink" href="#61-aritmeticos" title="Permanent link">¶</a></h3>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># Suma:            13</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># Resta:            7</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># Multiplicación:  30</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># División:         3.333...</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># División entera:  3  (descarta los decimales)</span>
+</span></span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># Módulo (resto):   1  (10 = 3×3 + 1)</span>
+</span></span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Potencia:      1000  (10³)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">¿Para qué sirve el módulo <code>%</code>?</p>
+<p>El operador <code>%</code> devuelve el <strong>resto</strong> de una división entera. Es muy útil para saber si un número es par o impar:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">numero</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Es par"</span><span class="p">)</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Es impar"</span><span class="p">)</span>   <span class="c1"># Este se imprime</span>
+</span></code></pre></div></td></tr></table></div></p>
+</div>
+<hr/>
+<h3 id="62-comparacion">6.2 Comparación<a class="headerlink" href="#62-comparacion" title="Permanent link">¶</a></h3>
+<p>Comparan dos valores y devuelven <code>True</code> o <code>False</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span>
+<span class="normal"><a href="#__codelineno-17-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">==</span> <span class="mi">18</span><span class="p">)</span>   <span class="c1"># False  (¿es igual a 18?)</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">!=</span> <span class="mi">18</span><span class="p">)</span>   <span class="c1"># True   (¿es distinto de 18?)</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span>    <span class="c1"># True   (¿es mayor que 18?)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span>    <span class="c1"># False  (¿es menor que 18?)</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>   <span class="c1"># True   (¿es mayor o igual que 18?)</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">&lt;=</span> <span class="mi">18</span><span class="p">)</span>   <span class="c1"># False  (¿es menor o igual que 18?)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>=</code> no es lo mismo que <code>==</code></p>
+<ul>
+<li><code>=</code> <strong>asigna</strong> un valor a una variable: <code>edad = 20</code></li>
+<li><code>==</code> <strong>compara</strong> si dos valores son iguales: <code>edad == 20</code></li>
+</ul>
+<p>Confundirlos es uno de los errores más frecuentes al empezar.</p>
+</div>
+<hr/>
+<h3 id="63-logicos">6.3 Lógicos<a class="headerlink" href="#63-logicos" title="Permanent link">¶</a></h3>
+<p>Combinan condiciones booleanas:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">tiene_carnet</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="c1"># and: las DOS condiciones deben ser True</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">tiene_carnet</span><span class="p">)</span>   <span class="c1"># True</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="c1"># or: al menos UNA debe ser True</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">or</span> <span class="n">tiene_carnet</span><span class="p">)</span>    <span class="c1"># True</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="c1"># not: invierte el resultado</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">tiene_carnet</span><span class="p">)</span>              <span class="c1"># False</span>
+</span></code></pre></div></td></tr></table></div>
+<hr/>
+<h3 id="64-asignacion-compuesta">6.4 Asignación compuesta<a class="headerlink" href="#64-asignacion-compuesta" title="Permanent link">¶</a></h3>
+<p>Forma abreviada de modificar el valor de una variable:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">x</span> <span class="o">+=</span> <span class="mi">3</span>    <span class="c1"># equivale a: x = x + 3  →  x vale 13</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span>    <span class="c1"># equivale a: x = x - 2  →  x vale 11</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="n">x</span> <span class="o">*=</span> <span class="mi">2</span>    <span class="c1"># equivale a: x = x * 2  →  x vale 22</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="n">x</span> <span class="o">/=</span> <span class="mi">4</span>    <span class="c1"># equivale a: x = x / 4  →  x vale 5.5</span>
+</span></code></pre></div></td></tr></table></div>
+<hr/>
+<h2 id="7-indentacion-y-bloques-de-codigo">7. Indentación y bloques de código<a class="headerlink" href="#7-indentacion-y-bloques-de-codigo" title="Permanent link">¶</a></h2>
+<p>En Python la <strong>indentación</strong> (los espacios al inicio de una línea) es parte de la sintaxis. Define qué código pertenece a qué bloque.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span>
+<span class="normal"><a href="#__codelineno-20-8">8</a></span>
+<span class="normal"><a href="#__codelineno-20-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="hll"><span class="k">if</span> <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+</span></span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Mayor de edad"</span><span class="p">)</span>   <span class="c1"># este print está DENTRO del if</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Puedes votar"</span><span class="p">)</span>    <span class="c1"># este también</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="hll"><span class="k">else</span><span class="p">:</span>
+</span></span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Menor de edad"</span><span class="p">)</span>   <span class="c1"># este está dentro del else</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">"Esto siempre se ejecuta"</span><span class="p">)</span>  <span class="c1"># este está FUERA del if/else</span>
+</span></span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Usa siempre 4 espacios</p>
+<p>Python acepta cualquier cantidad de espacios, pero en la misma parte del código deben ser <strong>consistentes</strong>. Lo estándar (PEP8) son <strong>4 espacios</strong>. No mezcles espacios y tabulaciones.</p>
+</div>
+<hr/>
+<h2 id="8-errores-comunes">8. Errores comunes<a class="headerlink" href="#8-errores-comunes" title="Permanent link">¶</a></h2>
+<p>Cuando un programa falla, Python muestra un mensaje de error. Aprender a <strong>leerlos</strong> es una habilidad fundamental. No te asustes, son tus mejores aliados para depurar.</p>
+<h3 id="syntaxerror-error-de-sintaxis">SyntaxError — error de sintaxis<a class="headerlink" href="#syntaxerror-error-de-sintaxis" title="Permanent link">¶</a></h3>
+<p>Python no entiende lo que has escrito. Suele ser una falta de paréntesis, dos puntos, o una palabra mal escrita.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hola"</span>    <span class="c1"># falta el paréntesis de cierre</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a>SyntaxError: '(' was never closed
+</span></code></pre></div></td></tr></table></div>
+<hr/>
+<h3 id="typeerror-tipos-incompatibles">TypeError — tipos incompatibles<a class="headerlink" href="#typeerror-tipos-incompatibles" title="Permanent link">¶</a></h3>
+<p>Estás intentando operar con tipos que no son compatibles.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">edad</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Tengo "</span> <span class="o">+</span> <span class="n">edad</span> <span class="o">+</span> <span class="s2">" años"</span><span class="p">)</span>  <span class="c1"># no puedes sumar str con int</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a>TypeError: can only concatenate str (not "int") to str
+</span></code></pre></div></td></tr></table></div>
+<p>Solución: convierte el número a texto con <code>str()</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Tengo "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" años"</span><span class="p">)</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="c1"># O mejor aún, usa f-strings:</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tengo </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<hr/>
+<h3 id="nameerror-variable-no-definida">NameError — variable no definida<a class="headerlink" href="#nameerror-variable-no-definida" title="Permanent link">¶</a></h3>
+<p>Estás usando una variable que no existe (o la has escrito mal).</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">nmobre</span><span class="p">)</span>   <span class="c1"># la variable se llama "nombre", no "nmobre"</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a>NameError: name 'nmobre' is not defined
+</span></code></pre></div></td></tr></table></div>
+<hr/>
+<h3 id="indentationerror-indentacion-incorrecta">IndentationError — indentación incorrecta<a class="headerlink" href="#indentationerror-indentacion-incorrecta" title="Permanent link">¶</a></h3>
+<p>La indentación no es consistente.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hola"</span><span class="p">)</span>   <span class="c1"># falta la indentación</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a>IndentationError: expected an indented block after 'if' statement
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Cómo leer un error</p>
+<p>Un mensaje de error de Python siempre te dice:</p>
+<ol>
+<li><strong>El tipo de error</strong> (<code>TypeError</code>, <code>NameError</code>...)</li>
+<li><strong>El archivo y la línea</strong> donde ocurre</li>
+<li><strong>Una descripción</strong> del problema</li>
+</ol>
+<p>Lee siempre la <strong>última línea</strong> del error primero: es la descripción más concreta.</p>
+</div>
+<hr/>
+<h2 id="9-modelo-mental-como-piensa-un-programa">9. Modelo mental: cómo piensa un programa<a class="headerlink" href="#9-modelo-mental-como-piensa-un-programa" title="Permanent link">¶</a></h2>
+<p>Todo programa, por complejo que sea, sigue este esquema:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1"></a>Entrada de datos → Procesamiento → Salida de resultados
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2"></a>     (Input)         (Process)          (Output)
+</span></code></pre></div></td></tr></table></div>
+<p>Ejemplo práctico — programa que calcula el doble de un número:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span>
+<span class="normal"><a href="#__codelineno-31-4">4</a></span>
+<span class="normal"><a href="#__codelineno-31-5">5</a></span>
+<span class="normal"><a href="#__codelineno-31-6">6</a></span>
+<span class="normal"><a href="#__codelineno-31-7">7</a></span>
+<span class="normal"><a href="#__codelineno-31-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="c1"># INPUT: pedimos el dato al usuario</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="hll"><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introduce un número: "</span><span class="p">))</span>
+</span></span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3"></a>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="c1"># PROCESS: calculamos</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="hll"><span class="n">resultado</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="c1"># OUTPUT: mostramos el resultado</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El doble de </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> es </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>Antes de escribir código, pregúntate siempre:
+- ¿Qué datos necesito como entrada?
+- ¿Qué operación debo hacer?
+- ¿Qué debo mostrar al final?</p>
+<hr/>
+<h2 id="10-buenas-practicas-basicas">10. Buenas prácticas básicas<a class="headerlink" href="#10-buenas-practicas-basicas" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Nombres descriptivos</strong>: <code>precio_total</code> es mucho mejor que <code>pt</code> o <code>x</code>.</li>
+<li><strong>Código limpio y legible</strong>: deja espacios alrededor de los operadores (<code>x = 5</code>, no <code>x=5</code>).</li>
+<li><strong>No repitas código</strong>: si algo se repite más de dos veces, probablemente necesita una función.</li>
+<li><strong>Comenta lo necesario</strong>: explica el por qué, no el qué.</li>
+<li><strong>Sigue PEP8</strong>: es la guía de estilo oficial de Python. VS Code puede avisarte de las infracciones automáticamente.</li>
+</ul>
+<hr/>
+<h2 id="ejercicios-ut1"><a href="ejercicios_ut1/">Ejercicios UT1</a><a class="headerlink" href="#ejercicios-ut1" title="Permanent link">¶</a></h2>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "toc.follow", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+</body>
+</html>
