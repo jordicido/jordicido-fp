@@ -652,6 +652,20 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-12-mini-hundir-la-flota">
+<span class="md-ellipsis">
+      Ejercicio 12 - Mini hundir la flota
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-13-buscador-de-tesoros">
+<span class="md-ellipsis">
+      Ejercicio 13 - Buscador de tesoros
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1099,6 +1113,20 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-12-mini-hundir-la-flota">
+<span class="md-ellipsis">
+      Ejercicio 12 - Mini hundir la flota
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-13-buscador-de-tesoros">
+<span class="md-ellipsis">
+      Ejercicio 13 - Buscador de tesoros
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1185,6 +1213,36 @@
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>Ingrese el nuevo valor: 99
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>[[1, 2, 3], [4, 5, 99], [7, 8, 9]]
 </span></code></pre></div></td></tr></table></div>
+<h2 id="ejercicio-12-mini-hundir-la-flota">Ejercicio 12 - Mini hundir la flota<a class="headerlink" href="#ejercicio-12-mini-hundir-la-flota" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que simule una versión sencilla del juego hundir la flota. El programa debe tener un tablero de 5 filas y 5 columnas representado con una lista de dos dimensiones.</p>
+<p>Coloca un barco en una posición fija del tablero, por ejemplo en la fila 2 y columna 3. Después, pide al usuario una fila y una columna. Si acierta la posición del barco, el programa debe mostrar <code>Tocado</code>. Si no acierta, debe mostrar <code>Agua</code>.</p>
+<p>Ejemplo:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Ingrese una fila: 2
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>Ingrese una columna: 3
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>Tocado
+</span></code></pre></div></td></tr></table></div>
+<p>Puedes representar el tablero usando:</p>
+<ul>
+<li><code>"~"</code> para el agua.</li>
+<li><code>"B"</code> para el barco.</li>
+<li><code>"X"</code> para un disparo acertado.</li>
+<li><code>"O"</code> para un disparo fallado.</li>
+</ul>
+<h2 id="ejercicio-13-buscador-de-tesoros">Ejercicio 13 - Buscador de tesoros<a class="headerlink" href="#ejercicio-13-buscador-de-tesoros" title="Permanent link">¶</a></h2>
+<p>Escribe un programa que tenga un mapa de 4 filas y 4 columnas representado con una lista de dos dimensiones. En una de las posiciones debe haber un tesoro oculto, representado con la letra <code>"T"</code>.</p>
+<p>El usuario debe introducir una fila y una columna para intentar encontrar el tesoro. Si acierta, el programa debe mostrar <code>Has encontrado el tesoro</code>. Si falla, debe indicar si el tesoro está en una fila mayor, una fila menor, una columna mayor o una columna menor.</p>
+<p>Ejemplo:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>Ingrese una fila: 1
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>Ingrese una columna: 1
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>El tesoro está en una fila mayor.
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>El tesoro está en una columna mayor.
+</span></code></pre></div></td></tr></table></div>
+<p>El objetivo es practicar el acceso a posiciones concretas de una lista de dos dimensiones y el uso de condiciones.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
