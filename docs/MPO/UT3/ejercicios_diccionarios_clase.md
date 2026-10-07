@@ -40,3 +40,22 @@ Escribe un programa que gestione un diccionario de productos, y por cada product
 2. Añadir un registro de ventas para un producto específico.
 3. Consultar las ventas totales de un producto.
 El programa debe ejecutarse indefinidamente hasta que el usuario introduzca "SALIR".
+
+## Ejercicio 9 - Eliminar elementos repetidos
+
+Escribe un programa que pida al usuario una lista de palabras separadas por comas. El programa debe almacenar las palabras en un set para eliminar los elementos repetidos y mostrar por pantalla las palabras sin duplicados.
+
+## Ejercicio 10 - Alumnos apuntados a actividades
+
+Escribe un programa que pida al usuario los nombres de los alumnos apuntados a dos actividades diferentes: teatro y robótica. Los nombres de cada actividad se introducirán separados por comas.
+
+El programa debe utilizar sets y mostrar:
+
+1. Los alumnos que están apuntados a al menos una actividad.
+2. Los alumnos que están apuntados a las dos actividades.
+3. Los alumnos que están solo en teatro.
+4. Los alumnos que están solo en robótica.
+
+## Ejercicio 11 - Palabras comunes en dos frases
+
+Escribe un programa que pida al usuario dos frases. El programa debe separar las frases en palabras, convertirlas a minúsculas y utilizar sets para mostrar las palabras que aparecen en ambas frases.

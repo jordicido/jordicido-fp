@@ -77,6 +77,103 @@ print(mi_lista_anidada[0][1])  # Imprime: 2
 print(mi_lista_anidada[1][0])  # Imprime: Hola
 ```
 
+### Listas multidimensionales
+
+Una **lista multidimensional** es una lista que contiene otras listas en su interior. En la práctica, se utilizan mucho para representar datos organizados en filas y columnas, como una tabla, una matriz o un tablero.
+
+Para definir una lista de dos dimensiones, escribimos una lista principal y, dentro de ella, varias listas internas. Cada lista interna suele representar una fila:
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+
+También podemos inicializar una lista de dos dimensiones con un valor inicial. Por ejemplo, la siguiente matriz tiene 3 filas y 4 columnas, y todos sus valores empiezan en 0:
+
+```python hl_lines="4"
+filas = 3
+columnas = 4
+
+matriz = [[0 for columna in range(columnas)] for fila in range(filas)]
+
+print(matriz)
+```
+
+La salida sería:
+
+```python
+[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+```
+
+> ⚠️ Aunque pueda parecer más sencillo, evita crear matrices así:
+>
+> ```python
+> matriz = [[0] * columnas] * filas
+> ```
+>
+> En este caso, Python reutiliza la misma lista interna varias veces. Si modificas una fila, se modificarán también las demás.
+
+Por ejemplo, podemos representar las notas de varios alumnos en distintas asignaturas:
+
+```python
+notas = [
+    [7, 8, 6],
+    [5, 9, 7],
+    [10, 8, 9]
+]
+```
+
+En este caso, `notas` contiene tres listas. Cada lista interior representa las notas de un alumno. Podemos imaginarlo de esta forma:
+
+| Alumno | Asignatura 1 | Asignatura 2 | Asignatura 3 |
+| ------ | ------------ | ------------ | ------------ |
+| 0      | 7            | 8            | 6            |
+| 1      | 5            | 9            | 7            |
+| 2      | 10           | 8            | 9            |
+
+Para acceder a un elemento concreto usamos dos índices:
+
+- El primer índice indica la **fila**.
+- El segundo índice indica la **columna**.
+
+```python hl_lines="1 2"
+print(notas[0][1])  # Imprime: 8
+print(notas[2][0])  # Imprime: 10
+```
+
+En el primer ejemplo, `notas[0][1]` accede a la fila 0 y a la columna 1. Como los índices empiezan en 0, el resultado es la segunda nota del primer alumno.
+
+También podemos modificar un valor de una lista multidimensional:
+
+```python hl_lines="1"
+notas[1][0] = 6
+
+print(notas)
+```
+
+Después de esta modificación, la primera nota del segundo alumno pasa de 5 a 6.
+
+Para recorrer una lista multidimensional, podemos utilizar bucles `for` anidados:
+
+```python hl_lines="1 2"
+for fila in notas:
+    for nota in fila:
+        print(nota)
+```
+
+Si además queremos mostrar la posición de cada elemento, podemos recorrer la lista usando índices:
+
+```python hl_lines="1 2"
+for i in range(len(notas)):
+    for j in range(len(notas[i])):
+        print(f"Alumno {i}, asignatura {j}: {notas[i][j]}")
+```
+
+Las listas multidimensionales pueden tener más de dos niveles, aunque lo más habitual al empezar es trabajar con listas de dos dimensiones, parecidas a tablas.
+
 ## Diccionarios
 
 Un **diccionario** es una estructura de datos en Python que almacena pares **clave-valor**. Cada clave es única y se utiliza para acceder a su valor asociado.
@@ -325,6 +422,130 @@ def mostrar_ubicacion(coord):
 
 mostrar_ubicacion(coordenada)
 ```
+
+## Sets
+
+Un **set** o **conjunto** es una colección **no ordenada** de elementos **únicos**. Esto significa que no mantiene una posición fija para cada elemento y que no permite elementos duplicados.
+
+```python
+mi_set = {1, 2, 3, 4}
+```
+
+Los sets son muy útiles cuando necesitas eliminar valores repetidos o comprobar rápidamente si un elemento pertenece a una colección.
+
+### Características principales
+
+- Los sets son **mutables**: se pueden añadir y eliminar elementos.
+- No permiten elementos duplicados.
+- No tienen un orden fijo.
+- No se puede acceder a sus elementos mediante índices.
+- Solo pueden contener elementos **inmutables** (números, cadenas, tuplas...).
+
+### Crear sets
+
+Un set se define utilizando llaves `{}`. También puedes crear un set a partir de otra colección utilizando la función `set()`.
+
+```python
+numeros = {1, 2, 3, 4}
+colores = set(["rojo", "verde", "azul"])
+set_vacio = set()
+```
+
+> ⚠️ Para crear un set vacío debes usar `set()`. Si escribes `{}`, Python crea un diccionario vacío.
+
+Si creas un set con elementos repetidos, Python elimina automáticamente los duplicados:
+
+```python
+numeros = {1, 2, 2, 3, 3, 3}
+
+print(numeros)  # Imprime: {1, 2, 3}
+```
+
+### Añadir y eliminar elementos
+
+Para añadir elementos a un set puedes usar el método `add()`. Para eliminar elementos, puedes usar `remove()` o `discard()`.
+
+```python
+frutas = {"manzana", "pera", "naranja"}
+
+frutas.add("plátano")
+frutas.remove("pera")
+
+print(frutas)
+```
+
+La diferencia entre `remove()` y `discard()` es importante:
+
+- `remove()` elimina un elemento, pero lanza un error si no existe.
+- `discard()` elimina un elemento si existe, pero no lanza error si no está en el set.
+
+```python
+frutas.discard("kiwi")
+```
+
+### Comprobar si un elemento existe
+
+Para comprobar si un elemento pertenece a un set, usamos el operador `in`:
+
+```python
+if "manzana" in frutas:
+    print("La fruta está en el set")
+```
+
+### Recorrer un set
+
+Puedes recorrer los elementos de un set con un bucle `for`, igual que con listas, diccionarios o tuplas. Como los sets no tienen orden fijo, no debes depender del orden en el que aparecen sus elementos.
+
+```python
+for fruta in frutas:
+    print(fruta)
+```
+
+### Operaciones comunes
+
+| Operación          | Ejemplo                 | Descripción                                  |
+| ------------------ | ----------------------- | -------------------------------------------- |
+| Longitud           | `len(frutas)`           | Devuelve el número de elementos              |
+| Añadir elemento    | `frutas.add("uva")`     | Añade un elemento al set                     |
+| Eliminar elemento  | `frutas.remove("uva")`  | Elimina un elemento y da error si no existe  |
+| Eliminar sin error | `frutas.discard("uva")` | Elimina un elemento si existe                |
+| Vaciar set         | `frutas.clear()`        | Elimina todos los elementos                  |
+| Ver si contiene    | `"uva" in frutas`       | Comprueba si un elemento está en el set      |
+
+### Operaciones entre sets
+
+Los sets permiten realizar operaciones matemáticas de conjuntos, como unión, intersección y diferencia.
+
+```python
+grupo_a = {"Ana", "Luis", "Marta"}
+grupo_b = {"Marta", "Pedro", "Ana"}
+```
+
+| Operación             | Ejemplo             | Resultado esperado                              |
+| --------------------- | ------------------- | ----------------------------------------------- |
+| Unión                 | `grupo_a | grupo_b` | Todos los elementos sin repetir                 |
+| Intersección          | `grupo_a & grupo_b` | Elementos que están en ambos                    |
+| Diferencia            | `grupo_a - grupo_b` | Elementos de `grupo_a` que no están en `grupo_b` |
+| Diferencia simétrica | `grupo_a ^ grupo_b` | Elementos que están solo en uno de los dos sets |
+
+```python
+print(grupo_a | grupo_b)  # Unión
+print(grupo_a & grupo_b)  # Intersección
+print(grupo_a - grupo_b)  # Diferencia
+```
+
+### Ejemplo práctico
+
+Un uso muy común de los sets es eliminar elementos repetidos de una lista:
+
+```python hl_lines="2"
+nombres = ["Ana", "Luis", "Ana", "Marta", "Luis"]
+nombres_sin_repetir = set(nombres)
+
+print(nombres_sin_repetir)
+```
+
+En este caso, `nombres_sin_repetir` contendrá cada nombre una sola vez.
 
 ## [Ejercicios de clase: listas](ejercicios_listas_clase.md)
 
