@@ -6,26 +6,41 @@ En esta unidad, aprenderemos a manejar archivos en Python, incluyendo la lectura
 
 ## Manejo de Archivos
 
-En Python, podemos trabajar con archivos utilizando funciones integradas que nos permiten abrir, leer, escribir y cerrar archivos de manera sencilla.
+Los archivos permiten que un programa conserve información aunque termine su ejecución. Por ejemplo, una aplicación puede guardar las tareas de un usuario, leer la configuración al iniciarse o registrar los accesos en un archivo de log. En Python podemos trabajar con archivos utilizando funciones integradas que nos permiten abrir, leer, escribir y cerrar archivos de manera sencilla.
+
+El trabajo con un archivo suele seguir este proceso:
+
+1. Indicar qué archivo queremos utilizar y cómo vamos a trabajar con él.
+2. Abrirlo en el modo adecuado.
+3. Leer o escribir su contenido.
+4. Cerrar el archivo para liberar los recursos utilizados.
+
+En la práctica, se recomienda utilizar `with`, porque se encarga automáticamente del último paso aunque se produzca un error.
 
 ### Abrir un archivo
 
-Para abrir un archivo, utilizamos la función `open()`, que recibe dos argumentos: el nombre del archivo y el modo en que queremos abrirlo (lectura, escritura, etc.).
+Para abrir un archivo, utilizamos la función `open()`. El único argumento obligatorio es la ruta del archivo. El modo de apertura es opcional y, si no lo indicamos, Python utiliza el modo lectura (`'r'`). Aun así, suele ser conveniente escribirlo para dejar clara nuestra intención.
 
 ```python
-archivo = open('mi_archivo.txt', 'r')  # 'r' para lectura
+archivo = open('mi_archivo.txt', 'r', encoding='utf-8')  # 'r' para lectura
 ```
+
+Si solo indicamos el nombre, Python buscará el archivo en la carpeta desde la que se está ejecutando el programa. También podemos utilizar una ruta relativa, como `datos/notas.txt`, o una ruta absoluta. Las rutas relativas suelen ser más fáciles de trasladar a otro ordenador, pero las carpetas que aparecen en ellas deben existir previamente.
+
+El parámetro `encoding='utf-8'` indica cómo deben interpretarse los caracteres del archivo. Es una buena práctica incluirlo cuando trabajamos con textos que pueden contener tildes, eñes u otros caracteres especiales.
 
 ### Modos de apertura
 
 Los modos de apertura más comunes son:
 
-```python hl_lines="2 3 4"
-archivo = open('mi_archivo.txt', 'r')  # 'r' para lectura
-archivo = open('mi_archivo.txt', 'w')  # 'w' para escritura
-archivo = open('mi_archivo.txt', 'a')  # 'a' para agregar contenido al final
-archivo = open('mi_archivo.txt', 'r+') # 'r+' para lectura y escritura
-```
+| Modo | Uso | ¿Qué ocurre si el archivo no existe? |
+|------|-----|---------------------------------------|
+| `'r'` | Leer el contenido. | Se produce un `FileNotFoundError`. |
+| `'w'` | Escribir desde cero. | Se crea. Si existe, se borra su contenido anterior. |
+| `'a'` | Añadir contenido al final. | Se crea. Si existe, conserva su contenido. |
+| `'r+'` | Leer y escribir. | Se produce un `FileNotFoundError`. |
+
+También existe el modo `'x'`, que crea un archivo nuevo y produce un error si ya existe. Los modos pueden combinarse con `'b'` para trabajar con datos binarios, por ejemplo imágenes o archivos PDF (`'rb'` para leerlos). En esta unidad trabajaremos principalmente con archivos de texto.
 
 ### Leer un archivo
 
@@ -38,12 +53,23 @@ Las diferencias entre estos métodos son:
 - `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista de cadenas.
 
 ```python
-contenido = archivo.read()  # Lee todo el contenido
-linea = archivo.readline()  # Lee una línea
-lineas = archivo.readlines() # Lee todas las líneas
+# Podemos elegir uno de estos métodos según lo que necesitemos
+contenido = archivo.read()     # Lee todo el contenido
+linea = archivo.readline()     # Lee una línea
+lineas = archivo.readlines()   # Lee todas las líneas
 ```
 
-Conocemos como cursor al indicador de posición en el archivo. Cada vez que leemos o escribimos, el cursor se mueve automáticamente. Por ejemplo, después de leer una línea con `readline()`, el cursor se mueve a la siguiente línea.
+Estas tres instrucciones muestran alternativas y no suelen ejecutarse seguidas sobre el mismo archivo. Conocemos como **cursor** al indicador de la posición actual dentro del archivo. Cada vez que leemos o escribimos, el cursor se mueve automáticamente. Por ejemplo, después de leer todo el contenido con `read()`, el cursor queda al final y una lectura posterior devolverá una cadena vacía.
+
+Cuando el archivo puede ser grande, es preferible recorrerlo línea a línea en lugar de cargarlo entero en memoria:
+
+```python
+with open('registro.txt', 'r', encoding='utf-8') as archivo:
+    for linea in archivo:
+        print(linea.rstrip('\n'))
+```
+
+Cada vuelta del bucle obtiene una línea y después continúa con la siguiente. `rstrip('\n')` elimina el salto de línea únicamente de la cadena que vamos a mostrar; no modifica el archivo original.
 
 ### Escribir en un archivo
 
@@ -52,7 +78,7 @@ Para escribir en un archivo, utilizamos el método `write()` o `writelines()`.
 La diferencia entre estos métodos es:
 
 - `write()`: Escribe una cadena en el archivo.
-- `writelines()`: Escribe una lista de cadenas en el archivo.
+- `writelines()`: Escribe una colección de cadenas en el archivo. No añade saltos de línea automáticamente, por lo que debemos incluir `\n` cuando sea necesario.
 
 ```python
 archivo = open('mi_archivo.txt', 'w')  # Abrir en modo escritura
@@ -80,10 +106,50 @@ archivo.close()
 Una forma recomendada de manejar archivos en Python es utilizando la declaración `with`. Esto asegura que el archivo se cierre automáticamente al finalizar el bloque de código, incluso si ocurre un error.
 
 ```python hl_lines="1"
-with open('mi_archivo.txt', 'r') as archivo:
+with open('mi_archivo.txt', 'r', encoding='utf-8') as archivo:
     contenido = archivo.read()
     print(contenido)
 # El archivo se cierra automáticamente aquí
+```
+
+### Ejemplo: guardar y consultar una lista de tareas
+
+El siguiente ejemplo muestra un caso habitual: primero guardamos varias tareas, una por línea, y después abrimos el archivo para leerlas. Al utilizar `'w'`, el archivo se crea si no existe; si ya existe, se sustituye su contenido.
+
+```python
+tareas = [
+    'Estudiar Python',
+    'Revisar los apuntes',
+    'Entregar el ejercicio'
+]
+
+# Guardar las tareas
+with open('tareas.txt', 'w', encoding='utf-8') as archivo:
+    for tarea in tareas:
+        archivo.write(tarea + '\n')
+
+# Leer las tareas guardadas
+with open('tareas.txt', 'r', encoding='utf-8') as archivo:
+    for numero, linea in enumerate(archivo, start=1):
+        tarea = linea.rstrip('\n')
+        print(f'{numero}. {tarea}')
+```
+
+`enumerate(archivo, start=1)` permite obtener a la vez el número de la tarea y la línea correspondiente. El método `rstrip('\n')` elimina el salto de línea antes de mostrarla.
+
+La salida será parecida a esta:
+
+```text
+1. Estudiar Python
+2. Revisar los apuntes
+3. Entregar el ejercicio
+```
+
+Si quisiéramos añadir una tarea sin borrar las anteriores, utilizaríamos el modo `'a'`:
+
+```python
+with open('tareas.txt', 'a', encoding='utf-8') as archivo:
+    archivo.write('Preparar el examen\n')
 ```
 
 ## Tratamiento de errores
