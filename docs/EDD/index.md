@@ -6,7 +6,7 @@ En este espacio se encuentran los apuntes de la asignatura de Entornos de Desarr
 
 ## [Proyecto 1 - **10% nota evaluación continua**](proyecto1.md)
 
-## [Proyecto 2 - **10% nota evaluación continua**]()
+## [Proyecto 2 - **10% nota evaluación continua**](proyecto2.md)
 
 ## [Test 1 - **5% nota evaluación continua**]()
 
