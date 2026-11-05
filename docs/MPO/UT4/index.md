@@ -2275,4 +2275,4 @@ Deberías poder responder a estas preguntas:
 
 ## Módulos
 
-[Ejercicios de clase UT4: Importar módulos](ejercicios_importar_modulos_clase/)
+[Ejercicios de clase UT4: Creación y uso de módulos](ejercicios_importar_modulos_clase/)
