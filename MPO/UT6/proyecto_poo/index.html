@@ -1,0 +1,1627 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../ejercicios_poo_clase/" rel="prev"/>
+<link href="../../UT7/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
+<title>Proyecto UT6: Arena de héroes - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#proyecto-ut6-arena-de-heroes-torneo-por-turnos">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Proyecto UT6: Arena de héroes
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    
+  
+    Índice del módulo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejercicios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Condicionales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Bucles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Avanzados
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Básicos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Diccionarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Extra
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Archivos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_21" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_21_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_21">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    UT6: Programación orientada a objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_poo_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT6: POO
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Proyecto UT6: Arena de héroes
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Proyecto UT6: Arena de héroes
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-contexto-y-reto">
+<span class="md-ellipsis">
+      
+        1. Contexto y reto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-objetivos">
+<span class="md-ellipsis">
+      
+        2. Objetivos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-modelo-obligatorio">
+<span class="md-ellipsis">
+      
+        3. Modelo obligatorio
+      
+    </span>
+</a>
+<nav aria-label="3. Modelo obligatorio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#personaje">
+<span class="md-ellipsis">
+      
+        Personaje
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#guerrero">
+<span class="md-ellipsis">
+      
+        Guerrero
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mago">
+<span class="md-ellipsis">
+      
+        Mago
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#combate">
+<span class="md-ellipsis">
+      
+        Combate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arena">
+<span class="md-ellipsis">
+      
+        Arena
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-diagrama-de-clases">
+<span class="md-ellipsis">
+      
+        4. Diagrama de clases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-interfaz-minima">
+<span class="md-ellipsis">
+      
+        5. Interfaz mínima
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-fases-de-desarrollo">
+<span class="md-ellipsis">
+      
+        6. Fases de desarrollo
+      
+    </span>
+</a>
+<nav aria-label="6. Fases de desarrollo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-1-modelo-y-pruebas-pequenas">
+<span class="md-ellipsis">
+      
+        Fase 1 — Modelo y pruebas pequeñas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-2-combate">
+<span class="md-ellipsis">
+      
+        Fase 2 — Combate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-3-arena-y-menu">
+<span class="md-ellipsis">
+      
+        Fase 3 — Arena y menú
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-4-calidad-y-entrega">
+<span class="md-ellipsis">
+      
+        Fase 4 — Calidad y entrega
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-pruebas-de-aceptacion">
+<span class="md-ellipsis">
+      
+        7. Pruebas de aceptación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-estructura-propuesta">
+<span class="md-ellipsis">
+      
+        8. Estructura propuesta
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-ampliaciones-opcionales">
+<span class="md-ellipsis">
+      
+        9. Ampliaciones opcionales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-entrega">
+<span class="md-ellipsis">
+      
+        10. Entrega
+      
+    </span>
+</a>
+<nav aria-label="10. Entrega" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rubrica-orientativa">
+<span class="md-ellipsis">
+      
+        Rúbrica orientativa
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-preguntas-de-diseno">
+<span class="md-ellipsis">
+      
+        11. Preguntas de diseño
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    UT7 — Proyecto CLI
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejemplos Mermaid
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Comandos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Usuarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Docker
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-contexto-y-reto">
+<span class="md-ellipsis">
+      
+        1. Contexto y reto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-objetivos">
+<span class="md-ellipsis">
+      
+        2. Objetivos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-modelo-obligatorio">
+<span class="md-ellipsis">
+      
+        3. Modelo obligatorio
+      
+    </span>
+</a>
+<nav aria-label="3. Modelo obligatorio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#personaje">
+<span class="md-ellipsis">
+      
+        Personaje
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#guerrero">
+<span class="md-ellipsis">
+      
+        Guerrero
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mago">
+<span class="md-ellipsis">
+      
+        Mago
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#combate">
+<span class="md-ellipsis">
+      
+        Combate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arena">
+<span class="md-ellipsis">
+      
+        Arena
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-diagrama-de-clases">
+<span class="md-ellipsis">
+      
+        4. Diagrama de clases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-interfaz-minima">
+<span class="md-ellipsis">
+      
+        5. Interfaz mínima
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-fases-de-desarrollo">
+<span class="md-ellipsis">
+      
+        6. Fases de desarrollo
+      
+    </span>
+</a>
+<nav aria-label="6. Fases de desarrollo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-1-modelo-y-pruebas-pequenas">
+<span class="md-ellipsis">
+      
+        Fase 1 — Modelo y pruebas pequeñas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-2-combate">
+<span class="md-ellipsis">
+      
+        Fase 2 — Combate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-3-arena-y-menu">
+<span class="md-ellipsis">
+      
+        Fase 3 — Arena y menú
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-4-calidad-y-entrega">
+<span class="md-ellipsis">
+      
+        Fase 4 — Calidad y entrega
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-pruebas-de-aceptacion">
+<span class="md-ellipsis">
+      
+        7. Pruebas de aceptación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-estructura-propuesta">
+<span class="md-ellipsis">
+      
+        8. Estructura propuesta
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-ampliaciones-opcionales">
+<span class="md-ellipsis">
+      
+        9. Ampliaciones opcionales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-entrega">
+<span class="md-ellipsis">
+      
+        10. Entrega
+      
+    </span>
+</a>
+<nav aria-label="10. Entrega" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rubrica-orientativa">
+<span class="md-ellipsis">
+      
+        Rúbrica orientativa
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-preguntas-de-diseno">
+<span class="md-ellipsis">
+      
+        11. Preguntas de diseño
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="proyecto-ut6-arena-de-heroes-torneo-por-turnos">Proyecto UT6: Arena de héroes — torneo por turnos<a class="headerlink" href="#proyecto-ut6-arena-de-heroes-torneo-por-turnos" title="Permanent link">¶</a></h1>
+<h2 id="1-contexto-y-reto">1. Contexto y reto<a class="headerlink" href="#1-contexto-y-reto" title="Permanent link">¶</a></h2>
+<p>Vas a construir un videojuego de consola en el que guerreros y magos se
+enfrentan en combates por turnos. El objetivo no es crear una interfaz gráfica
+ni utilizar azar: es diseñar un pequeño dominio de objetos con reglas claras,
+validaciones, composición, herencia, polimorfismo y pruebas reproducibles.</p>
+<p>El programa debe poder ejecutarse sin paquetes de terceros. Las reglas del
+combate deben funcionar sin <code>input()</code> para poder probarlas automáticamente; el
+menú será una capa separada que traduce las opciones del usuario en llamadas a
+las clases.</p>
+<h2 id="2-objetivos">2. Objetivos<a class="headerlink" href="#2-objetivos" title="Permanent link">¶</a></h2>
+<p>Al entregar deberás demostrar que sabes:</p>
+<ul>
+<li>crear una jerarquía sencilla con una clase base y dos especializaciones;</li>
+<li>proteger estado y rechazar operaciones inválidas;</li>
+<li>separar el cálculo del daño de la aplicación al oponente;</li>
+<li>coordinar objetos mediante <code>Combate</code> y <code>Arena</code>;</li>
+<li>recorrer personajes polimórficamente;</li>
+<li>diseñar una interfaz de consola que no contenga las reglas del dominio;</li>
+<li>escribir pruebas y documentación de ejecución.</li>
+</ul>
+<h2 id="3-modelo-obligatorio">3. Modelo obligatorio<a class="headerlink" href="#3-modelo-obligatorio" title="Permanent link">¶</a></h2>
+<h3 id="personaje"><code>Personaje</code><a class="headerlink" href="#personaje" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>nombre</code> no puede estar vacío;</li>
+<li>vida máxima inicial: 100;</li>
+<li><code>atacar()</code> devuelve 6 de daño;</li>
+<li><code>recibir_danio(cantidad)</code> reduce la vida, sin bajar de 0;</li>
+<li><code>esta_vivo()</code> devuelve un booleano;</li>
+<li>no se puede atacar estando derrotado;</li>
+<li>se rechazan daños negativos y cantidades no válidas.</li>
+</ul>
+<h3 id="guerrero"><code>Guerrero</code><a class="headerlink" href="#guerrero" title="Permanent link">¶</a></h3>
+<p>Hereda de <code>Personaje</code>, comienza con vida 120 y <code>atacar()</code> devuelve 14.</p>
+<h3 id="mago"><code>Mago</code><a class="headerlink" href="#mago" title="Permanent link">¶</a></h3>
+<p>Hereda de <code>Personaje</code>, comienza con vida 80 y maná 9. Un ataque mágico consume
+3 manás y devuelve 18 de daño. Si no quedan al menos 3 manás, realiza un ataque
+básico de 4 sin consumir maná. Por tanto, la secuencia de cuatro ataques de un
+mago nuevo es <code>18, 18, 18, 4</code> y su maná final es 0.</p>
+<h3 id="combate"><code>Combate</code><a class="headerlink" href="#combate" title="Permanent link">¶</a></h3>
+<p>Recibe dos objetos distintos, alterna ataques de forma determinista y termina
+cuando uno pierde toda la vida. El atacante obtiene el daño llamando a
+<code>atacar()</code> y el combate lo aplica al rival mediante <code>recibir_danio()</code>.</p>
+<p>Debe generar un registro legible y devolver el vencedor. Un combate terminado
+no puede ejecutarse una segunda vez. Si un atacante queda derrotado, no puede
+realizar otro ataque.</p>
+<h3 id="arena"><code>Arena</code><a class="headerlink" href="#arena" title="Permanent link">¶</a></h3>
+<p>Mantiene una colección propia de personajes, no diccionarios, y rechaza
+nombres duplicados. Debe permitir:</p>
+<ul>
+<li>crear o añadir personajes;</li>
+<li>listarlos;</li>
+<li>enfrentar dos personajes distintos;</li>
+<li>consultar un historial de vencedores y perdedores.</li>
+</ul>
+<p>Dos arenas independientes no comparten listas ni historial. Documenta qué
+sucede con personajes heridos que ya participaron: la opción recomendada es
+crear personajes nuevos para cada combate o rechazar combatientes derrotados;
+elige una política, impleméntala y haz que las pruebas coincidan con ella.</p>
+<div class="admonition warning">
+<p class="admonition-title">Sin azar en los requisitos mínimos</p>
+<p>No uses aleatoriedad para determinar ataques, turnos o daños. Así cualquier
+persona puede reproducir tus resultados y tus pruebas pueden comprobarlos.</p>
+</div>
+<h2 id="4-diagrama-de-clases">4. Diagrama de clases<a class="headerlink" href="#4-diagrama-de-clases" title="Permanent link">¶</a></h2>
+<p>Amplía o adapta este diagrama si tu diseño lo necesita, pero conserva las
+responsabilidades principales:</p>
+<pre class="mermaid"><code>classDiagram
+    Personaje &lt;|-- Guerrero
+    Personaje &lt;|-- Mago
+    Arena o-- Personaje
+    Arena o-- Combate
+    Combate --&gt; Personaje : ataca / recibe daño
+    class Personaje {
+        +nombre
+        +vida
+        +atacar() int
+        +recibir_danio(cantidad)
+        +esta_vivo() bool
+    }
+    class Guerrero {
+        +atacar() int
+    }
+    class Mago {
+        +mana
+        +atacar() int
+    }
+    class Combate {
+        +combatir() Personaje
+        +registro() list
+    }
+    class Arena {
+        -personajes
+        -historial
+        +agregar(personaje)
+        +enfrentar(nombre_a, nombre_b)
+        +ver_historial()
+    }</code></pre>
+<h2 id="5-interfaz-minima">5. Interfaz mínima<a class="headerlink" href="#5-interfaz-minima" title="Permanent link">¶</a></h2>
+<p>El programa debe ofrecer como mínimo este menú:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>=== ARENA DE HÉROES ===
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>1. Crear guerrero
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>2. Crear mago
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>3. Mostrar personajes
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>4. Iniciar combate
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>5. Ver historial
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>0. Salir
+</span></code></pre></div></td></tr></table></div>
+<p>Gestiona errores de entrada con mensajes comprensibles y permite volver al
+menú sin terminar abruptamente. El menú puede solicitar nombres, pero las
+clases deben ser utilizables desde pruebas sin simular <code>input()</code>.</p>
+<h2 id="6-fases-de-desarrollo">6. Fases de desarrollo<a class="headerlink" href="#6-fases-de-desarrollo" title="Permanent link">¶</a></h2>
+<h3 id="fase-1-modelo-y-pruebas-pequenas">Fase 1 — Modelo y pruebas pequeñas<a class="headerlink" href="#fase-1-modelo-y-pruebas-pequenas" title="Permanent link">¶</a></h3>
+<ol>
+<li>Escribe el diagrama y decide qué atributos son públicos o internos.</li>
+<li>Implementa <code>Personaje</code>, sus validaciones y pruebas.</li>
+<li>Implementa <code>Guerrero</code> y <code>Mago</code>, comprobando vida, daño y maná.</li>
+</ol>
+<h3 id="fase-2-combate">Fase 2 — Combate<a class="headerlink" href="#fase-2-combate" title="Permanent link">¶</a></h3>
+<ol>
+<li>Define quién comienza y documenta el orden.</li>
+<li>Alterna turnos hasta que un personaje quede derrotado.</li>
+<li>Guarda mensajes de registro sin imprimirlos obligatoriamente.</li>
+<li>Impide ejecutar dos veces el mismo combate.</li>
+</ol>
+<h3 id="fase-3-arena-y-menu">Fase 3 — Arena y menú<a class="headerlink" href="#fase-3-arena-y-menu" title="Permanent link">¶</a></h3>
+<ol>
+<li>Añade la colección privada o protegida de la arena.</li>
+<li>Rechaza nombres repetidos y enfrentamientos consigo mismo.</li>
+<li>Añade historial de ganador y perdedor.</li>
+<li>Conecta el menú en <code>main.py</code> sin trasladar allí las reglas.</li>
+</ol>
+<h3 id="fase-4-calidad-y-entrega">Fase 4 — Calidad y entrega<a class="headerlink" href="#fase-4-calidad-y-entrega" title="Permanent link">¶</a></h3>
+<ol>
+<li>Ejecuta todas las pruebas con <code>python -m unittest</code>.</li>
+<li>Prueba manualmente el menú, incluidos datos inválidos.</li>
+<li>Revisa nombres, módulos, docstrings y README.</li>
+<li>Comprueba que otra persona puede ejecutar el proyecto desde cero.</li>
+</ol>
+<h2 id="7-pruebas-de-aceptacion">7. Pruebas de aceptación<a class="headerlink" href="#7-pruebas-de-aceptacion" title="Permanent link">¶</a></h2>
+<p>Publica pruebas automáticas o reproducibles que demuestren:</p>
+<ol>
+<li>Un guerrero nuevo tiene vida 120 y ataque 14.</li>
+<li>Un mago nuevo tiene vida 80 y maná 9.</li>
+<li>Cuatro ataques del mago producen 18, 18, 18, 4 y dejan maná 0.</li>
+<li>Recibir 500 puntos de daño deja la vida en 0.</li>
+<li>Un personaje derrotado que intenta atacar provoca una excepción controlada.</li>
+<li>Dos personajes con el mismo nombre son rechazados por una arena.</li>
+<li>Un personaje no puede enfrentarse a sí mismo.</li>
+<li>El mismo combate no puede ejecutarse dos veces.</li>
+<li>Dos arenas no comparten sus colecciones.</li>
+<li>Un combate terminado devuelve vencedor y deja registro en el historial.</li>
+</ol>
+<p>Incluye además validación de nombre vacío, daño negativo, intento de golpe
+después de la derrota y comprobación del orden determinista del registro.</p>
+<h2 id="8-estructura-propuesta">8. Estructura propuesta<a class="headerlink" href="#8-estructura-propuesta" title="Permanent link">¶</a></h2>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>arena_heroes/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>├── personaje.py
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>├── guerrero.py
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>├── mago.py
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>├── combate.py
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>├── arena.py
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>├── main.py
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>├── tests/
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>│   └── test_arena.py
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>└── README.md
+</span></code></pre></div></td></tr></table></div>
+<p>Puedes organizar los tests de otra forma si mantienes las responsabilidades y
+la ejecución documentada. No utilices bibliotecas externas.</p>
+<h2 id="9-ampliaciones-opcionales">9. Ampliaciones opcionales<a class="headerlink" href="#9-ampliaciones-opcionales" title="Permanent link">¶</a></h2>
+<p>Cuando los requisitos mínimos y sus pruebas estén terminados, puedes añadir:</p>
+<ul>
+<li><code>Arquero</code> con una regla de ataque diferente;</li>
+<li>pociones e inventario;</li>
+<li>torneo y ranking;</li>
+<li>historial en JSON;</li>
+<li>modo de demostración sin introducir datos.</li>
+</ul>
+<p>Estas ampliaciones son posteriores y no deben cambiar silenciosamente las
+cifras ni las reglas obligatorias. Documenta cualquier nueva decisión.</p>
+<h2 id="10-entrega">10. Entrega<a class="headerlink" href="#10-entrega" title="Permanent link">¶</a></h2>
+<p>Entrega:</p>
+<ul>
+<li>código fuente de todas las clases y el menú;</li>
+<li><code>README.md</code> con requisitos, ejecución, decisiones y ejemplos;</li>
+<li>diagrama sencillo de clases;</li>
+<li>tests de aceptación y casos adicionales;</li>
+<li>una breve explicación de qué parte corresponde a herencia, composición y
+  polimorfismo.</li>
+</ul>
+<h3 id="rubrica-orientativa">Rúbrica orientativa<a class="headerlink" href="#rubrica-orientativa" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th style="text-align: right;">Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases, constructores, estado y validaciones</td>
+<td style="text-align: right;">25 %</td>
+</tr>
+<tr>
+<td>Herencia, sobrescritura y polimorfismo</td>
+<td style="text-align: right;">20 %</td>
+</tr>
+<tr>
+<td>Composición y reparto de responsabilidades</td>
+<td style="text-align: right;">20 %</td>
+</tr>
+<tr>
+<td>Combate, menú e historial</td>
+<td style="text-align: right;">20 %</td>
+</tr>
+<tr>
+<td>Pruebas, documentación y legibilidad</td>
+<td style="text-align: right;">15 %</td>
+</tr>
+</tbody>
+</table>
+<p>La rúbrica es una propuesta de trabajo y puede ajustarse a la programación del
+módulo. Una solución con más funciones, pero con reglas inconsistentes o sin
+pruebas, no supera una solución sencilla y fiable.</p>
+<h2 id="11-preguntas-de-diseno">11. Preguntas de diseño<a class="headerlink" href="#11-preguntas-de-diseno" title="Permanent link">¶</a></h2>
+<p>Responde en tu README:</p>
+<ol>
+<li>¿Por qué <code>atacar()</code> devuelve daño en vez de restarlo directamente?</li>
+<li>¿Qué código pertenece a <code>Personaje</code> y qué código solo a <code>Mago</code>?</li>
+<li>¿Por qué <code>Arena</code> usa composición en lugar de heredar de <code>Personaje</code>?</li>
+<li>¿Cómo garantizas que dos arenas no comparten listas por accidente?</li>
+<li>¿Qué estado conserva un combate terminado y cómo impides repetirlo?</li>
+<li>¿Qué cambiarías para añadir una nueva clase de héroe sin modificar el menú?</li>
+</ol>
+<p>Consulta la <a href="../">teoría de POO</a> y los <a href="../ejercicios_poo_clase/">ejercicios progresivos</a>
+si necesitas repasar una técnica antes de implementarla.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "toc.follow", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+</body>
+</html>

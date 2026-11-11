@@ -1,0 +1,3100 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../UT5/ejercicios_archivos_clase/" rel="prev"/>
+<link href="ejercicios_poo_clase/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
+<title>UT6: Programación orientada a objetos - Jordi Cido - FP</title>
+<link href="../../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ut6-programacion-orientada-a-objetos-poo-en-python">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT6: Programación orientada a objetos
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Índice del módulo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejercicios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Condicionales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Bucles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Avanzados
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Básicos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Diccionarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Extra
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Archivos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_21" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_21_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_21">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT6: Programación orientada a objetos
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT6: Programación orientada a objetos
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-que-es-una-clase">
+<span class="md-ellipsis">
+      
+        1. ¿Qué es una clase?
+      
+    </span>
+</a>
+<nav aria-label="1. ¿Qué es una clase?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-reconocer-una-clase">
+<span class="md-ellipsis">
+      
+        Microactividad: reconocer una clase
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-que-es-un-objeto-o-instancia">
+<span class="md-ellipsis">
+      
+        2. ¿Qué es un objeto o instancia?
+      
+    </span>
+</a>
+<nav aria-label="2. ¿Qué es un objeto o instancia?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-crear-instancias">
+<span class="md-ellipsis">
+      
+        Microactividad: crear instancias
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-atributos-los-datos-de-un-objeto">
+<span class="md-ellipsis">
+      
+        3. Atributos: los datos de un objeto
+      
+    </span>
+</a>
+<nav aria-label="3. Atributos: los datos de un objeto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-dos-estados-independientes">
+<span class="md-ellipsis">
+      
+        Microactividad: dos estados independientes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-__init__-dar-valores-iniciales-al-crear-objetos">
+<span class="md-ellipsis">
+      
+        4. __init__: dar valores iniciales al crear objetos
+      
+    </span>
+</a>
+<nav aria-label="4. __init__: dar valores iniciales al crear objetos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-anadir-un-dato-inicial">
+<span class="md-ellipsis">
+      
+        Microactividad: añadir un dato inicial
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-self-a-que-objeto-nos-estamos-refiriendo">
+<span class="md-ellipsis">
+      
+        5. self: ¿a qué objeto nos estamos refiriendo?
+      
+    </span>
+</a>
+<nav aria-label="5. self: ¿a qué objeto nos estamos refiriendo?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parametro-y-atributo-no-son-lo-mismo">
+<span class="md-ellipsis">
+      
+        Parámetro y atributo no son lo mismo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#se-escribe-self-al-llamar">
+<span class="md-ellipsis">
+      
+        ¿Se escribe self al llamar?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-1-predecir">
+<span class="md-ellipsis">
+      
+        Microactividad 1: predecir
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-2-corregir-una-asignacion">
+<span class="md-ellipsis">
+      
+        Microactividad 2: corregir una asignación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-metodos-las-acciones-de-los-objetos">
+<span class="md-ellipsis">
+      
+        6. Métodos: las acciones de los objetos
+      
+    </span>
+</a>
+<nav aria-label="6. Métodos: las acciones de los objetos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#return-y-print">
+<span class="md-ellipsis">
+      
+        return y print()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-1-anadir-curar">
+<span class="md-ellipsis">
+      
+        Microactividad 1: añadir curar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-2-dos-objetos">
+<span class="md-ellipsis">
+      
+        Microactividad 2: dos objetos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lo-tienes-claro">
+<span class="md-ellipsis">
+      
+        ¿Lo tienes claro?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-varios-objetos-listas-de-instancias">
+<span class="md-ellipsis">
+      
+        7. Varios objetos: listas de instancias
+      
+    </span>
+</a>
+<nav aria-label="7. Varios objetos: listas de instancias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-buscar-un-personaje">
+<span class="md-ellipsis">
+      
+        Microactividad: buscar un personaje
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-reglas-y-validaciones-para-conservar-un-estado-correcto">
+<span class="md-ellipsis">
+      
+        8. Reglas y validaciones para conservar un estado correcto
+      
+    </span>
+</a>
+<nav aria-label="8. Reglas y validaciones para conservar un estado correcto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-comprobar-antes-de-modificar">
+<span class="md-ellipsis">
+      
+        Microactividad: comprobar antes de modificar
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-encapsulacion-proteger-los-datos">
+<span class="md-ellipsis">
+      
+        9. Encapsulación: proteger los datos
+      
+    </span>
+</a>
+<nav aria-label="9. Encapsulación: proteger los datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-detectar-un-cambio-peligroso">
+<span class="md-ellipsis">
+      
+        Microactividad: detectar un cambio peligroso
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-relaciones-entre-objetos-composicion">
+<span class="md-ellipsis">
+      
+        10. Relaciones entre objetos: composición
+      
+    </span>
+</a>
+<nav aria-label="10. Relaciones entre objetos: composición" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-colaborar-con-objetos">
+<span class="md-ellipsis">
+      
+        Microactividad: colaborar con objetos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-herencia-crear-clases-especializadas">
+<span class="md-ellipsis">
+      
+        11. Herencia: crear clases especializadas
+      
+    </span>
+</a>
+<nav aria-label="11. Herencia: crear clases especializadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#primer-paso-guerrero">
+<span class="md-ellipsis">
+      
+        Primer paso: Guerrero
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usar-super__init__">
+<span class="md-ellipsis">
+      
+        Usar super().__init__()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#segundo-paso-mago">
+<span class="md-ellipsis">
+      
+        Segundo paso: Mago
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-una-clase-especializada">
+<span class="md-ellipsis">
+      
+        Microactividad: una clase especializada
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-polimorfismo-la-misma-operacion-distintos-resultados">
+<span class="md-ellipsis">
+      
+        12. Polimorfismo: la misma operación, distintos resultados
+      
+    </span>
+</a>
+<nav aria-label="12. Polimorfismo: la misma operación, distintos resultados" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-predecir-una-lista-mixta">
+<span class="md-ellipsis">
+      
+        Microactividad: predecir una lista mixta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-mejorar-y-organizar-nuestras-clases">
+<span class="md-ellipsis">
+      
+        13. Mejorar y organizar nuestras clases
+      
+    </span>
+</a>
+<nav aria-label="13. Mejorar y organizar nuestras clases" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mostrar-objetos-con-__str__">
+<span class="md-ellipsis">
+      
+        Mostrar objetos con __str__
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#separar-clases-en-modulos">
+<span class="md-ellipsis">
+      
+        Separar clases en módulos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#errores-que-conviene-revisar">
+<span class="md-ellipsis">
+      
+        Errores que conviene revisar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-organizar-un-ejemplo">
+<span class="md-ellipsis">
+      
+        Microactividad: organizar un ejemplo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-cierre-y-ampliaciones">
+<span class="md-ellipsis">
+      
+        14. Cierre y ampliaciones
+      
+    </span>
+</a>
+<nav aria-label="14. Cierre y ampliaciones" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-recorrido-de-la-unidad">
+<span class="md-ellipsis">
+      
+        El recorrido de la unidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checklist-de-autoevaluacion">
+<span class="md-ellipsis">
+      
+        Checklist de autoevaluación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-seguir-aprendiendo">
+<span class="md-ellipsis">
+      
+        Para seguir aprendiendo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ejercicios_poo_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT6: POO
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="proyecto_poo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto UT6: Arena de héroes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    UT7 — Proyecto CLI
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejemplos Mermaid
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT2/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT2/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/UT4/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Comandos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Usuarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Docker
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-que-es-una-clase">
+<span class="md-ellipsis">
+      
+        1. ¿Qué es una clase?
+      
+    </span>
+</a>
+<nav aria-label="1. ¿Qué es una clase?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-reconocer-una-clase">
+<span class="md-ellipsis">
+      
+        Microactividad: reconocer una clase
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-que-es-un-objeto-o-instancia">
+<span class="md-ellipsis">
+      
+        2. ¿Qué es un objeto o instancia?
+      
+    </span>
+</a>
+<nav aria-label="2. ¿Qué es un objeto o instancia?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-crear-instancias">
+<span class="md-ellipsis">
+      
+        Microactividad: crear instancias
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-atributos-los-datos-de-un-objeto">
+<span class="md-ellipsis">
+      
+        3. Atributos: los datos de un objeto
+      
+    </span>
+</a>
+<nav aria-label="3. Atributos: los datos de un objeto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-dos-estados-independientes">
+<span class="md-ellipsis">
+      
+        Microactividad: dos estados independientes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-__init__-dar-valores-iniciales-al-crear-objetos">
+<span class="md-ellipsis">
+      
+        4. __init__: dar valores iniciales al crear objetos
+      
+    </span>
+</a>
+<nav aria-label="4. __init__: dar valores iniciales al crear objetos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-anadir-un-dato-inicial">
+<span class="md-ellipsis">
+      
+        Microactividad: añadir un dato inicial
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-self-a-que-objeto-nos-estamos-refiriendo">
+<span class="md-ellipsis">
+      
+        5. self: ¿a qué objeto nos estamos refiriendo?
+      
+    </span>
+</a>
+<nav aria-label="5. self: ¿a qué objeto nos estamos refiriendo?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parametro-y-atributo-no-son-lo-mismo">
+<span class="md-ellipsis">
+      
+        Parámetro y atributo no son lo mismo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#se-escribe-self-al-llamar">
+<span class="md-ellipsis">
+      
+        ¿Se escribe self al llamar?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-1-predecir">
+<span class="md-ellipsis">
+      
+        Microactividad 1: predecir
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-2-corregir-una-asignacion">
+<span class="md-ellipsis">
+      
+        Microactividad 2: corregir una asignación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-metodos-las-acciones-de-los-objetos">
+<span class="md-ellipsis">
+      
+        6. Métodos: las acciones de los objetos
+      
+    </span>
+</a>
+<nav aria-label="6. Métodos: las acciones de los objetos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#return-y-print">
+<span class="md-ellipsis">
+      
+        return y print()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-1-anadir-curar">
+<span class="md-ellipsis">
+      
+        Microactividad 1: añadir curar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-2-dos-objetos">
+<span class="md-ellipsis">
+      
+        Microactividad 2: dos objetos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lo-tienes-claro">
+<span class="md-ellipsis">
+      
+        ¿Lo tienes claro?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-varios-objetos-listas-de-instancias">
+<span class="md-ellipsis">
+      
+        7. Varios objetos: listas de instancias
+      
+    </span>
+</a>
+<nav aria-label="7. Varios objetos: listas de instancias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-buscar-un-personaje">
+<span class="md-ellipsis">
+      
+        Microactividad: buscar un personaje
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-reglas-y-validaciones-para-conservar-un-estado-correcto">
+<span class="md-ellipsis">
+      
+        8. Reglas y validaciones para conservar un estado correcto
+      
+    </span>
+</a>
+<nav aria-label="8. Reglas y validaciones para conservar un estado correcto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-comprobar-antes-de-modificar">
+<span class="md-ellipsis">
+      
+        Microactividad: comprobar antes de modificar
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-encapsulacion-proteger-los-datos">
+<span class="md-ellipsis">
+      
+        9. Encapsulación: proteger los datos
+      
+    </span>
+</a>
+<nav aria-label="9. Encapsulación: proteger los datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-detectar-un-cambio-peligroso">
+<span class="md-ellipsis">
+      
+        Microactividad: detectar un cambio peligroso
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-relaciones-entre-objetos-composicion">
+<span class="md-ellipsis">
+      
+        10. Relaciones entre objetos: composición
+      
+    </span>
+</a>
+<nav aria-label="10. Relaciones entre objetos: composición" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-colaborar-con-objetos">
+<span class="md-ellipsis">
+      
+        Microactividad: colaborar con objetos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-herencia-crear-clases-especializadas">
+<span class="md-ellipsis">
+      
+        11. Herencia: crear clases especializadas
+      
+    </span>
+</a>
+<nav aria-label="11. Herencia: crear clases especializadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#primer-paso-guerrero">
+<span class="md-ellipsis">
+      
+        Primer paso: Guerrero
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usar-super__init__">
+<span class="md-ellipsis">
+      
+        Usar super().__init__()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#segundo-paso-mago">
+<span class="md-ellipsis">
+      
+        Segundo paso: Mago
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-una-clase-especializada">
+<span class="md-ellipsis">
+      
+        Microactividad: una clase especializada
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-polimorfismo-la-misma-operacion-distintos-resultados">
+<span class="md-ellipsis">
+      
+        12. Polimorfismo: la misma operación, distintos resultados
+      
+    </span>
+</a>
+<nav aria-label="12. Polimorfismo: la misma operación, distintos resultados" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-predecir-una-lista-mixta">
+<span class="md-ellipsis">
+      
+        Microactividad: predecir una lista mixta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-mejorar-y-organizar-nuestras-clases">
+<span class="md-ellipsis">
+      
+        13. Mejorar y organizar nuestras clases
+      
+    </span>
+</a>
+<nav aria-label="13. Mejorar y organizar nuestras clases" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mostrar-objetos-con-__str__">
+<span class="md-ellipsis">
+      
+        Mostrar objetos con __str__
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#separar-clases-en-modulos">
+<span class="md-ellipsis">
+      
+        Separar clases en módulos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#errores-que-conviene-revisar">
+<span class="md-ellipsis">
+      
+        Errores que conviene revisar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microactividad-organizar-un-ejemplo">
+<span class="md-ellipsis">
+      
+        Microactividad: organizar un ejemplo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-cierre-y-ampliaciones">
+<span class="md-ellipsis">
+      
+        14. Cierre y ampliaciones
+      
+    </span>
+</a>
+<nav aria-label="14. Cierre y ampliaciones" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-recorrido-de-la-unidad">
+<span class="md-ellipsis">
+      
+        El recorrido de la unidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checklist-de-autoevaluacion">
+<span class="md-ellipsis">
+      
+        Checklist de autoevaluación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-seguir-aprendiendo">
+<span class="md-ellipsis">
+      
+        Para seguir aprendiendo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ut6-programacion-orientada-a-objetos-poo-en-python">UT6: Programación orientada a objetos (POO) en Python<a class="headerlink" href="#ut6-programacion-orientada-a-objetos-poo-en-python" title="Permanent link">¶</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h2>
+<p>En esta unidad aprenderás a crear tus propios tipos de elementos en Python. Un
+personaje puede tener un nombre y una cantidad de vida, y también puede hacer
+acciones como presentarse, atacar o recibir daño.</p>
+<p>Piensa en un juego sencillo: ¿cómo crearíamos muchos personajes distintos,
+cada uno con sus propios datos y acciones? Vamos a construir la respuesta paso
+a paso, empezando por el código más pequeño posible y añadiendo una idea cada
+vez.</p>
+<p>Al terminar podrás crear clases y objetos, guardar datos en cada objeto,
+definir métodos, organizar una colección de personajes y ampliar un personaje
+con tipos especializados como <code>Guerrero</code> y <code>Mago</code>. También aprenderás a
+comprobar los datos y a organizar las clases en varios archivos.</p>
+<div class="admonition info">
+<p class="admonition-title">Cómo estudiar esta página</p>
+<p>Copia los ejemplos en un archivo, ejecútalos y cambia una sola cosa cada
+vez. Antes de ejecutar, intenta predecir la salida. Las microactividades
+están pensadas para durar entre dos y cinco minutos.</p>
+</div>
+<h2 id="1-que-es-una-clase">1. ¿Qué es una clase?<a class="headerlink" href="#1-que-es-una-clase" title="Permanent link">¶</a></h2>
+<p>Una <strong>clase</strong> es una descripción o plantilla. Indica cómo serán ciertos
+elementos de nuestro programa. En esta unidad vamos a describir personajes.</p>
+<p>Este es el primer código de la unidad:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="k">pass</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Aunque es muy corto, cada parte tiene un significado:</p>
+<ul>
+<li><code>class</code> indica que vamos a definir una clase.</li>
+<li><code>Personaje</code> es el nombre de la clase. Las clases se escriben normalmente con
+  la primera letra de cada palabra en mayúscula.</li>
+<li><code>:</code> indica que comienza el contenido de la clase.</li>
+<li>Las líneas sangradas pertenecen a la clase.</li>
+<li><code>pass</code> significa “no hay instrucciones todavía”. Sirve para crear una clase
+  vacía mientras aprendemos o mientras decidimos qué necesitará.</li>
+</ul>
+<p>El bloque es correcto y se puede ejecutar. Por ahora, <code>Personaje</code> solo es una
+descripción sin datos ni acciones.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Clase Personaje\nDescripción"]</code></pre>
+<p>Todavía no hemos creado ningún personaje concreto. Solo hemos escrito la
+plantilla que utilizaremos en el apartado siguiente.</p>
+<h3 id="microactividad-reconocer-una-clase">Microactividad: reconocer una clase<a class="headerlink" href="#microactividad-reconocer-una-clase" title="Permanent link">¶</a></h3>
+<p>Durante dos minutos:</p>
+<ol>
+<li>Señala en <code>class Personaje:</code> cuál es la palabra reservada y cuál es el
+   nombre elegido para la clase.</li>
+<li>Crea una segunda clase vacía llamada <code>Equipo</code>.</li>
+<li>Comprueba que ambas definiciones se ejecutan sin mostrar errores.</li>
+</ol>
+<h2 id="2-que-es-un-objeto-o-instancia">2. ¿Qué es un objeto o instancia?<a class="headerlink" href="#2-que-es-un-objeto-o-instancia" title="Permanent link">¶</a></h2>
+<p>Un <strong>objeto</strong> es un elemento concreto creado a partir de una clase. Si la clase
+es la descripción de un personaje, un objeto es un personaje concreto.
+También llamamos <strong>instancia</strong> a un objeto creado a partir de una clase.</p>
+<p>El siguiente bloque es completo y ejecutable:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">pass</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>  <span class="c1"># Personaje</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span><span class="p">)</span>           <span class="c1"># False</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>Personaje()</code> significa “crea un objeto siguiendo la clase <code>Personaje</code>”.
+Después guardamos el primer objeto en <code>p1</code> y el segundo en <code>p2</code>.</p>
+<p><code>p1</code> y <code>p2</code> son dos objetos distintos aunque procedan de la misma clase. La
+expresión <code>p1 is p2</code> pregunta si los dos nombres señalan exactamente al mismo
+objeto. Como hemos creado dos objetos, el resultado es <code>False</code>.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Clase Personaje"] --&gt; B["p1\nobjeto Personaje"]
+    A --&gt; C["p2\nobjeto Personaje"]
+    B -. "objeto independiente" .- C</code></pre>
+<p>La clase proporciona la forma general; cada objeto será un ejemplar separado.
+Más adelante guardaremos datos diferentes en cada uno.</p>
+<h3 id="microactividad-crear-instancias">Microactividad: crear instancias<a class="headerlink" href="#microactividad-crear-instancias" title="Permanent link">¶</a></h3>
+<p>Escribe y ejecuta este cambio:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">pass</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">p3</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">p3</span> <span class="ow">is</span> <span class="n">p1</span><span class="p">)</span>  <span class="c1"># ¿True o False?</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Predice la salida antes de ejecutar. Después explica con una frase por qué <code>p3</code>
+no es el mismo objeto que <code>p1</code>.</p>
+<h2 id="3-atributos-los-datos-de-un-objeto">3. Atributos: los datos de un objeto<a class="headerlink" href="#3-atributos-los-datos-de-un-objeto" title="Permanent link">¶</a></h2>
+<p>Un <strong>atributo</strong> es un dato que pertenece a un objeto. Un personaje puede tener
+atributos como <code>nombre</code>, <code>vida</code> o <code>nivel</code>.</p>
+<p>Para ver cómo se accede a un atributo, usaremos temporalmente dos objetos
+vacíos. Esta forma de asignar los datos nos ayuda a observar el punto, pero no
+será nuestra forma principal de diseñar la clase: en el apartado 4 aprenderemos
+a inicializar los objetos de manera ordenada.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">pass</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="n">p1</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Aina"</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">p2</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Pau"</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Aina</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Pau</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="n">p1</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Aina la exploradora"</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Aina la exploradora</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Pau</span>
+</span></code></pre></div></td></tr></table></div>
+<p>El punto (<code>.</code>) permite acceder a un atributo:</p>
+<ul>
+<li><code>p1.nombre</code> lee el atributo <code>nombre</code> de <code>p1</code>.</li>
+<li><code>p1.nombre = ...</code> cambia ese atributo de <code>p1</code>.</li>
+<li>Cambiar <code>p1.nombre</code> no cambia <code>p2.nombre</code>, porque son objetos diferentes.</li>
+</ul>
+<p>Podemos añadir otro atributo del mismo modo:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">pass</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">()</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">p1</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="n">p2</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="mi">50</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>  <span class="c1"># 100</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>  <span class="c1"># 50</span>
+</span></code></pre></div></td></tr></table></div>
+<p>En este momento la clase no obliga a que todos los personajes tengan los mismos
+atributos. Precisamente por eso, para un programa real preferiremos preparar
+los datos al crear cada objeto.</p>
+<h3 id="microactividad-dos-estados-independientes">Microactividad: dos estados independientes<a class="headerlink" href="#microactividad-dos-estados-independientes" title="Permanent link">¶</a></h3>
+<p>Añade <code>nivel</code> a <code>p1</code> y <code>p2</code>, con valores 3 y 7. Después cambia solo el nivel de
+<code>p1</code> a 4 y muestra los dos niveles. El resultado debería ser 4 y 7.</p>
+<p>En el diagrama, cada instancia tiene sus propios valores:</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Personaje"] --&gt; B["p1\nnombre = Aina\nvida = 100"]
+    A --&gt; C["p2\nnombre = Pau\nvida = 50"]</code></pre>
+<h2 id="4-__init__-dar-valores-iniciales-al-crear-objetos">4. <code>__init__</code>: dar valores iniciales al crear objetos<a class="headerlink" href="#4-__init__-dar-valores-iniciales-al-crear-objetos" title="Permanent link">¶</a></h2>
+<p>Escribir cada atributo después de crear el objeto puede provocar olvidos. El
+método especial <code>__init__</code> permite indicar qué datos necesita el objeto desde
+el momento en que se crea.</p>
+<p>Este bloque es completo y no utiliza todavía validaciones:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Aina</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>    <span class="c1"># 50</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Vamos a leer el inicializador línea a línea:</p>
+<ul>
+<li><code>def</code> empieza una definición de función.</li>
+<li><code>__init__</code> es el nombre del inicializador que Python ejecuta al crear un
+  objeto.</li>
+<li><code>self</code> representa el objeto concreto que se está inicializando.</li>
+<li><code>nombre</code> y <code>vida</code> son los datos que recibirá ese objeto.</li>
+</ul>
+<p>Las instrucciones <code>self.nombre = nombre</code> y <code>self.vida = vida</code> guardan los
+valores en la instancia.</p>
+<p>La parte izquierda (<code>self.nombre</code>) es el atributo que quedará guardado en el
+objeto. La parte derecha (<code>nombre</code>) es el dato recibido como parámetro. La
+asignación conecta ambos.</p>
+<p>Cuando escribimos <code>p1 = Personaje("Aina", 100)</code></p>
+<p>ocurre, de forma resumida, lo siguiente:</p>
+<ol>
+<li>Python crea un objeto que pertenece a la clase <code>Personaje</code>.</li>
+<li>Llama a <code>__init__</code> para preparar ese objeto.</li>
+<li>Coloca <code>"Aina"</code> en el parámetro <code>nombre</code> y <code>100</code> en <code>vida</code>.</li>
+<li>Guarda esos valores en <code>p1.nombre</code> y <code>p1.vida</code>.</li>
+<li><code>p1</code> queda asociado al objeto preparado.</li>
+</ol>
+<p><code>__init__</code> <strong>inicializa</strong> el objeto. No necesitas conocer otros métodos
+internos para utilizarlo.</p>
+<h3 id="microactividad-anadir-un-dato-inicial">Microactividad: añadir un dato inicial<a class="headerlink" href="#microactividad-anadir-un-dato-inicial" title="Permanent link">¶</a></h3>
+<p>Modifica la clase completa para que <code>__init__</code> reciba también <code>nivel</code>. Crea
+<code>Personaje("Aina", 100, 3)</code> y <code>Personaje("Pau", 50, 7)</code>. Comprueba que puedes
+mostrar <code>p1.nivel</code> y <code>p2.nivel</code>.</p>
+<h2 id="5-self-a-que-objeto-nos-estamos-refiriendo">5. <code>self</code>: ¿a qué objeto nos estamos refiriendo?<a class="headerlink" href="#5-self-a-que-objeto-nos-estamos-refiriendo" title="Permanent link">¶</a></h2>
+<p><code>self</code> es el objeto concreto que participa en una llamada. Si existen <code>p1</code> y
+<code>p2</code>, los dos usan la misma definición de la clase, pero cada llamada trabaja
+con una instancia diferente.</p>
+<p>Observa este ejemplo completo:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">presentarse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Soy </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>  <span class="c1"># Soy Aina</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>  <span class="c1"># Soy Pau</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Cuando escribimos <code>p1.presentarse()</code>, <code>self</code> representa a <code>p1</code>. Cuando
+escribimos <code>p2.presentarse()</code>, <code>self</code> representa a <code>p2</code>. El método es el mismo,
+pero el objeto utilizado cambia.</p>
+<p>Podemos expresar la idea de forma equivalente, aunque normalmente usaremos la
+primera forma:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">presentarse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Soy </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>          <span class="c1"># Soy Aina</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">Personaje</span><span class="o">.</span><span class="n">presentarse</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span> <span class="c1"># Soy Aina</span>
+</span></code></pre></div></td></tr></table></div>
+<p>En la primera llamada Python entrega <code>p1</code> automáticamente como <code>self</code>. En la
+segunda lo escribimos explícitamente para observar qué está pasando.</p>
+<h3 id="parametro-y-atributo-no-son-lo-mismo">Parámetro y atributo no son lo mismo<a class="headerlink" href="#parametro-y-atributo-no-son-lo-mismo" title="Permanent link">¶</a></h3>
+<p>En el método <code>def __init__(self, nombre):</code> la instrucción
+<code>self.nombre = nombre</code> guarda el dato en la instancia.</p>
+<p><code>nombre</code> es un <strong>parámetro</strong>. Solo sirve dentro de la llamada al método.
+<code>self.nombre</code> es un <strong>atributo</strong>. Queda guardado en el objeto y puede
+consultarse después desde otros métodos.</p>
+<p>Si escribiéramos <code>nombre = nombre</code>, estaríamos asignando el parámetro a sí
+mismo. El objeto no recibiría el atributo que necesitamos. La forma correcta
+es <code>self.nombre = nombre</code>.</p>
+<h3 id="se-escribe-self-al-llamar">¿Se escribe <code>self</code> al llamar?<a class="headerlink" href="#se-escribe-self-al-llamar" title="Permanent link">¶</a></h3>
+<p>No. Al definir un método sí se escribe como primer parámetro:</p>
+<p>Al definirlo escribimos <code>def presentarse(self):</code> y dentro podemos devolver
+<code>f"Soy {self.nombre}"</code>.</p>
+<p>Al llamar se escribe el objeto y el nombre del método:</p>
+<p>Al llamar se escribe <code>p1.presentarse()</code>.</p>
+<p>No escribimos <code>p1.presentarse(p1)</code>. Python ya sabe que <code>p1</code> es el objeto que
+debe ocupar el lugar de <code>self</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Error habitual</p>
+<p>Si olvidas <code>self</code> al definir un método, Python no podrá asociar
+correctamente la llamada con el objeto. Comprueba siempre que todos los
+métodos de instancia empiezan por <code>self</code>.</p>
+</div>
+<h3 id="microactividad-1-predecir">Microactividad 1: predecir<a class="headerlink" href="#microactividad-1-predecir" title="Permanent link">¶</a></h3>
+<p>Sin ejecutar, responde:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">presentarse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Soy </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">)</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>
+</span></code></pre></div></td></tr></table></div>
+<p>¿Qué nombre aparece en cada línea? Explica qué objeto representa <code>self</code> en cada
+llamada.</p>
+<h3 id="microactividad-2-corregir-una-asignacion">Microactividad 2: corregir una asignación<a class="headerlink" href="#microactividad-2-corregir-una-asignacion" title="Permanent link">¶</a></h3>
+<p>Revisa esta línea de un constructor que estás escribiendo: <code>nombre = nombre</code>.</p>
+<p>Corrígela para que el nombre quede guardado en el objeto y prueba después
+<code>print(personaje.nombre)</code>. La corrección debe utilizar <code>self</code>.</p>
+<h2 id="6-metodos-las-acciones-de-los-objetos">6. Métodos: las acciones de los objetos<a class="headerlink" href="#6-metodos-las-acciones-de-los-objetos" title="Permanent link">¶</a></h2>
+<p>Un <strong>método</strong> es una función que forma parte de una clase. Un método puede
+consultar un atributo, modificarlo o devolver un resultado.</p>
+<p>Primero veremos un método sin datos adicionales. Después añadiremos un método
+que recibe un parámetro además de <code>self</code>.</p>
+<p>El siguiente bloque es una versión completa de <code>Personaje</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">presentarse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Soy </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> y tengo </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vida</span><span class="si">}</span><span class="s2"> puntos de vida"</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">recibir_danio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">):</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">-</span> <span class="n">cantidad</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">esta_vivo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>       <span class="c1"># Soy Aina y tengo 100 puntos de vida</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">esta_vivo</span><span class="p">())</span>         <span class="c1"># True</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="n">p1</span><span class="o">.</span><span class="n">recibir_danio</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>                <span class="c1"># 70</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">esta_vivo</span><span class="p">())</span>         <span class="c1"># True</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>presentarse()</code> consulta el estado y devuelve un texto. <code>recibir_danio(30)</code>
+recibe <code>30</code> en <code>cantidad</code> y modifica <code>self.vida</code>. <code>esta_vivo()</code> consulta la
+vida y devuelve <code>True</code> o <code>False</code>.</p>
+<p>En esta primera versión todavía no hemos decidido qué hacer con un daño
+negativo o con una vida menor que cero. Lo estudiaremos después de practicar la
+relación entre objetos y métodos.</p>
+<h3 id="return-y-print"><code>return</code> y <code>print()</code><a class="headerlink" href="#return-y-print" title="Permanent link">¶</a></h3>
+<p><code>print()</code> muestra algo en pantalla. <code>return</code> entrega un resultado al código que
+ha llamado al método. Normalmente las reglas de una clase deben devolver datos,
+para que otra parte del programa decida qué hacer con ellos.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">texto_estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vida</span><span class="si">}</span><span class="s2"> PV"</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">mostrar_estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texto_estado</span><span class="p">())</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="n">estado</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">texto_estado</span><span class="p">()</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">estado</span><span class="p">)</span>                  <span class="c1"># Aina: 80 PV</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="n">p1</span><span class="o">.</span><span class="n">mostrar_estado</span><span class="p">()</span>            <span class="c1"># Aina: 80 PV</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>texto_estado()</code> devuelve una cadena que podemos guardar en <code>estado</code>. La
+función <code>mostrar_estado()</code> imprime directamente. Ambas pueden ser útiles, pero
+no hacen lo mismo.</p>
+<h3 id="microactividad-1-anadir-curar">Microactividad 1: añadir <code>curar</code><a class="headerlink" href="#microactividad-1-anadir-curar" title="Permanent link">¶</a></h3>
+<p>Añade a la primera versión de <code>Personaje</code> un método <code>curar(cantidad)</code> que sume
+la cantidad recibida a <code>self.vida</code>. Crea un personaje con 40 de vida, recibe 10
+de daño y después se cura 5. Muestra la vida tras cada llamada.</p>
+<h3 id="microactividad-2-dos-objetos">Microactividad 2: dos objetos<a class="headerlink" href="#microactividad-2-dos-objetos" title="Permanent link">¶</a></h3>
+<p>Sin ejecutar primero, predice la vida final:</p>
+<p>Usa la versión completa anterior para crear <code>p1 = Personaje("Aina", 100)</code> y
+<code>p2 = Personaje("Pau", 50)</code>, aplicar <code>p1.recibir_danio(20)</code> y
+<code>p2.recibir_danio(5)</code>, y mostrar sus vidas.</p>
+<p>Después ejecuta el código y explica por qué una llamada no modifica el otro
+objeto.</p>
+<h2 id="lo-tienes-claro">¿Lo tienes claro?<a class="headerlink" href="#lo-tienes-claro" title="Permanent link">¶</a></h2>
+<p>Haz esta comprobación antes de continuar. No copies una solución completa:
+escribe una clase nueva llamada <code>Libro</code> o <code>Mascota</code> que tenga:</p>
+<ol>
+<li>un <code>__init__</code> con dos datos, por ejemplo <code>titulo</code> y <code>autor</code>;</li>
+<li>dos atributos guardados mediante <code>self</code>;</li>
+<li>un método que devuelva una frase usando esos atributos;</li>
+<li>dos instancias con valores distintos;</li>
+<li>dos llamadas al método y una modificación de un solo objeto.</li>
+</ol>
+<p>Puedes comprobar tu resultado con estos criterios:</p>
+<ul>
+<li>la clase se puede ejecutar sin errores;</li>
+<li>cada instancia muestra sus propios datos;</li>
+<li>el método devuelve una cadena que el programa puede guardar en una variable;</li>
+<li>modificar la primera instancia no cambia la segunda;</li>
+<li>puedes explicar qué representa <code>self</code> en el método.</li>
+</ul>
+<p>Si todavía dudas entre parámetro y atributo, vuelve a ejecutar el ejemplo de
+<code>Personaje</code> y señala la parte izquierda y la parte derecha de
+<code>self.nombre = nombre</code>.</p>
+<h2 id="7-varios-objetos-listas-de-instancias">7. Varios objetos: listas de instancias<a class="headerlink" href="#7-varios-objetos-listas-de-instancias" title="Permanent link">¶</a></h2>
+<p>Una lista puede guardar objetos del mismo modo que guarda números o cadenas.
+La diferencia importante es que cada elemento de la lista es una instancia
+completa con sus propios atributos y métodos.</p>
+<p>Este ejemplo es autónomo:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span>
+<span class="normal"><a href="#__codelineno-11-20">20</a></span>
+<span class="normal"><a href="#__codelineno-11-21">21</a></span>
+<span class="normal"><a href="#__codelineno-11-22">22</a></span>
+<span class="normal"><a href="#__codelineno-11-23">23</a></span>
+<span class="normal"><a href="#__codelineno-11-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">presentarse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vida</span><span class="si">}</span><span class="s2"> PV"</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="n">personajes</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a>    <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a>    <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a>    <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Nora"</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="p">]</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="n">personajes</span><span class="p">:</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">personaje</span><span class="o">.</span><span class="n">presentarse</span><span class="p">())</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="n">personaje_mas_resistente</span> <span class="o">=</span> <span class="n">personajes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="n">personajes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21"></a>    <span class="k">if</span> <span class="n">personaje</span><span class="o">.</span><span class="n">vida</span> <span class="o">&gt;</span> <span class="n">personaje_mas_resistente</span><span class="o">.</span><span class="n">vida</span><span class="p">:</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22"></a>        <span class="n">personaje_mas_resistente</span> <span class="o">=</span> <span class="n">personaje</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23"></a>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="nb">print</span><span class="p">(</span><span class="n">personaje_mas_resistente</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Nora</span>
+</span></code></pre></div></td></tr></table></div>
+<p>El bucle <code>for</code> obtiene una instancia en cada vuelta. Por eso podemos escribir
+<code>personaje.vida</code> y <code>personaje.presentarse()</code>.</p>
+<p>Una lista de objetos no convierte esos objetos en diccionarios ni elimina sus
+métodos. Cada elemento sigue siendo un <code>Personaje</code>.</p>
+<h3 id="microactividad-buscar-un-personaje">Microactividad: buscar un personaje<a class="headerlink" href="#microactividad-buscar-un-personaje" title="Permanent link">¶</a></h3>
+<p>Añade un cuarto personaje a la lista. Cambia su vida para que sea la mayor y
+comprueba que el algoritmo lo encuentra. Después modifica solo la vida de un
+personaje y vuelve a imprimir los originales para observar que cada uno
+conserva su propio estado.</p>
+<h2 id="8-reglas-y-validaciones-para-conservar-un-estado-correcto">8. Reglas y validaciones para conservar un estado correcto<a class="headerlink" href="#8-reglas-y-validaciones-para-conservar-un-estado-correcto" title="Permanent link">¶</a></h2>
+<p>Ya sabemos crear objetos, guardar atributos y llamar a métodos. Ahora podemos
+decidir qué valores son aceptables. Una vida negativa no representa un estado
+útil y un daño negativo aumentaría la vida en lugar de reducirla.</p>
+<p>Primero limitaremos la vida a cero con <code>max(0, ...)</code>. Después rechazaremos un
+daño negativo mediante <code>ValueError</code>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span>
+<span class="normal"><a href="#__codelineno-12-21">21</a></span>
+<span class="normal"><a href="#__codelineno-12-22">22</a></span>
+<span class="normal"><a href="#__codelineno-12-23">23</a></span>
+<span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span>
+<span class="normal"><a href="#__codelineno-12-26">26</a></span>
+<span class="normal"><a href="#__codelineno-12-27">27</a></span>
+<span class="normal"><a href="#__codelineno-12-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">recibir_danio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">):</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="k">if</span> <span class="n">cantidad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"El daño no puede ser negativo"</span><span class="p">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">-</span> <span class="n">cantidad</span><span class="p">)</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">curar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">):</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a>        <span class="k">if</span> <span class="n">cantidad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"La curación no puede ser negativa"</span><span class="p">)</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">+=</span> <span class="n">cantidad</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">esta_vivo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18"></a>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21"></a><span class="n">p1</span><span class="o">.</span><span class="n">recibir_danio</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>         <span class="c1"># 0</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">esta_vivo</span><span class="p">())</span>  <span class="c1"># False</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24"></a>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26"></a>    <span class="n">p1</span><span class="o">.</span><span class="n">recibir_danio</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27"></a><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>        <span class="c1"># El daño no puede ser negativo</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>raise ValueError(...)</code> comunica que el valor recibido no es aceptable. El
+bloque <code>try</code>/<code>except</code> permite que la parte que utiliza la clase decida cómo
+informar del problema sin cerrar todo el programa.</p>
+<p>Fíjate en el orden: primero comprobamos el daño y solo después modificamos la
+vida. Si el daño es inválido, la vida conserva el valor anterior. Esta regla de
+mantener siempre un estado correcto recibe también el nombre de <strong>invariante</strong>,
+pero lo importante ahora es saber aplicarla.</p>
+<h3 id="microactividad-comprobar-antes-de-modificar">Microactividad: comprobar antes de modificar<a class="headerlink" href="#microactividad-comprobar-antes-de-modificar" title="Permanent link">¶</a></h3>
+<ol>
+<li>Crea un personaje con 40 de vida.</li>
+<li>Guarda su vida en una variable llamada <code>vida_anterior</code>.</li>
+<li>Intenta aplicar <code>-10</code> de daño dentro de un <code>try</code>/<code>except</code>.</li>
+<li>Comprueba que la vida sigue siendo 40 después del error.</li>
+</ol>
+<h2 id="9-encapsulacion-proteger-los-datos">9. Encapsulación: proteger los datos<a class="headerlink" href="#9-encapsulacion-proteger-los-datos" title="Permanent link">¶</a></h2>
+<p>La <strong>encapsulación</strong> consiste en controlar cómo se consulta o se modifica un
+dato para no romper las reglas de la clase. No significa esconder todo sin
+motivo: significa ofrecer operaciones claras para trabajar con el objeto.</p>
+<p>Usaremos <code>_vida</code> para indicar que la vida es un dato de uso interno. El guion
+bajo es una convención de Python: no impide realmente que otro código escriba
+<code>personaje._vida</code>. Sirve para comunicar que debería utilizar los métodos de la
+clase.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span>
+<span class="normal"><a href="#__codelineno-13-22">22</a></span>
+<span class="normal"><a href="#__codelineno-13-23">23</a></span>
+<span class="normal"><a href="#__codelineno-13-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a>    <span class="nd">@property</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">vida</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">recibir_danio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">):</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a>        <span class="k">if</span> <span class="n">cantidad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"El daño no puede ser negativo"</span><span class="p">)</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">-</span> <span class="n">cantidad</span><span class="p">)</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">curar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">):</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16"></a>        <span class="k">if</span> <span class="n">cantidad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"La curación no puede ser negativa"</span><span class="p">)</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">+=</span> <span class="n">cantidad</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20"></a>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>        <span class="c1"># 100</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="n">p1</span><span class="o">.</span><span class="n">recibir_danio</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>        <span class="c1"># 75</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>@property</code> permite consultar <code>p1.vida</code> como si fuera un atributo normal, pero
+la clase guarda internamente el valor en <code>_vida</code>. No hemos creado un setter:
+desde fuera se puede consultar la vida, pero las modificaciones pasan por
+<code>recibir_danio()</code> o <code>curar()</code>, donde están las reglas.</p>
+<p>No es necesario crear un getter y un setter mecánicos para cada atributo. Si un
+dato no necesita protección, una interfaz pública sencilla puede ser más clara.</p>
+<h3 id="microactividad-detectar-un-cambio-peligroso">Microactividad: detectar un cambio peligroso<a class="headerlink" href="#microactividad-detectar-un-cambio-peligroso" title="Permanent link">¶</a></h3>
+<p>Explica qué problema podría causar esta instrucción:</p>
+<p>La instrucción <code>personaje._vida = -400</code> puede romper la regla de que la vida
+no sea negativa.</p>
+<p>Después escribe una alternativa que use <code>recibir_danio()</code> y comprueba que la
+vida no baja de cero. Recuerda que <code>_vida</code> es una convención, no una barrera de
+seguridad absoluta.</p>
+<h2 id="10-relaciones-entre-objetos-composicion">10. Relaciones entre objetos: composición<a class="headerlink" href="#10-relaciones-entre-objetos-composicion" title="Permanent link">¶</a></h2>
+<p>Una clase puede trabajar con objetos de otra clase. Un <code>Equipo</code> <strong>tiene</strong> varios
+<code>Personaje</code>; esta relación se llama <strong>composición</strong>. El equipo mantiene una
+colección y los personajes mantienen sus propios datos.</p>
+<p>El siguiente ejemplo es completo: no depende de variables definidas fuera del
+bloque.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span>
+<span class="normal"><a href="#__codelineno-14-24">24</a></span>
+<span class="normal"><a href="#__codelineno-14-25">25</a></span>
+<span class="normal"><a href="#__codelineno-14-26">26</a></span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span>
+<span class="normal"><a href="#__codelineno-14-29">29</a></span>
+<span class="normal"><a href="#__codelineno-14-30">30</a></span>
+<span class="normal"><a href="#__codelineno-14-31">31</a></span>
+<span class="normal"><a href="#__codelineno-14-32">32</a></span>
+<span class="normal"><a href="#__codelineno-14-33">33</a></span>
+<span class="normal"><a href="#__codelineno-14-34">34</a></span>
+<span class="normal"><a href="#__codelineno-14-35">35</a></span>
+<span class="normal"><a href="#__codelineno-14-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a>    <span class="nd">@property</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">vida</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">recibir_danio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">):</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a>        <span class="k">if</span> <span class="n">cantidad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"El daño no puede ser negativo"</span><span class="p">)</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vida</span> <span class="o">-</span> <span class="n">cantidad</span><span class="p">)</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="k">class</span><span class="w"> </span><span class="nc">Equipo</span><span class="p">:</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_personajes</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">agregar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">personaje</span><span class="p">):</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_personajes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">personaje</span><span class="p">)</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">vida_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a>        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">personaje</span><span class="o">.</span><span class="n">vida</span> <span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_personajes</span><span class="p">)</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">mostrar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">personaje</span><span class="o">.</span><span class="n">nombre</span> <span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_personajes</span><span class="p">]</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29"></a>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30"></a>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31"></a><span class="n">equipo</span> <span class="o">=</span> <span class="n">Equipo</span><span class="p">(</span><span class="s2">"Exploradores"</span><span class="p">)</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="n">equipo</span><span class="o">.</span><span class="n">agregar</span><span class="p">(</span><span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="n">equipo</span><span class="o">.</span><span class="n">agregar</span><span class="p">(</span><span class="n">Personaje</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">,</span> <span class="mi">70</span><span class="p">))</span>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34"></a>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35"></a><span class="nb">print</span><span class="p">(</span><span class="n">equipo</span><span class="o">.</span><span class="n">mostrar</span><span class="p">())</span>     <span class="c1"># ['Aina', 'Pau']</span>
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36"></a><span class="nb">print</span><span class="p">(</span><span class="n">equipo</span><span class="o">.</span><span class="n">vida_total</span><span class="p">())</span>  <span class="c1"># 170</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>Equipo</code> crea su propia lista en <code>__init__</code>. <code>agregar()</code> recibe un objeto
+<code>Personaje</code> y lo guarda. <code>vida_total()</code> pide a cada personaje su vida y suma
+los resultados. Cada clase tiene una responsabilidad comprensible:</p>
+<pre class="mermaid"><code>classDiagram
+    class Equipo {
+        -nombre
+        -personajes
+        +agregar(personaje)
+        +vida_total()
+    }
+    class Personaje {
+        +nombre
+        -vida
+        +recibir_danio(cantidad)
+    }
+    Equipo "1" *-- "0..*" Personaje : tiene</code></pre>
+<h3 id="microactividad-colaborar-con-objetos">Microactividad: colaborar con objetos<a class="headerlink" href="#microactividad-colaborar-con-objetos" title="Permanent link">¶</a></h3>
+<p>Crea un segundo equipo con un personaje distinto. Comprueba que su lista
+empieza vacía y que la vida total del primer equipo no cambia. Después daña a
+uno de los personajes y vuelve a calcular la vida total.</p>
+<h2 id="11-herencia-crear-clases-especializadas">11. Herencia: crear clases especializadas<a class="headerlink" href="#11-herencia-crear-clases-especializadas" title="Permanent link">¶</a></h2>
+<p>Ahora introducimos una relación diferente. Un <code>Guerrero</code> <strong>es un</strong> <code>Personaje</code>.
+Un <code>Mago</code> también <strong>es un</strong> <code>Personaje</code>. Cuando una clase nueva es una versión
+especializada de otra, podemos utilizar <strong>herencia</strong>.</p>
+<p>La clase general se llama <strong>clase base</strong>. La clase especializada se llama
+<strong>clase derivada</strong> o hija. La hija recibe los métodos y atributos definidos en
+la base y puede añadir o cambiar comportamiento.</p>
+<h3 id="primer-paso-guerrero">Primer paso: <code>Guerrero</code><a class="headerlink" href="#primer-paso-guerrero" title="Permanent link">¶</a></h3>
+<p>Este primer ejemplo es completo. <code>Guerrero</code> reutiliza el método <code>atacar()</code> de
+la clase base solo para reemplazarlo con otra cantidad:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span>
+<span class="normal"><a href="#__codelineno-15-16">16</a></span>
+<span class="normal"><a href="#__codelineno-15-17">17</a></span>
+<span class="normal"><a href="#__codelineno-15-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a>        <span class="k">return</span> <span class="mi">6</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">Guerrero</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a>        <span class="k">return</span> <span class="mi">12</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14"></a>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="n">guerrero</span> <span class="o">=</span> <span class="n">Guerrero</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>    <span class="c1"># Aina</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>      <span class="c1"># 120</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">atacar</span><span class="p">())</span>  <span class="c1"># 12</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Como <code>Guerrero</code> no define su propio <code>__init__</code>, utiliza el de <code>Personaje</code> y por
+eso en este primer paso recibe <code>nombre</code> y <code>vida</code> al crear el objeto.</p>
+<h3 id="usar-super__init__">Usar <code>super().__init__()</code><a class="headerlink" href="#usar-super__init__" title="Permanent link">¶</a></h3>
+<p>Queremos que todos los guerreros empiecen con 120 puntos sin repetir ese
+argumento cada vez. <code>super().__init__()</code> llama al inicializador de la clase
+base:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span>
+<span class="normal"><a href="#__codelineno-16-17">17</a></span>
+<span class="normal"><a href="#__codelineno-16-18">18</a></span>
+<span class="normal"><a href="#__codelineno-16-19">19</a></span>
+<span class="normal"><a href="#__codelineno-16-20">20</a></span>
+<span class="normal"><a href="#__codelineno-16-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a>        <span class="k">return</span> <span class="mi">6</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">Guerrero</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a>        <span class="k">return</span> <span class="mi">12</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="n">guerrero</span> <span class="o">=</span> <span class="n">Guerrero</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">)</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>    <span class="c1"># Aina</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">vida</span><span class="p">)</span>      <span class="c1"># 120</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">atacar</span><span class="p">())</span>  <span class="c1"># 12</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>super().__init__(nombre, 120)</code> prepara la parte común del personaje. Después,
+<code>Guerrero</code> sobrescribe <code>atacar()</code> para devolver 12 en vez de 6.</p>
+<h3 id="segundo-paso-mago">Segundo paso: <code>Mago</code><a class="headerlink" href="#segundo-paso-mago" title="Permanent link">¶</a></h3>
+<p>Este bloque completo reúne la clase base y las dos clases especializadas:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span>
+<span class="normal"><a href="#__codelineno-17-14">14</a></span>
+<span class="normal"><a href="#__codelineno-17-15">15</a></span>
+<span class="normal"><a href="#__codelineno-17-16">16</a></span>
+<span class="normal"><a href="#__codelineno-17-17">17</a></span>
+<span class="normal"><a href="#__codelineno-17-18">18</a></span>
+<span class="normal"><a href="#__codelineno-17-19">19</a></span>
+<span class="normal"><a href="#__codelineno-17-20">20</a></span>
+<span class="normal"><a href="#__codelineno-17-21">21</a></span>
+<span class="normal"><a href="#__codelineno-17-22">22</a></span>
+<span class="normal"><a href="#__codelineno-17-23">23</a></span>
+<span class="normal"><a href="#__codelineno-17-24">24</a></span>
+<span class="normal"><a href="#__codelineno-17-25">25</a></span>
+<span class="normal"><a href="#__codelineno-17-26">26</a></span>
+<span class="normal"><a href="#__codelineno-17-27">27</a></span>
+<span class="normal"><a href="#__codelineno-17-28">28</a></span>
+<span class="normal"><a href="#__codelineno-17-29">29</a></span>
+<span class="normal"><a href="#__codelineno-17-30">30</a></span>
+<span class="normal"><a href="#__codelineno-17-31">31</a></span>
+<span class="normal"><a href="#__codelineno-17-32">32</a></span>
+<span class="normal"><a href="#__codelineno-17-33">33</a></span>
+<span class="normal"><a href="#__codelineno-17-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a>        <span class="k">return</span> <span class="mi">6</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">Guerrero</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a>        <span class="k">return</span> <span class="mi">12</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16"></a>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17"></a>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">Mago</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">=</span> <span class="mi">9</span>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22"></a>
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">-=</span> <span class="mi">3</span>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26"></a>            <span class="k">return</span> <span class="mi">18</span>
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27"></a>        <span class="k">return</span> <span class="mi">4</span>
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28"></a>
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29"></a>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30"></a><span class="n">guerrero</span> <span class="o">=</span> <span class="n">Guerrero</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">)</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31"></a><span class="n">mago</span> <span class="o">=</span> <span class="n">Mago</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">)</span>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32"></a><span class="nb">print</span><span class="p">(</span><span class="n">guerrero</span><span class="o">.</span><span class="n">atacar</span><span class="p">())</span>  <span class="c1"># 12</span>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33"></a><span class="nb">print</span><span class="p">(</span><span class="n">mago</span><span class="o">.</span><span class="n">atacar</span><span class="p">())</span>      <span class="c1"># 18</span>
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34"></a><span class="nb">print</span><span class="p">(</span><span class="n">mago</span><span class="o">.</span><span class="n">mana</span><span class="p">)</span>          <span class="c1"># 6</span>
+</span></code></pre></div></td></tr></table></div>
+<p>No hemos creado una clase nueva desde cero para cada tipo. <code>Guerrero</code> y <code>Mago</code>
+reutilizan lo común de <code>Personaje</code>, y cada uno añade o cambia solo lo necesario.</p>
+<p>Composición y herencia responden a preguntas distintas:</p>
+<ul>
+<li>“¿Un equipo <strong>tiene</strong> personajes?” → composición (<code>Equipo</code> guarda objetos).</li>
+<li>“¿Un mago <strong>es un</strong> personaje?” → herencia (<code>Mago</code> deriva de <code>Personaje</code>).</li>
+</ul>
+<h3 id="microactividad-una-clase-especializada">Microactividad: una clase especializada<a class="headerlink" href="#microactividad-una-clase-especializada" title="Permanent link">¶</a></h3>
+<p>Crea una clase <code>Explorador</code> que herede de <code>Personaje</code>, inicialice una vida de
+90 y sobrescriba <code>atacar()</code> para devolver 8. No añadas todavía reglas nuevas.
+Prueba que conserva <code>nombre</code> y que su ataque es diferente al de la clase base.</p>
+<h2 id="12-polimorfismo-la-misma-operacion-distintos-resultados">12. Polimorfismo: la misma operación, distintos resultados<a class="headerlink" href="#12-polimorfismo-la-misma-operacion-distintos-resultados" title="Permanent link">¶</a></h2>
+<p>Ya tenemos tres objetos que ofrecen el método <code>atacar()</code>: <code>Personaje</code>,
+<code>Guerrero</code> y <code>Mago</code>. Podemos guardarlos en una misma lista y llamar al mismo
+método en cada vuelta.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span>
+<span class="normal"><a href="#__codelineno-18-17">17</a></span>
+<span class="normal"><a href="#__codelineno-18-18">18</a></span>
+<span class="normal"><a href="#__codelineno-18-19">19</a></span>
+<span class="normal"><a href="#__codelineno-18-20">20</a></span>
+<span class="normal"><a href="#__codelineno-18-21">21</a></span>
+<span class="normal"><a href="#__codelineno-18-22">22</a></span>
+<span class="normal"><a href="#__codelineno-18-23">23</a></span>
+<span class="normal"><a href="#__codelineno-18-24">24</a></span>
+<span class="normal"><a href="#__codelineno-18-25">25</a></span>
+<span class="normal"><a href="#__codelineno-18-26">26</a></span>
+<span class="normal"><a href="#__codelineno-18-27">27</a></span>
+<span class="normal"><a href="#__codelineno-18-28">28</a></span>
+<span class="normal"><a href="#__codelineno-18-29">29</a></span>
+<span class="normal"><a href="#__codelineno-18-30">30</a></span>
+<span class="normal"><a href="#__codelineno-18-31">31</a></span>
+<span class="normal"><a href="#__codelineno-18-32">32</a></span>
+<span class="normal"><a href="#__codelineno-18-33">33</a></span>
+<span class="normal"><a href="#__codelineno-18-34">34</a></span>
+<span class="normal"><a href="#__codelineno-18-35">35</a></span>
+<span class="normal"><a href="#__codelineno-18-36">36</a></span>
+<span class="normal"><a href="#__codelineno-18-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a>        <span class="k">return</span> <span class="mi">6</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">Guerrero</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13"></a>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15"></a>        <span class="k">return</span> <span class="mi">12</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16"></a>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17"></a>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">Mago</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">=</span> <span class="mi">9</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22"></a>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">-=</span> <span class="mi">3</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26"></a>            <span class="k">return</span> <span class="mi">18</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27"></a>        <span class="k">return</span> <span class="mi">4</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28"></a>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29"></a>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30"></a><span class="n">personajes</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31"></a>    <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Nora"</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32"></a>    <span class="n">Guerrero</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">),</span>
+</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33"></a>    <span class="n">Mago</span><span class="p">(</span><span class="s2">"Pau"</span><span class="p">),</span>
+</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34"></a><span class="p">]</span>
+</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35"></a>
+</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36"></a><span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="n">personajes</span><span class="p">:</span>
+</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">personaje</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">personaje</span><span class="o">.</span><span class="n">atacar</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Salida:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a>Nora: 6
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>Aina: 12
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a>Pau: 18
+</span></code></pre></div></td></tr></table></div>
+<p>Esto es <strong>polimorfismo</strong>: pedimos la operación <code>atacar()</code> a objetos de tipos
+distintos y cada objeto responde con su propia versión. El bucle no necesita
+preguntar si el objeto es un guerrero o un mago.</p>
+<h3 id="microactividad-predecir-una-lista-mixta">Microactividad: predecir una lista mixta<a class="headerlink" href="#microactividad-predecir-una-lista-mixta" title="Permanent link">¶</a></h3>
+<p>Antes de ejecutar, escribe la salida de este bloque usando las clases del
+ejemplo anterior. Es una continuación del bloque completo inmediatamente
+anterior: ejecútalo en el mismo archivo o copia primero las definiciones de
+<code>Personaje</code>, <code>Guerrero</code> y <code>Mago</code>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">personajes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Mago</span><span class="p">(</span><span class="s2">"Luz"</span><span class="p">),</span> <span class="n">Guerrero</span><span class="p">(</span><span class="s2">"Roc"</span><span class="p">),</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Sol"</span><span class="p">,</span> <span class="mi">40</span><span class="p">)]</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="n">personajes</span><span class="p">:</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">personaje</span><span class="o">.</span><span class="n">atacar</span><span class="p">())</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Después ejecútalo y explica qué método se utiliza en cada objeto. No añadas
+<code>if type(personaje) ...</code>: la operación común ya proporciona la solución.</p>
+<h2 id="13-mejorar-y-organizar-nuestras-clases">13. Mejorar y organizar nuestras clases<a class="headerlink" href="#13-mejorar-y-organizar-nuestras-clases" title="Permanent link">¶</a></h2>
+<h3 id="mostrar-objetos-con-__str__">Mostrar objetos con <code>__str__</code><a class="headerlink" href="#mostrar-objetos-con-__str__" title="Permanent link">¶</a></h3>
+<p>Cuando imprimimos un objeto sin preparar una representación, Python puede
+mostrar una dirección poco útil. <code>__str__</code> permite definir un texto legible.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-21-10">10</a></span>
+<span class="normal"><a href="#__codelineno-21-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vida</span><span class="si">}</span><span class="s2"> PV)"</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8"></a>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9"></a>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="n">personaje</span> <span class="o">=</span> <span class="n">Personaje</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">personaje</span><span class="p">)</span>  <span class="c1"># Aina (100 PV)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>print(personaje)</code> utiliza automáticamente el texto que devuelve <code>__str__</code>.
+Este método no sustituye a <code>presentarse()</code> si el programa necesita una acción
+con otro propósito; simplemente define una representación cómoda para mostrar.</p>
+<h3 id="separar-clases-en-modulos">Separar clases en módulos<a class="headerlink" href="#separar-clases-en-modulos" title="Permanent link">¶</a></h3>
+<p>Cuando un programa crece, podemos guardar cada clase en un archivo. Este
+ejemplo utiliza tres archivos que deben estar en la misma carpeta:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a>ejemplo_personajes/
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a>├── personaje.py
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a>├── guerrero.py
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a>└── main.py
+</span></code></pre></div></td></tr></table></div>
+<p><code>personaje.py</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personaje</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">vida</span><span class="p">):</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a>        <span class="k">return</span> <span class="mi">6</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vida</span><span class="si">}</span><span class="s2"> PV)"</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>guerrero.py</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span>
+<span class="normal"><a href="#__codelineno-24-7">7</a></span>
+<span class="normal"><a href="#__codelineno-24-8">8</a></span>
+<span class="normal"><a href="#__codelineno-24-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">personaje</span><span class="w"> </span><span class="kn">import</span> <span class="n">Personaje</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Guerrero</span><span class="p">(</span><span class="n">Personaje</span><span class="p">):</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a>        <span class="k">return</span> <span class="mi">12</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>main.py</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span>
+<span class="normal"><a href="#__codelineno-25-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">personaje</span><span class="w"> </span><span class="kn">import</span> <span class="n">Personaje</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">guerrero</span><span class="w"> </span><span class="kn">import</span> <span class="n">Guerrero</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">ejecutar</span><span class="p">():</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6"></a>    <span class="n">personajes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Personaje</span><span class="p">(</span><span class="s2">"Nora"</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">Guerrero</span><span class="p">(</span><span class="s2">"Aina"</span><span class="p">)]</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7"></a>    <span class="k">for</span> <span class="n">personaje</span> <span class="ow">in</span> <span class="n">personajes</span><span class="p">:</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">personaje</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">personaje</span><span class="o">.</span><span class="n">atacar</span><span class="p">()</span><span class="si">}</span><span class="s2"> de daño"</span><span class="p">)</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9"></a>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10"></a>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12"></a>    <span class="n">ejecutar</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<p>El <code>import</code> hace disponible una clase definida en otro archivo. La condición
+<code>if __name__ == "__main__":</code> hace que <code>ejecutar()</code> se llame al ejecutar
+<code>main.py</code>, pero no automáticamente al importar el archivo desde una prueba.</p>
+<p>No crees dependencias circulares: <code>personaje.py</code> no necesita importar
+<code>guerrero.py</code> para definir <code>Personaje</code>.</p>
+<h3 id="errores-que-conviene-revisar">Errores que conviene revisar<a class="headerlink" href="#errores-que-conviene-revisar" title="Permanent link">¶</a></h3>
+<ul>
+<li>Guardar un dato en <code>nombre</code> en vez de <code>self.nombre</code>.</li>
+<li>Olvidar <code>self</code> en la definición de un método.</li>
+<li>Usar una lista compartida en el cuerpo de una clase cuando cada objeto debe
+  tener su propia lista.</li>
+<li>Imprimir un resultado cuando el resto del programa necesita recibirlo.</li>
+<li>Copiar toda la clase base en cada clase hija en lugar de reutilizarla.</li>
+<li>Colocar las reglas del dominio dentro del menú y hacer difícil probarlas.</li>
+</ul>
+<h3 id="microactividad-organizar-un-ejemplo">Microactividad: organizar un ejemplo<a class="headerlink" href="#microactividad-organizar-un-ejemplo" title="Permanent link">¶</a></h3>
+<p>Separa el ejemplo final en los tres archivos indicados. Ejecútalo desde la
+carpeta con <code>python main.py</code>. Cambia el nombre del guerrero y comprueba que el
+programa sigue funcionando sin modificar la clase base.</p>
+<h2 id="14-cierre-y-ampliaciones">14. Cierre y ampliaciones<a class="headerlink" href="#14-cierre-y-ampliaciones" title="Permanent link">¶</a></h2>
+<h3 id="el-recorrido-de-la-unidad">El recorrido de la unidad<a class="headerlink" href="#el-recorrido-de-la-unidad" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    A["Clase"] --&gt; B["Objeto"]
+    B --&gt; C["Atributos"]
+    C --&gt; D["Métodos"]
+    D --&gt; E["Colaboración"]
+    E --&gt; F["Herencia"]
+    F --&gt; G["Polimorfismo"]</code></pre>
+<p>Has aprendido el recorrido completo:</p>
+<ol>
+<li>una <strong>clase</strong> describe un tipo de elemento;</li>
+<li>un <strong>objeto</strong> es un ejemplar concreto;</li>
+<li>sus <strong>atributos</strong> guardan datos;</li>
+<li><code>__init__</code> prepara esos datos al crear el objeto;</li>
+<li><code>self</code> identifica el objeto que está trabajando;</li>
+<li>los <strong>métodos</strong> definen acciones;</li>
+<li>una lista puede guardar muchos objetos independientes;</li>
+<li>las validaciones conservan un estado correcto;</li>
+<li>la composición permite que una clase tenga otros objetos;</li>
+<li>la herencia crea tipos especializados;</li>
+<li>el polimorfismo permite usar una misma operación con objetos distintos.</li>
+</ol>
+<h3 id="checklist-de-autoevaluacion">Checklist de autoevaluación<a class="headerlink" href="#checklist-de-autoevaluacion" title="Permanent link">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Sé escribir una clase vacía con <code>class</code> y <code>pass</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Puedo crear dos objetos y explicar por qué son independientes.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Sé leer y modificar un atributo usando el punto.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Puedo explicar cada parte de <code>self.nombre = nombre</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Sé crear una clase con <code>__init__</code> y dos atributos.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Puedo definir un método sin olvidar <code>self</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Distingo un método que devuelve un resultado de uno que solo imprime.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Sé recorrer una lista de objetos y consultar sus atributos.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Puedo rechazar un dato inválido sin modificar el estado anterior.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Entiendo por qué <code>_vida</code> es una convención y cómo ayuda una propiedad.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Distingo “un equipo tiene personajes” de “un mago es un personaje”.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Puedo explicar qué método se ejecuta en una lista polimórfica.</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Sé separar una clase en un módulo e importarla desde <code>main.py</code>.</li>
+</ul>
+<p>Para practicar, continúa con los <a href="ejercicios_poo_clase/">ejercicios de POO</a> y
+después aborda el <a href="proyecto_poo/">proyecto final «Arena de héroes»</a>.</p>
+<h3 id="para-seguir-aprendiendo">Para seguir aprendiendo<a class="headerlink" href="#para-seguir-aprendiendo" title="Permanent link">¶</a></h3>
+<p>Cuando domines esta unidad puedes investigar, sin convertirlo todavía en un
+requisito del proyecto:</p>
+<ul>
+<li><code>@classmethod</code> para crear objetos mediante una alternativa al constructor;</li>
+<li><code>@staticmethod</code> para una operación relacionada con una clase que no necesita
+  un objeto concreto;</li>
+<li><code>__repr__</code> para una representación útil durante la depuración;</li>
+<li>guardar datos de objetos en JSON mediante diccionarios y reconstruirlos;</li>
+<li>ampliar las pruebas automáticas con <code>unittest</code>.</li>
+</ul>
+<p>Estas herramientas son ampliaciones. Lo esencial sigue siendo comprender qué
+objeto está trabajando, qué datos guarda y qué responsabilidad tiene cada
+método.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "toc.follow", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+</body>
+</html>

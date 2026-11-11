@@ -1,0 +1,1932 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../ejercicios_funciones_clase/" rel="prev"/>
+<link href="../../UT5/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
+<title>UT4 — Módulos - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ejercicios-de-clase-ut4-creacion-y-uso-de-modulos">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UT4 — Módulos
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    
+  
+    Índice del módulo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejercicios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Condicionales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Bucles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Avanzados
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Básicos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Diccionarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Extra
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Módulos
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Módulos
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contexto">
+<span class="md-ellipsis">
+      
+        Contexto
+      
+    </span>
+</a>
+<nav aria-label="Contexto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivos">
+<span class="md-ellipsis">
+      
+        Objetivos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estructura-del-trabajo">
+<span class="md-ellipsis">
+      
+        Estructura del trabajo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-1-biblioteca-de-salida-formateada-con-colorama">
+<span class="md-ellipsis">
+      
+        Ejercicio 1. Biblioteca de salida formateada con Colorama
+      
+    </span>
+</a>
+<nav aria-label="Ejercicio 1. Biblioteca de salida formateada con Colorama" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#situacion">
+<span class="md-ellipsis">
+      
+        Situación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preparacion">
+<span class="md-ellipsis">
+      
+        Preparación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-obligatorias">
+<span class="md-ellipsis">
+      
+        Funciones obligatorias
+      
+    </span>
+</a>
+<nav aria-label="Funciones obligatorias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-mostrar_mensajetexto-colorblanco">
+<span class="md-ellipsis">
+      
+        1. mostrar_mensaje(texto, color="blanco")
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-mostrar_titulotexto-ancho50">
+<span class="md-ellipsis">
+      
+        2. mostrar_titulo(texto, ancho=50)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-mostrar_menutitulo-opciones">
+<span class="md-ellipsis">
+      
+        3. mostrar_menu(titulo, opciones)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-mostrar_listaelementos-titulolistado">
+<span class="md-ellipsis">
+      
+        4. mostrar_lista(elementos, titulo="Listado")
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-mostrar_fichadatos-tituloinformacion">
+<span class="md-ellipsis">
+      
+        5. mostrar_ficha(datos, titulo="Información")
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prueba-del-modulo">
+<span class="md-ellipsis">
+      
+        Prueba del módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisitos-generales-del-ejercicio">
+<span class="md-ellipsis">
+      
+        Requisitos generales del ejercicio
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-2-biblioteca-de-entrada-y-validacion-de-datos">
+<span class="md-ellipsis">
+      
+        Ejercicio 2. Biblioteca de entrada y validación de datos
+      
+    </span>
+</a>
+<nav aria-label="Ejercicio 2. Biblioteca de entrada y validación de datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#situacion_1">
+<span class="md-ellipsis">
+      
+        Situación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preparacion_1">
+<span class="md-ellipsis">
+      
+        Preparación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-obligatorias_1">
+<span class="md-ellipsis">
+      
+        Funciones obligatorias
+      
+    </span>
+</a>
+<nav aria-label="Funciones obligatorias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-pedir_textomensaje-obligatoriotrue">
+<span class="md-ellipsis">
+      
+        1. pedir_texto(mensaje, obligatorio=True)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-pedir_enteromensaje">
+<span class="md-ellipsis">
+      
+        2. pedir_entero(mensaje)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-pedir_decimalmensaje">
+<span class="md-ellipsis">
+      
+        3. pedir_decimal(mensaje)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-pedir_entero_rangomensaje-minimo-maximo">
+<span class="md-ellipsis">
+      
+        4. pedir_entero_rango(mensaje, minimo, maximo)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-pedir_decimal_rangomensaje-minimo-maximo">
+<span class="md-ellipsis">
+      
+        5. pedir_decimal_rango(mensaje, minimo, maximo)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prueba-del-modulo_1">
+<span class="md-ellipsis">
+      
+        Prueba del módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisitos-generales-del-ejercicio_1">
+<span class="md-ellipsis">
+      
+        Requisitos generales del ejercicio
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actividad-final-integracion-de-ambos-modulos">
+<span class="md-ellipsis">
+      
+        Actividad final. Integración de ambos módulos
+      
+    </span>
+</a>
+<nav aria-label="Actividad final. Integración de ambos módulos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-orientativo-de-utilizacion-de-los-modulos">
+<span class="md-ellipsis">
+      
+        Ejemplo orientativo de utilización de los módulos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ampliacion-opcional">
+<span class="md-ellipsis">
+      
+        Ampliación opcional
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entrega">
+<span class="md-ellipsis">
+      
+        Entrega
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Archivos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_21" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_21_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_21">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6: Programación orientada a objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/ejercicios_poo_clase/">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT6: POO
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT6/proyecto_poo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto UT6: Arena de héroes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    UT7 — Proyecto CLI
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejemplos Mermaid
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Comandos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Usuarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Docker
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contexto">
+<span class="md-ellipsis">
+      
+        Contexto
+      
+    </span>
+</a>
+<nav aria-label="Contexto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivos">
+<span class="md-ellipsis">
+      
+        Objetivos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estructura-del-trabajo">
+<span class="md-ellipsis">
+      
+        Estructura del trabajo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-1-biblioteca-de-salida-formateada-con-colorama">
+<span class="md-ellipsis">
+      
+        Ejercicio 1. Biblioteca de salida formateada con Colorama
+      
+    </span>
+</a>
+<nav aria-label="Ejercicio 1. Biblioteca de salida formateada con Colorama" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#situacion">
+<span class="md-ellipsis">
+      
+        Situación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preparacion">
+<span class="md-ellipsis">
+      
+        Preparación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-obligatorias">
+<span class="md-ellipsis">
+      
+        Funciones obligatorias
+      
+    </span>
+</a>
+<nav aria-label="Funciones obligatorias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-mostrar_mensajetexto-colorblanco">
+<span class="md-ellipsis">
+      
+        1. mostrar_mensaje(texto, color="blanco")
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-mostrar_titulotexto-ancho50">
+<span class="md-ellipsis">
+      
+        2. mostrar_titulo(texto, ancho=50)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-mostrar_menutitulo-opciones">
+<span class="md-ellipsis">
+      
+        3. mostrar_menu(titulo, opciones)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-mostrar_listaelementos-titulolistado">
+<span class="md-ellipsis">
+      
+        4. mostrar_lista(elementos, titulo="Listado")
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-mostrar_fichadatos-tituloinformacion">
+<span class="md-ellipsis">
+      
+        5. mostrar_ficha(datos, titulo="Información")
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prueba-del-modulo">
+<span class="md-ellipsis">
+      
+        Prueba del módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisitos-generales-del-ejercicio">
+<span class="md-ellipsis">
+      
+        Requisitos generales del ejercicio
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicio-2-biblioteca-de-entrada-y-validacion-de-datos">
+<span class="md-ellipsis">
+      
+        Ejercicio 2. Biblioteca de entrada y validación de datos
+      
+    </span>
+</a>
+<nav aria-label="Ejercicio 2. Biblioteca de entrada y validación de datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#situacion_1">
+<span class="md-ellipsis">
+      
+        Situación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preparacion_1">
+<span class="md-ellipsis">
+      
+        Preparación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funciones-obligatorias_1">
+<span class="md-ellipsis">
+      
+        Funciones obligatorias
+      
+    </span>
+</a>
+<nav aria-label="Funciones obligatorias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-pedir_textomensaje-obligatoriotrue">
+<span class="md-ellipsis">
+      
+        1. pedir_texto(mensaje, obligatorio=True)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-pedir_enteromensaje">
+<span class="md-ellipsis">
+      
+        2. pedir_entero(mensaje)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-pedir_decimalmensaje">
+<span class="md-ellipsis">
+      
+        3. pedir_decimal(mensaje)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-pedir_entero_rangomensaje-minimo-maximo">
+<span class="md-ellipsis">
+      
+        4. pedir_entero_rango(mensaje, minimo, maximo)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-pedir_decimal_rangomensaje-minimo-maximo">
+<span class="md-ellipsis">
+      
+        5. pedir_decimal_rango(mensaje, minimo, maximo)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prueba-del-modulo_1">
+<span class="md-ellipsis">
+      
+        Prueba del módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisitos-generales-del-ejercicio_1">
+<span class="md-ellipsis">
+      
+        Requisitos generales del ejercicio
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actividad-final-integracion-de-ambos-modulos">
+<span class="md-ellipsis">
+      
+        Actividad final. Integración de ambos módulos
+      
+    </span>
+</a>
+<nav aria-label="Actividad final. Integración de ambos módulos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-orientativo-de-utilizacion-de-los-modulos">
+<span class="md-ellipsis">
+      
+        Ejemplo orientativo de utilización de los módulos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ampliacion-opcional">
+<span class="md-ellipsis">
+      
+        Ampliación opcional
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entrega">
+<span class="md-ellipsis">
+      
+        Entrega
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ejercicios-de-clase-ut4-creacion-y-uso-de-modulos">Ejercicios de clase UT4: Creación y uso de módulos<a class="headerlink" href="#ejercicios-de-clase-ut4-creacion-y-uso-de-modulos" title="Permanent link">¶</a></h1>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">¶</a></h2>
+<p>En muchos programas de consola repetimos las mismas tareas: imprimir títulos, construir menús, mostrar mensajes de error o solicitar al usuario números válidos. Si programamos estas operaciones cada vez que las necesitamos, duplicamos código y complicamos su mantenimiento.</p>
+<p>En esta práctica vas a crear <strong>dos módulos de utilidades en Python</strong> que podrás importar desde otros programas:</p>
+<ul>
+<li><code>salida.py</code>: para presentar información por consola de manera ordenada y con colores.</li>
+<li><code>entrada.py</code>: para solicitar y validar datos introducidos por el usuario.</li>
+</ul>
+<p>Los dos módulos serán <strong>independientes</strong> y después los utilizarás juntos en una pequeña demostración. <strong>No debes crear un nuevo programa de gestión completo</strong>; el objetivo es desarrollar funciones útiles y reutilizables, que podrás incorporar posteriormente a tu proyecto.</p>
+<h3 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">¶</a></h3>
+<p>Al finalizar la práctica deberías ser capaz de:</p>
+<ul>
+<li>Organizar funciones relacionadas en diferentes archivos <code>.py</code>.</li>
+<li>Importar y utilizar funciones creadas en otros módulos.</li>
+<li>Diseñar funciones con parámetros y valores por defecto.</li>
+<li>Distinguir entre funciones que <strong>muestran información</strong> y funciones que <strong>devuelven datos</strong>.</li>
+<li>Reutilizar funciones para evitar repetir código.</li>
+<li>Utilizar una biblioteca externa, <code>colorama</code>.</li>
+<li>Validar entradas sin que el programa finalice ante datos incorrectos.</li>
+<li>Comprobar y documentar el funcionamiento de las funciones desarrolladas.</li>
+</ul>
+<h3 id="estructura-del-trabajo">Estructura del trabajo<a class="headerlink" href="#estructura-del-trabajo" title="Permanent link">¶</a></h3>
+<p>Crea una carpeta con esta estructura:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>utilidades_consola/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── salida.py
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── entrada.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>├── demo_salida.py
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── demo_entrada.py
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>└── demo_integracion.py
+</span></code></pre></div></td></tr></table></div>
+<p>Las funciones de los módulos se desarrollan dentro de <code>salida.py</code> y <code>entrada.py</code>. Los archivos <code>demo_*.py</code> se emplearán únicamente para probarlas.</p>
+<hr/>
+<h2 id="ejercicio-1-biblioteca-de-salida-formateada-con-colorama">Ejercicio 1. Biblioteca de salida formateada con Colorama<a class="headerlink" href="#ejercicio-1-biblioteca-de-salida-formateada-con-colorama" title="Permanent link">¶</a></h2>
+<h3 id="situacion">Situación<a class="headerlink" href="#situacion" title="Permanent link">¶</a></h3>
+<p>Queremos que distintas aplicaciones de consola puedan compartir el mismo aspecto visual sin copiar continuamente instrucciones <code>print()</code> y código de formato.</p>
+<p>Para ello, vas a desarrollar un módulo llamado <strong><code>salida.py</code></strong>. Sus funciones permitirán mostrar mensajes, títulos, menús y datos estructurados.</p>
+<h3 id="preparacion">Preparación<a class="headerlink" href="#preparacion" title="Permanent link">¶</a></h3>
+<ol>
+<li>Instala la biblioteca externa con el siguiente comando:</li>
+</ol>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>colorama
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>Investiga cómo funcionan <code>Fore</code>, <code>Style</code> y <code>Style.RESET_ALL</code> de <code>colorama</code>.</li>
+<li>Crea el archivo <code>salida.py</code>.</li>
+<li>Crea <code>demo_salida.py</code> para importar el módulo y comprobar cada función.</li>
+</ol>
+<p><strong>Importante:</strong> cuando una función aplique colores o estilos, el formato de la consola debe volver al estado normal al finalizar, para que los mensajes posteriores no hereden accidentalmente el color anterior.</p>
+<h3 id="funciones-obligatorias">Funciones obligatorias<a class="headerlink" href="#funciones-obligatorias" title="Permanent link">¶</a></h3>
+<h4 id="1-mostrar_mensajetexto-colorblanco">1. <code>mostrar_mensaje(texto, color="blanco")</code><a class="headerlink" href="#1-mostrar_mensajetexto-colorblanco" title="Permanent link">¶</a></h4>
+<p>Muestra por pantalla el texto recibido con el color indicado.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>El primer parámetro será el texto a mostrar.</li>
+<li>El segundo parámetro será opcional y permitirá elegir como mínimo entre <code>rojo</code>, <code>verde</code>, <code>amarillo</code>, <code>azul</code>, <code>cian</code> y <code>blanco</code>.</li>
+<li>Si se utiliza el color por defecto, la salida debe mantener el aspecto normal de la terminal.</li>
+<li>Después de mostrar un mensaje coloreado, debe restablecer el formato de la consola.</li>
+<li>No devolverá ningún valor.</li>
+</ul>
+<p><strong>Ejemplos de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">mostrar_mensaje</span><span class="p">(</span><span class="s2">"Operación completada"</span><span class="p">,</span> <span class="s2">"verde"</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">mostrar_mensaje</span><span class="p">(</span><span class="s2">"Se ha producido un error"</span><span class="p">,</span> <span class="s2">"rojo"</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">mostrar_mensaje</span><span class="p">(</span><span class="s2">"Bienvenido al programa"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Comprueba que el tercer mensaje aparece con el formato normal, no con el color utilizado anteriormente.</p>
+<h4 id="2-mostrar_titulotexto-ancho50">2. <code>mostrar_titulo(texto, ancho=50)</code><a class="headerlink" href="#2-mostrar_titulotexto-ancho50" title="Permanent link">¶</a></h4>
+<p>Imprime un título destacado y centrado entre separadores.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Recibir el texto del título y una anchura opcional.</li>
+<li>Mostrar una línea separadora arriba y otra abajo.</li>
+<li>Centrar el texto con relación a la anchura indicada.</li>
+<li>Utilizar algún color o estilo para destacar el título.</li>
+<li>Evitar que un título largo se corte: si no cabe en la anchura indicada, adaptar el formato para mostrarlo completo.</li>
+</ul>
+<p><strong>Ejemplo orientativo de salida:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>==================================================
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>                 GESTOR DE TAREAS
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>==================================================
+</span></code></pre></div></td></tr></table></div>
+<h4 id="3-mostrar_menutitulo-opciones">3. <code>mostrar_menu(titulo, opciones)</code><a class="headerlink" href="#3-mostrar_menutitulo-opciones" title="Permanent link">¶</a></h4>
+<p>Imprime un menú utilizando un título y una lista de opciones.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Recibir un título y una lista de cadenas de texto.</li>
+<li>Reutilizar <code>mostrar_titulo()</code> para presentar la cabecera.</li>
+<li>Numerar automáticamente las opciones comenzando por <code>1</code>.</li>
+<li>Añadir al final la opción <code>0. Salir</code>.</li>
+<li>Destacar visualmente el título y/o la opción de salida utilizando Colorama.</li>
+<li>Funcionar con listas de distintas longitudes.</li>
+<li><strong>No solicitar una opción al usuario:</strong> esta función solo debe <strong>mostrar</strong> el menú.</li>
+</ul>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">mostrar_menu</span><span class="p">(</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="s2">"Gestión de alumnos"</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="p">[</span><span class="s2">"Añadir alumno"</span><span class="p">,</span> <span class="s2">"Consultar alumnos"</span><span class="p">,</span> <span class="s2">"Eliminar alumno"</span><span class="p">]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Ejemplo orientativo de salida:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>==================================================
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>                GESTIÓN DE ALUMNOS
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>==================================================
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>1. Añadir alumno
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>2. Consultar alumnos
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>3. Eliminar alumno
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>0. Salir
+</span></code></pre></div></td></tr></table></div>
+<h4 id="4-mostrar_listaelementos-titulolistado">4. <code>mostrar_lista(elementos, titulo="Listado")</code><a class="headerlink" href="#4-mostrar_listaelementos-titulolistado" title="Permanent link">¶</a></h4>
+<p>Muestra los elementos de una lista con numeración y un título.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Admitir listas con cadenas de texto o números.</li>
+<li>Mostrar un título y numerar los elementos a partir de <code>1</code>.</li>
+<li>Informar claramente cuando la lista esté vacía.</li>
+<li>No modificar la lista recibida.</li>
+</ul>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">mostrar_lista</span><span class="p">([</span><span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"Java"</span><span class="p">,</span> <span class="s2">"JavaScript"</span><span class="p">],</span> <span class="s2">"Lenguajes disponibles"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Ejemplo orientativo de salida:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>LENGUAJES DISPONIBLES
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>1. Python
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>2. Java
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>3. JavaScript
+</span></code></pre></div></td></tr></table></div>
+<h4 id="5-mostrar_fichadatos-tituloinformacion">5. <code>mostrar_ficha(datos, titulo="Información")</code><a class="headerlink" href="#5-mostrar_fichadatos-tituloinformacion" title="Permanent link">¶</a></h4>
+<p>Muestra la información de un diccionario de forma legible.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Recibir un diccionario con parejas clave-valor.</li>
+<li>Mostrar un título y presentar una línea por cada dato.</li>
+<li>Alinear los valores para facilitar la lectura, aunque las claves tengan longitudes diferentes.</li>
+<li>Funcionar con cualquier número de elementos.</li>
+<li>Mostrar un aviso si el diccionario está vacío.</li>
+<li>No modificar el diccionario recibido.</li>
+</ul>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">mostrar_ficha</span><span class="p">(</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="p">{</span><span class="s2">"Nombre"</span><span class="p">:</span> <span class="s2">"Laura"</span><span class="p">,</span> <span class="s2">"Edad"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">"Curso"</span><span class="p">:</span> <span class="s2">"2º DAM"</span><span class="p">},</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="s2">"Ficha del alumno"</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Ejemplo orientativo de salida:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>FICHA DEL ALUMNO
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>Nombre : Laura
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>Edad   : 21
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>Curso  : 2º DAM
+</span></code></pre></div></td></tr></table></div>
+<h3 id="prueba-del-modulo">Prueba del módulo<a class="headerlink" href="#prueba-del-modulo" title="Permanent link">¶</a></h3>
+<p>En <code>demo_salida.py</code>, importa el módulo <code>salida</code> y realiza las siguientes comprobaciones:</p>
+<ol>
+<li>Muestra mensajes con diferentes colores y comprueba que la consola recupera su formato normal.</li>
+<li>Imprime dos títulos con anchuras diferentes.</li>
+<li>Genera dos menús con diferentes cantidades de opciones.</li>
+<li>Muestra una lista con elementos y otra vacía.</li>
+<li>Muestra una ficha con al menos cuatro campos.</li>
+</ol>
+<h3 id="requisitos-generales-del-ejercicio">Requisitos generales del ejercicio<a class="headerlink" href="#requisitos-generales-del-ejercicio" title="Permanent link">¶</a></h3>
+<ul>
+<li>Todas las funciones obligatorias estarán definidas en <code>salida.py</code>.</li>
+<li>Reutiliza otras funciones del propio módulo cuando tenga sentido.</li>
+<li>Documenta cada función con un <em>docstring</em> que explique su objetivo y sus parámetros.</li>
+<li>Importar <code>salida.py</code> <strong>no debe ejecutar automáticamente las pruebas</strong>.</li>
+<li>El formato visual debe ser coherente entre las distintas funciones.</li>
+</ul>
+<hr/>
+<h2 id="ejercicio-2-biblioteca-de-entrada-y-validacion-de-datos">Ejercicio 2. Biblioteca de entrada y validación de datos<a class="headerlink" href="#ejercicio-2-biblioteca-de-entrada-y-validacion-de-datos" title="Permanent link">¶</a></h2>
+<h3 id="situacion_1">Situación<a class="headerlink" href="#situacion_1" title="Permanent link">¶</a></h3>
+<p>Cuando una aplicación pide una edad, una cantidad o una puntuación, no puede dar por supuesto que la persona introducirá siempre un valor correcto. Debe comprobar el dato y, si es necesario, solicitarlo nuevamente.</p>
+<p>En este ejercicio desarrollarás un módulo independiente llamado <strong><code>entrada.py</code></strong>, con funciones para pedir datos de forma segura y devolverlos ya convertidos al tipo adecuado.</p>
+<p>Este módulo <strong>no necesita Colorama</strong>. Puedes usar <code>print()</code> e <code>input()</code> y centrarte en las funciones y las validaciones.</p>
+<h3 id="preparacion_1">Preparación<a class="headerlink" href="#preparacion_1" title="Permanent link">¶</a></h3>
+<ol>
+<li>Crea el archivo <code>entrada.py</code>.</li>
+<li>Crea <code>demo_entrada.py</code> para importar y probar sus funciones.</li>
+<li>Investiga el funcionamiento de <code>try</code>, <code>except</code> y <code>ValueError</code> para evitar errores al convertir una entrada a <code>int</code> o <code>float</code>.</li>
+</ol>
+<h3 id="funciones-obligatorias_1">Funciones obligatorias<a class="headerlink" href="#funciones-obligatorias_1" title="Permanent link">¶</a></h3>
+<h4 id="1-pedir_textomensaje-obligatoriotrue">1. <code>pedir_texto(mensaje, obligatorio=True)</code><a class="headerlink" href="#1-pedir_textomensaje-obligatoriotrue" title="Permanent link">¶</a></h4>
+<p>Solicita una cadena de texto al usuario y la devuelve.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Mostrar el mensaje recibido como parámetro.</li>
+<li>Eliminar los espacios sobrantes al principio y al final.</li>
+<li>Si <code>obligatorio</code> es <code>True</code>, rechazar textos vacíos o formados únicamente por espacios.</li>
+<li>Si <code>obligatorio</code> es <code>False</code>, permitir una cadena vacía.</li>
+<li>Cuando la entrada no sea válida, informar del problema y volver a solicitarla.</li>
+<li>Devolver una cadena (<code>str</code>).</li>
+</ul>
+<p><strong>Ejemplos de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">nombre</span> <span class="o">=</span> <span class="n">pedir_texto</span><span class="p">(</span><span class="s2">"Introduce tu nombre: "</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">comentario</span> <span class="o">=</span> <span class="n">pedir_texto</span><span class="p">(</span><span class="s2">"Comentario opcional: "</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="2-pedir_enteromensaje">2. <code>pedir_entero(mensaje)</code><a class="headerlink" href="#2-pedir_enteromensaje" title="Permanent link">¶</a></h4>
+<p>Solicita un número entero al usuario.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Permitir enteros positivos, negativos y el cero.</li>
+<li>Comprobar que el texto puede convertirse a <code>int</code>.</li>
+<li>Si no puede convertirse, mostrar un error y solicitar de nuevo el dato, sin finalizar el programa.</li>
+<li>Devolver un <code>int</code>.</li>
+</ul>
+<p><strong>Ejemplo de interacción:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>Introduce tu edad: hola
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>Error: debes introducir un número entero.
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>Introduce tu edad: 23
+</span></code></pre></div></td></tr></table></div>
+<p>La función devolverá el número entero <code>23</code>.</p>
+<h4 id="3-pedir_decimalmensaje">3. <code>pedir_decimal(mensaje)</code><a class="headerlink" href="#3-pedir_decimalmensaje" title="Permanent link">¶</a></h4>
+<p>Solicita un valor numérico y lo devuelve como decimal.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Aceptar valores positivos y negativos, con o sin parte decimal.</li>
+<li>Admitir tanto <code>.</code> como <code>,</code> como separador decimal.</li>
+<li>Volver a pedir el dato si no es válido.</li>
+<li>Devolver siempre un <code>float</code>.</li>
+</ul>
+<p><strong>Ejemplos de entradas válidas:</strong> <code>12.5</code>, <code>12,5</code>, <code>-3.75</code>, <code>10</code>.</p>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">precio</span> <span class="o">=</span> <span class="n">pedir_decimal</span><span class="p">(</span><span class="s2">"Introduce el precio: "</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="4-pedir_entero_rangomensaje-minimo-maximo">4. <code>pedir_entero_rango(mensaje, minimo, maximo)</code><a class="headerlink" href="#4-pedir_entero_rangomensaje-minimo-maximo" title="Permanent link">¶</a></h4>
+<p>Solicita un número entero dentro de un intervalo determinado.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Recibir un mensaje, un valor mínimo y un valor máximo.</li>
+<li>Reutilizar <strong>obligatoriamente</strong> <code>pedir_entero()</code> para obtener el valor.</li>
+<li>Comprobar que el número está entre <code>minimo</code> y <code>maximo</code>, <strong>incluidos ambos límites</strong>.</li>
+<li>Si el número no pertenece al intervalo, mostrar un aviso y repetir la solicitud.</li>
+<li>Devolver un <code>int</code> válido.</li>
+</ul>
+<p><strong>Ejemplo de interacción:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>Introduce una edad (18-65): 80
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>Error: el valor debe estar entre 18 y 65.
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>Introduce una edad (18-65): 30
+</span></code></pre></div></td></tr></table></div>
+<p>La función devolverá <code>30</code>.</p>
+<h4 id="5-pedir_decimal_rangomensaje-minimo-maximo">5. <code>pedir_decimal_rango(mensaje, minimo, maximo)</code><a class="headerlink" href="#5-pedir_decimal_rangomensaje-minimo-maximo" title="Permanent link">¶</a></h4>
+<p>Solicita un número decimal dentro de un intervalo.</p>
+<p><strong>Requisitos:</strong></p>
+<ul>
+<li>Recibir el mensaje y los límites mínimo y máximo.</li>
+<li>Reutilizar <strong>obligatoriamente</strong> <code>pedir_decimal()</code>.</li>
+<li>Comprobar que el número está dentro del intervalo, incluidos los límites.</li>
+<li>Informar del error y repetir la solicitud mientras no se introduzca un valor permitido.</li>
+<li>Devolver un <code>float</code> válido.</li>
+</ul>
+<p><strong>Ejemplo de uso:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">nota</span> <span class="o">=</span> <span class="n">pedir_decimal_rango</span><span class="p">(</span><span class="s2">"Introduce la nota: "</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li><code>-1,5</code> → No válido: fuera del intervalo.</li>
+<li><code>12</code> → No válido: fuera del intervalo.</li>
+<li><code>7,5</code> → Válido.</li>
+<li><code>10</code> → Válido.</li>
+</ul>
+<h3 id="prueba-del-modulo_1">Prueba del módulo<a class="headerlink" href="#prueba-del-modulo_1" title="Permanent link">¶</a></h3>
+<p>En <code>demo_entrada.py</code>, importa las funciones del módulo y crea una demostración que solicite:</p>
+<ol>
+<li>Un nombre obligatorio.</li>
+<li>Un comentario opcional.</li>
+<li>Una edad entera.</li>
+<li>Un precio decimal.</li>
+<li>Una cantidad de unidades comprendida entre 1 y 100.</li>
+<li>Una valoración decimal entre 0 y 10.</li>
+</ol>
+<p>Al finalizar, muestra un resumen con los datos obtenidos.</p>
+<p>Durante la prueba, introduce <strong>intencionadamente valores incorrectos</strong> para comprobar que el programa solicita de nuevo los datos y no termina con una excepción.</p>
+<h3 id="requisitos-generales-del-ejercicio_1">Requisitos generales del ejercicio<a class="headerlink" href="#requisitos-generales-del-ejercicio_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Define todas las funciones obligatorias en <code>entrada.py</code>.</li>
+<li>Las funciones deben <strong>devolver el dato validado</strong>; no es suficiente con imprimirlo.</li>
+<li>El código que utiliza estas funciones no debe tener que convertir nuevamente los datos a números.</li>
+<li>Reutiliza funciones cuando corresponda, en especial en las validaciones de rangos.</li>
+<li>Documenta las funciones mediante <em>docstrings</em>.</li>
+<li>No utilices variables globales para almacenar las entradas.</li>
+<li>Importar <code>entrada.py</code> <strong>no debe iniciar automáticamente preguntas al usuario</strong>.</li>
+</ul>
+<hr/>
+<h2 id="actividad-final-integracion-de-ambos-modulos">Actividad final. Integración de ambos módulos<a class="headerlink" href="#actividad-final-integracion-de-ambos-modulos" title="Permanent link">¶</a></h2>
+<p>Crea un archivo llamado <strong><code>demo_integracion.py</code></strong> en el que importes <code>salida</code> y <code>entrada</code> y compruebes que funcionan juntos.</p>
+<p>El programa debe:</p>
+<ol>
+<li>Mostrar un pequeño menú mediante <code>salida.mostrar_menu()</code>.</li>
+<li>Solicitar una opción válida mediante una función de <code>entrada</code>.</li>
+<li>Si se elige la opción de registrar información, solicitar un nombre y una puntuación entre 0 y 100.</li>
+<li>Mostrar los datos registrados mediante <code>salida.mostrar_ficha()</code>.</li>
+<li>Mostrar un mensaje de confirmación en verde con <code>salida.mostrar_mensaje()</code>.</li>
+<li>Permitir salir con la opción <code>0</code>.</li>
+</ol>
+<p>No es necesario desarrollar un sistema completo de almacenamiento de registros. <strong>Esta actividad solo sirve para comprobar que los dos módulos pueden importarse y utilizarse conjuntamente.</strong></p>
+<h3 id="ejemplo-orientativo-de-utilizacion-de-los-modulos">Ejemplo orientativo de utilización de los módulos<a class="headerlink" href="#ejemplo-orientativo-de-utilizacion-de-los-modulos" title="Permanent link">¶</a></h3>
+<p>El siguiente fragmento muestra cómo deberían poder utilizarse las funciones que has creado (no incluye la implementación de dichas funciones):</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span>
+<span class="normal"><a href="#__codelineno-15-16">16</a></span>
+<span class="normal"><a href="#__codelineno-15-17">17</a></span>
+<span class="normal"><a href="#__codelineno-15-18">18</a></span>
+<span class="normal"><a href="#__codelineno-15-19">19</a></span>
+<span class="normal"><a href="#__codelineno-15-20">20</a></span>
+<span class="normal"><a href="#__codelineno-15-21">21</a></span>
+<span class="normal"><a href="#__codelineno-15-22">22</a></span>
+<span class="normal"><a href="#__codelineno-15-23">23</a></span>
+<span class="normal"><a href="#__codelineno-15-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">salida</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">entrada</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="n">opciones</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Registrar puntuación"</span><span class="p">,</span> <span class="s2">"Consultar información"</span><span class="p">]</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="n">salida</span><span class="o">.</span><span class="n">mostrar_menu</span><span class="p">(</span><span class="s2">"Panel de control"</span><span class="p">,</span> <span class="n">opciones</span><span class="p">)</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="n">opcion</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="n">pedir_entero_rango</span><span class="p">(</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="s2">"Selecciona una opción: "</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">opciones</span><span class="p">)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="p">)</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="k">if</span> <span class="n">opcion</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="n">pedir_texto</span><span class="p">(</span><span class="s2">"Nombre: "</span><span class="p">)</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a>    <span class="n">puntuacion</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="n">pedir_decimal_rango</span><span class="p">(</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14"></a>        <span class="s2">"Puntuación (0-100): "</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a>    <span class="p">)</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16"></a>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17"></a>    <span class="n">salida</span><span class="o">.</span><span class="n">mostrar_ficha</span><span class="p">({</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18"></a>        <span class="s2">"Nombre"</span><span class="p">:</span> <span class="n">nombre</span><span class="p">,</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19"></a>        <span class="s2">"Puntuación"</span><span class="p">:</span> <span class="n">puntuacion</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20"></a>    <span class="p">},</span> <span class="s2">"Resultado"</span><span class="p">)</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21"></a>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22"></a>    <span class="n">salida</span><span class="o">.</span><span class="n">mostrar_mensaje</span><span class="p">(</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23"></a>        <span class="s2">"Datos registrados correctamente"</span><span class="p">,</span> <span class="s2">"verde"</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24"></a>    <span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>El fragmento es <strong>orientativo</strong>: en tu demostración debes gestionar también las otras opciones del menú y la salida.</p>
+<h3 id="ampliacion-opcional">Ampliación opcional<a class="headerlink" href="#ampliacion-opcional" title="Permanent link">¶</a></h3>
+<p>Implementa en <code>entrada.py</code> una función adicional:</p>
+<p><strong><code>pedir_opcion(mensaje, numero_opciones)</code></strong></p>
+<p>Esta función debe reutilizar <code>pedir_entero_rango()</code> para solicitar y devolver una opción válida desde <code>0</code> hasta <code>numero_opciones</code>, ambos incluidos. Después úsala en <code>demo_integracion.py</code>.</p>
+<hr/>
+<h2 id="entrega">Entrega<a class="headerlink" href="#entrega" title="Permanent link">¶</a></h2>
+<p>Entrega la carpeta <code>utilidades_consola</code> con:</p>
+<ul>
+<li>Los dos módulos <code>salida.py</code> y <code>entrada.py</code>.</li>
+<li>Los tres programas de demostración <code>demo_salida.py</code>, <code>demo_entrada.py</code> y <code>demo_integracion.py</code>.</li>
+</ul>
+<p>Las funciones deben estar documentadas, tener nombres y parámetros adecuados y poder importarse sin ejecutar de inmediato las demostraciones.</p>
+<p><strong>Recuerda:</strong> el propósito es crear herramientas reutilizables que puedas incorporar a otros programas, especialmente al proyecto que ya estás desarrollando en clase.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "toc.follow", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+</body>
+</html>

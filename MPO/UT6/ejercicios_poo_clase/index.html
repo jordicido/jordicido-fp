@@ -1,0 +1,1623 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Jordi Cidoncha" name="author"/>
+<link href="../" rel="prev"/>
+<link href="../proyecto_poo/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
+<title>Ejercicios de clase UT6: POO - Jordi Cido - FP</title>
+<link href="../../../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../../styles/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ejercicios-de-clase-ut6-programacion-orientada-a-objetos">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Jordi Cido - FP" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Jordi Cido - FP
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Ejercicios de clase UT6: POO
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Jordi Cido - FP" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Jordi Cido - FP">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Jordi Cido - FP
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MPO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MPO
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    
+  
+    Índice del módulo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT1/ejercicios_ut1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejercicios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_if_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Condicionales
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_for_while_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Bucles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_avanzados/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Avanzados
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT2/ejercicios_ut2_bas/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Básicos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_listas_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Listas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_diccionarios_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Diccionarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT3/ejercicios_ut3_extra/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Extra
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_funciones_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Funciones
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT4/ejercicios_importar_modulos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Módulos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT5/ejercicios_archivos_clase/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Archivos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_21" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_21_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_21">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    UT6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    UT6: Programación orientada a objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT6: POO
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Ejercicios de clase UT6: POO
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#normas-de-trabajo">
+<span class="md-ellipsis">
+      
+        Normas de trabajo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nivel-1-clases-e-instancias">
+<span class="md-ellipsis">
+      
+        Nivel 1 — Clases e instancias
+      
+    </span>
+</a>
+<nav aria-label="Nivel 1 — Clases e instancias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-mascota-virtual">
+<span class="md-ellipsis">
+      
+        1. Mascota virtual
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-semaforo">
+<span class="md-ellipsis">
+      
+        2. Semáforo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-producto-de-tienda">
+<span class="md-ellipsis">
+      
+        3. Producto de tienda
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-rectangulos">
+<span class="md-ellipsis">
+      
+        4. Rectángulos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nivel-2-encapsulacion-y-colaboracion">
+<span class="md-ellipsis">
+      
+        Nivel 2 — Encapsulación y colaboración
+      
+    </span>
+</a>
+<nav aria-label="Nivel 2 — Encapsulación y colaboración" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-cuenta-bancaria-segura">
+<span class="md-ellipsis">
+      
+        5. Cuenta bancaria segura
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-biblioteca">
+<span class="md-ellipsis">
+      
+        6. Biblioteca
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-equipo-de-jugadores">
+<span class="md-ellipsis">
+      
+        7. Equipo de jugadores
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-entradas-de-concierto">
+<span class="md-ellipsis">
+      
+        8. Entradas de concierto
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nivel-3-herencia-polimorfismo-y-diseno">
+<span class="md-ellipsis">
+      
+        Nivel 3 — Herencia, polimorfismo y diseño
+      
+    </span>
+</a>
+<nav aria-label="Nivel 3 — Herencia, polimorfismo y diseño" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-vehiculos-de-alquiler">
+<span class="md-ellipsis">
+      
+        9. Vehículos de alquiler
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-personajes-con-habilidades-distintas">
+<span class="md-ellipsis">
+      
+        10. Personajes con habilidades distintas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-detectives-de-errores-poo">
+<span class="md-ellipsis">
+      
+        11. Detectives de errores POO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-liga-de-cartas">
+<span class="md-ellipsis">
+      
+        12. Liga de cartas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reto-opcional-persistencia-json">
+<span class="md-ellipsis">
+      
+        Reto opcional: persistencia JSON
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criterios-de-correccion">
+<span class="md-ellipsis">
+      
+        Criterios de corrección
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../proyecto_poo/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto UT6: Arena de héroes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UT7/proyecto_cli_app_tiempo/">
+<span class="md-ellipsis">
+    
+  
+    UT7 — Proyecto CLI
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    EDD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    EDD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/pd/">
+<span class="md-ellipsis">
+    
+  
+    Programación didáctica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/">
+<span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion3/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/sesion4/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Sesión 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT1/ejemplos%20mermaid/">
+<span class="md-ellipsis">
+    
+  
+    UT1 — Ejemplos Mermaid
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/">
+<span class="md-ellipsis">
+    
+  
+    UT2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/sesion1/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT2/sesion2/">
+<span class="md-ellipsis">
+    
+  
+    UT2 — Sesión 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/">
+<span class="md-ellipsis">
+    
+  
+    UT3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT3/ejercicio_junit/">
+<span class="md-ellipsis">
+    
+  
+    UT3 — Ejercicio JUnit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac1/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac2/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac3/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/UT4/introduccion_git_prac4/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Git 4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto1/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../EDD/proyecto2/">
+<span class="md-ellipsis">
+    
+  
+    Proyecto 2
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    SSII
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SSII
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/">
+<span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/">
+<span class="md-ellipsis">
+    
+  
+    UT4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT4/practica_comandos/">
+<span class="md-ellipsis">
+    
+  
+    UT4 — Comandos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/">
+<span class="md-ellipsis">
+    
+  
+    UT5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT5/practica_usuarios/">
+<span class="md-ellipsis">
+    
+  
+    UT5 — Usuarios
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT6/">
+<span class="md-ellipsis">
+    
+  
+    UT6
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT7/">
+<span class="md-ellipsis">
+    
+  
+    UT7
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/">
+<span class="md-ellipsis">
+    
+  
+    UT9
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/instalar_docker/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Docker
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../SSII/UT9/practica_contenedores/">
+<span class="md-ellipsis">
+    
+  
+    UT9 — Contenedores
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#normas-de-trabajo">
+<span class="md-ellipsis">
+      
+        Normas de trabajo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nivel-1-clases-e-instancias">
+<span class="md-ellipsis">
+      
+        Nivel 1 — Clases e instancias
+      
+    </span>
+</a>
+<nav aria-label="Nivel 1 — Clases e instancias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-mascota-virtual">
+<span class="md-ellipsis">
+      
+        1. Mascota virtual
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-semaforo">
+<span class="md-ellipsis">
+      
+        2. Semáforo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-producto-de-tienda">
+<span class="md-ellipsis">
+      
+        3. Producto de tienda
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-rectangulos">
+<span class="md-ellipsis">
+      
+        4. Rectángulos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nivel-2-encapsulacion-y-colaboracion">
+<span class="md-ellipsis">
+      
+        Nivel 2 — Encapsulación y colaboración
+      
+    </span>
+</a>
+<nav aria-label="Nivel 2 — Encapsulación y colaboración" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-cuenta-bancaria-segura">
+<span class="md-ellipsis">
+      
+        5. Cuenta bancaria segura
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-biblioteca">
+<span class="md-ellipsis">
+      
+        6. Biblioteca
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-equipo-de-jugadores">
+<span class="md-ellipsis">
+      
+        7. Equipo de jugadores
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-entradas-de-concierto">
+<span class="md-ellipsis">
+      
+        8. Entradas de concierto
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nivel-3-herencia-polimorfismo-y-diseno">
+<span class="md-ellipsis">
+      
+        Nivel 3 — Herencia, polimorfismo y diseño
+      
+    </span>
+</a>
+<nav aria-label="Nivel 3 — Herencia, polimorfismo y diseño" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-vehiculos-de-alquiler">
+<span class="md-ellipsis">
+      
+        9. Vehículos de alquiler
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-personajes-con-habilidades-distintas">
+<span class="md-ellipsis">
+      
+        10. Personajes con habilidades distintas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-detectives-de-errores-poo">
+<span class="md-ellipsis">
+      
+        11. Detectives de errores POO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-liga-de-cartas">
+<span class="md-ellipsis">
+      
+        12. Liga de cartas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reto-opcional-persistencia-json">
+<span class="md-ellipsis">
+      
+        Reto opcional: persistencia JSON
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criterios-de-correccion">
+<span class="md-ellipsis">
+      
+        Criterios de corrección
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="ejercicios-de-clase-ut6-programacion-orientada-a-objetos">Ejercicios de clase UT6: Programación orientada a objetos<a class="headerlink" href="#ejercicios-de-clase-ut6-programacion-orientada-a-objetos" title="Permanent link">¶</a></h1>
+<p>Estos ejercicios son enunciados, no soluciones completas. Escribe código
+legible, prueba primero los casos normales y después los errores, y separa la
+lógica de las clases de la entrada y salida por pantalla. Salvo que se indique
+lo contrario, utiliza únicamente la biblioteca estándar y nombres en español
+coherentes.</p>
+<h2 id="normas-de-trabajo">Normas de trabajo<a class="headerlink" href="#normas-de-trabajo" title="Permanent link">¶</a></h2>
+<ol>
+<li>Crea una carpeta o módulo por ejercicio y añade un pequeño bloque de uso
+   protegido por <code>if __name__ == "__main__":</code>.</li>
+<li>Los métodos que calculan o consultan deben devolver valores; no bases las
+   pruebas en leer texto impreso por pantalla.</li>
+<li>Valida los datos antes de modificar el estado. Documenta con una excepción
+   apropiada qué entradas se rechazan.</li>
+<li>Añade pruebas manuales o con <code>unittest</code> para cada caso solicitado.</li>
+<li>No copies una solución completa de Internet: explica en comentarios las
+   decisiones que no sean evidentes.</li>
+</ol>
+<h2 id="nivel-1-clases-e-instancias">Nivel 1 — Clases e instancias<a class="headerlink" href="#nivel-1-clases-e-instancias" title="Permanent link">¶</a></h2>
+<h3 id="1-mascota-virtual">1. Mascota virtual<a class="headerlink" href="#1-mascota-virtual" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> practicar atributos de instancia, constructor, métodos que
+modifican estado y límites.</p>
+<p>Crea <code>Mascota</code> con <code>nombre</code>, <code>especie</code> y <code>energia</code>. La energía inicial será 50.
+Implementa:</p>
+<ul>
+<li><code>comer()</code>, que suma 15 sin superar 100;</li>
+<li><code>jugar()</code>, que resta 20 sin bajar de 0;</li>
+<li><code>mostrar_estado()</code>, que devuelve una cadena con nombre, especie y energía.</li>
+</ul>
+<p>Crea dos mascotas, juega con una y comprueba que la energía de la otra sigue
+siendo 50. Comprueba una mascota con energía 95 al comer y con energía 10 al
+jugar. Decide qué ocurre con nombres vacíos y documenta tu validación.</p>
+<p><strong>Comprobaciones esperadas:</strong> <code>Mascota("Luna", "gato")</code> empieza en 50; después
+de comer queda en 65; al jugar cinco veces no baja de 0; comer varias veces no
+sube de 100.</p>
+<p><strong>Reflexión:</strong> ¿por qué <code>energia</code> debe ser un atributo de instancia y no una
+lista o valor compartido en el cuerpo de la clase?</p>
+<h3 id="2-semaforo">2. Semáforo<a class="headerlink" href="#2-semaforo" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> representar estados finitos y transiciones controladas.</p>
+<p>Crea <code>Semaforo</code> con estado inicial <code>"rojo"</code>. El método <code>siguiente()</code> debe rotar
+en este orden: <code>rojo → verde → amarillo → rojo</code>. <code>puede_pasar()</code> devuelve
+<code>True</code> únicamente cuando el estado es <code>"verde"</code>.</p>
+<p>Rechaza estados iniciales que no pertenezcan a la colección válida. Comprueba
+la secuencia completa, varias vueltas y que dos semáforos sean independientes.</p>
+<p><strong>Casos esperados:</strong> el primer estado es rojo; tras una llamada es verde y
+<code>puede_pasar()</code> es verdadero; tras dos llamadas es amarillo y es falso; tras
+tres vuelve a rojo.</p>
+<p><strong>Reflexión:</strong> ¿te convendría permitir asignar el estado directamente desde
+fuera o es más seguro obligar a pasar por <code>siguiente()</code>?</p>
+<h3 id="3-producto-de-tienda">3. Producto de tienda<a class="headerlink" href="#3-producto-de-tienda" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> practicar validación, invariantes, métodos de modificación y
+<code>__str__()</code>.</p>
+<p>Define <code>Producto</code> con <code>nombre</code>, <code>precio</code> y <code>stock</code>. Implementa:</p>
+<ul>
+<li><code>vender(cantidad)</code>, que reduce el stock si hay existencias;</li>
+<li><code>reponer(cantidad)</code>, que incrementa el stock;</li>
+<li><code>valor_inventario()</code>, que devuelve <code>precio * stock</code>;</li>
+<li><code>__str__()</code>, que resume nombre, precio y stock.</li>
+</ul>
+<p>Rechaza nombres vacíos, precios negativos, cantidades no positivas y ventas
+superiores al stock. En cualquier error el stock debe permanecer intacto.</p>
+<p><strong>Escenario:</strong> crea <code>Producto("Cuaderno", 2.50, 10)</code>, vende 3, repone 5 y
+comprueba stock 12 y valor 30.00. Prueba vender 20 y verifica que el stock no
+cambia.</p>
+<p><strong>Reflexión:</strong> ¿qué diferencia hay entre que <code>vender()</code> devuelva <code>True</code> y que
+lance <code>ValueError</code> cuando la venta no se puede realizar?</p>
+<h3 id="4-rectangulos">4. Rectángulos<a class="headerlink" href="#4-rectangulos" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> combinar objetos, cálculos y listas de instancias.</p>
+<p>Crea <code>Rectangulo</code> con dimensiones positivas <code>ancho</code> y <code>alto</code>. Implementa
+<code>area()</code>, <code>perimetro()</code>, <code>es_cuadrado()</code> y <code>__str__()</code>.</p>
+<p>Construye una lista con al menos cuatro rectángulos, recórrela y selecciona el
+que tenga mayor área. No ordenes la lista original salvo que lo necesites.
+Prueba dimensiones decimales, un cuadrado y dimensiones inválidas.</p>
+<p><strong>Salida orientativa:</strong> para ancho 4 y alto 3, el área es 12, el perímetro 14 y
+<code>es_cuadrado()</code> es falso.</p>
+<p><strong>Reflexión:</strong> ¿qué solución elegirías si hubiera empate en el área mayor?</p>
+<h2 id="nivel-2-encapsulacion-y-colaboracion">Nivel 2 — Encapsulación y colaboración<a class="headerlink" href="#nivel-2-encapsulacion-y-colaboracion" title="Permanent link">¶</a></h2>
+<h3 id="5-cuenta-bancaria-segura">5. Cuenta bancaria segura<a class="headerlink" href="#5-cuenta-bancaria-segura" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> proteger estado con una propiedad de solo lectura y hacer una
+operación entre objetos de forma atómica.</p>
+<p>Crea <code>CuentaBancaria</code> con <code>titular</code> y <code>_saldo</code>. Expón <code>saldo</code> mediante una
+propiedad de lectura. Implementa <code>ingresar(cantidad)</code>, <code>retirar(cantidad)</code> y
+<code>transferir(destino, cantidad)</code>.</p>
+<p>Rechaza titulares vacíos, cantidades no positivas, retiradas sin fondos y
+destinos que no sean otra cuenta válida. En una transferencia, valida destino,
+cantidad y fondos de la cuenta origen <strong>antes</strong> de modificar ninguna cuenta.</p>
+<p><strong>Caso obligatorio:</strong> dos cuentas comienzan con 100 € y 25 €; se transfieren
+30 € de la primera a la segunda y terminan con 70 € y 55 €. Prueba también una
+transferencia fallida y verifica ambos saldos.</p>
+<p><strong>Pruebas:</strong> intenta asignar <code>cuenta.saldo = 0</code>; comprueba que la propiedad no
+permite saltarse las reglas. Añade una prueba de ingreso y otra de retirada.</p>
+<p><strong>Reflexión:</strong> ¿por qué es peligroso exponer <code>_saldo</code> para que cualquier código
+lo cambie directamente?</p>
+<h3 id="6-biblioteca">6. Biblioteca<a class="headerlink" href="#6-biblioteca" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> practicar composición y reparto de responsabilidades.</p>
+<p>Crea <code>Libro</code> con <code>titulo</code>, <code>autor</code> y estado <code>prestado</code>. Implementa en el libro
+<code>prestar()</code> y <code>devolver()</code>, rechazando un doble préstamo o una devolución de un
+libro disponible.</p>
+<p>Crea <code>Biblioteca</code> con una lista <strong>propia</strong> de libros e implementa:</p>
+<ul>
+<li><code>agregar(libro)</code>;</li>
+<li><code>buscar_por_titulo(texto)</code>, sin distinguir mayúsculas y minúsculas;</li>
+<li><code>disponibles()</code>, que devuelva los libros no prestados.</li>
+</ul>
+<p>Prueba una biblioteca vacía, una búsqueda sin resultados, un préstamo correcto
+y un doble préstamo. Devuelve listas nuevas cuando sea razonable para evitar
+que el llamador modifique directamente la colección interna.</p>
+<p><strong>Reflexión:</strong> ¿debe ser responsabilidad de <code>Biblioteca</code> cambiar el estado
+<code>prestado</code> o de cada <code>Libro</code>? Justifica tu decisión.</p>
+<h3 id="7-equipo-de-jugadores">7. Equipo de jugadores<a class="headerlink" href="#7-equipo-de-jugadores" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> colaborar entre objetos y ordenar resultados sin efectos laterales.</p>
+<p>Crea <code>Jugador</code> con <code>nombre</code> y <code>puntos</code>, y <code>Equipo</code> con una colección propia de
+jugadores. Implementa:</p>
+<ul>
+<li>agregar jugadores sin duplicar nombres;</li>
+<li><code>total_puntos()</code>;</li>
+<li><code>mejor_jugador()</code>, que devuelve <code>None</code> si el equipo está vacío;</li>
+<li><code>ranking()</code>, que devuelve jugadores ordenados por puntos descendentes sin
+  alterar innecesariamente el orden interno.</li>
+</ul>
+<p>Valida nombres no vacíos y puntos no negativos. Decide cómo resolver empates y
+escribe esa regla en el README del ejercicio.</p>
+<p><strong>Casos:</strong> equipo vacío; dos jugadores con el mismo nombre; tres jugadores con
+puntos 8, 15 y 10; comprobar que el ranking es 15, 10, 8 y que la colección
+original conserva su orden.</p>
+<p><strong>Reflexión:</strong> ¿qué parte debe pertenecer a <code>Jugador</code> y cuál a <code>Equipo</code>?</p>
+<h3 id="8-entradas-de-concierto">8. Entradas de concierto<a class="headerlink" href="#8-entradas-de-concierto" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> utilizar atributos de clase, <code>@classmethod</code> y <code>@staticmethod</code>.</p>
+<p>Crea <code>EntradaConcierto</code> con un contador de clase <code>siguiente_id</code>. Cada instancia
+recibe un identificador consecutivo y guarda concierto y precio. Implementa:</p>
+<ul>
+<li><code>@staticmethod precio_valido(precio)</code>, que acepte números no negativos pero
+  rechace booleanos;</li>
+<li><code>@classmethod desde_texto(texto)</code>, que interprete
+  <code>"Concierto;29.50"</code>;</li>
+<li><code>__str__()</code> con identificador, concierto y precio.</li>
+</ul>
+<p>Rechaza texto sin separador, concierto vacío y precios mal formados. Comprueba
+que tres entradas reciben identificadores consecutivos y que una entrada
+creada desde texto también participa en la secuencia.</p>
+<p><strong>Reflexión:</strong> ¿por qué <code>desde_texto</code> es un método de clase y no un método de
+instancia? ¿Cuándo bastaría una función externa?</p>
+<h2 id="nivel-3-herencia-polimorfismo-y-diseno">Nivel 3 — Herencia, polimorfismo y diseño<a class="headerlink" href="#nivel-3-herencia-polimorfismo-y-diseno" title="Permanent link">¶</a></h2>
+<h3 id="9-vehiculos-de-alquiler">9. Vehículos de alquiler<a class="headerlink" href="#9-vehiculos-de-alquiler" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> modelar herencia y sobrescritura mediante una operación común.</p>
+<p>Crea <code>Vehiculo</code> con matrícula o identificador y un método
+<code>coste_alquiler(dias)</code>. Crea <code>Coche</code>, con 35 € por día, y <code>Moto</code>, con 20 € por
+día. Puedes hacer que la clase base valide el identificador y los días.</p>
+<p>Los días deben ser enteros positivos y <code>bool</code> no debe aceptarse como entero.
+Recorre una lista mixta de coches y motos calculando el coste sin usar
+condiciones <code>if</code> que inspeccionen el tipo.</p>
+<p><strong>Casos:</strong> coche durante 2 días cuesta 70 €; moto durante 3 días cuesta 60 €;
+0, -1, 2.5 y <code>True</code> son entradas inválidas.</p>
+<p><strong>Reflexión:</strong> explica qué método se sobrescribe y qué código común aprovecha
+<code>super()</code>.</p>
+<h3 id="10-personajes-con-habilidades-distintas">10. Personajes con habilidades distintas<a class="headerlink" href="#10-personajes-con-habilidades-distintas" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> practicar polimorfismo, estado específico de una subclase y
+validación de daño.</p>
+<p>Crea <code>Personaje</code> con nombre, vida no negativa, <code>esta_vivo()</code> y
+<code>recibir_danio(cantidad)</code>. Crea <code>Guerrero</code>, cuyo <code>atacar()</code> devuelve 12, y
+<code>Mago</code>, que comienza con 10 de maná. El mago consume 3 de maná y devuelve 18
+por ataque mágico; si no dispone de maná suficiente, realiza un ataque básico
+de 2 sin consumir maná.</p>
+<p>Estas cifras pertenecen a este ejercicio y <strong>no</strong> son las del proyecto final.
+La vida nunca puede bajar de 0 y el daño negativo debe rechazarse. Recorre una
+lista de personajes y llama a <code>atacar()</code> sin comprobar tipos. Añade
+opcionalmente <code>Arquero</code> con otra regla compatible.</p>
+<p><strong>Casos:</strong> cuatro ataques de un mago con 10 de maná producen 18, 18, 18, 2 y
+dejan maná 1; un daño de 500 deja vida 0; daño negativo produce excepción.</p>
+<p><strong>Reflexión:</strong> ¿qué contrato común necesitan todas las clases para formar la
+lista polimórfica?</p>
+<h3 id="11-detectives-de-errores-poo">11. Detectives de errores POO<a class="headerlink" href="#11-detectives-de-errores-poo" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> diagnosticar fallos reales y explicar su causa, no solo corregir
+la línea marcada. Para cada fragmento crea una prueba que falle antes de la
+corrección y otra que funcione después.</p>
+<p><strong>A. Método sin <code>self</code></strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Temporizador</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segundos</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">segundos</span> <span class="o">=</span> <span class="n">segundos</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">reiniciar</span><span class="p">():</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">segundos</span> <span class="o">=</span> <span class="mi">0</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>B. Atributo no guardado en la instancia</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Alumno</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">presentarse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Soy </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">"</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>C. Lista mutable compartida</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Carrito</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="n">productos</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">agregar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producto</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">productos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>D. <code>print()</code> en vez de <code>return</code></strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Rectangulo</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">alto</span><span class="p">):</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ancho</span> <span class="o">=</span> <span class="n">ancho</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">alto</span> <span class="o">=</span> <span class="n">alto</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ancho</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">alto</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Corrige sin cambiar el objetivo de cada clase, identifica la excepción o el
+resultado incorrecto original y explica por qué tu prueba demuestra el error.</p>
+<h3 id="12-liga-de-cartas">12. Liga de cartas<a class="headerlink" href="#12-liga-de-cartas" title="Permanent link">¶</a></h3>
+<p><strong>Objetivo:</strong> diseñar un pequeño dominio con composición, reglas y pruebas.</p>
+<p>Diseña <code>Jugador</code>, <code>Partida</code> y <code>Liga</code>. Una victoria da 3 puntos, un empate 1 y
+una derrota 0. La liga debe impedir:</p>
+<ul>
+<li>jugar contra uno mismo;</li>
+<li>registrar jugadores que no pertenezcan a la liga;</li>
+<li>duplicar el mismo registro de partida.</li>
+</ul>
+<p>La clasificación se ordena por puntos descendentes y, en empate, por nombre.
+Decide cómo se representa el resultado, documenta el modelo con un diagrama de
+clases y evita que <code>Liga</code> conozca detalles innecesarios de <code>Jugador</code>.</p>
+<p><strong>Entrega mínima:</strong> cuatro jugadores, tres partidas, clasificación, al menos
+seis pruebas y un ejemplo de uso. Incluye un caso de empate y un intento
+inválido.</p>
+<p><strong>Reflexión:</strong> ¿qué objeto debería calcular los puntos de una partida y cuál
+debería acumular la clasificación?</p>
+<h2 id="reto-opcional-persistencia-json">Reto opcional: persistencia JSON<a class="headerlink" href="#reto-opcional-persistencia-json" title="Permanent link">¶</a></h2>
+<p>Adapta <code>Biblioteca</code>, <code>Equipo</code> o <code>Liga</code> para guardar y cargar sus datos en JSON.
+Define <code>to_dict()</code> y <code>from_dict()</code> donde sean necesarios y reconstruye
+instancias al cargar: JSON no conserva clases ni métodos de Python.</p>
+<p>Trata al menos estos casos:</p>
+<ul>
+<li>archivo inexistente;</li>
+<li>archivo JSON mal formado;</li>
+<li>dato obligatorio ausente;</li>
+<li>colección vacía;</li>
+<li>archivo válido con varios objetos.</li>
+</ul>
+<p>Escribe una prueba que guarde objetos, los cargue en una colección nueva y
+compruebe que los valores y tipos se han reconstruido.</p>
+<h2 id="criterios-de-correccion">Criterios de corrección<a class="headerlink" href="#criterios-de-correccion" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modelo</td>
+<td>Clases y responsabilidades comprensibles.</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Atributos de instancia independientes e invariantes mantenidas.</td>
+</tr>
+<tr>
+<td>Métodos</td>
+<td>Nombres claros, retornos útiles y sin efectos ocultos.</td>
+</tr>
+<tr>
+<td>Validación</td>
+<td>Errores detectados antes de modificar el objeto.</td>
+</tr>
+<tr>
+<td>Diseño</td>
+<td>Composición/herencia justificadas y sin comprobaciones de tipo innecesarias.</td>
+</tr>
+<tr>
+<td>Pruebas</td>
+<td>Casos normales, límites y errores reproducibles.</td>
+</tr>
+<tr>
+<td>Comunicación</td>
+<td>Código, comentarios y README legibles.</td>
+</tr>
+</tbody>
+</table>
+<p>Cuando termines, revisa el <a href="../proyecto_poo/">proyecto final Arena de héroes</a>,
+que combina estas técnicas en una aplicación de consola.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "toc.follow", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+</body>
+</html>
