@@ -1,6 +1,69 @@
 site_name: Jordi Cido - FP
 site_author: Jordi Cidoncha
 
+nav:
+  - Inicio: index.md
+  - MPO:
+      - Índice del módulo: MPO/index.md
+      - Programación didáctica: MPO/pd.md
+      - Proyecto 1: MPO/proyecto1.md
+      - Proyecto 2: MPO/proyecto2.md
+      - UT1: MPO/UT1/index.md
+      - UT1 — Ejercicios: MPO/UT1/ejercicios_ut1.md
+      - UT2: MPO/UT2/index.md
+      - UT2 — Condicionales: MPO/UT2/ejercicios_if_clase.md
+      - UT2 — Bucles: MPO/UT2/ejercicios_for_while_clase.md
+      - UT2 — Avanzados: MPO/UT2/ejercicios_ut2_avanzados.md
+      - UT2 — Básicos: MPO/UT2/ejercicios_ut2_bas.md
+      - UT3: MPO/UT3/index.md
+      - UT3 — Listas: MPO/UT3/ejercicios_listas_clase.md
+      - UT3 — Diccionarios: MPO/UT3/ejercicios_diccionarios_clase.md
+      - UT3 — Extra: MPO/UT3/ejercicios_ut3_extra.md
+      - UT4: MPO/UT4/index.md
+      - UT4 — Funciones: MPO/UT4/ejercicios_funciones_clase.md
+      - UT4 — Módulos: MPO/UT4/ejercicios_importar_modulos_clase.md
+      - UT5: MPO/UT5/index.md
+      - UT5 — Archivos: MPO/UT5/ejercicios_archivos_clase.md
+      - UT6:
+          - 'UT6: Programación orientada a objetos': MPO/UT6/index.md
+          - 'Ejercicios de clase UT6: POO': MPO/UT6/ejercicios_poo_clase.md
+          - 'Proyecto UT6: Arena de héroes': MPO/UT6/proyecto_poo.md
+      - UT7: MPO/UT7/index.md
+      - UT7 — Proyecto CLI: MPO/UT7/proyecto_cli_app_tiempo.md
+  - EDD:
+      - Índice: EDD/index.md
+      - Programación didáctica: EDD/pd.md
+      - UT1: EDD/UT1/index.md
+      - UT1 — Sesión 1: EDD/UT1/sesion1.md
+      - UT1 — Sesión 2: EDD/UT1/sesion2.md
+      - UT1 — Sesión 3: EDD/UT1/sesion3.md
+      - UT1 — Sesión 4: EDD/UT1/sesion4.md
+      - UT1 — Ejemplos Mermaid: EDD/UT1/ejemplos mermaid.md
+      - UT2: EDD/UT2/index.md
+      - UT2 — Sesión 1: EDD/UT2/sesion1.md
+      - UT2 — Sesión 2: EDD/UT2/sesion2.md
+      - UT3: EDD/UT3/index.md
+      - UT3 — JUnit: EDD/UT3/junit.md
+      - UT3 — Ejercicio JUnit: EDD/UT3/ejercicio_junit.md
+      - UT4: EDD/UT4/index.md
+      - UT4 — Git 1: EDD/UT4/introduccion_git_prac1.md
+      - UT4 — Git 2: EDD/UT4/introduccion_git_prac2.md
+      - UT4 — Git 3: EDD/UT4/introduccion_git_prac3.md
+      - UT4 — Git 4: EDD/UT4/introduccion_git_prac4.md
+      - Proyecto 1: EDD/proyecto1.md
+      - Proyecto 2: EDD/proyecto2.md
+  - SSII:
+      - Índice: SSII/index.md
+      - UT4: SSII/UT4/index.md
+      - UT4 — Comandos: SSII/UT4/practica_comandos.md
+      - UT5: SSII/UT5/index.md
+      - UT5 — Usuarios: SSII/UT5/practica_usuarios.md
+      - UT6: SSII/UT6/index.md
+      - UT7: SSII/UT7/index.md
+      - UT9: SSII/UT9/index.md
+      - UT9 — Docker: SSII/UT9/instalar_docker.md
+      - UT9 — Contenedores: SSII/UT9/practica_contenedores.md
+
 theme:
   name: "material"
   language: es

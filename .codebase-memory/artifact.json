@@ -1,11 +1,11 @@
 {
     "schema_version": 1,
-    "commit": "0b6f5d171c58ff9da5fbc36cd6c43ea7f38b2fc4",
-    "indexed_at": "2026-11-05T11:05:47Z",
+    "commit": "a5a970c74e8c6fa49932abe38d441c94855426cb",
+    "indexed_at": "2026-11-11T14:35:11Z",
     "project": "home-jordicido-Documents-github.com-jordicido-jordicido-fp",
-    "nodes": 41,
-    "edges": 40,
-    "original_size": 1179648,
-    "compressed_size": 5614,
-    "compression_level": 9
+    "nodes": 1192,
+    "edges": 1300,
+    "original_size": 3866624,
+    "compressed_size": 233453,
+    "compression_level": 3
 }

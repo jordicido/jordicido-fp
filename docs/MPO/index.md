@@ -48,6 +48,10 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 
 ### [UT6: Programación orientada a objetos](UT6)
 
-- Conceptos de POO: clases, objetos, atributos y métodos
-- Encapsulación, herencia y polimorfismo
-- Diseño de clases y objetos en Python
+- Clases, objetos, atributos, constructores y métodos.
+- Estado de las instancias, encapsulación y validación.
+- Composición, herencia, sobrescritura y polimorfismo.
+- Métodos especiales y métodos de clase.
+- Proyecto práctico orientado a objetos, pruebas y documentación.
+
+[Acceder a la UT6](UT6/index.md)
