@@ -2,85 +2,526 @@
 
 ## Introducción
 
-Hasta ahora has trabajado con variables, estructuras de control, colecciones,
-funciones, módulos, archivos y excepciones. Esas herramientas siguen siendo
-válidas: la programación orientada a objetos (POO) las organiza alrededor de
-las entidades de un problema. En lugar de mantener diccionarios y funciones
-desconectadas, podemos reunir los datos y las operaciones relacionadas en una
-clase.
+En esta unidad aprenderás a crear tus propios tipos de elementos en Python. Un
+personaje puede tener un nombre y una cantidad de vida, y también puede hacer
+acciones como presentarse, atacar o recibir daño.
 
-Imagina una aplicación de una biblioteca. Con diccionarios tendríamos que
-recordar qué clave contiene el título, qué función comprueba si un libro está
-prestado y qué código cambia ese estado. Con objetos, un `Libro` conoce su
-título y puede ofrecer la operación `prestar()`. La clase no sustituye a las
-funciones ni a los diccionarios: proporciona otra forma de modelar problemas
-cuando existen muchas entidades con datos y comportamiento relacionados.
+Piensa en un juego sencillo: ¿cómo crearíamos muchos personajes distintos,
+cada uno con sus propios datos y acciones? Vamos a construir la respuesta paso
+a paso, empezando por el código más pequeño posible y añadiendo una idea cada
+vez.
 
-!!! info "Al finalizar la unidad"
-    Serás capaz de crear clases con estado válido, proteger sus operaciones con
-    validaciones, relacionar objetos mediante composición, reutilizar código
-    con herencia cuando tenga sentido, aprovechar el polimorfismo, separar un
-    programa en módulos, serializar objetos sencillos y probar sus reglas con
-    `unittest`.
+Al terminar podrás crear clases y objetos, guardar datos en cada objeto,
+definir métodos, organizar una colección de personajes y ampliar un personaje
+con tipos especializados como `Guerrero` y `Mago`. También aprenderás a
+comprobar los datos y a organizar las clases en varios archivos.
 
-### Objetivos
+!!! info "Cómo estudiar esta página"
+    Copia los ejemplos en un archivo, ejecútalos y cambia una sola cosa cada
+    vez. Antes de ejecutar, intenta predecir la salida. Las microactividades
+    están pensadas para durar entre dos y cinco minutos.
 
-Al terminar deberías poder:
+## 1. ¿Qué es una clase?
 
-- explicar la diferencia entre clase, objeto, atributo, estado, comportamiento
-  y método;
-- definir clases e instanciarlas con constructores claros;
-- distinguir atributos de instancia y de clase;
-- mantener invariantes y lanzar `ValueError` antes de dejar un objeto a medias;
-- exponer una interfaz pública mediante propiedades y métodos;
-- modelar relaciones de composición e identificar una herencia adecuada;
-- recorrer objetos distintos usando una operación común;
-- organizar varias clases en módulos sin dependencias circulares;
-- probar casos normales y errores, y guardar objetos en JSON mediante
-  `to_dict()` y `from_dict()`;
-- diseñar un pequeño programa orientado a objetos documentado y mantenible.
+Una **clase** es una descripción o plantilla. Indica cómo serán ciertos
+elementos de nuestro programa. En esta unidad vamos a describir personajes.
 
-## 1. De funciones y diccionarios a objetos
-
-La programación estructurada expresa un algoritmo como instrucciones,
-condicionales y bucles. La programación modular separa esas instrucciones en
-funciones y módulos reutilizables. La POO añade una forma de agrupar **estado**
-y **comportamiento** alrededor de conceptos del problema. Ningún enfoque es
-incorrecto: una función corta puede ser la mejor solución y una clase pequeña
-puede resultar innecesaria.
-
-### El mismo problema con un diccionario
-
-```python
-def crear_personaje(nombre, vida):
-    return {"nombre": nombre, "vida": vida}
-
-
-def recibir_danio(personaje, cantidad):
-    if cantidad < 0:
-        raise ValueError("El daño no puede ser negativo")
-    personaje["vida"] = max(0, personaje["vida"] - cantidad)
-
-
-heroina = crear_personaje("Aina", 100)
-recibir_danio(heroina, 15)
-print(heroina["vida"])  # 85
-```
-
-Este código puede ser perfectamente adecuado para un programa pequeño. Cuando
-aparecen muchos tipos de personaje, muchas operaciones y muchas reglas, es
-fácil escribir por error `personaje["vidaa"]`, olvidar una validación o pasar
-un diccionario de una forma inesperada.
-
-### El mismo problema con una clase
+Este es el primer código de la unidad:
 
 ```python
 class Personaje:
-    def __init__(self, nombre, vida=100):
-        if not nombre.strip():
-            raise ValueError("El nombre no puede estar vacío")
-        if vida < 0:
-            raise ValueError("La vida no puede ser negativa")
+    pass
+```
+
+Aunque es muy corto, cada parte tiene un significado:
+
+- `class` indica que vamos a definir una clase.
+- `Personaje` es el nombre de la clase. Las clases se escriben normalmente con
+  la primera letra de cada palabra en mayúscula.
+- `:` indica que comienza el contenido de la clase.
+- Las líneas sangradas pertenecen a la clase.
+- `pass` significa “no hay instrucciones todavía”. Sirve para crear una clase
+  vacía mientras aprendemos o mientras decidimos qué necesitará.
+
+El bloque es correcto y se puede ejecutar. Por ahora, `Personaje` solo es una
+descripción sin datos ni acciones.
+
+```mermaid
+flowchart LR
+    A["Clase Personaje\nDescripción"]
+```
+
+Todavía no hemos creado ningún personaje concreto. Solo hemos escrito la
+plantilla que utilizaremos en el apartado siguiente.
+
+### Microactividad: reconocer una clase
+
+Durante dos minutos:
+
+1. Señala en `class Personaje:` cuál es la palabra reservada y cuál es el
+   nombre elegido para la clase.
+2. Crea una segunda clase vacía llamada `Equipo`.
+3. Comprueba que ambas definiciones se ejecutan sin mostrar errores.
+
+## 2. ¿Qué es un objeto o instancia?
+
+Un **objeto** es un elemento concreto creado a partir de una clase. Si la clase
+es la descripción de un personaje, un objeto es un personaje concreto.
+También llamamos **instancia** a un objeto creado a partir de una clase.
+
+El siguiente bloque es completo y ejecutable:
+
+```python
+class Personaje:
+    pass
+
+
+p1 = Personaje()
+p2 = Personaje()
+
+print(type(p1).__name__)  # Personaje
+print(p1 is p2)           # False
+```
+
+`Personaje()` significa “crea un objeto siguiendo la clase `Personaje`”.
+Después guardamos el primer objeto en `p1` y el segundo en `p2`.
+
+`p1` y `p2` son dos objetos distintos aunque procedan de la misma clase. La
+expresión `p1 is p2` pregunta si los dos nombres señalan exactamente al mismo
+objeto. Como hemos creado dos objetos, el resultado es `False`.
+
+```mermaid
+flowchart TD
+    A["Clase Personaje"] --> B["p1\nobjeto Personaje"]
+    A --> C["p2\nobjeto Personaje"]
+    B -. "objeto independiente" .- C
+```
+
+La clase proporciona la forma general; cada objeto será un ejemplar separado.
+Más adelante guardaremos datos diferentes en cada uno.
+
+### Microactividad: crear instancias
+
+Escribe y ejecuta este cambio:
+
+```python
+class Personaje:
+    pass
+
+
+p1 = Personaje()
+p3 = Personaje()
+print(p3 is p1)  # ¿True o False?
+```
+
+Predice la salida antes de ejecutar. Después explica con una frase por qué `p3`
+no es el mismo objeto que `p1`.
+
+## 3. Atributos: los datos de un objeto
+
+Un **atributo** es un dato que pertenece a un objeto. Un personaje puede tener
+atributos como `nombre`, `vida` o `nivel`.
+
+Para ver cómo se accede a un atributo, usaremos temporalmente dos objetos
+vacíos. Esta forma de asignar los datos nos ayuda a observar el punto, pero no
+será nuestra forma principal de diseñar la clase: en el apartado 4 aprenderemos
+a inicializar los objetos de manera ordenada.
+
+```python
+class Personaje:
+    pass
+
+
+p1 = Personaje()
+p2 = Personaje()
+
+p1.nombre = "Aina"
+p2.nombre = "Pau"
+
+print(p1.nombre)  # Aina
+print(p2.nombre)  # Pau
+
+p1.nombre = "Aina la exploradora"
+print(p1.nombre)  # Aina la exploradora
+print(p2.nombre)  # Pau
+```
+
+El punto (`.`) permite acceder a un atributo:
+
+- `p1.nombre` lee el atributo `nombre` de `p1`.
+- `p1.nombre = ...` cambia ese atributo de `p1`.
+- Cambiar `p1.nombre` no cambia `p2.nombre`, porque son objetos diferentes.
+
+Podemos añadir otro atributo del mismo modo:
+
+```python
+class Personaje:
+    pass
+
+
+p1 = Personaje()
+p2 = Personaje()
+p1.vida = 100
+p2.vida = 50
+
+print(p1.vida)  # 100
+print(p2.vida)  # 50
+```
+
+En este momento la clase no obliga a que todos los personajes tengan los mismos
+atributos. Precisamente por eso, para un programa real preferiremos preparar
+los datos al crear cada objeto.
+
+### Microactividad: dos estados independientes
+
+Añade `nivel` a `p1` y `p2`, con valores 3 y 7. Después cambia solo el nivel de
+`p1` a 4 y muestra los dos niveles. El resultado debería ser 4 y 7.
+
+En el diagrama, cada instancia tiene sus propios valores:
+
+```mermaid
+flowchart LR
+    A["Personaje"] --> B["p1\nnombre = Aina\nvida = 100"]
+    A --> C["p2\nnombre = Pau\nvida = 50"]
+```
+
+## 4. `__init__`: dar valores iniciales al crear objetos
+
+Escribir cada atributo después de crear el objeto puede provocar olvidos. El
+método especial `__init__` permite indicar qué datos necesita el objeto desde
+el momento en que se crea.
+
+Este bloque es completo y no utiliza todavía validaciones:
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+
+p1 = Personaje("Aina", 100)
+p2 = Personaje("Pau", 50)
+
+print(p1.nombre)  # Aina
+print(p2.vida)    # 50
+```
+
+Vamos a leer el inicializador línea a línea:
+
+- `def` empieza una definición de función.
+- `__init__` es el nombre del inicializador que Python ejecuta al crear un
+  objeto.
+- `self` representa el objeto concreto que se está inicializando.
+- `nombre` y `vida` son los datos que recibirá ese objeto.
+
+Las instrucciones `self.nombre = nombre` y `self.vida = vida` guardan los
+valores en la instancia.
+
+La parte izquierda (`self.nombre`) es el atributo que quedará guardado en el
+objeto. La parte derecha (`nombre`) es el dato recibido como parámetro. La
+asignación conecta ambos.
+
+Cuando escribimos `p1 = Personaje("Aina", 100)`
+
+ocurre, de forma resumida, lo siguiente:
+
+1. Python crea un objeto que pertenece a la clase `Personaje`.
+2. Llama a `__init__` para preparar ese objeto.
+3. Coloca `"Aina"` en el parámetro `nombre` y `100` en `vida`.
+4. Guarda esos valores en `p1.nombre` y `p1.vida`.
+5. `p1` queda asociado al objeto preparado.
+
+`__init__` **inicializa** el objeto. No necesitas conocer otros métodos
+internos para utilizarlo.
+
+### Microactividad: añadir un dato inicial
+
+Modifica la clase completa para que `__init__` reciba también `nivel`. Crea
+`Personaje("Aina", 100, 3)` y `Personaje("Pau", 50, 7)`. Comprueba que puedes
+mostrar `p1.nivel` y `p2.nivel`.
+
+## 5. `self`: ¿a qué objeto nos estamos refiriendo?
+
+`self` es el objeto concreto que participa en una llamada. Si existen `p1` y
+`p2`, los dos usan la misma definición de la clase, pero cada llamada trabaja
+con una instancia diferente.
+
+Observa este ejemplo completo:
+
+```python
+class Personaje:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def presentarse(self):
+        return f"Soy {self.nombre}"
+
+
+p1 = Personaje("Aina")
+p2 = Personaje("Pau")
+
+print(p1.presentarse())  # Soy Aina
+print(p2.presentarse())  # Soy Pau
+```
+
+Cuando escribimos `p1.presentarse()`, `self` representa a `p1`. Cuando
+escribimos `p2.presentarse()`, `self` representa a `p2`. El método es el mismo,
+pero el objeto utilizado cambia.
+
+Podemos expresar la idea de forma equivalente, aunque normalmente usaremos la
+primera forma:
+
+```python
+class Personaje:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def presentarse(self):
+        return f"Soy {self.nombre}"
+
+
+p1 = Personaje("Aina")
+print(p1.presentarse())          # Soy Aina
+print(Personaje.presentarse(p1)) # Soy Aina
+```
+
+En la primera llamada Python entrega `p1` automáticamente como `self`. En la
+segunda lo escribimos explícitamente para observar qué está pasando.
+
+### Parámetro y atributo no son lo mismo
+
+En el método `def __init__(self, nombre):` la instrucción
+`self.nombre = nombre` guarda el dato en la instancia.
+
+`nombre` es un **parámetro**. Solo sirve dentro de la llamada al método.
+`self.nombre` es un **atributo**. Queda guardado en el objeto y puede
+consultarse después desde otros métodos.
+
+Si escribiéramos `nombre = nombre`, estaríamos asignando el parámetro a sí
+mismo. El objeto no recibiría el atributo que necesitamos. La forma correcta
+es `self.nombre = nombre`.
+
+### ¿Se escribe `self` al llamar?
+
+No. Al definir un método sí se escribe como primer parámetro:
+
+Al definirlo escribimos `def presentarse(self):` y dentro podemos devolver
+`f"Soy {self.nombre}"`.
+
+Al llamar se escribe el objeto y el nombre del método:
+
+Al llamar se escribe `p1.presentarse()`.
+
+No escribimos `p1.presentarse(p1)`. Python ya sabe que `p1` es el objeto que
+debe ocupar el lugar de `self`.
+
+!!! warning "Error habitual"
+    Si olvidas `self` al definir un método, Python no podrá asociar
+    correctamente la llamada con el objeto. Comprueba siempre que todos los
+    métodos de instancia empiezan por `self`.
+
+### Microactividad 1: predecir
+
+Sin ejecutar, responde:
+
+```python
+class Personaje:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def presentarse(self):
+        return f"Soy {self.nombre}"
+
+
+p1 = Personaje("Aina")
+p2 = Personaje("Pau")
+print(p1.presentarse())
+print(p2.presentarse())
+```
+
+¿Qué nombre aparece en cada línea? Explica qué objeto representa `self` en cada
+llamada.
+
+### Microactividad 2: corregir una asignación
+
+Revisa esta línea de un constructor que estás escribiendo: `nombre = nombre`.
+
+Corrígela para que el nombre quede guardado en el objeto y prueba después
+`print(personaje.nombre)`. La corrección debe utilizar `self`.
+
+## 6. Métodos: las acciones de los objetos
+
+Un **método** es una función que forma parte de una clase. Un método puede
+consultar un atributo, modificarlo o devolver un resultado.
+
+Primero veremos un método sin datos adicionales. Después añadiremos un método
+que recibe un parámetro además de `self`.
+
+El siguiente bloque es una versión completa de `Personaje`:
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def presentarse(self):
+        return f"Soy {self.nombre} y tengo {self.vida} puntos de vida"
+
+    def recibir_danio(self, cantidad):
+        self.vida = self.vida - cantidad
+
+    def esta_vivo(self):
+        return self.vida > 0
+
+
+p1 = Personaje("Aina", 100)
+print(p1.presentarse())       # Soy Aina y tengo 100 puntos de vida
+print(p1.esta_vivo())         # True
+
+p1.recibir_danio(30)
+print(p1.vida)                # 70
+print(p1.esta_vivo())         # True
+```
+
+`presentarse()` consulta el estado y devuelve un texto. `recibir_danio(30)`
+recibe `30` en `cantidad` y modifica `self.vida`. `esta_vivo()` consulta la
+vida y devuelve `True` o `False`.
+
+En esta primera versión todavía no hemos decidido qué hacer con un daño
+negativo o con una vida menor que cero. Lo estudiaremos después de practicar la
+relación entre objetos y métodos.
+
+### `return` y `print()`
+
+`print()` muestra algo en pantalla. `return` entrega un resultado al código que
+ha llamado al método. Normalmente las reglas de una clase deben devolver datos,
+para que otra parte del programa decida qué hacer con ellos.
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def texto_estado(self):
+        return f"{self.nombre}: {self.vida} PV"
+
+    def mostrar_estado(self):
+        print(self.texto_estado())
+
+
+p1 = Personaje("Aina", 80)
+estado = p1.texto_estado()
+print(estado)                  # Aina: 80 PV
+p1.mostrar_estado()            # Aina: 80 PV
+```
+
+`texto_estado()` devuelve una cadena que podemos guardar en `estado`. La
+función `mostrar_estado()` imprime directamente. Ambas pueden ser útiles, pero
+no hacen lo mismo.
+
+### Microactividad 1: añadir `curar`
+
+Añade a la primera versión de `Personaje` un método `curar(cantidad)` que sume
+la cantidad recibida a `self.vida`. Crea un personaje con 40 de vida, recibe 10
+de daño y después se cura 5. Muestra la vida tras cada llamada.
+
+### Microactividad 2: dos objetos
+
+Sin ejecutar primero, predice la vida final:
+
+Usa la versión completa anterior para crear `p1 = Personaje("Aina", 100)` y
+`p2 = Personaje("Pau", 50)`, aplicar `p1.recibir_danio(20)` y
+`p2.recibir_danio(5)`, y mostrar sus vidas.
+
+Después ejecuta el código y explica por qué una llamada no modifica el otro
+objeto.
+
+## ¿Lo tienes claro?
+
+Haz esta comprobación antes de continuar. No copies una solución completa:
+escribe una clase nueva llamada `Libro` o `Mascota` que tenga:
+
+1. un `__init__` con dos datos, por ejemplo `titulo` y `autor`;
+2. dos atributos guardados mediante `self`;
+3. un método que devuelva una frase usando esos atributos;
+4. dos instancias con valores distintos;
+5. dos llamadas al método y una modificación de un solo objeto.
+
+Puedes comprobar tu resultado con estos criterios:
+
+- la clase se puede ejecutar sin errores;
+- cada instancia muestra sus propios datos;
+- el método devuelve una cadena que el programa puede guardar en una variable;
+- modificar la primera instancia no cambia la segunda;
+- puedes explicar qué representa `self` en el método.
+
+Si todavía dudas entre parámetro y atributo, vuelve a ejecutar el ejemplo de
+`Personaje` y señala la parte izquierda y la parte derecha de
+`self.nombre = nombre`.
+
+## 7. Varios objetos: listas de instancias
+
+Una lista puede guardar objetos del mismo modo que guarda números o cadenas.
+La diferencia importante es que cada elemento de la lista es una instancia
+completa con sus propios atributos y métodos.
+
+Este ejemplo es autónomo:
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def presentarse(self):
+        return f"{self.nombre}: {self.vida} PV"
+
+
+personajes = [
+    Personaje("Aina", 100),
+    Personaje("Pau", 70),
+    Personaje("Nora", 120),
+]
+
+for personaje in personajes:
+    print(personaje.presentarse())
+
+personaje_mas_resistente = personajes[0]
+for personaje in personajes[1:]:
+    if personaje.vida > personaje_mas_resistente.vida:
+        personaje_mas_resistente = personaje
+
+print(personaje_mas_resistente.nombre)  # Nora
+```
+
+El bucle `for` obtiene una instancia en cada vuelta. Por eso podemos escribir
+`personaje.vida` y `personaje.presentarse()`.
+
+Una lista de objetos no convierte esos objetos en diccionarios ni elimina sus
+métodos. Cada elemento sigue siendo un `Personaje`.
+
+### Microactividad: buscar un personaje
+
+Añade un cuarto personaje a la lista. Cambia su vida para que sea la mayor y
+comprueba que el algoritmo lo encuentra. Después modifica solo la vida de un
+personaje y vuelve a imprimir los originales para observar que cada uno
+conserva su propio estado.
+
+## 8. Reglas y validaciones para conservar un estado correcto
+
+Ya sabemos crear objetos, guardar atributos y llamar a métodos. Ahora podemos
+decidir qué valores son aceptables. Una vida negativa no representa un estado
+útil y un daño negativo aumentaría la vida en lugar de reducirla.
+
+Primero limitaremos la vida a cero con `max(0, ...)`. Después rechazaremos un
+daño negativo mediante `ValueError`.
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
         self.nombre = nombre
         self.vida = vida
 
@@ -89,410 +530,223 @@ class Personaje:
             raise ValueError("El daño no puede ser negativo")
         self.vida = max(0, self.vida - cantidad)
 
-
-heroina = Personaje("Aina")
-heroina.recibir_danio(15)
-print(heroina.vida)  # 85
-```
-
-La clase concentra las reglas de un personaje. Aun así, la elección depende
-del problema: no conviertas automáticamente cada dato en una clase.
-
-!!! tip "Pregunta de predicción"
-    ¿Qué debe ocurrir si llamamos a `heroina.recibir_danio(-1)`? Una operación
-    inválida debe fallar antes de modificar la vida.
-
-## 2. Clase, objeto, atributos y métodos
-
-Una **clase** es un molde o descripción de un tipo de objeto. Un **objeto** (o
-**instancia**) es un ejemplar concreto de esa clase. Una instancia tiene:
-
-- **atributos**, que describen sus datos;
-- **estado**, que es el conjunto de valores de sus atributos en un momento;
-- **comportamiento**, que son las acciones que puede realizar;
-- **métodos**, que son funciones definidas dentro de una clase.
-
-La clase `Mascota` puede describir muchas mascotas. `luna` y `toby` serán dos
-objetos distintos, cada uno con su propio nombre y energía.
-
-```mermaid
-classDiagram
-    class Mascota {
-        +str nombre
-        +str especie
-        +int energia
-        +comer()
-        +jugar()
-        +mostrar_estado() str
-    }
-```
-
-Para empezar basta con la clase principal:
-
-```python
-class Mascota:
-    def __init__(self, nombre, especie):
-        self.nombre = nombre
-        self.especie = especie
-        self.energia = 50
-
-    def jugar(self):
-        self.energia = max(0, self.energia - 20)
-
-    def comer(self):
-        self.energia = min(100, self.energia + 15)
-
-    def mostrar_estado(self):
-        return f"{self.nombre} ({self.especie}): {self.energia}/100"
-
-
-luna = Mascota("Luna", "gato")
-toby = Mascota("Toby", "perro")
-luna.jugar()
-print(luna.mostrar_estado())  # Luna (gato): 30/100
-print(toby.mostrar_estado())  # Toby (perro): 50/100
-```
-
-`luna` y `toby` pertenecen a la misma clase, pero `luna is toby` es falso y
-sus estados no se mezclan.
-
-## 3. Crear clases, instanciar y devolver resultados
-
-Una definición comienza con `class`, un nombre en `PascalCase` y dos puntos.
-Dentro se escriben atributos iniciales y métodos con nombres en `snake_case`.
-
-```python
-class Rectangulo:
-    def __init__(self, ancho, alto):
-        if ancho <= 0 or alto <= 0:
-            raise ValueError("Las dimensiones deben ser positivas")
-        self.ancho = ancho
-        self.alto = alto
-
-    def area(self):
-        return self.ancho * self.alto
-
-    def es_cuadrado(self):
-        return self.ancho == self.alto
-
-
-figura = Rectangulo(4, 3)
-print(figura.area())         # 12
-print(figura.es_cuadrado())  # False
-```
-
-Para construir un objeto escribimos `Clase(argumentos)`. Para acceder a un
-atributo o llamar a un método usamos un punto. Un método debe devolver un
-resultado cuando otra parte del programa necesita tomar decisiones con él.
-Mostrar un valor y devolverlo son acciones distintas:
-
-```python
-def area_y_mostrar(rectangulo):
-    print(rectangulo.area())  # efecto en pantalla
-
-
-def area_para_calcular(rectangulo):
-    return rectangulo.area()  # dato que puede reutilizarse
-```
-
-En una clase suele ser mejor que `area()` devuelva el número y que la interfaz
-decida después si debe imprimirlo, guardarlo o compararlo.
-
-## 4. `self` y `__init__`
-
-`self` representa la instancia que está utilizando el método. Python lo pasa
-automáticamente cuando escribimos `objeto.metodo()`, pero debemos declararlo
-como primer parámetro en la definición.
-
-```python
-class Saludo:
-    def __init__(self, nombre):
-        self.nombre = nombre
-
-    def texto(self):
-        return f"Hola, {self.nombre}"
-
-
-saludo = Saludo("Nora")
-print(saludo.texto())
-```
-
-En `self.nombre = nombre`, la izquierda es un atributo que queda guardado en
-la instancia y la derecha es el parámetro local recibido por `__init__`. Si
-escribimos `nombre = nombre`, solo reasignamos el parámetro y el objeto no
-conserva el dato.
-
-`__init__` se ejecuta para inicializar una instancia ya creada. No es,
-literalmente, el método que crea el objeto; esa creación se relaciona con
-`__new__`, que no necesitamos redefinir en esta unidad.
-
-```python
-class Contador:
-    def __init__(self, inicial=0):
-        self.valor = inicial
-
-    def incrementar(self, cantidad=1):
-        self.valor += cantidad
-        return self.valor
-
-
-primero = Contador()
-segundo = Contador(10)
-primero.incrementar()
-print(primero.valor)  # 1
-print(segundo.valor)  # 10
-```
-
-!!! warning "Error frecuente"
-    Si Python muestra `TypeError: ... missing 1 required positional argument:
-    'self'`, revisa que el método incluya `self` y que lo llames mediante una
-    instancia: `contador.incrementar()`.
-
-## 5. Atributos de instancia y de clase
-
-Un atributo creado con `self` pertenece a cada instancia. Un atributo escrito
-directamente en el cuerpo de la clase puede representar un dato compartido por
-la clase completa.
-
-```python
-class Alumno:
-    centro = "IES Ejemplo"  # atributo de clase
-
-    def __init__(self, nombre):
-        self.nombre = nombre  # atributo de instancia
-
-
-ana = Alumno("Ana")
-bruno = Alumno("Bruno")
-print(ana.centro, bruno.centro)
-```
-
-La búsqueda `ana.centro` encuentra primero un atributo de la instancia y, si
-no existe, busca en la clase. Si asignamos `ana.centro = "Otro centro"`, no
-cambiamos el atributo de clase: creamos un atributo propio para `ana`.
-
-### El peligro de las listas mutables compartidas
-
-Este diseño es incorrecto si cada alumno debe tener sus propias notas:
-
-```python
-class AlumnoIncorrecto:
-    notas = []  # una única lista compartida por todas las instancias
-```
-
-La solución es crear la lista en `__init__`:
-
-```python
-class Alumno:
-    def __init__(self, nombre):
-        self.nombre = nombre
-        self.notas = []
-
-
-ana = Alumno("Ana")
-bruno = Alumno("Bruno")
-ana.notas.append(9)
-print(ana.notas)    # [9]
-print(bruno.notas)  # []
-```
-
-`is` comprueba identidad: si dos nombres apuntan al mismo objeto. `==`
-comprueba igualdad de valores, según las reglas del tipo.
-
-```python
-uno = Alumno("Ana")
-dos = Alumno("Ana")
-print(uno is dos)  # False: son instancias diferentes
-print(uno == dos)  # False por defecto: no hemos definido igualdad
-```
-
-Dos diccionarios con el mismo contenido sí suelen ser `==`; dos instancias de
-una clase no son iguales automáticamente solo porque tengan atributos iguales.
-
-## 6. Métodos, reglas e invariantes
-
-Un método puede consultar o modificar el estado. Una **invariante** es una
-regla que debe mantenerse siempre, por ejemplo “el saldo nunca es negativo” o
-“la energía está entre 0 y 100”. Validar al principio de una operación ayuda a
-que un error no deje el objeto en un estado parcial.
-
-```python
-class Producto:
-    def __init__(self, nombre, precio, stock=0):
-        if not nombre.strip():
-            raise ValueError("El nombre es obligatorio")
-        if precio < 0 or stock < 0:
-            raise ValueError("Precio y stock no pueden ser negativos")
-        self.nombre = nombre
-        self.precio = precio
-        self.stock = stock
-
-    def vender(self, cantidad):
-        if cantidad <= 0:
-            raise ValueError("La cantidad debe ser positiva")
-        if cantidad > self.stock:
-            raise ValueError("No hay suficiente stock")
-        self.stock -= cantidad
-
-    def reponer(self, cantidad):
-        if cantidad <= 0:
-            raise ValueError("La cantidad debe ser positiva")
-        self.stock += cantidad
-
-    def valor_inventario(self):
-        return self.precio * self.stock
-```
-
-Observa el orden de `vender()`: primero comprueba todas las condiciones y solo
-después modifica `stock`. Si una venta falla, el valor anterior permanece.
-
-!!! note "`return` frente a `print`"
-    Las reglas del dominio deben devolver datos o lanzar excepciones. La capa
-    de interfaz puede imprimir esos datos. Así resulta sencillo probar la clase
-    sin depender de la pantalla.
-
-## 7. Encapsulación y propiedades
-
-La encapsulación consiste en ofrecer una interfaz estable y limitar el acceso
-directo a los detalles que no deberían manipularse sin reglas. Python no aplica
-privacidad estricta: `_saldo` es una convención que indica “uso interno”, no
-una barrera absoluta.
-
-Una propiedad permite consultar un valor mediante una expresión sencilla y
-controlar cómo se obtiene o modifica.
-
-```python
-class CuentaBancaria:
-    def __init__(self, titular, saldo_inicial=0):
-        if not titular.strip() or saldo_inicial < 0:
-            raise ValueError("Titular o saldo no válidos")
-        self.titular = titular
-        self._saldo = saldo_inicial
-
-    @property
-    def saldo(self):
-        """Saldo de solo lectura para el resto del programa."""
-        return self._saldo
-
-    def ingresar(self, cantidad):
-        if cantidad <= 0:
-            raise ValueError("La cantidad debe ser positiva")
-        self._saldo += cantidad
-
-    def retirar(self, cantidad):
-        if cantidad <= 0 or cantidad > self._saldo:
-            raise ValueError("Retirada no válida")
-        self._saldo -= cantidad
-```
-
-`cuenta.saldo` se puede leer, pero `cuenta.saldo = -10` falla porque no hemos
-definido un setter. No conviene crear getters y setters triviales para todos
-los atributos: si no hay una regla que proteger, un atributo público puede ser
-más claro.
-
-## 8. `__str__` y `__repr__`
-
-`str(objeto)` y `print(objeto)` utilizan `__str__` cuando la clase lo define.
-Debe ofrecer una representación breve y comprensible para una persona.
-`repr(objeto)` se orienta más a depuración y a mostrar información inequívoca.
-
-```python
-class Libro:
-    def __init__(self, titulo, autor):
-        self.titulo = titulo
-        self.autor = autor
-
-    def __str__(self):
-        return f"{self.titulo}, de {self.autor}"
-
-    def __repr__(self):
-        return f"Libro(titulo={self.titulo!r}, autor={self.autor!r})"
-
-
-libro = Libro("La plaza", "Irene")
-print(libro)       # La plaza, de Irene
-print(repr(libro)) # Libro(titulo='La plaza', autor='Irene')
-```
-
-## 9. Relaciones entre objetos y composición
-
-La **composición** representa una relación “tiene un”: una `Biblioteca` tiene
-libros, un `Equipo` tiene jugadores. La responsabilidad se reparte: el libro
-conoce su estado de préstamo y la biblioteca gestiona la colección.
-
-```mermaid
-classDiagram
-    class Biblioteca {
-        -list libros
-        +agregar(libro)
-        +buscar(titulo)
-        +disponibles()
-    }
-    class Libro {
-        +str titulo
-        +str autor
-        -bool prestado
-        +prestar()
-        +devolver()
-    }
-    Biblioteca "1" *-- "0..*" Libro : contiene
-```
-
-```python
-class Biblioteca:
-    def __init__(self):
-        self._libros = []
-
-    def agregar(self, libro):
-        self._libros.append(libro)
-
-    def buscar(self, titulo):
-        buscado = titulo.casefold()
-        return [libro for libro in self._libros
-                if buscado in libro.titulo.casefold()]
-
-    def disponibles(self):
-        return [libro for libro in self._libros if not libro.prestado]
-```
-
-No confundas “tiene un” con “es un”. Un `Mago` **es un** `Personaje`, por lo
-que podría tener sentido la herencia. Una `Arena` **tiene** personajes, por lo
-que normalmente usaremos composición.
-
-## 10. Herencia, `super()` y sobrescritura
-
-La herencia permite crear una clase derivada a partir de una clase base. La
-clase derivada reutiliza lo común y puede añadir o sobrescribir comportamiento.
-
-```mermaid
-classDiagram
-    Personaje <|-- Guerrero
-    Personaje <|-- Mago
-    Arena o-- Personaje : gestiona
-    class Personaje {
-        +nombre
-        +vida
-        +atacar()
-    }
-    class Guerrero {
-        +atacar()
-    }
-    class Mago {
-        +mana
-        +atacar()
-    }
-```
-
-```python
-class Personaje:
-    def __init__(self, nombre, vida=100):
-        if not nombre.strip() or vida <= 0:
-            raise ValueError("Datos de personaje no válidos")
-        self.nombre = nombre
-        self.vida = vida
+    def curar(self, cantidad):
+        if cantidad < 0:
+            raise ValueError("La curación no puede ser negativa")
+        self.vida += cantidad
 
     def esta_vivo(self):
         return self.vida > 0
+
+
+p1 = Personaje("Aina", 30)
+p1.recibir_danio(50)
+print(p1.vida)         # 0
+print(p1.esta_vivo())  # False
+
+try:
+    p1.recibir_danio(-5)
+except ValueError as error:
+    print(error)        # El daño no puede ser negativo
+```
+
+`raise ValueError(...)` comunica que el valor recibido no es aceptable. El
+bloque `try`/`except` permite que la parte que utiliza la clase decida cómo
+informar del problema sin cerrar todo el programa.
+
+Fíjate en el orden: primero comprobamos el daño y solo después modificamos la
+vida. Si el daño es inválido, la vida conserva el valor anterior. Esta regla de
+mantener siempre un estado correcto recibe también el nombre de **invariante**,
+pero lo importante ahora es saber aplicarla.
+
+### Microactividad: comprobar antes de modificar
+
+1. Crea un personaje con 40 de vida.
+2. Guarda su vida en una variable llamada `vida_anterior`.
+3. Intenta aplicar `-10` de daño dentro de un `try`/`except`.
+4. Comprueba que la vida sigue siendo 40 después del error.
+
+## 9. Encapsulación: proteger los datos
+
+La **encapsulación** consiste en controlar cómo se consulta o se modifica un
+dato para no romper las reglas de la clase. No significa esconder todo sin
+motivo: significa ofrecer operaciones claras para trabajar con el objeto.
+
+Usaremos `_vida` para indicar que la vida es un dato de uso interno. El guion
+bajo es una convención de Python: no impide realmente que otro código escriba
+`personaje._vida`. Sirve para comunicar que debería utilizar los métodos de la
+clase.
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self._vida = vida
+
+    @property
+    def vida(self):
+        return self._vida
+
+    def recibir_danio(self, cantidad):
+        if cantidad < 0:
+            raise ValueError("El daño no puede ser negativo")
+        self._vida = max(0, self._vida - cantidad)
+
+    def curar(self, cantidad):
+        if cantidad < 0:
+            raise ValueError("La curación no puede ser negativa")
+        self._vida += cantidad
+
+
+p1 = Personaje("Aina", 100)
+print(p1.vida)        # 100
+p1.recibir_danio(25)
+print(p1.vida)        # 75
+```
+
+`@property` permite consultar `p1.vida` como si fuera un atributo normal, pero
+la clase guarda internamente el valor en `_vida`. No hemos creado un setter:
+desde fuera se puede consultar la vida, pero las modificaciones pasan por
+`recibir_danio()` o `curar()`, donde están las reglas.
+
+No es necesario crear un getter y un setter mecánicos para cada atributo. Si un
+dato no necesita protección, una interfaz pública sencilla puede ser más clara.
+
+### Microactividad: detectar un cambio peligroso
+
+Explica qué problema podría causar esta instrucción:
+
+La instrucción `personaje._vida = -400` puede romper la regla de que la vida
+no sea negativa.
+
+Después escribe una alternativa que use `recibir_danio()` y comprueba que la
+vida no baja de cero. Recuerda que `_vida` es una convención, no una barrera de
+seguridad absoluta.
+
+## 10. Relaciones entre objetos: composición
+
+Una clase puede trabajar con objetos de otra clase. Un `Equipo` **tiene** varios
+`Personaje`; esta relación se llama **composición**. El equipo mantiene una
+colección y los personajes mantienen sus propios datos.
+
+El siguiente ejemplo es completo: no depende de variables definidas fuera del
+bloque.
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self._vida = vida
+
+    @property
+    def vida(self):
+        return self._vida
+
+    def recibir_danio(self, cantidad):
+        if cantidad < 0:
+            raise ValueError("El daño no puede ser negativo")
+        self._vida = max(0, self._vida - cantidad)
+
+
+class Equipo:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self._personajes = []
+
+    def agregar(self, personaje):
+        self._personajes.append(personaje)
+
+    def vida_total(self):
+        return sum(personaje.vida for personaje in self._personajes)
+
+    def mostrar(self):
+        return [personaje.nombre for personaje in self._personajes]
+
+
+equipo = Equipo("Exploradores")
+equipo.agregar(Personaje("Aina", 100))
+equipo.agregar(Personaje("Pau", 70))
+
+print(equipo.mostrar())     # ['Aina', 'Pau']
+print(equipo.vida_total())  # 170
+```
+
+`Equipo` crea su propia lista en `__init__`. `agregar()` recibe un objeto
+`Personaje` y lo guarda. `vida_total()` pide a cada personaje su vida y suma
+los resultados. Cada clase tiene una responsabilidad comprensible:
+
+```mermaid
+classDiagram
+    class Equipo {
+        -nombre
+        -personajes
+        +agregar(personaje)
+        +vida_total()
+    }
+    class Personaje {
+        +nombre
+        -vida
+        +recibir_danio(cantidad)
+    }
+    Equipo "1" *-- "0..*" Personaje : tiene
+```
+
+### Microactividad: colaborar con objetos
+
+Crea un segundo equipo con un personaje distinto. Comprueba que su lista
+empieza vacía y que la vida total del primer equipo no cambia. Después daña a
+uno de los personajes y vuelve a calcular la vida total.
+
+## 11. Herencia: crear clases especializadas
+
+Ahora introducimos una relación diferente. Un `Guerrero` **es un** `Personaje`.
+Un `Mago` también **es un** `Personaje`. Cuando una clase nueva es una versión
+especializada de otra, podemos utilizar **herencia**.
+
+La clase general se llama **clase base**. La clase especializada se llama
+**clase derivada** o hija. La hija recibe los métodos y atributos definidos en
+la base y puede añadir o cambiar comportamiento.
+
+### Primer paso: `Guerrero`
+
+Este primer ejemplo es completo. `Guerrero` reutiliza el método `atacar()` de
+la clase base solo para reemplazarlo con otra cantidad:
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def atacar(self):
+        return 6
+
+
+class Guerrero(Personaje):
+    def atacar(self):
+        return 12
+
+
+guerrero = Guerrero("Aina", 120)
+print(guerrero.nombre)    # Aina
+print(guerrero.vida)      # 120
+print(guerrero.atacar())  # 12
+```
+
+Como `Guerrero` no define su propio `__init__`, utiliza el de `Personaje` y por
+eso en este primer paso recibe `nombre` y `vida` al crear el objeto.
+
+### Usar `super().__init__()`
+
+Queremos que todos los guerreros empiecen con 120 puntos sin repetir ese
+argumento cada vez. `super().__init__()` llama al inicializador de la clase
+base:
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
 
     def atacar(self):
         return 6
@@ -500,29 +754,46 @@ class Personaje:
 
 class Guerrero(Personaje):
     def __init__(self, nombre):
-        super().__init__(nombre, vida=120)
+        super().__init__(nombre, 120)
 
     def atacar(self):
-        return 14
+        return 12
+
+
+guerrero = Guerrero("Aina")
+print(guerrero.nombre)    # Aina
+print(guerrero.vida)      # 120
+print(guerrero.atacar())  # 12
 ```
 
-`super().__init__` llama al inicializador de la clase base. No copies código
-común sin motivo. Sobrescribir significa definir en la derivada un método con
-el mismo nombre para ofrecer una versión especializada.
+`super().__init__(nombre, 120)` prepara la parte común del personaje. Después,
+`Guerrero` sobrescribe `atacar()` para devolver 12 en vez de 6.
 
-No conviene heredar solo para compartir unas líneas: si la relación “es un” no
-es natural, usa composición o una función. La herencia introduce dependencia
-entre clases y debe hacer el modelo más claro, no más complicado.
+### Segundo paso: `Mago`
 
-## 11. Polimorfismo y duck typing
-
-El polimorfismo permite pedir la misma operación a objetos distintos y dejar
-que cada uno responda según su tipo.
+Este bloque completo reúne la clase base y las dos clases especializadas:
 
 ```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def atacar(self):
+        return 6
+
+
+class Guerrero(Personaje):
+    def __init__(self, nombre):
+        super().__init__(nombre, 120)
+
+    def atacar(self):
+        return 12
+
+
 class Mago(Personaje):
     def __init__(self, nombre):
-        super().__init__(nombre, vida=80)
+        super().__init__(nombre, 80)
         self.mana = 9
 
     def atacar(self):
@@ -532,241 +803,266 @@ class Mago(Personaje):
         return 4
 
 
-personajes = [Guerrero("Ada"), Mago("Leo"), Personaje("Nora")]
+guerrero = Guerrero("Aina")
+mago = Mago("Pau")
+print(guerrero.atacar())  # 12
+print(mago.atacar())      # 18
+print(mago.mana)          # 6
+```
+
+No hemos creado una clase nueva desde cero para cada tipo. `Guerrero` y `Mago`
+reutilizan lo común de `Personaje`, y cada uno añade o cambia solo lo necesario.
+
+Composición y herencia responden a preguntas distintas:
+
+- “¿Un equipo **tiene** personajes?” → composición (`Equipo` guarda objetos).
+- “¿Un mago **es un** personaje?” → herencia (`Mago` deriva de `Personaje`).
+
+### Microactividad: una clase especializada
+
+Crea una clase `Explorador` que herede de `Personaje`, inicialice una vida de
+90 y sobrescriba `atacar()` para devolver 8. No añadas todavía reglas nuevas.
+Prueba que conserva `nombre` y que su ataque es diferente al de la clase base.
+
+## 12. Polimorfismo: la misma operación, distintos resultados
+
+Ya tenemos tres objetos que ofrecen el método `atacar()`: `Personaje`,
+`Guerrero` y `Mago`. Podemos guardarlos en una misma lista y llamar al mismo
+método en cada vuelta.
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def atacar(self):
+        return 6
+
+
+class Guerrero(Personaje):
+    def __init__(self, nombre):
+        super().__init__(nombre, 120)
+
+    def atacar(self):
+        return 12
+
+
+class Mago(Personaje):
+    def __init__(self, nombre):
+        super().__init__(nombre, 80)
+        self.mana = 9
+
+    def atacar(self):
+        if self.mana >= 3:
+            self.mana -= 3
+            return 18
+        return 4
+
+
+personajes = [
+    Personaje("Nora", 100),
+    Guerrero("Aina"),
+    Mago("Pau"),
+]
+
 for personaje in personajes:
-    print(personaje.nombre, personaje.atacar())
+    print(f"{personaje.nombre}: {personaje.atacar()}")
 ```
 
-No necesitamos una cadena de `if type(personaje) is ...`. Cada objeto cumple el
-contrato de ofrecer `atacar()`.
-
-Python no tiene sobrecarga de métodos como Java basada en varias firmas. Si
-defines dos métodos con el mismo nombre, el segundo reemplaza al primero.
-Puedes usar valores por defecto, argumentos variables o métodos con nombres
-distintos cuando proceda. Además, Python admite **duck typing**: una función
-puede aceptar cualquier objeto que tenga el método que necesita.
-
-```python
-def anunciar_ataque(personaje):
-    # No importa la clase exacta; basta con que tenga atacar() y nombre.
-    return f"{personaje.nombre} causa {personaje.atacar()} puntos"
-```
-
-## 12. Métodos de clase y estáticos
-
-Un método de instancia recibe `self`. Un `@classmethod` recibe `cls` y puede
-crear instancias alternativas o trabajar con datos compartidos por la clase.
-Un `@staticmethod` no recibe automáticamente ni `self` ni `cls`; es una función
-relacionada conceptualmente con la clase.
-
-```python
-class EntradaConcierto:
-    siguiente_id = 1
-
-    def __init__(self, concierto, precio):
-        if not self.precio_valido(precio):
-            raise ValueError("Precio no válido")
-        self.id = EntradaConcierto.siguiente_id
-        EntradaConcierto.siguiente_id += 1
-        self.concierto = concierto
-        self.precio = precio
-
-    @staticmethod
-    def precio_valido(precio):
-        return isinstance(precio, (int, float)) \
-            and not isinstance(precio, bool) and precio >= 0
-
-    @classmethod
-    def desde_texto(cls, texto):
-        try:
-            concierto, precio = texto.split(";", maxsplit=1)
-            return cls(concierto.strip(), float(precio))
-        except (ValueError, TypeError) as error:
-            raise ValueError("Formato esperado: Concierto;29.50") from error
-
-    def __str__(self):
-        return f"#{self.id}: {self.concierto} ({self.precio:.2f} €)"
-```
-
-Usa un método estático si la operación pertenece al vocabulario de la clase
-pero no necesita el estado de una instancia. Si no existe esa relación, una
-función normal en un módulo suele ser más sencilla.
-
-## 13. Módulos y organización del proyecto
-
-Cuando una clase crece, colócala en un módulo con un nombre descriptivo. Una
-organización sencilla puede ser:
+Salida:
 
 ```text
-arena_heroes/
+Nora: 6
+Aina: 12
+Pau: 18
+```
+
+Esto es **polimorfismo**: pedimos la operación `atacar()` a objetos de tipos
+distintos y cada objeto responde con su propia versión. El bucle no necesita
+preguntar si el objeto es un guerrero o un mago.
+
+### Microactividad: predecir una lista mixta
+
+Antes de ejecutar, escribe la salida de este bloque usando las clases del
+ejemplo anterior. Es una continuación del bloque completo inmediatamente
+anterior: ejecútalo en el mismo archivo o copia primero las definiciones de
+`Personaje`, `Guerrero` y `Mago`.
+
+```python
+personajes = [Mago("Luz"), Guerrero("Roc"), Personaje("Sol", 40)]
+for personaje in personajes:
+    print(personaje.atacar())
+```
+
+Después ejecútalo y explica qué método se utiliza en cada objeto. No añadas
+`if type(personaje) ...`: la operación común ya proporciona la solución.
+
+## 13. Mejorar y organizar nuestras clases
+
+### Mostrar objetos con `__str__`
+
+Cuando imprimimos un objeto sin preparar una representación, Python puede
+mostrar una dirección poco útil. `__str__` permite definir un texto legible.
+
+```python
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def __str__(self):
+        return f"{self.nombre} ({self.vida} PV)"
+
+
+personaje = Personaje("Aina", 100)
+print(personaje)  # Aina (100 PV)
+```
+
+`print(personaje)` utiliza automáticamente el texto que devuelve `__str__`.
+Este método no sustituye a `presentarse()` si el programa necesita una acción
+con otro propósito; simplemente define una representación cómoda para mostrar.
+
+### Separar clases en módulos
+
+Cuando un programa crece, podemos guardar cada clase en un archivo. Este
+ejemplo utiliza tres archivos que deben estar en la misma carpeta:
+
+```text
+ejemplo_personajes/
 ├── personaje.py
 ├── guerrero.py
-├── mago.py
-├── combate.py
-├── arena.py
 └── main.py
 ```
 
-Un módulo importa las clases que utiliza:
+`personaje.py`:
 
 ```python
-# guerrero.py
+class Personaje:
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
+
+    def atacar(self):
+        return 6
+
+    def __str__(self):
+        return f"{self.nombre} ({self.vida} PV)"
+```
+
+`guerrero.py`:
+
+```python
 from personaje import Personaje
 
 
 class Guerrero(Personaje):
-    pass
+    def __init__(self, nombre):
+        super().__init__(nombre, 120)
+
+    def atacar(self):
+        return 12
 ```
 
-El archivo principal se ocupa de la entrada y salida, no de todas las reglas
-del dominio:
+`main.py`:
 
 ```python
-# main.py
+from personaje import Personaje
 from guerrero import Guerrero
 
 
 def ejecutar():
-    guerrero = Guerrero("Ada")
-    print(guerrero.nombre)
+    personajes = [Personaje("Nora", 100), Guerrero("Aina")]
+    for personaje in personajes:
+        print(f"{personaje}: {personaje.atacar()} de daño")
 
 
 if __name__ == "__main__":
     ejecutar()
 ```
 
-La condición evita que el menú se ejecute al importar `main` desde una prueba.
-Evita dependencias circulares: si `personaje.py` importa `mago.py` y `mago.py`
-importa `personaje.py`, reorganiza las responsabilidades o importa dentro de
-una función solo cuando sea una solución justificada.
+El `import` hace disponible una clase definida en otro archivo. La condición
+`if __name__ == "__main__":` hace que `ejecutar()` se llame al ejecutar
+`main.py`, pero no automáticamente al importar el archivo desde una prueba.
 
-## 14. Excepciones, validación y pruebas
+No crees dependencias circulares: `personaje.py` no necesita importar
+`guerrero.py` para definir `Personaje`.
 
-Las excepciones comunican que una operación no es válida. El constructor debe
-rechazar datos imposibles y los métodos deben validar antes de modificar el
-estado.
+### Errores que conviene revisar
 
-```python
-class Termometro:
-    def __init__(self, grados):
-        self._grados = self._validar(grados)
+- Guardar un dato en `nombre` en vez de `self.nombre`.
+- Olvidar `self` en la definición de un método.
+- Usar una lista compartida en el cuerpo de una clase cuando cada objeto debe
+  tener su propia lista.
+- Imprimir un resultado cuando el resto del programa necesita recibirlo.
+- Copiar toda la clase base en cada clase hija en lugar de reutilizarla.
+- Colocar las reglas del dominio dentro del menú y hacer difícil probarlas.
 
-    @staticmethod
-    def _validar(grados):
-        if not isinstance(grados, (int, float)):
-            raise TypeError("Los grados deben ser numéricos")
-        if grados < -273.15:
-            raise ValueError("No se puede bajar del cero absoluto")
-        return grados
+### Microactividad: organizar un ejemplo
 
-    def cambiar(self, grados):
-        nuevo = self._validar(grados)
-        self._grados = nuevo
+Separa el ejemplo final en los tres archivos indicados. Ejecútalo desde la
+carpeta con `python main.py`. Cambia el nombre del guerrero y comprueba que el
+programa sigue funcionando sin modificar la clase base.
 
-    @property
-    def grados(self):
-        return self._grados
+## 14. Cierre y ampliaciones
+
+### El recorrido de la unidad
+
+```mermaid
+flowchart LR
+    A["Clase"] --> B["Objeto"]
+    B --> C["Atributos"]
+    C --> D["Métodos"]
+    D --> E["Colaboración"]
+    E --> F["Herencia"]
+    F --> G["Polimorfismo"]
 ```
 
-El patrón `nuevo = validar(...); self._dato = nuevo` garantiza que un error no
-deje una parte del objeto actualizada y otra sin actualizar.
+Has aprendido el recorrido completo:
 
-### Pruebas con `unittest`
-
-```python
-import unittest
-
-
-class TestTermometro(unittest.TestCase):
-    def test_cambiar_guarda_el_valor(self):
-        termometro = Termometro(20)
-        termometro.cambiar(21.5)
-        self.assertEqual(termometro.grados, 21.5)
-
-    def test_rechaza_cero_absoluto(self):
-        with self.assertRaises(ValueError):
-            Termometro(-300)
-
-
-if __name__ == "__main__":
-    unittest.main()
-```
-
-Prueba al menos un caso normal, un límite y cada error importante. Una prueba
-no solo comprueba que “funciona”: documenta qué comportamiento debe conservarse
-cuando el programa evolucione.
-
-## 15. Integración con JSON
-
-JSON solo conoce objetos básicos como diccionarios, listas, cadenas y números.
-No guarda automáticamente una instancia de Python ni sus métodos. Una clase
-puede definir `to_dict()` para serializar datos y `from_dict()` para reconstruir
-una instancia.
-
-```python
-import json
-
-
-class Nota:
-    def __init__(self, texto, importante=False):
-        if not texto.strip():
-            raise ValueError("La nota no puede estar vacía")
-        self.texto = texto
-        self.importante = importante
-
-    def to_dict(self):
-        return {"texto": self.texto, "importante": self.importante}
-
-    @classmethod
-    def from_dict(cls, datos):
-        return cls(datos["texto"], datos.get("importante", False))
-
-
-nota = Nota("Repasar POO", True)
-texto_json = json.dumps(nota.to_dict(), ensure_ascii=False)
-datos = json.loads(texto_json)
-reconstruida = Nota.from_dict(datos)
-print(reconstruida.texto)
-```
-
-En una lista de objetos, guarda una lista de diccionarios. Al cargarla,
-recorre los diccionarios y llama a `from_dict()` para recuperar el tipo y sus
-reglas. Si el archivo no existe o contiene JSON mal formado, decide si debes
-capturar `FileNotFoundError`/`json.JSONDecodeError` en la interfaz o propagar
-una excepción de dominio.
-
-## 16. Buenas prácticas y errores habituales
-
-Un diseño POO claro suele tener nombres expresivos, métodos cortos y una única
-responsabilidad principal por clase. Antes de crear una clase, pregunta qué
-estado debe proteger, qué acciones le pertenecen y qué colaboración necesita.
-
-Errores que conviene detectar:
-
-| Error | Mejora |
-|---|---|
-| Omitir `self` | Añadirlo como primer parámetro de cada método de instancia. |
-| Escribir `nombre = nombre` | Guardar la entrada como `self.nombre = nombre`. |
-| Definir `lista = []` en la clase | Crear `self.lista = []` en `__init__`. |
-| Usar `print()` donde se necesita un dato | Devolver con `return` y mostrar en la interfaz. |
-| Confiar en que `_dato` es privado | Recordar que es una convención y proteger invariantes en métodos. |
-| Heredar para cualquier reutilización | Elegir composición si la relación “es un” no es real. |
-| Comprobar `type()` con muchos `if` | Diseñar una operación común y usar polimorfismo. |
-| Cambiar el estado antes de validar | Validar primero y modificar después. |
-| Crear una clase para un dato trivial | Mantener una función o un tipo simple si resulta más claro. |
+1. una **clase** describe un tipo de elemento;
+2. un **objeto** es un ejemplar concreto;
+3. sus **atributos** guardan datos;
+4. `__init__` prepara esos datos al crear el objeto;
+5. `self` identifica el objeto que está trabajando;
+6. los **métodos** definen acciones;
+7. una lista puede guardar muchos objetos independientes;
+8. las validaciones conservan un estado correcto;
+9. la composición permite que una clase tenga otros objetos;
+10. la herencia crea tipos especializados;
+11. el polimorfismo permite usar una misma operación con objetos distintos.
 
 ### Checklist de autoevaluación
 
-- [ ] Puedo explicar clase, instancia, atributo y método con un ejemplo.
-- [ ] Sé por qué `self.nombre = nombre` guarda el dato.
-- [ ] Mis listas y diccionarios pertenecen a la instancia correcta.
-- [ ] Mis métodos devuelven resultados y no mezclan reglas con la interfaz.
-- [ ] Las operaciones inválidas lanzan una excepción sin corromper el estado.
-- [ ] Distingo composición (“tiene un”) de herencia (“es un”).
-- [ ] Puedo recorrer una lista polimórfica sin inspeccionar tipos.
-- [ ] Sé separar clases en módulos y proteger el punto de entrada.
-- [ ] Tengo pruebas de casos normales, límites y errores.
-- [ ] Puedo convertir objetos a diccionarios y reconstruirlos desde JSON.
+- [ ] Sé escribir una clase vacía con `class` y `pass`.
+- [ ] Puedo crear dos objetos y explicar por qué son independientes.
+- [ ] Sé leer y modificar un atributo usando el punto.
+- [ ] Puedo explicar cada parte de `self.nombre = nombre`.
+- [ ] Sé crear una clase con `__init__` y dos atributos.
+- [ ] Puedo definir un método sin olvidar `self`.
+- [ ] Distingo un método que devuelve un resultado de uno que solo imprime.
+- [ ] Sé recorrer una lista de objetos y consultar sus atributos.
+- [ ] Puedo rechazar un dato inválido sin modificar el estado anterior.
+- [ ] Entiendo por qué `_vida` es una convención y cómo ayuda una propiedad.
+- [ ] Distingo “un equipo tiene personajes” de “un mago es un personaje”.
+- [ ] Puedo explicar qué método se ejecuta en una lista polimórfica.
+- [ ] Sé separar una clase en un módulo e importarla desde `main.py`.
 
-Practica la progresión en [los ejercicios de clase de POO](ejercicios_poo_clase.md)
-y aplica el diseño completo en el [proyecto Arena de héroes](proyecto_poo.md).
+Para practicar, continúa con los [ejercicios de POO](ejercicios_poo_clase.md) y
+después aborda el [proyecto final «Arena de héroes»](proyecto_poo.md).
+
+### Para seguir aprendiendo
+
+Cuando domines esta unidad puedes investigar, sin convertirlo todavía en un
+requisito del proyecto:
+
+- `@classmethod` para crear objetos mediante una alternativa al constructor;
+- `@staticmethod` para una operación relacionada con una clase que no necesita
+  un objeto concreto;
+- `__repr__` para una representación útil durante la depuración;
+- guardar datos de objetos en JSON mediante diccionarios y reconstruirlos;
+- ampliar las pruebas automáticas con `unittest`.
+
+Estas herramientas son ampliaciones. Lo esencial sigue siendo comprender qué
+objeto está trabajando, qué datos guarda y qué responsabilidad tiene cada
+método.
