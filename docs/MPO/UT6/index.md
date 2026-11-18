@@ -1048,8 +1048,9 @@ Has aprendido el recorrido completo:
 - [ ] Puedo explicar qué método se ejecuta en una lista polimórfica.
 - [ ] Sé separar una clase en un módulo e importarla desde `main.py`.
 
-Para practicar, continúa con los [ejercicios de POO](ejercicios_poo_clase.md) y
-después aborda el [proyecto final «Arena de héroes»](proyecto_poo.md).
+Para practicar, continúa con los [ejercicios de POO](ejercicios_poo_clase.md),
+realiza la [práctica «Tamagotchi Evolution»](practica_tamagotchi_evolution.md)
+y después aborda el [proyecto final «Arena de héroes»](proyecto_poo.md).
 
 ### Para seguir aprendiendo
 

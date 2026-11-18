@@ -335,3 +335,11 @@ compruebe que los valores y tipos se han reconstruido.
 
 Cuando termines, revisa el [proyecto final Arena de héroes](proyecto_poo.md),
 que combina estas técnicas en una aplicación de consola.
+
+## Continuación práctica: Tamagotchi Evolution
+
+Si quieres aplicar encapsulación, herencia, composición y polimorfismo en un
+único ejercicio guiado, continúa con la [práctica «Tamagotchi Evolution — El
+refugio de mascotas (parte 2)»](practica_tamagotchi_evolution.md). Es una
+continuación independiente de la primera parte y no sustituye al ejercicio 1,
+«Mascota virtual», cuyo contrato es diferente.

@@ -55,3 +55,5 @@ El objetivo de este módulo es proporcionar al alumnado una comprensión sólida
 - Proyecto práctico orientado a objetos, pruebas y documentación.
 
 [Acceder a la UT6](UT6/index.md)
+
+[Práctica «Tamagotchi Evolution — El refugio de mascotas (parte 2)»](UT6/practica_tamagotchi_evolution.md)

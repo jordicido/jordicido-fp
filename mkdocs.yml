@@ -27,6 +27,7 @@ nav:
       - UT6:
           - 'UT6: Programación orientada a objetos': MPO/UT6/index.md
           - 'Ejercicios de clase UT6: POO': MPO/UT6/ejercicios_poo_clase.md
+          - 'Práctica: Tamagotchi Evolution': MPO/UT6/practica_tamagotchi_evolution.md
           - 'Proyecto UT6: Arena de héroes': MPO/UT6/proyecto_poo.md
       - UT7: MPO/UT7/index.md
       - UT7 — Proyecto CLI: MPO/UT7/proyecto_cli_app_tiempo.md
